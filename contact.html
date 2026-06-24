@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✏️ SEO: Change title and description -->
+  <title>Contact | Hire an Automation Expert - n8n, Zapier, GoHighLevel</title>
+  <meta name="description" content="Contact me to discuss your automation project. Available for n8n, Zapier, GoHighLevel, and AI Agent projects. Fast response, professional service." />
+  <meta name="keywords" content="hire automation expert, contact n8n freelancer, Zapier developer for hire, GoHighLevel setup service" />
+  <meta name="author" content="Your Name" />
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">⚡ YourName</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html" class="btn btn-primary nav-hire">Hire Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===================== END HEADER ===================== -->
+
+
+  <main>
+
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Let's Work Together</h1>
+        <p>Tell me about your project and I'll respond within 2 hours with a plan and quote.</p>
+      </div>
+    </section>
+    <!-- ===================== END PAGE HERO ===================== -->
+
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section class="section contact-section">
+      <div class="container contact-grid">
+
+        <!-- ===== CONTACT FORM ===== -->
+        <div class="contact-form-wrap">
+          <h2>Send Me a Message</h2>
+          <p>Fill in the form and I'll get back to you as fast as possible.</p>
+
+          <!-- 
+            ✏️ IMPORTANT: FormSubmit.co Setup
+            1. Replace "your-email@example.com" below with YOUR REAL EMAIL ADDRESS
+            2. The first time you submit, FormSubmit will send you a confirmation email — click it to activate
+            3. After that, all form submissions will be sent to your email
+            More info: https://formsubmit.co
+          -->
+          <form
+            action="https://formsubmit.co/your-email@example.com"
+            method="POST"
+            class="contact-form"
+            id="contactForm"
+            novalidate
+          >
+
+            <!-- FormSubmit hidden settings -->
+            <!-- ✏️ Change the redirect URL to your real GitHub Pages URL after form submission -->
+            <input type="hidden" name="_next" value="https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME/contact.html?success=true" />
+            <!-- Disable FormSubmit's default captcha (uses honeypot instead) -->
+            <input type="hidden" name="_captcha" value="false" />
+            <!-- Custom email subject line -->
+            <input type="hidden" name="_subject" value="New Project Inquiry from Portfolio Website" />
+            <!-- Honeypot field to prevent spam (hidden from humans) -->
+            <input type="text" name="_honey" style="display:none" />
+
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name">Your Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Smith"
+                required
+                autocomplete="name"
+              />
+              <span class="field-error" id="name-error"></span>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="john@example.com"
+                required
+                autocomplete="email"
+              />
+              <span class="field-error" id="email-error"></span>
+            </div>
+
+            <!-- Service Dropdown -->
+            <div class="form-group">
+              <label for="service">Service Interested In <span class="required">*</span></label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>-- Select a Service --</option>
+                <option value="n8n Automation">n8n Automation</option>
+                <option value="Zapier Integration">Zapier Integration</option>
+                <option value="GoHighLevel Setup">GoHighLevel Setup</option>
+                <option value="Custom GPT / AI Agent">Custom GPT / AI Agent</option>
+                <option value="Other Automation">Other Automation</option>
+              </select>
+              <span class="field-error" id="service-error"></span>
+            </div>
+
+            <!-- Project Details -->
+            <div class="form-group">
+              <label for="message">Project Details <span class="required">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Describe what you want to automate, which tools you use, and what results you're looking for..."
+                rows="6"
+                required
+              ></textarea>
+              <span class="field-error" id="message-error"></span>
+            </div>
+
+            <!-- Budget (optional) -->
+            <div class="form-group">
+              <label for="budget">Approximate Budget (Optional)</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>-- Select Budget Range --</option>
+                <option value="Under $100">Under $100</option>
+                <option value="$100 - $300">$100 - $300</option>
+                <option value="$300 - $500">$300 - $500</option>
+                <option value="$500 - $1000">$500 - $1,000</option>
+                <option value="Over $1000">Over $1,000</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              Send Message
+            </button>
+
+            <!-- Success message shown after redirect (JS checks URL param) -->
+            <div class="form-success" id="formSuccess" style="display:none;">
+              ✅ Thank you! Your message was sent. I'll reply within 2 hours.
+            </div>
+
+          </form>
+        </div>
+        <!-- ===== END CONTACT FORM ===== -->
+
+
+        <!-- ===== CONTACT INFO SIDEBAR ===== -->
+        <div class="contact-info">
+
+          <!-- Availability Badge -->
+          <div class="availability-card">
+            <div class="availability-dot"></div>
+            <div>
+              <strong>Available for New Projects</strong>
+              <p>Average response time: <strong>2 hours</strong></p>
+            </div>
+          </div>
+
+          <!-- Direct Contact Buttons -->
+          <div class="direct-contact">
+            <h3>Hire Me Directly</h3>
+
+            <!-- ✏️ Replace YOUR_USERNAME with your real Fiverr username -->
+            <a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener" class="direct-btn fiverr-btn">
+              🟢 Hire Me on Fiverr
+            </a>
+
+            <!-- ✏️ Replace YOUR_PROFILE with your real Upwork profile URL part -->
+            <a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener" class="direct-btn upwork-btn">
+              🔵 Hire Me on Upwork
+            </a>
+
+            <!-- ✏️ Replace your-email@example.com with your real email -->
+            <a href="mailto:your-email@example.com" class="direct-btn email-btn">
+              📧 Email Me Directly
+            </a>
+
+            <!-- ✏️ OPTIONAL: Replace with your real WhatsApp number (include country code, no + sign) -->
+            <!-- Example for number +1 234 567 8900: https://wa.me/12345678900 -->
+            <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi, I found your portfolio and I'm interested in automation services." target="_blank" rel="noopener" class="direct-btn whatsapp-btn">
+              💬 WhatsApp Me
+            </a>
+          </div>
+
+          <!-- FAQ / What to expect -->
+          <div class="contact-faq">
+            <h3>What Happens Next?</h3>
+            <ol>
+              <li><strong>You send</strong> the form above with your project details.</li>
+              <li><strong>I review</strong> your request and reply within 2 hours.</li>
+              <li><strong>We discuss</strong> the scope, timeline, and budget.</li>
+              <li><strong>I build</strong> and deliver your automation.</li>
+              <li><strong>You get</strong> free post-delivery support.</li>
+            </ol>
+          </div>
+
+        </div>
+        <!-- ===== END CONTACT INFO SIDEBAR ===== -->
+
+      </div>
+    </section>
+    <!-- ===================== END CONTACT SECTION ===================== -->
+
+  </main>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">⚡ YourName</a>
+        <p>n8n &amp; AI Automation Expert helping businesses grow through smart workflows.</p>
+        <div class="social-links">
+          <a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener" aria-label="Fiverr"><span class="social-text">Fiverr</span></a>
+          <a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="Upwork"><span class="social-text">Upwork</span></a>
+          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="social-text">LinkedIn</span></a>
+          <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" aria-label="YouTube"><span class="social-text">YouTube</span></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="legal.html">Privacy &amp; Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
+          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
+          <li><a href="portfolio.html?tab=gohighlevel">GoHighLevel Setup</a></li>
+          <li><a href="portfolio.html?tab=customgpt">Custom GPT / AI Agent</a></li>
+          <li><a href="portfolio.html?tab=others">Other Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
+          <li><a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener">Hire on Fiverr</a></li>
+          <li><a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener">Hire on Upwork</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="footer-year"></span> Your Name. All rights reserved.</p>
+        <p><a href="legal.html">Privacy Policy</a> &amp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

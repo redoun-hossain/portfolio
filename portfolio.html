@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✏️ SEO: Change title and description -->
+  <title>Portfolio | n8n, Zapier, GoHighLevel, AI Automation Projects</title>
+  <meta name="description" content="Browse real automation projects: n8n workflows, Zapier integrations, GoHighLevel setups, Custom GPT agents. See screenshots, video demos, and results." />
+  <meta name="keywords" content="n8n portfolio, Zapier projects, GoHighLevel automation, custom AI agent, automation freelancer portfolio" />
+  <meta name="author" content="Your Name" />
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">⚡ YourName</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="btn btn-primary nav-hire">Hire Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===================== END HEADER ===================== -->
+
+
+  <main>
+
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>My Portfolio</h1>
+        <p>Real projects. Real results. Click a tab to explore by service type.</p>
+      </div>
+    </section>
+    <!-- ===================== END PAGE HERO ===================== -->
+
+
+    <!-- ===================== PORTFOLIO TABS ===================== -->
+    <section class="section portfolio-section">
+      <div class="container">
+
+        <!-- Tab Buttons -->
+        <!-- ✏️ You can rename tab labels here if needed -->
+        <div class="tab-buttons" role="tablist" aria-label="Portfolio categories">
+          <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="n8n"         aria-controls="tab-n8n">🔄 n8n</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" data-tab="zapier"       aria-controls="tab-zapier">⚡ Zapier</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" data-tab="gohighlevel"  aria-controls="tab-gohighlevel">🎯 GoHighLevel</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" data-tab="customgpt"    aria-controls="tab-customgpt">🤖 Custom GPT</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" data-tab="others"       aria-controls="tab-others">🛠️ Others</button>
+        </div>
+
+
+        <!-- ==================== TAB: n8n ==================== -->
+        <div class="tab-content active" id="tab-n8n" role="tabpanel">
+
+          <!-- Short intro for this tab -->
+          <div class="tab-intro">
+            <h2>n8n Automation Projects</h2>
+            <p>I build powerful, self-hosted n8n workflows that connect your tools, automate repetitive tasks, and run 24/7 without manual effort.</p>
+          </div>
+
+          <!-- ============================================================
+               ✏️ HOW TO ADD A NEW PROJECT:
+               1. Copy the block from <!-- PROJECT CARD START --> to <!-- PROJECT CARD END -->
+               2. Paste it below the last project card in this tab
+               3. Update: image paths, title, description, tools, result, YouTube video ID
+               4. Give the new card a unique data-project-id like "n8n-3", "n8n-4" etc.
+               ============================================================ -->
+
+          <div class="projects-grid">
+
+            <!-- PROJECT CARD START (n8n - Project 1) -->
+            <div class="project-card" data-project-id="n8n-1">
+              <!-- ✏️ Change image path to your real thumbnail -->
+              <img src="images/projects/n8n/project-1-thumbnail.jpg" alt="Lead Capture Automation" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">n8n</span>
+                <h3>Lead Capture &amp; CRM Automation</h3>
+                <!-- ✏️ Change description -->
+                <p>Auto-capture leads from Facebook Ads and push them into CRM with instant email notifications and Slack alerts.</p>
+                <div class="project-tools">
+                  <!-- ✏️ Change tools used -->
+                  <span>n8n</span><span>Facebook API</span><span>Airtable</span><span>Gmail</span>
+                </div>
+                <!-- ✏️ Change result/impact -->
+                <p class="project-result"><strong>Result:</strong> Saved 5+ hours/week, 0% leads missed.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-1">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+            <!-- PROJECT CARD START (n8n - Project 2) -->
+            <div class="project-card" data-project-id="n8n-2">
+              <!-- ✏️ Change image path -->
+              <img src="images/projects/n8n/project-2-thumbnail.jpg" alt="Invoice Automation" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">n8n</span>
+                <h3>Invoice &amp; Payment Automation</h3>
+                <!-- ✏️ Change description -->
+                <p>Automatically generate invoices, send payment reminders, and update accounting records when a payment is received.</p>
+                <div class="project-tools">
+                  <span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> Eliminated manual invoicing, 100% on-time reminders.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-2">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+          </div><!-- end projects-grid -->
+
+          <!-- ============================================================
+               PROJECT DETAIL PANELS - shown when "View Details" is clicked
+               Each panel matches a project card via id="detail-n8n-X"
+               ============================================================ -->
+
+          <!-- DETAIL PANEL: n8n Project 1 -->
+          <div class="project-detail" id="detail-n8n-1">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+
+            <h2>Lead Capture &amp; CRM Automation</h2>
+
+            <!-- ✏️ Screenshots: Change image paths -->
+            <div class="detail-screenshots">
+              <img src="images/projects/n8n/project-1-screenshot-1.jpg" alt="Workflow Screenshot 1" loading="lazy" />
+              <img src="images/projects/n8n/project-1-screenshot-2.jpg" alt="Workflow Screenshot 2" loading="lazy" />
+              <img src="images/projects/n8n/project-1-screenshot-3.jpg" alt="Result Screenshot"    loading="lazy" />
+            </div>
+
+            <!-- ✏️ YouTube Video: Replace YOUR_VIDEO_ID_HERE with real YouTube video ID -->
+            <!-- Example: if video URL is https://youtu.be/abc123xyz, the ID is abc123xyz -->
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="Lead Capture Automation Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <div class="detail-body">
+              <!-- ✏️ Change challenge, solution, tools, result text -->
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>The client was manually checking Facebook Ads Manager every few hours and copying leads into a spreadsheet. Leads were being missed and follow-up was delayed by hours.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>Built an n8n workflow that triggers every 15 minutes, fetches new leads from the Facebook Lead Ads API, deduplicates them, adds to Airtable CRM, and sends a Slack notification plus a personalized welcome email automatically.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools">
+                  <span>n8n</span><span>Facebook Lead Ads API</span><span>Airtable</span><span>Gmail</span><span>Slack</span>
+                </div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ 100% of leads captured automatically<br />✅ Response time reduced from 4 hours to under 5 minutes<br />✅ Client saved 5+ hours per week</p>
+              </div>
+            </div>
+
+            <div class="detail-cta">
+              <p>Need a similar automation?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+          <!-- END DETAIL PANEL: n8n Project 1 -->
+
+          <!-- DETAIL PANEL: n8n Project 2 -->
+          <div class="project-detail" id="detail-n8n-2">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+
+            <h2>Invoice &amp; Payment Automation</h2>
+
+            <div class="detail-screenshots">
+              <img src="images/projects/n8n/project-2-screenshot-1.jpg" alt="Invoice Workflow Screenshot 1" loading="lazy" />
+              <img src="images/projects/n8n/project-2-screenshot-2.jpg" alt="Invoice Workflow Screenshot 2" loading="lazy" />
+            </div>
+
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE with your real YouTube video ID -->
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="Invoice Automation Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>Manual invoice creation was taking hours each month. Payment reminders were often forgotten, causing late payments and cash flow issues.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>Built a Stripe-triggered n8n workflow that auto-generates PDF invoices, logs them to Google Sheets, and sends scheduled payment reminder emails until the invoice is paid.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools">
+                  <span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span><span>PDF Generator</span>
+                </div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ Zero manual invoicing<br />✅ 100% reminder delivery rate<br />✅ 30% faster payment collection</p>
+              </div>
+            </div>
+
+            <div class="detail-cta">
+              <p>Need a similar automation?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+          <!-- END DETAIL PANEL: n8n Project 2 -->
+
+          <!-- Tab CTA -->
+          <div class="tab-cta">
+            <p>Need similar n8n automation?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+
+        </div>
+        <!-- ==================== END TAB: n8n ==================== -->
+
+
+        <!-- ==================== TAB: Zapier ==================== -->
+        <div class="tab-content" id="tab-zapier" role="tabpanel">
+
+          <div class="tab-intro">
+            <h2>Zapier Integration Projects</h2>
+            <p>Connect 5000+ apps with Zapier. I build reliable, multi-step Zaps that keep your business running without manual intervention.</p>
+          </div>
+
+          <div class="projects-grid">
+
+            <!-- PROJECT CARD START (Zapier - Project 1) -->
+            <div class="project-card" data-project-id="zapier-1">
+              <img src="images/projects/zapier/project-1-thumbnail.jpg" alt="Shopify Order Automation" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">Zapier</span>
+                <h3>E-Commerce Order Automation</h3>
+                <p>Sync Shopify orders to Google Sheets, send SMS shipping updates via Twilio, and notify the team on Slack automatically.</p>
+                <div class="project-tools">
+                  <span>Zapier</span><span>Shopify</span><span>Google Sheets</span><span>Twilio</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> 100% orders tracked, customers informed instantly.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-zapier-1">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+            <!-- PROJECT CARD START (Zapier - Project 2) -->
+            <div class="project-card" data-project-id="zapier-2">
+              <img src="images/projects/zapier/project-2-thumbnail.jpg" alt="Typeform to HubSpot" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">Zapier</span>
+                <h3>Typeform → HubSpot Lead Pipeline</h3>
+                <p>Every Typeform submission auto-creates a HubSpot contact, adds to the correct pipeline stage, and sends a personalized welcome email sequence.</p>
+                <div class="project-tools">
+                  <span>Zapier</span><span>Typeform</span><span>HubSpot</span><span>Gmail</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> Lead response time under 2 minutes, no leads lost.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-zapier-2">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+          </div>
+
+          <!-- DETAIL PANEL: Zapier Project 1 -->
+          <div class="project-detail" id="detail-zapier-1">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+            <h2>E-Commerce Order Automation</h2>
+            <div class="detail-screenshots">
+              <img src="images/projects/zapier/project-1-screenshot-1.jpg" alt="Zapier Workflow" loading="lazy" />
+              <img src="images/projects/zapier/project-1-screenshot-2.jpg" alt="Google Sheets Result" loading="lazy" />
+            </div>
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Shopify Order Automation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>The store owner was manually copying orders and sending shipping updates. Errors were common and customers complained about poor communication.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>A multi-step Zapier workflow triggers on each Shopify order, logs it to Google Sheets with all details, sends an SMS via Twilio, and posts a Slack alert to the fulfillment team.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools"><span>Zapier</span><span>Shopify</span><span>Google Sheets</span><span>Twilio</span><span>Slack</span></div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ Zero manual order tracking<br />✅ Customers receive shipping SMS in under 1 minute<br />✅ Team fulfillment speed increased by 40%</p>
+              </div>
+            </div>
+            <div class="detail-cta">
+              <p>Need a similar automation?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+
+          <!-- DETAIL PANEL: Zapier Project 2 -->
+          <div class="project-detail" id="detail-zapier-2">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+            <h2>Typeform → HubSpot Lead Pipeline</h2>
+            <div class="detail-screenshots">
+              <img src="images/projects/zapier/project-2-screenshot-1.jpg" alt="Zapier Setup" loading="lazy" />
+              <img src="images/projects/zapier/project-2-screenshot-2.jpg" alt="HubSpot Pipeline" loading="lazy" />
+            </div>
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="HubSpot Lead Pipeline Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>Leads from Typeform forms were sitting in a spreadsheet for days before anyone followed up. No automated welcome email existed.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>Zapier workflow: Typeform submission → create HubSpot contact → set pipeline stage → trigger a 3-email welcome sequence via Gmail, all within seconds.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools"><span>Zapier</span><span>Typeform</span><span>HubSpot</span><span>Gmail</span></div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ Lead response time dropped to under 2 minutes<br />✅ 25% increase in lead-to-client conversion</p>
+              </div>
+            </div>
+            <div class="detail-cta">
+              <p>Need a similar automation?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="tab-cta">
+            <p>Need Zapier automation built?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+
+        </div>
+        <!-- ==================== END TAB: Zapier ==================== -->
+
+
+        <!-- ==================== TAB: GoHighLevel ==================== -->
+        <div class="tab-content" id="tab-gohighlevel" role="tabpanel">
+
+          <div class="tab-intro">
+            <h2>GoHighLevel Setup Projects</h2>
+            <p>Full GHL CRM setup, automation funnels, pipeline management, and sub-account configuration for agencies and coaches.</p>
+          </div>
+
+          <div class="projects-grid">
+
+            <!-- PROJECT CARD START (GHL - Project 1) -->
+            <div class="project-card" data-project-id="ghl-1">
+              <img src="images/projects/gohighlevel/project-1-thumbnail.jpg" alt="GHL Agency Setup" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">GoHighLevel</span>
+                <h3>Full Agency CRM &amp; Pipeline Setup</h3>
+                <p>Complete GoHighLevel setup including sub-accounts, pipelines, automations, lead nurture sequences, and calendar booking integration.</p>
+                <div class="project-tools">
+                  <span>GoHighLevel</span><span>Twilio</span><span>Stripe</span><span>Calendly</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> Agency onboarded 10 clients in first month using the system.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-ghl-1">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+            <!-- PROJECT CARD START (GHL - Project 2) -->
+            <div class="project-card" data-project-id="ghl-2">
+              <img src="images/projects/gohighlevel/project-2-thumbnail.jpg" alt="GHL Coaching Funnel" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">GoHighLevel</span>
+                <h3>Coaching Business Lead Funnel</h3>
+                <p>Landing page + lead magnet funnel + automated SMS/email follow-up sequence inside GoHighLevel for a life coach.</p>
+                <div class="project-tools">
+                  <span>GoHighLevel</span><span>GHL Funnels</span><span>SMS Automation</span><span>Email Sequences</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> 3x increase in booked discovery calls within 30 days.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-ghl-2">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+          </div>
+
+          <!-- DETAIL PANEL: GHL Project 1 -->
+          <div class="project-detail" id="detail-ghl-1">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+            <h2>Full Agency CRM &amp; Pipeline Setup</h2>
+            <div class="detail-screenshots">
+              <img src="images/projects/gohighlevel/project-1-screenshot-1.jpg" alt="GHL Dashboard" loading="lazy" />
+              <img src="images/projects/gohighlevel/project-1-screenshot-2.jpg" alt="Pipeline View" loading="lazy" />
+            </div>
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="GHL Agency Setup Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>The agency was managing clients in spreadsheets. No CRM, no automation, no consistent client onboarding process.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>Built a complete GHL agency account: structured pipelines, automated lead nurture, Twilio SMS integration, Stripe payments, and calendar booking — all connected and automated.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools"><span>GoHighLevel</span><span>Twilio</span><span>Stripe</span><span>Calendly</span><span>Zapier</span></div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ Agency onboarded 10 clients in month 1<br />✅ 80% reduction in manual admin work<br />✅ Client reported "game-changing" impact</p>
+              </div>
+            </div>
+            <div class="detail-cta">
+              <p>Need a similar automation?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+
+          <!-- DETAIL PANEL: GHL Project 2 -->
+          <div class="project-detail" id="detail-ghl-2">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+            <h2>Coaching Business Lead Funnel</h2>
+            <div class="detail-screenshots">
+              <img src="images/projects/gohighlevel/project-2-screenshot-1.jpg" alt="Funnel Screenshot" loading="lazy" />
+              <img src="images/projects/gohighlevel/project-2-screenshot-2.jpg" alt="Email Sequence" loading="lazy" />
+            </div>
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="GHL Coaching Funnel Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>Life coach was relying on social media DMs for leads. No structured follow-up. Many interested leads went cold.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>Created a GHL landing page with lead magnet, connected to a 7-step email + SMS nurture sequence, ending with a calendar booking link for discovery calls.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools"><span>GoHighLevel</span><span>GHL Funnels</span><span>SMS Automation</span><span>Email Sequences</span></div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ 3x more booked discovery calls in 30 days<br />✅ 60% of leads now engage with the email sequence<br />✅ Coach now fully automated follow-up</p>
+              </div>
+            </div>
+            <div class="detail-cta">
+              <p>Need a similar automation?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="tab-cta">
+            <p>Need GoHighLevel setup or automation?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+
+        </div>
+        <!-- ==================== END TAB: GoHighLevel ==================== -->
+
+
+        <!-- ==================== TAB: Custom GPT ==================== -->
+        <div class="tab-content" id="tab-customgpt" role="tabpanel">
+
+          <div class="tab-intro">
+            <h2>Custom GPT &amp; AI Agent Projects</h2>
+            <p>I build AI-powered assistants trained on your business data. Automate customer support, content generation, and decision-making with GPT-powered agents.</p>
+          </div>
+
+          <div class="projects-grid">
+
+            <!-- PROJECT CARD START (GPT - Project 1) -->
+            <div class="project-card" data-project-id="gpt-1">
+              <img src="images/projects/customgpt/project-1-thumbnail.jpg" alt="AI Customer Support Bot" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">Custom GPT</span>
+                <h3>AI Customer Support Chatbot</h3>
+                <p>A custom GPT agent trained on the company's knowledge base to answer customer questions 24/7, escalating complex issues to humans automatically.</p>
+                <div class="project-tools">
+                  <span>OpenAI API</span><span>n8n</span><span>Slack</span><span>Notion</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> 70% of support tickets resolved without human intervention.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-gpt-1">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+            <!-- PROJECT CARD START (GPT - Project 2) -->
+            <div class="project-card" data-project-id="gpt-2">
+              <img src="images/projects/customgpt/project-2-thumbnail.jpg" alt="AI Content Generator" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">Custom GPT</span>
+                <h3>AI Content Generation Agent</h3>
+                <p>An AI agent that generates SEO blog posts, social media captions, and email newsletters from a single keyword input — fully automated.</p>
+                <div class="project-tools">
+                  <span>OpenAI API</span><span>n8n</span><span>WordPress</span><span>Airtable</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> 20 pieces of content generated per week with zero manual writing.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-gpt-2">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+          </div>
+
+          <!-- DETAIL PANEL: GPT Project 1 -->
+          <div class="project-detail" id="detail-gpt-1">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+            <h2>AI Customer Support Chatbot</h2>
+            <div class="detail-screenshots">
+              <img src="images/projects/customgpt/project-1-screenshot-1.jpg" alt="Chatbot Interface" loading="lazy" />
+              <img src="images/projects/customgpt/project-1-screenshot-2.jpg" alt="n8n Workflow" loading="lazy" />
+            </div>
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="AI Chatbot Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>The support team was overwhelmed with repetitive questions about pricing, features, and policies. Response times were 24–48 hours.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>Built a custom GPT agent using the OpenAI API, trained on the company's Notion knowledge base. Integrated via n8n into the website chat widget. Complex questions auto-escalate to a human agent via Slack.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools"><span>OpenAI API</span><span>n8n</span><span>Slack</span><span>Notion</span><span>Crisp Chat</span></div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ 70% of tickets resolved without human<br />✅ Response time: instant (24/7)<br />✅ Support team workload reduced by 60%</p>
+              </div>
+            </div>
+            <div class="detail-cta">
+              <p>Want an AI agent for your business?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+
+          <!-- DETAIL PANEL: GPT Project 2 -->
+          <div class="project-detail" id="detail-gpt-2">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+            <h2>AI Content Generation Agent</h2>
+            <div class="detail-screenshots">
+              <img src="images/projects/customgpt/project-2-screenshot-1.jpg" alt="Content Agent UI" loading="lazy" />
+              <img src="images/projects/customgpt/project-2-screenshot-2.jpg" alt="Published Content" loading="lazy" />
+            </div>
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Content Agent Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>The marketing team spent 15+ hours per week writing blog posts, social captions, and newsletters manually — limiting their growth.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>An n8n workflow that takes a keyword from Airtable, sends it through a structured GPT prompt chain to generate a full SEO blog post, 5 social captions, and an email newsletter draft — then auto-publishes to WordPress.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools"><span>OpenAI API</span><span>n8n</span><span>WordPress API</span><span>Airtable</span><span>Mailchimp</span></div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ 20 content pieces per week, fully automated<br />✅ Marketing team's writing time reduced by 90%<br />✅ SEO traffic increased 35% in 2 months</p>
+              </div>
+            </div>
+            <div class="detail-cta">
+              <p>Want AI content automation?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="tab-cta">
+            <p>Need a Custom GPT or AI Agent?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+
+        </div>
+        <!-- ==================== END TAB: Custom GPT ==================== -->
+
+
+        <!-- ==================== TAB: Others ==================== -->
+        <div class="tab-content" id="tab-others" role="tabpanel">
+
+          <div class="tab-intro">
+            <h2>Other Automation Projects</h2>
+            <p>Make (Integromat), Pabbly, API integrations, web scraping, and any custom automation you need — I've got you covered.</p>
+          </div>
+
+          <div class="projects-grid">
+
+            <!-- PROJECT CARD START (Others - Project 1) -->
+            <div class="project-card" data-project-id="others-1">
+              <img src="images/projects/others/project-1-thumbnail.jpg" alt="Make.com Automation" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">Make.com</span>
+                <h3>Real Estate Lead Distribution</h3>
+                <p>A Make.com scenario that captures property inquiry leads and distributes them to the right agent based on location, property type, and agent availability.</p>
+                <div class="project-tools">
+                  <span>Make.com</span><span>Google Sheets</span><span>Gmail</span><span>Calendly</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> Lead-to-agent assignment time reduced from 2 hours to 30 seconds.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-others-1">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+            <!-- PROJECT CARD START (Others - Project 2) -->
+            <div class="project-card" data-project-id="others-2">
+              <img src="images/projects/others/project-2-thumbnail.jpg" alt="Web Scraping Automation" loading="lazy" class="project-thumb" />
+              <div class="project-info">
+                <span class="project-tag">API Integration</span>
+                <h3>Price Monitoring &amp; Alert System</h3>
+                <p>Automated price scraper that monitors competitor product prices daily and sends Slack alerts when prices drop below a threshold.</p>
+                <div class="project-tools">
+                  <span>n8n</span><span>ScraperAPI</span><span>Google Sheets</span><span>Slack</span>
+                </div>
+                <p class="project-result"><strong>Result:</strong> Client responded to price changes in real-time, increased sales by 20%.</p>
+                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-others-2">View Details</button>
+              </div>
+            </div>
+            <!-- PROJECT CARD END -->
+
+          </div>
+
+          <!-- DETAIL PANEL: Others Project 1 -->
+          <div class="project-detail" id="detail-others-1">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+            <h2>Real Estate Lead Distribution</h2>
+            <div class="detail-screenshots">
+              <img src="images/projects/others/project-1-screenshot-1.jpg" alt="Make.com Scenario" loading="lazy" />
+              <img src="images/projects/others/project-1-screenshot-2.jpg" alt="Lead Distribution Sheet" loading="lazy" />
+            </div>
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Lead Distribution Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>The agency received leads from multiple sources and manually assigned them to agents via WhatsApp. Leads were often assigned to unavailable agents, causing delays.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>A Make.com scenario with routing logic: checks agent availability from a Google Sheet schedule, matches lead location and property type, and auto-assigns + notifies the right agent by email and SMS.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools"><span>Make.com</span><span>Google Sheets</span><span>Gmail</span><span>Twilio SMS</span><span>Calendly</span></div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ Assignment time: 2 hours → 30 seconds<br />✅ 0% leads going to unavailable agents<br />✅ 45% improvement in lead response rate</p>
+              </div>
+            </div>
+            <div class="detail-cta">
+              <p>Need a similar automation?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+
+          <!-- DETAIL PANEL: Others Project 2 -->
+          <div class="project-detail" id="detail-others-2">
+            <button class="detail-close" aria-label="Close details">✕ Close</button>
+            <h2>Price Monitoring &amp; Alert System</h2>
+            <div class="detail-screenshots">
+              <img src="images/projects/others/project-2-screenshot-1.jpg" alt="Scraper Workflow" loading="lazy" />
+              <img src="images/projects/others/project-2-screenshot-2.jpg" alt="Slack Alert" loading="lazy" />
+            </div>
+            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Price Monitor Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="detail-body">
+              <div class="detail-section">
+                <h3>Challenge</h3>
+                <p>The e-commerce manager checked competitor prices manually every day — a 2-hour task that was often skipped on busy days, causing missed opportunities.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Solution</h3>
+                <p>An n8n workflow scheduled daily that uses ScraperAPI to extract competitor prices, compares them to a Google Sheet baseline, and sends a Slack alert only when a price drops below the threshold.</p>
+              </div>
+              <div class="detail-section">
+                <h3>Tools Used</h3>
+                <div class="project-tools"><span>n8n</span><span>ScraperAPI</span><span>Google Sheets</span><span>Slack</span></div>
+              </div>
+              <div class="detail-section">
+                <h3>Result</h3>
+                <p>✅ Price monitoring fully automated (2 hours → 0 minutes manual)<br />✅ Faster price response increased sales by 20%</p>
+              </div>
+            </div>
+            <div class="detail-cta">
+              <p>Need a custom automation solution?</p>
+              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="tab-cta">
+            <p>Have a unique automation challenge?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+
+        </div>
+        <!-- ==================== END TAB: Others ==================== -->
+
+      </div>
+    </section>
+    <!-- ===================== END PORTFOLIO TABS ===================== -->
+
+  </main>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">⚡ YourName</a>
+        <p>n8n &amp; AI Automation Expert helping businesses grow through smart workflows.</p>
+        <div class="social-links">
+          <a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener" aria-label="Fiverr"><span class="social-text">Fiverr</span></a>
+          <a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="Upwork"><span class="social-text">Upwork</span></a>
+          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="social-text">LinkedIn</span></a>
+          <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" aria-label="YouTube"><span class="social-text">YouTube</span></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="legal.html">Privacy &amp; Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
+          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
+          <li><a href="portfolio.html?tab=gohighlevel">GoHighLevel Setup</a></li>
+          <li><a href="portfolio.html?tab=customgpt">Custom GPT / AI Agent</a></li>
+          <li><a href="portfolio.html?tab=others">Other Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
+          <li><a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener">Hire on Fiverr</a></li>
+          <li><a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener">Hire on Upwork</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="footer-year"></span> Your Name. All rights reserved.</p>
+        <p><a href="legal.html">Privacy Policy</a> &amp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
