@@ -1407,3 +1407,92 @@ h1, h2, h3, h4 {
   .hero-buttons { flex-direction: column; align-items: center; }
   .cta-buttons  { flex-direction: column; align-items: center; }
 }
+
+/* ========================================================== */
+/* 🎨 UNIVERSAL MASTER COLOR OVERRIDE v2.0 (FOR ALL 5 PAGES) */
+/* ========================================================== */
+
+/* ১. প্রধান ছাদ (সব পেজের টপ হেডার) - কড়া রাজকীয় নীল */
+.site-header { background: #1e40af !important; }
+.site-header .logo { color: #ffffff !important; }
+
+.site-header .nav-menu ul li a {
+  color: #ffffff !important;
+  opacity: 0.85 !important;
+  background: transparent !important;
+}
+
+/* যে পেজ ওপেন থাকবে, শুধু সেই বাটনটা নিচে সাদা দাগ পাবে */
+.site-header .nav-menu ul li a.active {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 3px solid #ffffff !important;
+  border-radius: 0 !important;
+  padding: 4px 6px !important;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+}
+
+.site-header .nav-menu ul li a.nav-hire {
+  background: #ffffff !important;
+  color: #1e40af !important;
+  font-weight: 800 !important;
+  border: none !important;
+  padding: 8px 18px !important;
+  border-radius: 6px !important;
+}
+
+/* ২. জাদুকরী চিট-কোড: হোমপেজের বড় হিরো + বাকি ৪টা পেজের ছোট ব্যানার (সব একসাথে ৫০% আকাশী নীল) */
+.hero,
+.page-header,
+.sub-header,
+.page-banner,
+main section:first-of-type {
+  background-color: #93c5fd !important;
+  background-image: none !important;
+  border-bottom: 3px solid #2563eb !important;
+}
+
+/* ছোট ব্যানারগুলোর ভেতরের টাইটেল লেখাগুলো যেন একদম কুচকুচে কালো ও লেজারের মতো স্পষ্ট হয় */
+.page-header h1, .page-header h2, .page-header p,
+main section:first-of-type h1, 
+main section:first-of-type h2,
+main section:first-of-type p {
+  color: #0f172a !important;
+  opacity: 1 !important;
+}
+
+/* ========================================================== */
+/* 🚀 GLOBAL LIVING HEADER ANIMATION (FOR ALL 5 PAGES)       */
+/* ========================================================== */
+
+/* ১. লোগোতে মাউস নিলে আলতো করে বড় হবে */
+.site-header .logo { transition: transform 0.3s ease !important; }
+.site-header .logo:hover { transform: scale(1.06) !important; }
+
+/* ২. সাধারণ মেনুগুলোর জীবন্ত লাফ দেওয়ার প্রধান ইঞ্জিন */
+.site-header .nav-menu ul li a {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: inline-block !important;
+}
+
+/* মাউস নিলে ওপরে উঠবে ও জোরালো সাদা আলো ছড়াবে */
+.site-header .nav-menu ul li a:not(.btn):hover {
+  opacity: 1 !important;
+  transform: translateY(-3px) !important;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.85) !important;
+  color: #ffffff !important;
+}
+
+/* ৩. Hire Me বাটন হোভার লাফ (সলিড প্রিমিয়াম জাম্প) */
+.site-header .nav-menu ul li a.nav-hire {
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+}
+.site-header .nav-menu ul li a.nav-hire:hover {
+  background: #eff6ff !important;
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22) !important;
+}
+

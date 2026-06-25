@@ -1,42 +1,48 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✏️ SEO: Change the title and description to match your name and services -->
-  <title>Redoun Hossain | n8n & AI Automation Expert</title>
+  <title>Redoun Hossain | n8n &amp; GoHighLevel Specialist</title>
   <meta name="description" content="I build smart automation workflows using n8n, Zapier, GoHighLevel, and Custom AI Agents. Save time, reduce manual work, and grow your business." />
   <meta name="keywords" content="n8n automation, Zapier integration, GoHighLevel setup, AI agent, workflow automation, freelancer" />
   <meta name="author" content="Redoun Hossain" />
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Redoun Hossain | n8n & AI Automation Expert" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Redoun Hossain | n8n &amp; GoHighLevel Specialist" />
   <meta property="og:description" content="Smart automation workflows that save time and help businesses grow." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://redoun-hossain.github.io/portfolio/" />
-  <!-- ✏️ Change the og:image to your real preview image path -->
   <meta property="og:image" content="images/profile.jpg" />
 
-  <!-- ✏️ Favicon: Replace images/favicon.ico with your real favicon file -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 🎨 THE MASTER OVERRIDE ENGINE -->
+  <style>
+    .site-header { background: #1e40af !important; }
+    .site-header .logo { color: #ffffff !important; }
+    .site-header .nav-menu ul li a { color: #ffffff !important; opacity: 0.9 !important; background: transparent !important; display: inline-block !important; }
+    .site-header .nav-menu ul li a:not(.btn):hover { opacity: 1 !important; transform: translateY(-2px); }
+    
+    .site-header .nav-menu ul li a.active, .site-header .nav-menu ul li a[href="index.html"] {
+      color: #ffffff !important; background: transparent !important; border-bottom: 3px solid #ffffff !important; font-weight: 900 !important; opacity: 1 !important;
+    }
+    .site-header .nav-hire { background: #ffffff !important; color: #1e40af !important; font-weight: 800 !important; border: none !important; padding: 8px 18px !important; border-radius: 6px !important; }
+    
+    .hero { background: #93c5fd !important; background-image: none !important; border-bottom: 3px solid #2563eb !important; }
+  </style>
 </head>
 <body>
 
   <!-- ===================== HEADER / NAVIGATION ===================== -->
-  <!-- ✏️ Change "Your Name" to your real name or brand -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">⚡ Redoun</a>
 
-      <!-- Hamburger button for mobile -->
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
 
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
@@ -45,7 +51,6 @@
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <!-- ✏️ This "Hire Me" button links to contact page — change if needed -->
           <li><a href="contact.html" class="btn btn-primary nav-hire">Hire Me</a></li>
         </ul>
       </nav>
@@ -53,33 +58,29 @@
   </header>
   <!-- ===================== END HEADER ===================== -->
 
-
   <main>
 
-           <!-- ===================== HERO SECTION ===================== -->
+    <!-- ===================== HERO SECTION ===================== -->
     <section class="hero">
       <div class="container hero-inner">
 
         <div class="hero-text">
-          <!-- Main Headline -->
           <h1 class="hero-title">Custom Workflow Automation &amp; AI Agent Expert</h1>
 
-          <!-- Secret Style Injection for Tool Badges -->
           <style>
-            .tool-badge {
-              color: #2563eb;
-              font-weight: 700;
-              background-color: #eff6ff;
-              padding: 1px 8px;
-              border-radius: 5px;
-              display: inline-block;
-              margin: 1px 0;
-            }
+            .hero-pills-bridge { margin: 18px 0 20px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+            .tool-pill { color: #1e40af !important; font-weight: 800 !important; background: #ffffff !important; border: 1.5px solid #2563eb !important; padding: 5px 16px !important; border-radius: 50px !important; font-size: 0.9rem !important; box-shadow: 0 3px 8px rgba(0,0,0,0.06); }
           </style>
 
-          <!-- Subheadline -->
-          <p class="hero-sub">
-            I build AI-powered automation systems with <span class="tool-badge">n8n</span>, <span class="tool-badge">GoHighLevel</span>, <span class="tool-badge">Zapier</span>, and <span class="tool-badge">CustomGPT</span> to streamline operations, reduce manual work, and help businesses scale efficiently.
+          <div class="hero-pills-bridge">
+            <span class="tool-pill">n8n</span>
+            <span class="tool-pill">GoHighLevel</span>
+            <span class="tool-pill">Zapier</span>
+            <span class="tool-pill">CustomGPT</span>
+          </div>
+
+          <p class="hero-sub" style="color: #0f172a !important; opacity: 1 !important; font-weight: 600 !important; font-size: 1.08rem !important; line-height: 1.65 !important; margin-bottom: 28px !important;">
+            I design and develop AI-powered automation systems and custom workflow solutions that help businesses streamline operations, reduce manual work, and scale efficiently.
           </p>
 
           <div class="hero-buttons">
@@ -87,21 +88,22 @@
             <a href="contact.html" class="btn btn-outline">Contact Me</a>
           </div>
 
-          <!-- Stats -->
-          <div class="hero-stats">
+          <!-- 💥 লেজার-ইনজেক্টেড কুচকুচে কালো লেবেল (জীবনের তরে আর ঝাপসা হবে না) -->
+          <div class="hero-stats" style="margin-top: 35px;">
             <div class="stat">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Job Success</span>
+              <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">100%</span>
+              <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Job Success</span>
             </div>
             <div class="stat">
-              <span class="stat-number">24/7</span>
-              <span class="stat-label">Active Support</span>
+              <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">24/7</span>
+              <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Active Support</span>
             </div>
             <div class="stat">
-              <span class="stat-number">2h</span>
-              <span class="stat-label">Avg. Response</span>
+              <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">2h</span>
+              <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Avg. Response</span>
             </div>
           </div>
+
         </div>
 
         <div class="hero-image">
@@ -110,56 +112,128 @@
 
       </div>
     </section>
-    <!-- ===================== END HERO ===================== --> 
+    <!-- ===================== END HERO ===================== -->
 
 
-    <!-- ===================== SERVICES SECTION ===================== -->
-    <section class="section services">
+               <!-- ===================== SERVICES SECTION ===================== -->
+    <section class="section services" style="background-color: #ffffff !important; padding: 85px 0 !important;">
       <div class="container">
-        <h2 class="section-title">What I Do</h2>
-        <p class="section-sub">Click any service to see real project examples in the portfolio.</p>
+        <h2 class="section-title" style="color: #1e40af !important; font-weight: 800;">What I Do</h2>
+        <p class="section-sub" style="color: #475569 !important; margin-bottom: 50px;">Click any service to explore related projects from my portfolio.</p>
+
+        <!-- 🎨 The 30% Ice-Blue Pastel Cards Injection -->
+        <style>
+          .cards-grid .pastel-card {
+            background-color: #dbeafe !important; /* হেডারের সাথে মিল রেখে নিখুঁত ৩০% স্নিগ্ধ নীল */
+            border: 2px solid #bfdbfe !important;
+            border-radius: 16px !important;
+            padding: 30px 24px !important;
+            transition: all 0.3s ease !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none !important;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.05);
+          }
+          /* বায়ার মাউস নিলে কার্ডটা ম্যাজিকের মতো সাদা হয়ে যাবে আর বর্ডার হেডারের গাঢ় নীল হবে */
+          .cards-grid .pastel-card:hover {
+            background-color: #ffffff !important;
+            border-color: #1e40af !important;
+            transform: translateY(-7px) !important;
+            box-shadow: 0 18px 35px rgba(30, 64, 175, 0.12) !important;
+          }
+          .cards-grid .pastel-card h3 {
+            color: #1e40af !important; /* টাইটেল একদম হেডারের কড়া রাজকীয় নীল */
+            font-size: 1.22rem !important;
+            font-weight: 800 !important;
+            margin: 14px 0 10px 0 !important;
+          }
+          .cards-grid .pastel-card p {
+            color: #334155 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.62 !important;
+          }
+          .cards-grid .pastel-card .card-link {
+            color: #2563eb !important;
+            font-weight: 800 !important;
+            margin-top: 20px !important;
+            display: inline-block;
+          }
+          /* অরিজিনাল লোগো রাখার সাদা চারকোনা বাক্স */
+          .logo-white-box {
+            width: 50px;
+            height: 50px;
+            background: #ffffff !important;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+          }
+          .logo-img { width: 28px; height: 28px; object-fit: contain; }
+        </style>
 
         <div class="cards-grid">
 
-          <!-- Service Card 1 -->
-          <a href="portfolio.html?tab=n8n" class="service-card">
-            <div class="service-icon">🔄</div>
-            <h3>n8n Automation</h3>
-            <p>Custom n8n workflows connecting your apps, automating repetitive tasks, and saving hours every week.</p>
+          <!-- Card 1: n8n -->
+          <a href="portfolio.html?tab=n8n" class="service-card pastel-card">
+            <div>
+              <div class="logo-white-box">
+                <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128" alt="n8n" class="logo-img" />
+              </div>
+              <h3>n8n Automation</h3>
+              <p>Custom n8n workflows that connect your apps, automate repetitive processes, and save valuable time every week.</p>
+            </div>
             <span class="card-link">See Projects →</span>
           </a>
 
-          <!-- Service Card 2 -->
-          <a href="portfolio.html?tab=zapier" class="service-card">
-            <div class="service-icon">⚡</div>
-            <h3>Zapier Integration</h3>
-            <p>Connect 5000+ apps with Zapier automations. No code needed — I build it all for you.</p>
+          <!-- Card 2: Zapier -->
+          <a href="portfolio.html?tab=zapier" class="service-card pastel-card">
+            <div>
+              <div class="logo-white-box">
+                <img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128" alt="Zapier" class="logo-img" />
+              </div>
+              <h3>Zapier Integration</h3>
+              <p>Zapier automation setups that connect your tools, eliminate manual work, and streamline day-to-day operations.</p>
+            </div>
             <span class="card-link">See Projects →</span>
           </a>
 
-          <!-- Service Card 3 -->
-          <a href="portfolio.html?tab=gohighlevel" class="service-card">
-            <div class="service-icon">🎯</div>
-            <h3>GoHighLevel Setup</h3>
-            <p>Full GHL CRM setup, automation funnels, and pipeline management for agencies and coaches.</p>
+          <!-- Card 3: GoHighLevel -->
+          <a href="portfolio.html?tab=gohighlevel" class="service-card pastel-card">
+            <div>
+              <div class="logo-white-box">
+                <img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=128" alt="GoHighLevel" class="logo-img" />
+              </div>
+              <h3>GoHighLevel Setup</h3>
+              <p>Complete GoHighLevel setup for agencies and coaches, including CRM configuration, workflow automation, funnels, and pipeline management.</p>
+            </div>
             <span class="card-link">See Projects →</span>
           </a>
 
-          <!-- Service Card 4 -->
-          <a href="portfolio.html?tab=customgpt" class="service-card">
-            <div class="service-icon">🤖</div>
-            <h3>Custom GPT / AI Agent</h3>
-            <p>Build AI-powered assistants and agents that answer questions, generate content, and automate decisions.</p>
+          <!-- Card 4: Custom GPT -->
+          <a href="portfolio.html?tab=customgpt" class="service-card pastel-card">
+            <div>
+              <div class="logo-white-box">
+                <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI" class="logo-img" />
+              </div>
+              <h3>Custom GPT / AI Agent</h3>
+              <p>AI-powered assistants and custom agents built to answer questions, generate content, support customers, and automate workflows.</p>
+            </div>
             <span class="card-link">See Projects →</span>
           </a>
 
-          <!-- Service Card 5 -->
-          <a href="portfolio.html?tab=others" class="service-card">
-            <div class="service-icon">🛠️</div>
-            <h3>Other Automation</h3>
-            <p>API integrations, Make (Integromat), Pabbly, web scraping, and custom automation solutions.</p>
-            <span class="card-link">See Projects →</span>
-          </a>
+                    <!-- Card 5: Coming Soon Teaser -->
+          <div class="service-card pastel-card" style="background:#b6c0cc !important; border:1.5px dashed #94a3b8 !important; cursor:default; opacity:0.8;">
+            <div>
+              <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
+                <span style="font-size:22px;">⏳</span>
+              </div>
+              <h3 style="color:#3d4249 !important;">More Automation Services</h3>
+              <p>Additional automation services will be added here soon.</p>
+            </div>
+            <span class="card-link" style="color:oklab(28.823999999999998% -0.00124 -0.00608) !important; cursor:default;">Coming Soon</span>
+          </div>
 
         </div>
       </div>
@@ -167,99 +241,235 @@
     <!-- ===================== END SERVICES ===================== -->
 
 
-    <!-- ===================== LATEST PROJECTS SECTION ===================== -->
-    <section class="section latest-projects bg-light">
+            <!-- ===================== FEATURED PROJECTS SECTION ===================== -->
+    <section class="section featured-projects" style="background-color: #ffffff !important; padding: 90px 0 !important; border-top: 1px solid #f1f5f9;">
       <div class="container">
-        <h2 class="section-title">Latest Projects</h2>
-        <p class="section-sub">A quick look at recent work. See full details in the Portfolio.</p>
+        
+        <h2 class="section-title" style="color: #1e40af !important; font-weight: 800;">Featured Projects</h2>
+        <p class="section-sub" style="color: #475569 !important; max-width: 680px; margin: 0 auto 55px auto; font-size: 1.05rem; line-height: 1.6;">
+          A selection of high-impact automation projects showcasing real business solutions and measurable results.
+        </p>
+
+        <!-- 🎨 Light Pastel Card + Logo Badge Styling Injection -->
+        <style>
+          .featured-card-box {
+            background-color: #eff6ff !important; /* আগের সেকশনের মতো স্নিগ্ধ হালকা নীল */
+            border: 2px solid #dbeafe !important;
+            border-radius: 18px !important;
+            overflow: hidden !important;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.04) !important;
+            transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            display: flex;
+            flex-direction: column;
+          }
+          /* মাউস নিলে কার্ডটা ম্যাজিকের মতো ধবধবে সাদা হয়ে ওপরে উঠবে */
+          .featured-card-box:hover {
+            background-color: #ffffff !important;
+            transform: translateY(-8px) !important;
+            border-color: #2563eb !important;
+            box-shadow: 0 20px 30px rgba(37, 99, 235, 0.15) !important;
+          }
+          .featured-card-box .project-info {
+            padding: 26px 24px !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+          }
+          .featured-card-box h3 {
+            color: #1e40af !important; /* টাইটেল হেডারের কড়া রাজকীয় নীল */
+            font-size: 1.2rem !important;
+            font-weight: 800 !important;
+            margin: 14px 0 10px 0 !important;
+          }
+          .featured-card-box p {
+            color: #334155 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.62 !important;
+            margin-bottom: 20px !important;
+          }
+          
+          /* অরিজিনাল লোগো-সহ আধুনিক সাদা ক্যাপসুল ব্যাজ */
+          .project-brand-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            border: 1.5px solid #bfdbfe;
+            padding: 5px 14px 5px 8px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.82rem;
+            color: #1e40af;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            width: fit-content;
+          }
+          .project-brand-pill img { width: 18px; height: 18px; object-fit: contain; }
+
+          .featured-card-box .project-tools span {
+            background: #ffffff !important;
+            color: #334155 !important;
+            border: 1px solid #bfdbfe !important;
+            font-weight: 700 !important;
+            font-size: 0.78rem !important;
+            padding: 4px 10px !important;
+            border-radius: 6px !important;
+          }
+        </style>
 
         <div class="cards-grid">
 
-          <!-- ✏️ Project Card 1: Change image, title, description, tools -->
-          <div class="project-card">
-            <!-- ✏️ Replace with your real project thumbnail image -->
+          <!-- Card 1: n8n -->
+          <div class="project-card featured-card-box">
             <img src="images/projects/n8n/project-1-thumbnail.jpg" alt="n8n Lead Automation" loading="lazy" class="project-thumb" />
             <div class="project-info">
-              <span class="project-tag">n8n</span>
-              <h3>Lead Capture & CRM Automation</h3>
-              <p>Auto-capture leads from Facebook Ads and push them into CRM with instant email notifications.</p>
-              <div class="project-tools">
-                <span>n8n</span><span>Facebook API</span><span>Airtable</span>
+              <div>
+                <!-- লোগো ব্যাজ -->
+                <div class="project-brand-pill">
+                  <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n"/>
+                  <span>n8n</span>
+                </div>
+                <h3>Lead Capture &amp; CRM Automation</h3>
+                <p>Auto-capture leads from Facebook Ads and push them into CRM with instant email notifications.</p>
+                <div class="project-tools">
+                  <span>n8n</span><span>Facebook API</span><span>Airtable</span>
+                </div>
               </div>
-              <a href="portfolio.html?tab=n8n" class="btn btn-outline btn-sm">View Details →</a>
+              <a href="portfolio.html?tab=n8n" class="btn btn-outline btn-sm" style="margin-top: 22px; border: 2px solid #2563eb; color:#2563eb; font-weight: 700; border-radius: 8px;">View Details →</a>
             </div>
           </div>
 
-          <!-- ✏️ Project Card 2: Change image, title, description, tools -->
-          <div class="project-card">
-            <!-- ✏️ Replace with your real project thumbnail image -->
+          <!-- Card 2: Zapier -->
+          <div class="project-card featured-card-box">
             <img src="images/projects/zapier/project-1-thumbnail.jpg" alt="Zapier E-commerce Automation" loading="lazy" class="project-thumb" />
             <div class="project-info">
-              <span class="project-tag">Zapier</span>
-              <h3>E-Commerce Order Automation</h3>
-              <p>Automatically sync Shopify orders to Google Sheets and send shipping updates via SMS.</p>
-              <div class="project-tools">
-                <span>Zapier</span><span>Shopify</span><span>Twilio</span>
+              <div>
+                <!-- লোগো ব্যাজ -->
+                <div class="project-brand-pill">
+                  <img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=64" alt="Zapier"/>
+                  <span>Zapier</span>
+                </div>
+                <h3>E-Commerce Order Automation</h3>
+                <p>Automatically sync Shopify orders to Google Sheets and send shipping updates via SMS.</p>
+                <div class="project-tools">
+                  <span>Zapier</span><span>Shopify</span><span>Twilio</span>
+                </div>
               </div>
-              <a href="portfolio.html?tab=zapier" class="btn btn-outline btn-sm">View Details →</a>
+              <a href="portfolio.html?tab=zapier" class="btn btn-outline btn-sm" style="margin-top: 22px; border: 2px solid #2563eb; color:#2563eb; font-weight: 700; border-radius: 8px;">View Details →</a>
             </div>
           </div>
 
-                   <!-- Project Card 3: GoHighLevel CRM Automation -->
-          <div class="project-card">
+          <!-- Card 3: GoHighLevel -->
+          <div class="project-card featured-card-box">
             <img src="images/projects/gohighlevel/project-1-thumbnail.jpg" alt="GoHighLevel CRM Setup" loading="lazy" class="project-thumb" />
             <div class="project-info">
-              <span class="project-tag">GoHighLevel</span>
-              <h3>Automated Agency CRM &amp; Sales Funnel</h3>
-              <p>Full GHL pipeline setup, automated SMS/Email follow-up sequences, and instant calendar booking system.</p>
-              <div class="project-tools">
-                <span>GoHighLevel</span><span>Twilio</span><span>Stripe</span>
+              <div>
+                <!-- লোগো ব্যাজ -->
+                <div class="project-brand-pill">
+                  <img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=64" alt="GoHighLevel"/>
+                  <span>GoHighLevel</span>
+                </div>
+                <h3>Automated Agency CRM &amp; Sales Funnel</h3>
+                <p>Full GHL pipeline setup, automated SMS/Email follow-up sequences, and instant calendar booking system.</p>
+                <div class="project-tools">
+                  <span>GoHighLevel</span><span>Twilio</span><span>Stripe</span>
+                </div>
               </div>
-              <a href="portfolio.html?tab=gohighlevel" class="btn btn-outline btn-sm">View Details →</a>
+              <a href="portfolio.html?tab=gohighlevel" class="btn btn-outline btn-sm" style="margin-top: 22px; border: 2px solid #2563eb; color:#2563eb; font-weight: 700; border-radius: 8px;">View Details →</a>
             </div>
           </div>
 
         </div>
 
-        <div class="section-cta">
-          <a href="portfolio.html" class="btn btn-primary">View All Projects</a>
+        <!-- Section Bottom CTA -->
+        <div class="section-cta" style="margin-top: 60px;">
+          <a href="portfolio.html" class="btn btn-primary" style="padding: 14px 36px; font-weight: 800; border-radius: 50px; box-shadow: 0 10px 25px -5px rgba(37,99,235,0.4);">Explore All Projects</a>
         </div>
+
       </div>
     </section>
-    <!-- ===================== END LATEST PROJECTS ===================== -->
+    <!-- ===================== END FEATURED PROJECTS ===================== -->
 
 
-    <!-- ===================== TRUST / STATS SECTION ===================== -->
-    <section class="section trust">
+        <!-- ===================== TRUST / STATS SECTION ===================== -->
+    <section class="section trust" style="background-color: #ffffff !important; padding: 90px 0 !important;">
       <div class="container">
-        <h2 class="section-title">Why Clients Trust Me</h2>
+        
+        <h2 class="section-title" style="color: #1e40af !important; font-weight: 800;">Why Clients Trust Me</h2>
+
+        <!-- 🎨 Soft Mint-Sage Trust Cards Injection (Psychology: Green = Verified/Safe) -->
+        <style>
+          .trust-mint-card {
+            background-color: #f0fdf4 !important; /* চরম স্নিগ্ধ মিন্ট-ক্রিম কালার */
+            border: 2px solid #bbf7d0 !important;
+            border-radius: 18px !important;
+            padding: 32px 24px !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.03) !important;
+            display: flex;
+            flex-direction: column;
+          }
+          /* মাউস নিলে ধবধবে সাদা হয়ে কড়া ভেরিফায়েড সবুজ বর্ডার দেখাবে */
+          .trust-mint-card:hover {
+            background-color: #ffffff !important;
+            border-color: #16a34a !important; 
+            transform: translateY(-7px) !important;
+            box-shadow: 0 18px 32px rgba(22, 163, 74, 0.12) !important;
+          }
+          .trust-mint-card h3 {
+            color: #14532d !important; /* টাইটেল কড়া ফরেস্ট-গ্রীন (ট্রাস্টের প্রতীক) */
+            font-size: 1.18rem !important;
+            font-weight: 800 !important;
+            margin: 18px 0 10px 0 !important;
+          }
+          .trust-mint-card p {
+            color: #334155 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.62 !important;
+            margin: 0 !important;
+          }
+          .trust-icon-white-box {
+            width: 50px;
+            height: 50px;
+            background: #ffffff;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border: 1px solid #dcfce7;
+          }
+        </style>
 
         <div class="trust-grid">
 
-          <div class="trust-card">
-            <div class="trust-icon">✅</div>
-            <!-- ✏️ Change the number to your real project count -->
-            <h3>100% Tested Workflows</h3>
-            <p>Delivered successful automations across industries including e-commerce, agencies, and SaaS.</p>
+          <!-- Card 1 -->
+          <div class="trust-card trust-mint-card">
+            <div class="trust-icon-white-box">✅</div>
+            <h3>Tested, Reliable Workflows</h3>
+            <p>Every automation is carefully built and tested to ensure smooth performance, reliability, and real business impact.</p>
           </div>
 
-          <div class="trust-card">
-            <div class="trust-icon">😊</div>
-            <!-- ✏️ Change the number to your real client count -->
-            <h3>Clear &amp; Fast Communication</h3>
-            <p>Clients from Fiverr, Upwork, and direct referrals — all with 5-star reviews.</p>
+          <!-- Card 2 -->
+          <div class="trust-card trust-mint-card">
+            <div class="trust-icon-white-box">😊</div>
+            <h3>Clear &amp; Responsive Communication</h3>
+            <p>I keep communication clear, professional, and timely throughout the project — from planning to final delivery.</p>
           </div>
 
-          <div class="trust-card">
-            <div class="trust-icon">🚀</div>
-            <h3>Fast Delivery</h3>
-            <p>Most projects delivered within 1–3 days. Rush delivery available for urgent needs.</p>
+          <!-- Card 3 -->
+          <div class="trust-card trust-mint-card">
+            <div class="trust-icon-white-box">🚀</div>
+            <h3>Fast Turnaround</h3>
+            <p>Fast and efficient project delivery without compromising quality, clarity, or reliability.</p>
           </div>
 
-          <div class="trust-card">
-            <div class="trust-icon">🛡️</div>
+          <!-- Card 4 -->
+          <div class="trust-card trust-mint-card">
+            <div class="trust-icon-white-box">🛡️</div>
             <h3>Post-Delivery Support</h3>
-            <p>Free support after delivery to make sure everything works perfectly in your environment.</p>
+            <p>I provide post-delivery support to help with setup, troubleshooting, and making sure everything runs smoothly in your environment.</p>
           </div>
 
         </div>
@@ -268,14 +478,14 @@
     <!-- ===================== END TRUST ===================== -->
 
 
-    <!-- ===================== CTA BANNER ===================== -->
+        <!-- ===================== CTA BANNER ===================== -->
     <section class="section cta-banner">
       <div class="container cta-inner">
         <h2>Ready to Automate Your Business?</h2>
-        <p>Let's build a workflow that saves you hours every week. Start with a free consultation.</p>
+        <p>Let’s build a smarter workflow that saves time, reduces manual work, and helps your business run more efficiently.</p>
         <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-white">Get in Touch</a>
-          <a href="portfolio.html" class="btn btn-outline-white">See My Work</a>
+          <a href="contact.html" class="btn btn-white" style="font-weight: 800; padding: 12px 30px; border-radius: 8px;">Contact Me</a>
+          <a href="portfolio.html" class="btn btn-outline-white" style="font-weight: 800; padding: 12px 30px; border-radius: 8px; border-width: 2px;">See My Work</a>
         </div>
       </div>
     </section>
@@ -283,40 +493,88 @@
 
   </main>
 
+  <!-- ===================== THE TIMELESS CLASSIC FOOTER (COMPLETE A TO Z) ===================== -->
+  <footer class="site-footer" style="background-color: #0b1120 !important; color: #94a3b8 !important; padding: 65px 0 25px 0 !important; border-top: 2px solid #2563eb !important;">
+    
+    <!-- 🎨 Pure Minimalist Typography & Styling Injection -->
+    <style>
+      /* ১. হেডিংগুলো বড়, বোল্ড এবং ধবধবে সাদা */
+      .site-footer h4 {
+        color: #ffffff !important;
+        font-size: 1.08rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 22px !important;
+        letter-spacing: 0.3px;
+      }
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
+      /* ২. নিচের অপশনগুলো স্লিম, ছোট এবং পরিশীলিত */
+      .site-footer .classic-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .site-footer .classic-list li { margin-bottom: 11px !important; }
+      .site-footer .classic-list li a {
+        color: #94a3b8 !important;
+        text-decoration: none !important;
+        font-size: 0.93rem !important;
+        transition: all 0.2s ease !important;
+      }
+      .site-footer .classic-list li a:hover {
+        color: #ffffff !important;
+        transform: translateX(4px);
+        display: inline-block;
+      }
 
-      <div class="footer-brand">
-        <!-- ✏️ Change "YourName" to your real name or brand -->
-        <a href="index.html" class="logo">⚡ Redoun</a>
-        <p>n8n &amp; AI Automation Expert helping businesses grow through smart workflows.</p>
+      /* ৩. সোশ্যাল বাটনগুলো একদম ছোট ও ভদ্র ডার্ক পিল (নিখুঁত ৬টি বাটন গ্রিড) */
+      .subtle-social-btn {
+        display: inline-block;
+        background: #1e293b;
+        color: #cbd5e1 !important;
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 6px;
+        text-decoration: none !important;
+        margin: 0 !important;
+        border: 1px solid #334155;
+        transition: all 0.2s;
+      }
+      .subtle-social-btn:hover { background: #2563eb; color: #ffffff !important; border-color: #2563eb; }
 
-        <!-- ✏️ Replace # with your real social profile links -->
-        <div class="social-links">
-          <!-- Fiverr link -->
-          <a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener" aria-label="Fiverr">
-            <img src="images/icons/fiverr.svg" alt="Fiverr" width="24" height="24" onerror="this.outerHTML='<span class=\'social-text\'>Fiverr</span>'" />
-          </a>
-          <!-- Upwork link -->
-          <a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="Upwork">
-            <img src="images/icons/upwork.svg" alt="Upwork" width="24" height="24" onerror="this.outerHTML='<span class=\'social-text\'>Upwork</span>'" />
-          </a>
-          <!-- LinkedIn link -->
-          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24" height="24" onerror="this.outerHTML='<span class=\'social-text\'>LinkedIn</span>'" />
-          </a>
-          <!-- YouTube link -->
-          <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" aria-label="YouTube">
-            <img src="images/icons/youtube.svg" alt="YouTube" width="24" height="24" onerror="this.outerHTML='<span class=\'social-text\'>YouTube</span>'" />
-          </a>
+      .footer-bottom-slim {
+        margin-top: 55px !important;
+        padding-top: 25px !important;
+        border-top: 1px solid #1e293b !important;
+        font-size: 0.88rem !important;
+        color: #64748b !important;
+      }
+      .footer-bottom-slim a { color: #94a3b8 !important; text-decoration: none; }
+      .footer-bottom-slim a:hover { color: #fff !important; text-decoration: underline; }
+    </style>
+
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px;">
+
+      <!-- Col 1: Brand & 6 Social Pills -->
+      <div>
+        <a href="index.html" style="color: #ffffff !important; font-size: 1.6rem; font-weight: 900; text-decoration: none; letter-spacing: -0.5px;">⚡ Redoun</a>
+        <p style="margin: 14px 0 22px 0; font-size: 0.92rem; line-height: 1.6; color: #94a3b8;">Custom Workflow Automation & AI Agent Expert</p>
+        
+        <!-- ৬টি সোশ্যাল বাটন (৩টি ওপরে, ৩টি নিচে নিখুঁত গ্রিড) -->
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; max-width: 260px;">
+          <a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" class="subtle-social-btn">Fiverr</a>
+          <a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" class="subtle-social-btn">Upwork</a>
+          <a href="https://github.com/redoun-hossain" target="_blank" class="subtle-social-btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" class="subtle-social-btn">LinkedIn</a>
+          <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" class="subtle-social-btn">YouTube</a>
+          <a href="https://twitter.com/YOUR_PROFILE" target="_blank" class="subtle-social-btn">Twitter</a>
         </div>
       </div>
 
-      <div class="footer-links">
+      <!-- Col 2: Navigation -->
+      <div>
         <h4>Quick Links</h4>
-        <ul>
+        <ul class="classic-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="about.html">About</a></li>
@@ -325,38 +583,39 @@
         </ul>
       </div>
 
-      <div class="footer-links">
+      <!-- Col 3: Services -->
+      <div>
         <h4>Services</h4>
-        <ul>
+        <ul class="classic-list">
           <li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
-          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
           <li><a href="portfolio.html?tab=gohighlevel">GoHighLevel Setup</a></li>
+          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
           <li><a href="portfolio.html?tab=customgpt">Custom GPT / AI Agent</a></li>
-          <li><a href="portfolio.html?tab=others">Other Automation</a></li>
+          <li><a href="portfolio.html?tab=others">More Services</a></li>
         </ul>
       </div>
 
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <ul>
-          <!-- ✏️ Replace with your real email -->
+      <!-- Col 4: Get in Touch (১০০% সেম স্টাইলের ৩টি ভদ্র লিংক) -->
+      <div>
+        <h4>Get in Touch</h4>
+        <ul class="classic-list">
+          <!-- 🚨 নিচের 'your-email@example.com' কেটে তোমার আসল জিমেইল বসাও -->
           <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
-          <!-- ✏️ Replace with your real Fiverr link -->
-          <li><a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener">Hire on Fiverr</a></li>
-          <!-- ✏️ Replace with your real Upwork link -->
-          <li><a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener">Hire on Upwork</a></li>
+          <li><a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank">Hire on Fiverr ↗</a></li>
+          <li><a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank">Hire on Upwork ↗</a></li>
         </ul>
       </div>
 
     </div>
 
-    <div class="footer-bottom">
-      <div class="container">
-        <!-- ✏️ Change "Your Name" to your real name -->
-        <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
-        <p><a href="legal.html">Privacy Policy</a> &amp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-slim">
+      <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
+        <p style="margin: 0;">&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
+        <p style="margin: 0;"><a href="legal.html">Privacy Policy</a> &nbsp;•&nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
       </div>
     </div>
+
   </footer>
   <!-- ===================== END FOOTER ===================== -->
 

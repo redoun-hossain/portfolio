@@ -42,7 +42,7 @@
     <section class="page-hero">
       <div class="container">
         <h1>My Portfolio</h1>
-        <p>Real projects. Real results. Click a tab to explore by service type.</p>
+        <p>Click a tab to explore real projects across my core automation services and additional workflow solutions.</p>
       </div>
     </section>
     <!-- ===================== END PAGE HERO ===================== -->
@@ -54,13 +54,89 @@
 
         <!-- Tab Buttons -->
         <!-- ✏️ You can rename tab labels here if needed -->
-        <div class="tab-buttons" role="tablist" aria-label="Portfolio categories">
-          <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="n8n"         aria-controls="tab-n8n">🔄 n8n</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" data-tab="zapier"       aria-controls="tab-zapier">⚡ Zapier</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" data-tab="gohighlevel"  aria-controls="tab-gohighlevel">🎯 GoHighLevel</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" data-tab="customgpt"    aria-controls="tab-customgpt">🤖 Custom GPT</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" data-tab="others"       aria-controls="tab-others">🛠️ Others</button>
+        <style>
+          .portfolio-tabs-wrapper {
+            display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; margin: 35px 0 50px 0 !important;
+          }
+          .brand-tab-btn {
+            display: inline-flex !important; align-items: center !important; gap: 9px !important; padding: 10px 24px !important; border-radius: 50px !important; font-weight: 800 !important; font-size: 0.94rem !important; cursor: pointer !important; transition: all 0.25s ease !important; border: 2px solid !important;
+          }
+          .brand-tab-btn:hover { transform: translateY(-3px) scale(1.02); }
+
+          /* ১. n8n (সফট কোরাল-লাল থিম) */
+          .btn-n8n { background: #ffe4e6 !important; color: #e11d48 !important; border-color: #f43f5e !important; }
+          .btn-n8n.active-brand-tab { background: #e11d48 !important; color: #fff !important; border-color: #e11d48 !important; box-shadow: 0 8px 20px rgba(225,29,72,0.35) !important; }
+
+          /* ২. Zapier (সফট কমলা থিম) */
+          .btn-zapier { background: #ffedd5 !important; color: #ea580c !important; border-color: #f97316 !important; }
+          .btn-zapier.active-brand-tab { background: #ea580c !important; color: #fff !important; border-color: #ea580c !important; box-shadow: 0 8px 20px rgba(234,88,12,0.35) !important; }
+
+          /* ৩. GoHighLevel (সফট ইলেকট্রিক নীল থিম) */
+          .btn-ghl { background: #dbeafe !important; color: #2563eb !important; border-color: #3b82f6 !important; }
+          .btn-ghl.active-brand-tab { background: #2563eb !important; color: #fff !important; border-color: #2563eb !important; box-shadow: 0 8px 20px rgba(37,99,235,0.35) !important; }
+
+          /* ৪. Custom GPT (সফট এমেরাল্ড সবুজ থিম) */
+          .btn-gpt { background: #d1fae5 !important; color: #059669 !important; border-color: #10b981 !important; }
+          .btn-gpt.active-brand-tab { background: #059669 !important; color: #fff !important; border-color: #059669 !important; box-shadow: 0 8px 20px rgba(5,150,105,0.35) !important; }
+
+          /* ৫. More Services (সফট ল্যাভেন্ডার বেগুনি থিম) */
+          .btn-more { background: #f3e8ff !important; color: #9333ea !important; border-color: #a855f7 !important; }
+          .btn-more.active-brand-tab { background: #9333ea !important; color: #fff !important; border-color: #9333ea !important; box-shadow: 0 8px 20px rgba(147,51,234,0.35) !important; }
+
+          .tab-icon-wrap { width: 24px; height: 24px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+          .tab-icon-wrap img { width: 100%; height: 100%; object-fit: contain; }
+
+          /* কন্টেন্ট হাইড/শো করার জোরদার লেজার */
+          .tab-content { display: none !important; }
+          .tab-content.active, .tab-content.force-show { display: block !important; animation: fadeInBrand 0.35s ease; }
+          @keyframes fadeInBrand { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+        </style>
+
+        <!-- 5 Colorful Brand Buttons -->
+        <div class="portfolio-tabs-wrapper">
+          
+          <button class="brand-tab-btn btn-n8n active-brand-tab" onclick="firePhysicalTab('n8n', this)">
+            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64"/></span> n8n
+          </button>
+
+          <button class="brand-tab-btn btn-zapier" onclick="firePhysicalTab('zapier', this)">
+            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=64"/></span> Zapier
+          </button>
+
+          <button class="brand-tab-btn btn-ghl" onclick="firePhysicalTab('gohighlevel', this)">
+            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=64"/></span> GoHighLevel
+          </button>
+
+          <button class="brand-tab-btn btn-gpt" onclick="firePhysicalTab('customgpt', this)">
+            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=64"/></span> Custom GPT
+          </button>
+
+          <button class="brand-tab-btn btn-more" onclick="firePhysicalTab('others', this)">
+            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=64"/></span> More Automation Services
+          </button>
+
         </div>
+
+        <!-- 💥 সরাসরি বাটনের চামড়ার নিচে বসানো অমর রোবট (কারো বাপের সাধ্য নাই আটকাতে পারে) -->
+        <script>
+          function firePhysicalTab(targetId, clickedBtn) {
+            var allBtns = document.querySelectorAll('.brand-tab-btn');
+            for(var i=0; i<allBtns.length; i++) { allBtns[i].classList.remove('active-brand-tab'); }
+            clickedBtn.classList.add('active-brand-tab');
+
+            var allPanels = document.querySelectorAll('.tab-content');
+            for(var j=0; j<allPanels.length; j++) {
+              allPanels[j].style.setProperty('display', 'none', 'important');
+              allPanels[j].classList.remove('force-show');
+            }
+
+            var activePanel = document.getElementById('tab-' + targetId) || document.getElementById(targetId);
+            if(activePanel) {
+              activePanel.style.setProperty('display', 'block', 'important');
+              activePanel.classList.add('force-show');
+            }
+          }
+        </script>
 
 
         <!-- ==================== TAB: n8n ==================== -->
@@ -69,16 +145,8 @@
           <!-- Short intro for this tab -->
           <div class="tab-intro">
             <h2>n8n Automation Projects</h2>
-            <p>I build powerful, self-hosted n8n workflows that connect your tools, automate repetitive tasks, and run 24/7 without manual effort.</p>
+            <p>I build powerful n8n workflows that connect your tools, automate repetitive tasks, and keep critical business processes running efficiently with minimal manual effort.</p>
           </div>
-
-          <!-- ============================================================
-               ✏️ HOW TO ADD A NEW PROJECT:
-               1. Copy the block from <!-- PROJECT CARD START --> to <!-- PROJECT CARD END -->
-               2. Paste it below the last project card in this tab
-               3. Update: image paths, title, description, tools, result, YouTube video ID
-               4. Give the new card a unique data-project-id like "n8n-3", "n8n-4" etc.
-               ============================================================ -->
 
           <div class="projects-grid">
 
@@ -616,129 +684,48 @@
         <!-- ==================== END TAB: Custom GPT ==================== -->
 
 
-        <!-- ==================== TAB: Others ==================== -->
+                <!-- ==================== TAB: More Automation Services ==================== -->
         <div class="tab-content" id="tab-others" role="tabpanel">
 
-          <div class="tab-intro">
-            <h2>Other Automation Projects</h2>
-            <p>Make (Integromat), Pabbly, API integrations, web scraping, and any custom automation you need — I've got you covered.</p>
+          <!-- Title & Subtitle -->
+          <div class="tab-intro" style="text-align: center; max-width: 680px; margin: 10px auto 45px auto;">
+            <h2 style="color: #1e40af !important; font-size: 1.85rem; font-weight: 800; margin-bottom: 12px;">More Automation Services</h2>
+            <p style="color: #475569 !important; font-size: 1.05rem; line-height: 1.6;">Additional automation services will be added here soon.</p>
           </div>
 
-          <div class="projects-grid">
-
-            <!-- PROJECT CARD START (Others - Project 1) -->
-            <div class="project-card" data-project-id="others-1">
-              <img src="images/projects/others/project-1-thumbnail.jpg" alt="Make.com Automation" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">Make.com</span>
-                <h3>Real Estate Lead Distribution</h3>
-                <p>A Make.com scenario that captures property inquiry leads and distributes them to the right agent based on location, property type, and agent availability.</p>
-                <div class="project-tools">
-                  <span>Make.com</span><span>Google Sheets</span><span>Gmail</span><span>Calendly</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> Lead-to-agent assignment time reduced from 2 hours to 30 seconds.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-others-1">View Details</button>
+          <!-- 2 Blank 'Coming Soon' Blueprint Cards Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 780px; margin: 0 auto 40px auto;">
+            
+            <!-- Blank Card 1 -->
+            <div style="background: hwb(210 61% 31%); border: 2px dashed #94a3b8; border-radius: 16px; padding: 45px 25px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0.85;">
+              <div style="width: 52px; height: 52px; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <span style="font-size: 24px;">⏳</span>
               </div>
+              <h3 style="color: #334155 !important; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px 0;">New Service Expansion #1</h3>
+              <p style="color: #64748b !important; font-size: 0.92rem; margin: 0 0 20px 0;">Workflows &amp; API integrations in development</p>
+              <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 800; padding: 5px 14px; border-radius: 50px; letter-spacing: 0.5px;">COMING SOON</span>
             </div>
-            <!-- PROJECT CARD END -->
 
-            <!-- PROJECT CARD START (Others - Project 2) -->
-            <div class="project-card" data-project-id="others-2">
-              <img src="images/projects/others/project-2-thumbnail.jpg" alt="Web Scraping Automation" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">API Integration</span>
-                <h3>Price Monitoring &amp; Alert System</h3>
-                <p>Automated price scraper that monitors competitor product prices daily and sends Slack alerts when prices drop below a threshold.</p>
-                <div class="project-tools">
-                  <span>n8n</span><span>ScraperAPI</span><span>Google Sheets</span><span>Slack</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> Client responded to price changes in real-time, increased sales by 20%.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-others-2">View Details</button>
+            <!-- Blank Card 2 -->
+            <div style="background: hwb(210 61% 31%); border: 2px dashed #94a3b8; border-radius: 16px; padding: 45px 25px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0.85;">
+              <div style="width: 52px; height: 52px; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <span style="font-size: 24px;">⏳</span>
               </div>
+              <h3 style="color: #334155 !important; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px 0;">New Service Expansion #2</h3>
+              <p style="color: #64748b !important; font-size: 0.92rem; margin: 0 0 20px 0;">Case studies &amp; video documentation incoming</p>
+              <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 800; padding: 5px 14px; border-radius: 50px; letter-spacing: 0.5px;">COMING SOON</span>
             </div>
-            <!-- PROJECT CARD END -->
 
           </div>
 
-          <!-- DETAIL PANEL: Others Project 1 -->
-          <div class="project-detail" id="detail-others-1">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>Real Estate Lead Distribution</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/others/project-1-screenshot-1.jpg" alt="Make.com Scenario" loading="lazy" />
-              <img src="images/projects/others/project-1-screenshot-2.jpg" alt="Lead Distribution Sheet" loading="lazy" />
-            </div>
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Lead Distribution Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>The agency received leads from multiple sources and manually assigned them to agents via WhatsApp. Leads were often assigned to unavailable agents, causing delays.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>A Make.com scenario with routing logic: checks agent availability from a Google Sheet schedule, matches lead location and property type, and auto-assigns + notifies the right agent by email and SMS.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>Make.com</span><span>Google Sheets</span><span>Gmail</span><span>Twilio SMS</span><span>Calendly</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ Assignment time: 2 hours → 30 seconds<br />✅ 0% leads going to unavailable agents<br />✅ 45% improvement in lead response rate</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Need a similar automation?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <!-- DETAIL PANEL: Others Project 2 -->
-          <div class="project-detail" id="detail-others-2">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>Price Monitoring &amp; Alert System</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/others/project-2-screenshot-1.jpg" alt="Scraper Workflow" loading="lazy" />
-              <img src="images/projects/others/project-2-screenshot-2.jpg" alt="Slack Alert" loading="lazy" />
-            </div>
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Price Monitor Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>The e-commerce manager checked competitor prices manually every day — a 2-hour task that was often skipped on busy days, causing missed opportunities.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>An n8n workflow scheduled daily that uses ScraperAPI to extract competitor prices, compares them to a Google Sheet baseline, and sends a Slack alert only when a price drops below the threshold.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>n8n</span><span>ScraperAPI</span><span>Google Sheets</span><span>Slack</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ Price monitoring fully automated (2 hours → 0 minutes manual)<br />✅ Faster price response increased sales by 20%</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Need a custom automation solution?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <div class="tab-cta">
-            <p>Have a unique automation challenge?</p>
-            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          <!-- Small Urgent Request CTA -->
+          <div style="text-align: center; margin-top: 35px;">
+            <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 10px;">Have a custom automation request right now?</p>
+            <a href="contact.html" class="btn btn-outline" style="border: 2px solid #2563eb; color: #2563eb; font-weight: 700; padding: 8px 22px; border-radius: 8px;">Request Custom Service</a>
           </div>
 
         </div>
-        <!-- ==================== END TAB: Others ==================== -->
+        <!-- ==================== END TAB: More Automation Services ==================== -->
 
       </div>
     </section>
@@ -747,22 +734,88 @@
   </main>
 
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="logo">⚡ YourName</a>
-        <p>n8n &amp; AI Automation Expert helping businesses grow through smart workflows.</p>
-        <div class="social-links">
-          <a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener" aria-label="Fiverr"><span class="social-text">Fiverr</span></a>
-          <a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="Upwork"><span class="social-text">Upwork</span></a>
-          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="social-text">LinkedIn</span></a>
-          <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" aria-label="YouTube"><span class="social-text">YouTube</span></a>
+  <!-- ===================== THE TIMELESS CLASSIC FOOTER (COMPLETE A TO Z) ===================== -->
+  <footer class="site-footer" style="background-color: #0b1120 !important; color: #94a3b8 !important; padding: 65px 0 25px 0 !important; border-top: 2px solid #2563eb !important;">
+    
+    <!-- 🎨 Pure Minimalist Typography & Styling Injection -->
+    <style>
+      /* ১. হেডিংগুলো বড়, বোল্ড এবং ধবধবে সাদা */
+      .site-footer h4 {
+        color: #ffffff !important;
+        font-size: 1.08rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 22px !important;
+        letter-spacing: 0.3px;
+      }
+
+      /* ২. নিচের অপশনগুলো স্লিম, ছোট এবং পরিশীলিত */
+      .site-footer .classic-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .site-footer .classic-list li { margin-bottom: 11px !important; }
+      .site-footer .classic-list li a {
+        color: #94a3b8 !important;
+        text-decoration: none !important;
+        font-size: 0.93rem !important;
+        transition: all 0.2s ease !important;
+      }
+      .site-footer .classic-list li a:hover {
+        color: #ffffff !important;
+        transform: translateX(4px);
+        display: inline-block;
+      }
+
+      /* ৩. সোশ্যাল বাটনগুলো একদম ছোট ও ভদ্র ডার্ক পিল (নিখুঁত ৬টি বাটন গ্রিড) */
+      .subtle-social-btn {
+        display: inline-block;
+        background: #1e293b;
+        color: #cbd5e1 !important;
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 6px;
+        text-decoration: none !important;
+        margin: 0 !important;
+        border: 1px solid #334155;
+        transition: all 0.2s;
+      }
+      .subtle-social-btn:hover { background: #2563eb; color: #ffffff !important; border-color: #2563eb; }
+
+      .footer-bottom-slim {
+        margin-top: 55px !important;
+        padding-top: 25px !important;
+        border-top: 1px solid #1e293b !important;
+        font-size: 0.88rem !important;
+        color: #64748b !important;
+      }
+      .footer-bottom-slim a { color: #94a3b8 !important; text-decoration: none; }
+      .footer-bottom-slim a:hover { color: #fff !important; text-decoration: underline; }
+    </style>
+
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px;">
+
+      <!-- Col 1: Brand & 6 Social Pills -->
+      <div>
+        <a href="index.html" style="color: #ffffff !important; font-size: 1.6rem; font-weight: 900; text-decoration: none; letter-spacing: -0.5px;">⚡ Redoun</a>
+        <p style="margin: 14px 0 22px 0; font-size: 0.92rem; line-height: 1.6; color: #94a3b8;">Custom Workflow Automation & AI Agent Expert</p>
+        
+        <!-- ৬টি সোশ্যাল বাটন (৩টি ওপরে, ৩টি নিচে নিখুঁত গ্রিড) -->
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; max-width: 260px;">
+          <a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" class="subtle-social-btn">Fiverr</a>
+          <a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" class="subtle-social-btn">Upwork</a>
+          <a href="https://github.com/redoun-hossain" target="_blank" class="subtle-social-btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" class="subtle-social-btn">LinkedIn</a>
+          <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" class="subtle-social-btn">YouTube</a>
+          <a href="https://twitter.com/YOUR_PROFILE" target="_blank" class="subtle-social-btn">Twitter</a>
         </div>
       </div>
-      <div class="footer-links">
+
+      <!-- Col 2: Navigation -->
+      <div>
         <h4>Quick Links</h4>
-        <ul>
+        <ul class="classic-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="about.html">About</a></li>
@@ -770,31 +823,40 @@
           <li><a href="legal.html">Privacy &amp; Terms</a></li>
         </ul>
       </div>
-      <div class="footer-links">
+
+      <!-- Col 3: Services -->
+      <div>
         <h4>Services</h4>
-        <ul>
+        <ul class="classic-list">
           <li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
-          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
           <li><a href="portfolio.html?tab=gohighlevel">GoHighLevel Setup</a></li>
+          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
           <li><a href="portfolio.html?tab=customgpt">Custom GPT / AI Agent</a></li>
-          <li><a href="portfolio.html?tab=others">Other Automation</a></li>
+          <li><a href="portfolio.html?tab=others">More Services</a></li>
         </ul>
       </div>
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <ul>
+
+      <!-- Col 4: Get in Touch (১০০% সেম স্টাইলের ৩টি ভদ্র লিংক) -->
+      <div>
+        <h4>Get in Touch</h4>
+        <ul class="classic-list">
+          <!-- 🚨 নিচের 'your-email@example.com' কেটে তোমার আসল জিমেইল বসাও -->
           <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
-          <li><a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank" rel="noopener">Hire on Fiverr</a></li>
-          <li><a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank" rel="noopener">Hire on Upwork</a></li>
+          <li><a href="https://www.fiverr.com/YOUR_USERNAME" target="_blank">Hire on Fiverr ↗</a></li>
+          <li><a href="https://www.upwork.com/freelancers/YOUR_PROFILE" target="_blank">Hire on Upwork ↗</a></li>
         </ul>
       </div>
+
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; <span id="footer-year"></span> Your Name. All rights reserved.</p>
-        <p><a href="legal.html">Privacy Policy</a> &amp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-slim">
+      <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
+        <p style="margin: 0;">&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
+        <p style="margin: 0;"><a href="legal.html">Privacy Policy</a> &nbsp;•&nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
       </div>
     </div>
+
   </footer>
   <!-- ===================== END FOOTER ===================== -->
 
