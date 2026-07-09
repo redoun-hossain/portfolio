@@ -499,19 +499,18 @@
 <style>
 
 .site-footer .footer-wrapper {
-  max-width: 1400px; /* আরও বড় করলাম যাতে left-right সমান হয় */
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 40px; /* দুই পাশে সমান padding */
+  padding: 0 40px;
 }
 
 .site-footer .footer-grid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1fr;
-  gap: 60px;
-  align-items: start; /* সব কলাম উপর থেকে শুরু */
+  grid-template-columns: 1.3fr 1fr 1fr 1fr; /* আগে 1.8fr ছিল, এখন 1.3fr */
+  gap: 70px; /* একটু বেশি gap */
+  align-items: start;
 }
 
-/* সব heading একই height এবং একই margin */
 .site-footer h4,
 .site-footer .footer-brand {
   color: #fff;
@@ -520,7 +519,6 @@
   margin: 0 0 22px 0;
   padding: 0;
   line-height: 1.3;
-  height: auto;
 }
 
 .site-footer .footer-brand {
@@ -536,6 +534,14 @@
   line-height: 1.6;
   font-size: .92rem;
   color: #94a3b8;
+}
+
+/* Social buttons - 3 column grid যাতে 2-2-2 করে 3 line হয় */
+.social-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 column */
+  gap: 10px;
+  max-width: 280px;
 }
 
 .classic-list {
@@ -565,12 +571,14 @@
   background: #1e293b;
   border: 1px solid #334155;
   border-radius: 6px;
-  padding: 6px 14px;
-  font-size: .82rem;
+  padding: 6px 12px; /* একটু ছোট করলাম */
+  font-size: .8rem;
   font-weight: 600;
   color: #cbd5e1;
   text-decoration: none;
   transition: .25s;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .subtle-social-btn:hover {
@@ -602,6 +610,9 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .social-buttons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 </style>
@@ -614,7 +625,9 @@
     <div>
       <a href="index.html" class="footer-brand">⚡ Redoun</a>
       <p class="footer-desc">Custom Workflow Automation & AI Agent Expert</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      
+      <!-- 3 column grid: 2-2-2 করে 3 line -->
+      <div class="social-buttons-grid">
         <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" class="subtle-social-btn">Fiverr</a>
         <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" class="subtle-social-btn">Upwork</a>
         <a href="https://github.com/redoun-hossain" target="_blank" class="subtle-social-btn">GitHub</a>
