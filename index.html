@@ -493,132 +493,266 @@
 
   </main>
 
-  <!-- ===================== THE TIMELESS CLASSIC FOOTER (COMPLETE A TO Z) ===================== -->
-  <footer class="site-footer" style="background-color: #0b1120 !important; color: #94a3b8 !important; padding: 65px 0 25px 0 !important; border-top: 2px solid #2563eb !important;">
-    
-    <!-- 🎨 Pure Minimalist Typography & Styling Injection -->
-    <style>
-      /* ১. হেডিংগুলো বড়, বোল্ড এবং ধবধবে সাদা */
-      .site-footer h4 {
-        color: #ffffff !important;
-        font-size: 1.08rem !important;
-        font-weight: 700 !important;
-        margin-bottom: 22px !important;
-        letter-spacing: 0.3px;
-      }
+  <!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" style="background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;">
 
-      /* ২. নিচের অপশনগুলো স্লিম, ছোট এবং পরিশীলিত */
-      .site-footer .classic-list {
-        list-style: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-      .site-footer .classic-list li { margin-bottom: 11px !important; }
-      .site-footer .classic-list li a {
-        color: #94a3b8 !important;
-        text-decoration: none !important;
-        font-size: 0.93rem !important;
-        transition: all 0.2s ease !important;
-      }
-      .site-footer .classic-list li a:hover {
-        color: #ffffff !important;
-        transform: translateX(4px);
-        display: inline-block;
-      }
+<style>
 
-      /* ৩. সোশ্যাল বাটনগুলো একদম ছোট ও ভদ্র ডার্ক পিল (নিখুঁত ৬টি বাটন গ্রিড) */
-      .subtle-social-btn {
-        display: inline-block;
-        background: #1e293b;
-        color: #cbd5e1 !important;
-        font-size: 0.82rem;
-        font-weight: 600;
-        padding: 5px 14px;
-        border-radius: 6px;
-        text-decoration: none !important;
-        margin: 0 !important;
-        border: 1px solid #334155;
-        transition: all 0.2s;
-      }
-      .subtle-social-btn:hover { background: #2563eb; color: #ffffff !important; border-color: #2563eb; }
+.site-footer h4{
+color:#fff;
+font-size:1.08rem;
+font-weight:700;
+margin-bottom:22px;
+letter-spacing:.3px;
+}
 
-      .footer-bottom-slim {
-        margin-top: 55px !important;
-        padding-top: 25px !important;
-        border-top: 1px solid #1e293b !important;
-        font-size: 0.88rem !important;
-        color: #64748b !important;
-      }
-      .footer-bottom-slim a { color: #94a3b8 !important; text-decoration: none; }
-      .footer-bottom-slim a:hover { color: #fff !important; text-decoration: underline; }
-    </style>
+.classic-list{
+list-style:none;
+padding:0;
+margin:0;
+}
 
-    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px;">
+.classic-list li{
+margin-bottom:12px;
+}
 
-      <!-- Col 1: Brand & 6 Social Pills -->
-      <div>
-        <a href="index.html" style="color: #ffffff !important; font-size: 1.6rem; font-weight: 900; text-decoration: none; letter-spacing: -0.5px;">⚡ Redoun</a>
-        <p style="margin: 14px 0 22px 0; font-size: 0.92rem; line-height: 1.6; color: #94a3b8;">Custom Workflow Automation & AI Agent Expert</p>
-        
-        <!-- ৬টি সোশ্যাল বাটন (৩টি ওপরে, ৩টি নিচে নিখুঁত গ্রিড) -->
-        <div style="display: flex; flex-wrap: wrap; gap: 6px; max-width: 260px;">
-          <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" class="subtle-social-btn">Fiverr</a>
-          <a href=" https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" class="subtle-social-btn">Upwork</a>
-          <a href="https://github.com/redoun-hossain" target="_blank" class="subtle-social-btn">GitHub</a>
-          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" class="subtle-social-btn">LinkedIn</a>
-          <a href="https://www.youtube.com/@ArfinSami" target="_blank" class="subtle-social-btn">YouTube</a>
-         <a href="#" class="subtle-social-btn"
-   onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com'); alert('Email copied!\n\nemail.arfinsami@gmail.com'); return false;">
-   Email
+.classic-list li a{
+color:#94a3b8;
+text-decoration:none;
+font-size:.93rem;
+transition:.25s;
+}
+
+.classic-list li a:hover{
+color:#fff;
+padding-left:4px;
+}
+
+.subtle-social-btn{
+
+display:inline-block;
+background:#1e293b;
+border:1px solid #334155;
+border-radius:6px;
+
+padding:6px 14px;
+
+font-size:.82rem;
+font-weight:600;
+
+color:#cbd5e1;
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.subtle-social-btn:hover{
+
+background:#2563eb;
+border-color:#2563eb;
+color:#fff;
+
+}
+
+.footer-bottom-slim{
+
+margin-top:55px;
+padding-top:25px;
+
+border-top:1px solid #1e293b;
+
+font-size:.88rem;
+color:#64748b;
+
+}
+
+.footer-bottom-slim a{
+
+color:#94a3b8;
+text-decoration:none;
+
+}
+
+.footer-bottom-slim a:hover{
+
+color:#fff;
+text-decoration:underline;
+
+}
+
+</style>
+
+<div class="container"
+style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:40px;
+">
+
+<!-- Brand -->
+
+<div>
+
+<a href="index.html"
+style="
+font-size:1.6rem;
+font-weight:900;
+color:#fff;
+text-decoration:none;
+letter-spacing:-.5px;
+">
+⚡ Redoun
 </a>
-        </div>
-      </div>
 
-      <!-- Col 2: Navigation -->
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="classic-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="legal.html">Privacy &amp; Terms</a></li>
-        </ul>
-      </div>
+<p
+style="
+margin:14px 0 22px;
+line-height:1.6;
+font-size:.92rem;
+">
+Custom Workflow Automation & AI Agent Expert
+</p>
 
-      <!-- Col 3: Services -->
-      <div>
-        <h4>Services</h4>
-        <ul class="classic-list">
-          <li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
-          <li><a href="portfolio.html?tab=gohighlevel">GoHighLevel Setup</a></li>
-          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
-          <li><a href="portfolio.html?tab=customgpt">Custom GPT / AI Agent</a></li>
-          <li><a href="portfolio.html?tab=others">More Services</a></li>
-        </ul>
-      </div>
+<div
+style="
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+max-width:270px;
+">
 
-      <!-- Col 4: Get in Touch (১০০% সেম স্টাইলের ২টি ভদ্র লিংক) -->
-      <div>
-        <a href="index.html" style="color: #ffffff !important; font-size: 1.6rem; font-weight: 900; text-decoration: none; letter-spacing: -0.5px;">Get in Touch</a>
+<a href="https://www.fiverr.com/redoun_hossain/" target="_blank" class="subtle-social-btn">Fiverr</a>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 6px; max-width: 260px;">
-          <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" class="subtle-social-btn">Hire on Fiverr ↗</a>
-          <a href=" https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" class="subtle-social-btn">Hire on Upwork ↗</a>
-        </div>
+<a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" class="subtle-social-btn">Upwork</a>
 
-    </div>
+<a href="https://github.com/redoun-hossain" target="_blank" class="subtle-social-btn">GitHub</a>
 
-    <!-- Bottom Bar -->
-    <div class="footer-bottom-slim">
-      <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
-        <p style="margin: 0;">&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
-        <p style="margin: 0;"><a href="legal.html">Privacy Policy</a> &nbsp;•&nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
-      </div>
-    </div>
+<a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" class="subtle-social-btn">LinkedIn</a>
 
-  </footer>
-  <!-- ===================== END FOOTER ===================== -->
+<a href="https://www.youtube.com/@ArfinSami" target="_blank" class="subtle-social-btn">YouTube</a>
+
+<a href="#"
+class="subtle-social-btn"
+onclick="
+navigator.clipboard.writeText('email.arfinsami@gmail.com');
+alert('Business Email copied!\n\nemail.arfinsami@gmail.com');
+return false;
+">
+Email
+</a>
+
+</div>
+
+</div>
+
+<!-- Quick Links -->
+
+<div>
+
+<h4>Quick Links</h4>
+
+<ul class="classic-list">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="portfolio.html">Portfolio</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li><a href="legal.html">Privacy & Terms</a></li>
+
+</ul>
+
+</div>
+
+<!-- Services -->
+
+<div>
+
+<h4>Services</h4>
+
+<ul class="classic-list">
+
+<li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
+
+<li><a href="portfolio.html?tab=gohighlevel">GoHighLevel Setup</a></li>
+
+<li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
+
+<li><a href="portfolio.html?tab=customgpt">Custom GPT / AI Agent</a></li>
+
+<li><a href="portfolio.html?tab=others">More Services</a></li>
+
+</ul>
+
+</div>
+
+<!-- Contact -->
+
+<div>
+
+<h4>Get in Touch</h4>
+
+<div
+style="
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:18px;
+max-width:260px;
+">
+
+<a href="https://www.fiverr.com/redoun_hossain/"
+target="_blank"
+class="subtle-social-btn">
+Hire on Fiverr ↗
+</a>
+
+<a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe"
+target="_blank"
+class="subtle-social-btn">
+Hire on Upwork ↗
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Bottom -->
+
+<div class="footer-bottom-slim">
+
+<div
+class="container"
+style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+">
+
+<p style="margin:0;">
+&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.
+</p>
+
+<p style="margin:0;">
+<a href="legal.html">Privacy Policy</a>
+&nbsp; • &nbsp;
+<a href="legal.html?tab=terms">Terms & Conditions</a>
+</p>
+
+</div>
+
+</div>
+
+</footer>
+<!-- ===================== END FOOTER ===================== -->
 
   <!-- Back to top button -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
