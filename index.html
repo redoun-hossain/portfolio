@@ -498,32 +498,40 @@
 
 <style>
 
-.footer-grid-wrapper {
+.footer-container {
 max-width: 1200px;
 margin: 0 auto;
 padding: 0 20px;
-display: grid;
-grid-template-columns: 1.5fr 1fr 1fr 1fr;
-gap: 60px;
-align-items: start;
 }
 
-.site-footer h4{
+.footer-grid-main {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+column-gap: 80px;
+}
+
+.footer-column {
+/* সব কলাম same height এবং top থেকে শুরু */
+}
+
+.footer-column h4,
+.footer-brand-title {
 color:#fff;
 font-size:1.08rem;
 font-weight:700;
-margin: 0 0 22px 0;
+margin: 0 0 22px 0 !important;
+padding: 0 !important;
 letter-spacing:.3px;
+line-height: 1.08rem;
 }
 
 .footer-brand-title {
-font-size:1.6rem;
+font-size:1.6rem !important;
 font-weight:900;
-color:#fff;
 text-decoration:none;
 letter-spacing:-.5px;
-display:inline-block;
-margin: 0 0 22px 0;
+display:block;
+line-height: 1.6rem;
 }
 
 .classic-list{
@@ -586,7 +594,7 @@ text-decoration:underline;
 }
 
 @media (max-width: 768px) {
-  .footer-grid-wrapper {
+  .footer-grid-main {
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -594,30 +602,30 @@ text-decoration:underline;
 
 </style>
 
-<div class="footer-grid-wrapper">
+<div class="footer-container">
 
-<!-- Brand -->
-<div>
+<div class="footer-grid-main">
+
+<!-- Brand Column -->
+<div class="footer-column">
 <a href="index.html" class="footer-brand-title">⚡ Redoun</a>
 
-<p style="margin:0 0 22px;line-height:1.6;font-size:.92rem;">
+<p style="margin:0 0 22px;line-height:1.6;font-size:.92rem;color:#94a3b8;">
 Custom Workflow Automation & AI Agent Expert
 </p>
 
-<div style="display:flex;flex-wrap:wrap;gap:10px;">
-
+<div style="display:flex;flex-wrap:wrap;gap:10px;max-width:300px;">
 <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" class="subtle-social-btn">Fiverr</a>
 <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" class="subtle-social-btn">Upwork</a>
 <a href="https://github.com/redoun-hossain" target="_blank" class="subtle-social-btn">GitHub</a>
 <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" class="subtle-social-btn">LinkedIn</a>
 <a href="https://www.youtube.com/@ArfinSami" target="_blank" class="subtle-social-btn">YouTube</a>
 <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">Email</a>
-
 </div>
 </div>
 
-<!-- Quick Links -->
-<div>
+<!-- Quick Links Column -->
+<div class="footer-column">
 <h4>Quick Links</h4>
 <ul class="classic-list">
 <li><a href="index.html">Home</a></li>
@@ -628,8 +636,8 @@ Custom Workflow Automation & AI Agent Expert
 </ul>
 </div>
 
-<!-- Services -->
-<div>
+<!-- Services Column -->
+<div class="footer-column">
 <h4>Services</h4>
 <ul class="classic-list">
 <li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
@@ -640,27 +648,20 @@ Custom Workflow Automation & AI Agent Expert
 </ul>
 </div>
 
-<!-- Get in Touch -->
-<div>
+<!-- Get in Touch Column -->
+<div class="footer-column">
 <h4>Get in Touch</h4>
 <div style="display:flex;flex-direction:column;gap:12px;">
-
-<a href="https://www.fiverr.com/redoun_hossain/" target="_blank" class="subtle-social-btn" style="width:fit-content;">
-Hire on Fiverr ↗
-</a>
-
-<a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" class="subtle-social-btn" style="width:fit-content;">
-Hire on Upwork ↗
-</a>
-
+<a href="https://www.fiverr.com/redoun_hossain/" target="_blank" class="subtle-social-btn" style="width:fit-content;">Hire on Fiverr ↗</a>
+<a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" class="subtle-social-btn" style="width:fit-content;">Hire on Upwork ↗</a>
 </div>
 </div>
 
 </div>
 
-<!-- Bottom -->
+<!-- Bottom Bar -->
 <div class="footer-bottom-slim">
-<div style="max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;">
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;">
 
 <p style="margin:0;">
 &copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.
@@ -673,6 +674,8 @@ Hire on Upwork ↗
 </p>
 
 </div>
+</div>
+
 </div>
 
 </footer>
