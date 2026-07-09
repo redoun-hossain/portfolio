@@ -506,8 +506,8 @@
 
 .site-footer .footer-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr; /* আগে 1.8fr ছিল, এখন 1.3fr */
-  gap: 70px; /* একটু বেশি gap */
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 70px;
   align-items: start;
 }
 
@@ -536,12 +536,19 @@
   color: #94a3b8;
 }
 
-/* Social buttons - 3 column grid যাতে 2-2-2 করে 3 line হয় */
+/* ✅ ২টি করে ৩ লাইন করার জন্য ঠিক করা গ্রিড */
 .social-buttons-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 column */
+  grid-template-columns: repeat(2, 1fr); /* ২ কলাম = ২টি প্রতি লাইনে */
   gap: 10px;
-  max-width: 280px;
+  max-width: 230px;
+}
+
+.social-buttons-grid .subtle-social-btn {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  display: block;
 }
 
 .classic-list {
@@ -571,14 +578,12 @@
   background: #1e293b;
   border: 1px solid #334155;
   border-radius: 6px;
-  padding: 6px 12px; /* একটু ছোট করলাম */
+  padding: 6px 12px;
   font-size: .8rem;
   font-weight: 600;
   color: #cbd5e1;
   text-decoration: none;
   transition: .25s;
-  text-align: center;
-  white-space: nowrap;
 }
 
 .subtle-social-btn:hover {
@@ -611,7 +616,8 @@
     gap: 40px;
   }
   .social-buttons-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* মোবাইলে ৩টি করে লাইনে সুন্দর দেখায় */
+    max-width: 100%;
   }
 }
 
@@ -626,7 +632,7 @@
       <a href="index.html" class="footer-brand">⚡ Redoun</a>
       <p class="footer-desc">Custom Workflow Automation & AI Agent Expert</p>
       
-      <!-- 3 column grid: 2-2-2 করে 3 line -->
+      <!-- ✅ ২টি করে ৩ লাইন -->
       <div class="social-buttons-grid">
         <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" class="subtle-social-btn">Fiverr</a>
         <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" class="subtle-social-btn">Upwork</a>
