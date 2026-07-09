@@ -493,7 +493,7 @@
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
+ <!-- ===================== FOOTER ===================== -->
 <footer class="site-footer" style="background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;">
 
 <style>
@@ -565,31 +565,37 @@ color:#fff;
 text-decoration:underline;
 }
 
-</style>
-
-<div class="container"
-style="
-display:grid;
-grid-template-columns: 1.8fr 1fr 1fr 1fr;
-gap:25px;
-">
-
-<!-- Brand -->
-<div>
-<a href="index.html"
-style="
+.footer-brand-title {
 font-size:1.6rem;
 font-weight:900;
 color:#fff;
 text-decoration:none;
 letter-spacing:-.5px;
+display:block;
+margin-bottom:22px;
+}
+
+</style>
+
+<div class="container"
+style="
+display:grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+gap:50px;
+max-width:1200px;
+margin:0 auto;
+padding:0 20px;
 ">
+
+<!-- Brand -->
+<div>
+<a href="index.html" class="footer-brand-title">
 ⚡ Redoun
 </a>
 
 <p
 style="
-margin:14px 0 22px;
+margin:0 0 22px;
 line-height:1.6;
 font-size:.92rem;
 ">
@@ -654,7 +660,7 @@ style="
 display:flex;
 flex-wrap:wrap;
 gap:12px;
-margin-top:18px;
+margin-top:0;
 max-width:260px;
 ">
 
@@ -685,6 +691,9 @@ justify-content:space-between;
 align-items:center;
 flex-wrap:wrap;
 gap:15px;
+max-width:1200px;
+margin:0 auto;
+padding:0 20px;
 ">
 
 <p style="margin:0;">
