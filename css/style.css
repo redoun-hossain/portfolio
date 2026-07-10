@@ -1538,3 +1538,27 @@ main section:first-of-type p {
 }
 
 
+/* =========================================
+   🛠️ HERO BORDER-BOTTOM REMOVER (ALL PAGES)
+   ========================================= */
+.hero,
+.page-hero,
+section.hero,
+section.page-hero,
+main > section:first-of-type {
+  border-bottom: none !important;
+  border-bottom-width: 0 !important;
+  border-bottom-style: none !important;
+  border-bottom-color: transparent !important;
+}
+
+/* যদি কোনো ::after pseudo-element থাকে তাহলে সেটাও সরানো */
+.hero::after,
+.page-hero::after,
+section.hero::after,
+section.page-hero::after,
+main > section:first-of-type::after {
+  border-bottom: none !important;
+  content: none !important;
+  display: none !important;
+}
