@@ -179,6 +179,7 @@
     <p class="section-sub" style="color: #475569 !important; margin-bottom: 50px;">Click any service to explore related projects from my portfolio.</p>
 
     <style>
+      /* ✅ Active কার্ড (n8n) - Vibrant নীল */
       .cards-grid .pastel-card {
         background-color: #dbeafe !important;
         border: 2px solid #bfdbfe !important;
@@ -226,41 +227,57 @@
       }
       .logo-img { width: 28px; height: 28px; object-fit: contain; }
 
-      /* ✅ Coming Soon কার্ড স্টাইল */
+      /* ✅ Inactive/Coming Soon কার্ড - Discolored & Faded */
       .coming-soon-card {
-        background: #b6c0cc !important;
-        border: 1.5px dashed #94a3b8 !important;
+        background: #e8e8e8 !important;
+        border: 2px dashed #c0c0c0 !important;
         cursor: default !important;
-        opacity: 0.85 !important;
+        opacity: 0.6 !important;
+        filter: grayscale(70%) !important;
       }
       .coming-soon-card:hover {
-        background: #b6c0cc !important;
-        border-color: #94a3b8 !important;
+        background: #e8e8e8 !important;
+        border-color: #c0c0c0 !important;
         transform: none !important;
-        box-shadow: 0 4px 15px rgba(30, 64, 175, 0.05) !important;
+        box-shadow: none !important;
+        opacity: 0.6 !important;
       }
       .coming-soon-card h3 {
-        color: #3d4249 !important;
+        color: #6b7280 !important;
       }
-      /* ✅ বড় COMING SOON লেখা */
+      .coming-soon-card p {
+        color: #9ca3af !important;
+      }
+      .coming-soon-card .logo-white-box {
+        background: #d4d4d4 !important;
+        box-shadow: none !important;
+      }
+      .coming-soon-card .logo-img {
+        opacity: 0.4 !important;
+        filter: grayscale(100%) !important;
+      }
+
+      /* ✅ বড় COMING SOON ব্যাজ */
       .coming-soon-badge {
         display: inline-block;
         margin-top: 20px;
-        padding: 8px 20px;
-        background: #3d4249 !important;
+        padding: 10px 22px;
+        background: #4b5563 !important;
         color: #ffffff !important;
-        font-size: 1.1rem !important;
+        font-size: 1.15rem !important;
         font-weight: 900 !important;
-        letter-spacing: 2px !important;
+        letter-spacing: 2.5px !important;
         text-transform: uppercase !important;
         border-radius: 8px !important;
         text-align: center;
+        filter: none !important;
+        opacity: 1 !important;
       }
     </style>
 
     <div class="cards-grid">
 
-      <!-- ✅ Card 1: n8n (ACTIVE - একমাত্র ক্লিকেবল) -->
+      <!-- ✅ Card 1: n8n (ACTIVE - Vibrant & Clickable) -->
       <a href="portfolio.html?tab=n8n" class="service-card pastel-card">
         <div>
           <div class="logo-white-box">
@@ -272,11 +289,11 @@
         <span class="card-link">See Projects →</span>
       </a>
 
-      <!-- ⏳ Card 2: Zapier (COMING SOON) -->
+      <!-- ⏳ Card 2: Zapier (INACTIVE - Discolored) -->
       <div class="service-card pastel-card coming-soon-card">
         <div>
-          <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
-            <img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128" alt="Zapier" class="logo-img" style="opacity:0.5;" />
+          <div class="logo-white-box">
+            <img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128" alt="Zapier" class="logo-img" />
           </div>
           <h3>Zapier Integration</h3>
           <p>Zapier automation setups that connect your tools, eliminate manual work, and streamline day-to-day operations.</p>
@@ -284,11 +301,11 @@
         <span class="coming-soon-badge">⏳ COMING SOON</span>
       </div>
 
-      <!-- ⏳ Card 3: GoHighLevel (COMING SOON) -->
+      <!-- ⏳ Card 3: GoHighLevel (INACTIVE - Discolored) -->
       <div class="service-card pastel-card coming-soon-card">
         <div>
-          <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
-            <img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=128" alt="GoHighLevel" class="logo-img" style="opacity:0.5;" />
+          <div class="logo-white-box">
+            <img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=128" alt="GoHighLevel" class="logo-img" />
           </div>
           <h3>GoHighLevel Setup</h3>
           <p>Complete GoHighLevel setup for agencies and coaches, including CRM configuration, workflow automation, funnels, and pipeline management.</p>
@@ -296,11 +313,11 @@
         <span class="coming-soon-badge">⏳ COMING SOON</span>
       </div>
 
-      <!-- ⏳ Card 4: Custom GPT (COMING SOON) -->
+      <!-- ⏳ Card 4: Custom GPT (INACTIVE - Discolored) -->
       <div class="service-card pastel-card coming-soon-card">
         <div>
-          <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
-            <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI" class="logo-img" style="opacity:0.5;" />
+          <div class="logo-white-box">
+            <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI" class="logo-img" />
           </div>
           <h3>Custom GPT / AI Agent</h3>
           <p>AI-powered assistants and custom agents built to answer questions, generate content, support customers, and automate workflows.</p>
@@ -308,11 +325,11 @@
         <span class="coming-soon-badge">⏳ COMING SOON</span>
       </div>
 
-      <!-- ⏳ Card 5: More Services (COMING SOON) -->
+      <!-- ⏳ Card 5: More Services (INACTIVE - Discolored) -->
       <div class="service-card pastel-card coming-soon-card">
         <div>
-          <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
-            <span style="font-size:22px;">⏳</span>
+          <div class="logo-white-box">
+            <span style="font-size:22px; opacity:0.4;">⏳</span>
           </div>
           <h3>More Automation Services</h3>
           <p>Additional automation services will be added here soon.</p>
