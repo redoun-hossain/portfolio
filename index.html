@@ -285,156 +285,204 @@
 </section>
 <!-- ===================== END SERVICES ===================== -->
 
+<!-- ===================== FEATURED PROJECTS SECTION ===================== -->
+<section class="section featured-projects" style="background-color: #ffffff !important; padding: 90px 0 !important; border-top: 1px solid #f1f5f9;">
+  <div class="container">
+    
+    <h2 class="section-title" style="color: #1e40af !important; font-weight: 800;">Featured Projects</h2>
+    <p class="section-sub" style="color: #475569 !important; max-width: 680px; margin: 0 auto 55px auto; font-size: 1.05rem; line-height: 1.6;">
+      A selection of high-impact automation projects showcasing real business solutions and measurable results.
+    </p>
 
-            <!-- ===================== FEATURED PROJECTS SECTION ===================== -->
-    <section class="section featured-projects" style="background-color: #ffffff !important; padding: 90px 0 !important; border-top: 1px solid #f1f5f9;">
-      <div class="container">
-        
-        <h2 class="section-title" style="color: #1e40af !important; font-weight: 800;">Featured Projects</h2>
-        <p class="section-sub" style="color: #475569 !important; max-width: 680px; margin: 0 auto 55px auto; font-size: 1.05rem; line-height: 1.6;">
-          A selection of high-impact automation projects showcasing real business solutions and measurable results.
-        </p>
+    <style>
+      /* ✅ Active কার্ড (n8n) - Vibrant */
+      .featured-card-box {
+        background-color: #eff6ff !important;
+        border: 2px solid #dbeafe !important;
+        border-radius: 18px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 15px rgba(30, 64, 175, 0.04) !important;
+        transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: flex;
+        flex-direction: column;
+      }
+      .featured-card-box:hover {
+        background-color: #ffffff !important;
+        transform: translateY(-8px) !important;
+        border-color: #2563eb !important;
+        box-shadow: 0 20px 30px rgba(37, 99, 235, 0.15) !important;
+      }
+      .featured-card-box .project-info {
+        padding: 26px 24px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+      }
+      .featured-card-box h3 {
+        color: #1e40af !important;
+        font-size: 1.2rem !important;
+        font-weight: 800 !important;
+        margin: 14px 0 10px 0 !important;
+      }
+      .featured-card-box p {
+        color: #334155 !important;
+        font-size: 0.95rem !important;
+        line-height: 1.62 !important;
+        margin-bottom: 20px !important;
+      }
+      .project-brand-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #ffffff;
+        border: 1.5px solid #bfdbfe;
+        padding: 5px 14px 5px 8px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 0.82rem;
+        color: #1e40af;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        width: fit-content;
+      }
+      .project-brand-pill img { width: 18px; height: 18px; object-fit: contain; }
+      .featured-card-box .project-tools span {
+        background: #ffffff !important;
+        color: #334155 !important;
+        border: 1px solid #bfdbfe !important;
+        font-weight: 700 !important;
+        font-size: 0.78rem !important;
+        padding: 4px 10px !important;
+        border-radius: 6px !important;
+      }
 
-        <!-- 🎨 Light Pastel Card + Logo Badge Styling Injection -->
-        <style>
-          .featured-card-box {
-            background-color: #eff6ff !important; /* আগের সেকশনের মতো স্নিগ্ধ হালকা নীল */
-            border: 2px solid #dbeafe !important;
-            border-radius: 18px !important;
-            overflow: hidden !important;
-            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.04) !important;
-            transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            display: flex;
-            flex-direction: column;
-          }
-          /* মাউস নিলে কার্ডটা ম্যাজিকের মতো ধবধবে সাদা হয়ে ওপরে উঠবে */
-          .featured-card-box:hover {
-            background-color: #ffffff !important;
-            transform: translateY(-8px) !important;
-            border-color: #2563eb !important;
-            box-shadow: 0 20px 30px rgba(37, 99, 235, 0.15) !important;
-          }
-          .featured-card-box .project-info {
-            padding: 26px 24px !important;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-grow: 1;
-          }
-          .featured-card-box h3 {
-            color: #1e40af !important; /* টাইটেল হেডারের কড়া রাজকীয় নীল */
-            font-size: 1.2rem !important;
-            font-weight: 800 !important;
-            margin: 14px 0 10px 0 !important;
-          }
-          .featured-card-box p {
-            color: #334155 !important;
-            font-size: 0.95rem !important;
-            line-height: 1.62 !important;
-            margin-bottom: 20px !important;
-          }
-          
-          /* অরিজিনাল লোগো-সহ আধুনিক সাদা ক্যাপসুল ব্যাজ */
-          .project-brand-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #ffffff;
-            border: 1.5px solid #bfdbfe;
-            padding: 5px 14px 5px 8px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 0.82rem;
-            color: #1e40af;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            width: fit-content;
-          }
-          .project-brand-pill img { width: 18px; height: 18px; object-fit: contain; }
+      /* ✅ Inactive/Coming Soon কার্ড - Discolored */
+      .featured-inactive {
+        background: #f1f1f1 !important;
+        border: 2px dashed #c0c0c0 !important;
+        opacity: 0.6 !important;
+        filter: grayscale(60%) !important;
+        cursor: default !important;
+      }
+      .featured-inactive:hover {
+        background: #f1f1f1 !important;
+        transform: none !important;
+        border-color: #c0c0c0 !important;
+        box-shadow: none !important;
+        opacity: 0.6 !important;
+      }
+      .featured-inactive h3 {
+        color: #6b7280 !important;
+      }
+      .featured-inactive p {
+        color: #9ca3af !important;
+      }
+      .featured-inactive .project-brand-pill {
+        background: #e5e5e5 !important;
+        border-color: #d4d4d4 !important;
+        color: #6b7280 !important;
+      }
+      .featured-inactive .project-brand-pill img {
+        opacity: 0.4 !important;
+        filter: grayscale(100%) !important;
+      }
+      .featured-inactive .project-thumb {
+        opacity: 0.4 !important;
+        filter: grayscale(80%) !important;
+      }
+      .featured-inactive .project-tools span {
+        background: #e5e5e5 !important;
+        color: #9ca3af !important;
+        border-color: #d4d4d4 !important;
+      }
 
-          .featured-card-box .project-tools span {
-            background: #ffffff !important;
-            color: #334155 !important;
-            border: 1px solid #bfdbfe !important;
-            font-weight: 700 !important;
-            font-size: 0.78rem !important;
-            padding: 4px 10px !important;
-            border-radius: 6px !important;
-          }
-        </style>
+      /* ✅ বড় COMING SOON ব্যাজ (কার্ডের নিচে) */
+      .featured-cs-badge {
+        display: inline-block;
+        margin-top: 22px;
+        padding: 10px 22px;
+        background: #4b5563 !important;
+        color: #ffffff !important;
+        font-size: 1.1rem !important;
+        font-weight: 900 !important;
+        letter-spacing: 2.5px !important;
+        text-transform: uppercase !important;
+        border-radius: 8px !important;
+        text-align: center;
+        filter: none !important;
+        opacity: 1 !important;
+      }
+    </style>
 
-        <div class="cards-grid">
+    <div class="cards-grid">
 
-          <!-- Card 1: n8n -->
-          <div class="project-card featured-card-box">
-            <img src="images/projects/n8n/project-1-thumbnail.jpg" alt="n8n Lead Automation" loading="lazy" class="project-thumb" />
-            <div class="project-info">
-              <div>
-                <!-- লোগো ব্যাজ -->
-                <div class="project-brand-pill">
-                  <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n"/>
-                  <span>n8n</span>
-                </div>
-                <h3>Lead Capture &amp; CRM Automation</h3>
-                <p>Auto-capture leads from Facebook Ads and push them into CRM with instant email notifications.</p>
-                <div class="project-tools">
-                  <span>n8n</span><span>Facebook API</span><span>Airtable</span>
-                </div>
-              </div>
-              <a href="portfolio.html?tab=n8n" class="btn btn-outline btn-sm" style="margin-top: 22px; border: 2px solid #2563eb; color:#2563eb; font-weight: 700; border-radius: 8px;">View Details →</a>
+      <!-- ✅ Card 1: n8n (ACTIVE - Vibrant & Clickable) -->
+      <div class="project-card featured-card-box">
+        <img src="images/projects/n8n/project-1-thumbnail.jpg" alt="n8n Lead Automation" loading="lazy" class="project-thumb" />
+        <div class="project-info">
+          <div>
+            <div class="project-brand-pill">
+              <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n"/>
+              <span>n8n</span>
+            </div>
+            <h3>Lead Capture &amp; CRM Automation</h3>
+            <p>Auto-capture leads from Facebook Ads and push them into CRM with instant email notifications.</p>
+            <div class="project-tools">
+              <span>n8n</span><span>Facebook API</span><span>Airtable</span>
             </div>
           </div>
-
-          <!-- Card 2: Zapier -->
-          <div class="project-card featured-card-box">
-            <img src="images/projects/zapier/project-1-thumbnail.jpg" alt="Zapier E-commerce Automation" loading="lazy" class="project-thumb" />
-            <div class="project-info">
-              <div>
-                <!-- লোগো ব্যাজ -->
-                <div class="project-brand-pill">
-                  <img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=64" alt="Zapier"/>
-                  <span>Zapier</span>
-                </div>
-                <h3>E-Commerce Order Automation</h3>
-                <p>Automatically sync Shopify orders to Google Sheets and send shipping updates via SMS.</p>
-                <div class="project-tools">
-                  <span>Zapier</span><span>Shopify</span><span>Twilio</span>
-                </div>
-              </div>
-              <a href="portfolio.html?tab=zapier" class="btn btn-outline btn-sm" style="margin-top: 22px; border: 2px solid #2563eb; color:#2563eb; font-weight: 700; border-radius: 8px;">View Details →</a>
-            </div>
-          </div>
-
-          <!-- Card 3: GoHighLevel -->
-          <div class="project-card featured-card-box">
-            <img src="images/projects/gohighlevel/project-1-thumbnail.jpg" alt="GoHighLevel CRM Setup" loading="lazy" class="project-thumb" />
-            <div class="project-info">
-              <div>
-                <!-- লোগো ব্যাজ -->
-                <div class="project-brand-pill">
-                  <img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=64" alt="GoHighLevel"/>
-                  <span>GoHighLevel</span>
-                </div>
-                <h3>Automated Agency CRM &amp; Sales Funnel</h3>
-                <p>Full GHL pipeline setup, automated SMS/Email follow-up sequences, and instant calendar booking system.</p>
-                <div class="project-tools">
-                  <span>GoHighLevel</span><span>Twilio</span><span>Stripe</span>
-                </div>
-              </div>
-              <a href="portfolio.html?tab=gohighlevel" class="btn btn-outline btn-sm" style="margin-top: 22px; border: 2px solid #2563eb; color:#2563eb; font-weight: 700; border-radius: 8px;">View Details →</a>
-            </div>
-          </div>
-
+          <a href="portfolio.html?tab=n8n" class="btn btn-outline btn-sm" style="margin-top: 22px; border: 2px solid #2563eb; color:#2563eb; font-weight: 700; border-radius: 8px;">View Details →</a>
         </div>
-
-        <!-- Section Bottom CTA -->
-        <div class="section-cta" style="margin-top: 60px;">
-          <a href="portfolio.html" class="btn btn-primary" style="padding: 14px 36px; font-weight: 800; border-radius: 50px; box-shadow: 0 10px 25px -5px rgba(37,99,235,0.4);">Explore All Projects</a>
-        </div>
-
       </div>
-    </section>
-    <!-- ===================== END FEATURED PROJECTS ===================== -->
 
+      <!-- ⏳ Card 2: Zapier (INACTIVE - Discolored) -->
+      <div class="project-card featured-card-box featured-inactive">
+        <img src="images/projects/zapier/project-1-thumbnail.jpg" alt="Zapier E-commerce Automation" loading="lazy" class="project-thumb" />
+        <div class="project-info">
+          <div>
+            <div class="project-brand-pill">
+              <img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=64" alt="Zapier"/>
+              <span>Zapier</span>
+            </div>
+            <h3>E-Commerce Order Automation</h3>
+            <p>Automatically sync Shopify orders to Google Sheets and send shipping updates via SMS.</p>
+            <div class="project-tools">
+              <span>Zapier</span><span>Shopify</span><span>Twilio</span>
+            </div>
+          </div>
+          <span class="featured-cs-badge">⏳ COMING SOON</span>
+        </div>
+      </div>
+
+      <!-- ⏳ Card 3: GoHighLevel (INACTIVE - Discolored) -->
+      <div class="project-card featured-card-box featured-inactive">
+        <img src="images/projects/gohighlevel/project-1-thumbnail.jpg" alt="GoHighLevel CRM Setup" loading="lazy" class="project-thumb" />
+        <div class="project-info">
+          <div>
+            <div class="project-brand-pill">
+              <img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=64" alt="GoHighLevel"/>
+              <span>GoHighLevel</span>
+            </div>
+            <h3>Automated Agency CRM &amp; Sales Funnel</h3>
+            <p>Full GHL pipeline setup, automated SMS/Email follow-up sequences, and instant calendar booking system.</p>
+            <div class="project-tools">
+              <span>GoHighLevel</span><span>Twilio</span><span>Stripe</span>
+            </div>
+          </div>
+          <span class="featured-cs-badge">⏳ COMING SOON</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section Bottom CTA -->
+    <div class="section-cta" style="margin-top: 60px;">
+      <a href="portfolio.html" class="btn btn-primary" style="padding: 14px 36px; font-weight: 800; border-radius: 50px; box-shadow: 0 10px 25px -5px rgba(37,99,235,0.4);">Explore All Projects</a>
+    </div>
+
+  </div>
+</section>
+<!-- ===================== END FEATURED PROJECTS ===================== -->
 
         <!-- ===================== TRUST / STATS SECTION ===================== -->
     <section class="section trust" style="background-color: #ffffff !important; padding: 90px 0 !important;">
