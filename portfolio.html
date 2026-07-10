@@ -4,21 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✏️ SEO: Change title and description -->
   <title>Portfolio | n8n, Zapier, GoHighLevel, AI Automation Projects</title>
   <meta name="description" content="Browse real automation projects: n8n workflows, Zapier integrations, GoHighLevel setups, Custom GPT agents. See screenshots, video demos, and results." />
   <meta name="keywords" content="n8n portfolio, Zapier projects, GoHighLevel automation, custom AI agent, automation freelancer portfolio" />
-  <meta name="author" content="Your Name" />
+  <meta name="author" content="Redoun Hossain" />
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 🎨 MASTER OVERRIDE ENGINE -->
+  <style>
+    .site-header { background: #1e40af !important; }
+    .site-header .logo { color: #ffffff !important; }
+    .site-header .nav-menu ul li a { color: #ffffff !important; opacity: 0.9 !important; background: transparent !important; display: inline-block !important; }
+    .site-header .nav-menu ul li a:not(.btn):hover { opacity: 1 !important; transform: translateY(-2px); }
+    .site-header .nav-menu ul li a.active { color: #ffffff !important; background: transparent !important; border-bottom: 3px solid #ffffff !important; font-weight: 900 !important; opacity: 1 !important; }
+    .site-header .nav-hire { background: #ffffff !important; color: #1e40af !important; font-weight: 800 !important; border: none !important; padding: 8px 18px !important; border-radius: 6px !important; }
+    .page-hero { background: #93c5fd !important; background-image: none !important; border-bottom: 3px solid #2563eb !important; }
+    .page-hero h1, .page-hero p { color: #0f172a !important; opacity: 1 !important; }
+  </style>
 </head>
 <body>
 
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">⚡ YourName</a>
+      <a href="index.html" class="logo">⚡ Redoun</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -53,7 +64,6 @@
       <div class="container">
 
         <!-- Tab Buttons -->
-        <!-- ✏️ You can rename tab labels here if needed -->
         <style>
           .portfolio-tabs-wrapper {
             display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; margin: 35px 0 50px 0 !important;
@@ -63,33 +73,76 @@
           }
           .brand-tab-btn:hover { transform: translateY(-3px) scale(1.02); }
 
-          /* ১. n8n (সফট কোরাল-লাল থিম) */
           .btn-n8n { background: #ffe4e6 !important; color: #e11d48 !important; border-color: #f43f5e !important; }
           .btn-n8n.active-brand-tab { background: #e11d48 !important; color: #fff !important; border-color: #e11d48 !important; box-shadow: 0 8px 20px rgba(225,29,72,0.35) !important; }
 
-          /* ২. Zapier (সফট কমলা থিম) */
           .btn-zapier { background: #ffedd5 !important; color: #ea580c !important; border-color: #f97316 !important; }
           .btn-zapier.active-brand-tab { background: #ea580c !important; color: #fff !important; border-color: #ea580c !important; box-shadow: 0 8px 20px rgba(234,88,12,0.35) !important; }
 
-          /* ৩. GoHighLevel (সফট ইলেকট্রিক নীল থিম) */
           .btn-ghl { background: #dbeafe !important; color: #2563eb !important; border-color: #3b82f6 !important; }
           .btn-ghl.active-brand-tab { background: #2563eb !important; color: #fff !important; border-color: #2563eb !important; box-shadow: 0 8px 20px rgba(37,99,235,0.35) !important; }
 
-          /* ৪. Custom GPT (সফট এমেরাল্ড সবুজ থিম) */
           .btn-gpt { background: #d1fae5 !important; color: #059669 !important; border-color: #10b981 !important; }
           .btn-gpt.active-brand-tab { background: #059669 !important; color: #fff !important; border-color: #059669 !important; box-shadow: 0 8px 20px rgba(5,150,105,0.35) !important; }
 
-          /* ৫. More Services (সফট ল্যাভেন্ডার বেগুনি থিম) */
           .btn-more { background: #f3e8ff !important; color: #9333ea !important; border-color: #a855f7 !important; }
           .btn-more.active-brand-tab { background: #9333ea !important; color: #fff !important; border-color: #9333ea !important; box-shadow: 0 8px 20px rgba(147,51,234,0.35) !important; }
 
           .tab-icon-wrap { width: 24px; height: 24px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
           .tab-icon-wrap img { width: 100%; height: 100%; object-fit: contain; }
 
-          /* কন্টেন্ট হাইড/শো করার জোরদার লেজার */
           .tab-content { display: none !important; }
           .tab-content.active, .tab-content.force-show { display: block !important; animation: fadeInBrand 0.35s ease; }
           @keyframes fadeInBrand { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+          /* ✅ বড় COMING SOON কার্ড স্টাইল */
+          .coming-soon-full {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 30px;
+            background: #f1f5f9;
+            border: 3px dashed #cbd5e1;
+            border-radius: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+          }
+          .coming-soon-full .cs-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+          }
+          .coming-soon-full .cs-title {
+            font-size: 2.8rem !important;
+            font-weight: 900 !important;
+            color: #334155 !important;
+            letter-spacing: 4px !important;
+            text-transform: uppercase !important;
+            margin: 0 0 16px 0 !important;
+            line-height: 1.1 !important;
+          }
+          .coming-soon-full .cs-sub {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin: 0 0 30px 0;
+            line-height: 1.6;
+          }
+          .coming-soon-full .cs-cta {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #2563eb;
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.25s;
+          }
+          .coming-soon-full .cs-cta:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+          }
         </style>
 
         <!-- 5 Colorful Brand Buttons -->
@@ -112,12 +165,12 @@
           </button>
 
           <button class="brand-tab-btn btn-more" onclick="firePhysicalTab('others', this)">
-            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=64"/></span> More Automation Services
+            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=64"/></span> More Services
           </button>
 
         </div>
 
-        <!-- 💥 সরাসরি বাটনের চামড়ার নিচে বসানো অমর রোবট (কারো বাপের সাধ্য নাই আটকাতে পারে) -->
+        <!-- Tab Switching Script -->
         <script>
           function firePhysicalTab(targetId, clickedBtn) {
             var allBtns = document.querySelectorAll('.brand-tab-btn');
@@ -139,10 +192,9 @@
         </script>
 
 
-        <!-- ==================== TAB: n8n ==================== -->
+        <!-- ==================== TAB: n8n (ACTIVE - Full Projects) ==================== -->
         <div class="tab-content active" id="tab-n8n" role="tabpanel">
 
-          <!-- Short intro for this tab -->
           <div class="tab-intro">
             <h2>n8n Automation Projects</h2>
             <p>I build powerful n8n workflows that connect your tools, automate repetitive tasks, and keep critical business processes running efficiently with minimal manual effort.</p>
@@ -150,34 +202,27 @@
 
           <div class="projects-grid">
 
-            <!-- PROJECT CARD START (n8n - Project 1) -->
+            <!-- PROJECT 1 -->
             <div class="project-card" data-project-id="n8n-1">
-              <!-- ✏️ Change image path to your real thumbnail -->
               <img src="images/projects/n8n/test.jpg" alt="Lead Capture Automation" loading="lazy" class="project-thumb" />
               <div class="project-info">
                 <span class="project-tag">n8n</span>
                 <h3>Lead Capture &amp; CRM Automation</h3>
-                <!-- ✏️ Change description -->
                 <p>Auto-capture leads from Facebook Ads and push them into CRM with instant email notifications and Slack alerts.</p>
                 <div class="project-tools">
-                  <!-- ✏️ Change tools used -->
                   <span>n8n</span><span>Facebook API</span><span>Airtable</span><span>Gmail</span>
                 </div>
-                <!-- ✏️ Change result/impact -->
                 <p class="project-result"><strong>Result:</strong> Saved 5+ hours/week, 0% leads missed.</p>
                 <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-1">View Details</button>
               </div>
             </div>
-            <!-- PROJECT CARD END -->
 
-            <!-- PROJECT CARD START (n8n - Project 2) -->
+            <!-- PROJECT 2 -->
             <div class="project-card" data-project-id="n8n-2">
-              <!-- ✏️ Change image path -->
               <img src="images/projects/n8n/project-2-thumbnail.jpg" alt="Invoice Automation" loading="lazy" class="project-thumb" />
               <div class="project-info">
                 <span class="project-tag">n8n</span>
                 <h3>Invoice &amp; Payment Automation</h3>
-                <!-- ✏️ Change description -->
                 <p>Automatically generate invoices, send payment reminders, and update accounting records when a payment is received.</p>
                 <div class="project-tools">
                   <span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span>
@@ -186,42 +231,22 @@
                 <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-2">View Details</button>
               </div>
             </div>
-            <!-- PROJECT CARD END -->
 
-          </div><!-- end projects-grid -->
-
-          <!-- ============================================================
-               PROJECT DETAIL PANELS - shown when "View Details" is clicked
-               Each panel matches a project card via id="detail-n8n-X"
-               ============================================================ -->
+          </div>
 
           <!-- DETAIL PANEL: n8n Project 1 -->
           <div class="project-detail" id="detail-n8n-1">
             <button class="detail-close" aria-label="Close details">✕ Close</button>
-
             <h2>Lead Capture &amp; CRM Automation</h2>
-
-            <!-- ✏️ Screenshots: Change image paths -->
             <div class="detail-screenshots">
               <img src="images/projects/n8n/test.jpg" alt="Workflow Screenshot 1" loading="lazy" />
               <img src="images/projects/n8n/test.jpg" alt="Workflow Screenshot 2" loading="lazy" />
-              <img src="images/projects/n8n/test.jpg" alt="Result Screenshot"    loading="lazy" />
+              <img src="images/projects/n8n/test.jpg" alt="Result Screenshot" loading="lazy" />
             </div>
-
-            <!-- ✏️ YouTube Video: Replace YOUR_VIDEO_ID_HERE with real YouTube video ID -->
-            <!-- Example: if video URL is https://youtu.be/abc123xyz, the ID is abc123xyz -->
             <div class="video-embed">
-              <iframe
-                src="https://www.youtube.com/embed/k4NjcHPsQOc"
-                title="Lead Capture Automation Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy">
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/k4NjcHPsQOc" title="Lead Capture Automation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="detail-body">
-              <!-- ✏️ Change challenge, solution, tools, result text -->
               <div class="detail-section">
                 <h3>Challenge</h3>
                 <p>The client was manually checking Facebook Ads Manager every few hours and copying leads into a spreadsheet. Leads were being missed and follow-up was delayed by hours.</p>
@@ -232,45 +257,30 @@
               </div>
               <div class="detail-section">
                 <h3>Tools Used</h3>
-                <div class="project-tools">
-                  <span>n8n</span><span>Facebook Lead Ads API</span><span>Airtable</span><span>Gmail</span><span>Slack</span>
-                </div>
+                <div class="project-tools"><span>n8n</span><span>Facebook Lead Ads API</span><span>Airtable</span><span>Gmail</span><span>Slack</span></div>
               </div>
               <div class="detail-section">
                 <h3>Result</h3>
                 <p>✅ 100% of leads captured automatically<br />✅ Response time reduced from 4 hours to under 5 minutes<br />✅ Client saved 5+ hours per week</p>
               </div>
             </div>
-
             <div class="detail-cta">
               <p>Need a similar automation?</p>
               <a href="contact.html" class="btn btn-primary">Contact Me</a>
             </div>
           </div>
-          <!-- END DETAIL PANEL: n8n Project 1 -->
 
           <!-- DETAIL PANEL: n8n Project 2 -->
           <div class="project-detail" id="detail-n8n-2">
             <button class="detail-close" aria-label="Close details">✕ Close</button>
-
             <h2>Invoice &amp; Payment Automation</h2>
-
             <div class="detail-screenshots">
-              <img src="images/projects/n8n/project-2-screenshot-1.jpg" alt="Invoice Workflow Screenshot 1" loading="lazy" />
-              <img src="images/projects/n8n/project-2-screenshot-2.jpg" alt="Invoice Workflow Screenshot 2" loading="lazy" />
+              <img src="images/projects/n8n/project-2-screenshot-1.jpg" alt="Invoice Workflow" loading="lazy" />
+              <img src="images/projects/n8n/project-2-screenshot-2.jpg" alt="Payment Tracking" loading="lazy" />
             </div>
-
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE with your real YouTube video ID -->
             <div class="video-embed">
-              <iframe
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
-                title="Invoice Automation Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy">
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Invoice Automation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="detail-body">
               <div class="detail-section">
                 <h3>Challenge</h3>
@@ -282,24 +292,19 @@
               </div>
               <div class="detail-section">
                 <h3>Tools Used</h3>
-                <div class="project-tools">
-                  <span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span><span>PDF Generator</span>
-                </div>
+                <div class="project-tools"><span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span><span>PDF Generator</span></div>
               </div>
               <div class="detail-section">
                 <h3>Result</h3>
                 <p>✅ Zero manual invoicing<br />✅ 100% reminder delivery rate<br />✅ 30% faster payment collection</p>
               </div>
             </div>
-
             <div class="detail-cta">
               <p>Need a similar automation?</p>
               <a href="contact.html" class="btn btn-primary">Contact Me</a>
             </div>
           </div>
-          <!-- END DETAIL PANEL: n8n Project 2 -->
 
-          <!-- Tab CTA -->
           <div class="tab-cta">
             <p>Need similar n8n automation?</p>
             <a href="contact.html" class="btn btn-primary">Contact Me</a>
@@ -309,423 +314,52 @@
         <!-- ==================== END TAB: n8n ==================== -->
 
 
-        <!-- ==================== TAB: Zapier ==================== -->
+        <!-- ==================== TAB: Zapier (COMING SOON) ==================== -->
         <div class="tab-content" id="tab-zapier" role="tabpanel">
-
-          <div class="tab-intro">
-            <h2>Zapier Integration Projects</h2>
-            <p>Connect 5000+ apps with Zapier. I build reliable, multi-step Zaps that keep your business running without manual intervention.</p>
+          <div class="coming-soon-full">
+            <div class="cs-icon">⏳</div>
+            <h2 class="cs-title">COMING SOON</h2>
+            <p class="cs-sub">Zapier integration projects are currently being documented and will be published here soon. Stay tuned!</p>
+            <a href="contact.html" class="cs-cta">Request Zapier Automation →</a>
           </div>
-
-          <div class="projects-grid">
-
-            <!-- PROJECT CARD START (Zapier - Project 1) -->
-            <div class="project-card" data-project-id="zapier-1">
-              <img src="images/projects/zapier/test.jpg" alt="Shopify Order Automation" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">Zapier</span>
-                <h3>E-Commerce Order Automation</h3>
-                <p>Sync Shopify orders to Google Sheets, send SMS shipping updates via Twilio, and notify the team on Slack automatically.</p>
-                <div class="project-tools">
-                  <span>Zapier</span><span>Shopify</span><span>Google Sheets</span><span>Twilio</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> 100% orders tracked, customers informed instantly.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-zapier-1">View Details</button>
-              </div>
-            </div>
-            <!-- PROJECT CARD END -->
-
-            <!-- PROJECT CARD START (Zapier - Project 2) -->
-            <div class="project-card" data-project-id="zapier-2">
-              <img src="images/projects/zapier/project-2-thumbnail.jpg" alt="Typeform to HubSpot" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">Zapier</span>
-                <h3>Typeform → HubSpot Lead Pipeline</h3>
-                <p>Every Typeform submission auto-creates a HubSpot contact, adds to the correct pipeline stage, and sends a personalized welcome email sequence.</p>
-                <div class="project-tools">
-                  <span>Zapier</span><span>Typeform</span><span>HubSpot</span><span>Gmail</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> Lead response time under 2 minutes, no leads lost.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-zapier-2">View Details</button>
-              </div>
-            </div>
-            <!-- PROJECT CARD END -->
-
-          </div>
-
-          <!-- DETAIL PANEL: Zapier Project 1 -->
-          <div class="project-detail" id="detail-zapier-1">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>E-Commerce Order Automation</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/zapier/project-1-screenshot-1.jpg" alt="Zapier Workflow" loading="lazy" />
-              <img src="images/projects/zapier/project-1-screenshot-2.jpg" alt="Google Sheets Result" loading="lazy" />
-            </div>
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Shopify Order Automation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>The store owner was manually copying orders and sending shipping updates. Errors were common and customers complained about poor communication.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>A multi-step Zapier workflow triggers on each Shopify order, logs it to Google Sheets with all details, sends an SMS via Twilio, and posts a Slack alert to the fulfillment team.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>Zapier</span><span>Shopify</span><span>Google Sheets</span><span>Twilio</span><span>Slack</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ Zero manual order tracking<br />✅ Customers receive shipping SMS in under 1 minute<br />✅ Team fulfillment speed increased by 40%</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Need a similar automation?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <!-- DETAIL PANEL: Zapier Project 2 -->
-          <div class="project-detail" id="detail-zapier-2">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>Typeform → HubSpot Lead Pipeline</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/zapier/project-2-screenshot-1.jpg" alt="Zapier Setup" loading="lazy" />
-              <img src="images/projects/zapier/project-2-screenshot-2.jpg" alt="HubSpot Pipeline" loading="lazy" />
-            </div>
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="HubSpot Lead Pipeline Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>Leads from Typeform forms were sitting in a spreadsheet for days before anyone followed up. No automated welcome email existed.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>Zapier workflow: Typeform submission → create HubSpot contact → set pipeline stage → trigger a 3-email welcome sequence via Gmail, all within seconds.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>Zapier</span><span>Typeform</span><span>HubSpot</span><span>Gmail</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ Lead response time dropped to under 2 minutes<br />✅ 25% increase in lead-to-client conversion</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Need a similar automation?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <div class="tab-cta">
-            <p>Need Zapier automation built?</p>
-            <a href="contact.html" class="btn btn-primary">Contact Me</a>
-          </div>
-
         </div>
         <!-- ==================== END TAB: Zapier ==================== -->
 
 
-        <!-- ==================== TAB: GoHighLevel ==================== -->
+        <!-- ==================== TAB: GoHighLevel (COMING SOON) ==================== -->
         <div class="tab-content" id="tab-gohighlevel" role="tabpanel">
-
-          <div class="tab-intro">
-            <h2>GoHighLevel Setup Projects</h2>
-            <p>Full GHL CRM setup, automation funnels, pipeline management, and sub-account configuration for agencies and coaches.</p>
+          <div class="coming-soon-full">
+            <div class="cs-icon">⏳</div>
+            <h2 class="cs-title">COMING SOON</h2>
+            <p class="cs-sub">GoHighLevel setup projects and case studies are being prepared and will be available here shortly.</p>
+            <a href="contact.html" class="cs-cta">Request GHL Setup →</a>
           </div>
-
-          <div class="projects-grid">
-
-            <!-- PROJECT CARD START (GHL - Project 1) -->
-            <div class="project-card" data-project-id="ghl-1">
-              <img src="images/projects/gohighlevel/project-1-thumbnail.jpg" alt="GHL Agency Setup" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">GoHighLevel</span>
-                <h3>Full Agency CRM &amp; Pipeline Setup</h3>
-                <p>Complete GoHighLevel setup including sub-accounts, pipelines, automations, lead nurture sequences, and calendar booking integration.</p>
-                <div class="project-tools">
-                  <span>GoHighLevel</span><span>Twilio</span><span>Stripe</span><span>Calendly</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> Agency onboarded 10 clients in first month using the system.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-ghl-1">View Details</button>
-              </div>
-            </div>
-            <!-- PROJECT CARD END -->
-
-            <!-- PROJECT CARD START (GHL - Project 2) -->
-            <div class="project-card" data-project-id="ghl-2">
-              <img src="images/projects/gohighlevel/project-2-thumbnail.jpg" alt="GHL Coaching Funnel" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">GoHighLevel</span>
-                <h3>Coaching Business Lead Funnel</h3>
-                <p>Landing page + lead magnet funnel + automated SMS/email follow-up sequence inside GoHighLevel for a life coach.</p>
-                <div class="project-tools">
-                  <span>GoHighLevel</span><span>GHL Funnels</span><span>SMS Automation</span><span>Email Sequences</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> 3x increase in booked discovery calls within 30 days.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-ghl-2">View Details</button>
-              </div>
-            </div>
-            <!-- PROJECT CARD END -->
-
-          </div>
-
-          <!-- DETAIL PANEL: GHL Project 1 -->
-          <div class="project-detail" id="detail-ghl-1">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>Full Agency CRM &amp; Pipeline Setup</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/gohighlevel/project-1-screenshot-1.jpg" alt="GHL Dashboard" loading="lazy" />
-              <img src="images/projects/gohighlevel/project-1-screenshot-2.jpg" alt="Pipeline View" loading="lazy" />
-            </div>
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="GHL Agency Setup Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>The agency was managing clients in spreadsheets. No CRM, no automation, no consistent client onboarding process.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>Built a complete GHL agency account: structured pipelines, automated lead nurture, Twilio SMS integration, Stripe payments, and calendar booking — all connected and automated.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>GoHighLevel</span><span>Twilio</span><span>Stripe</span><span>Calendly</span><span>Zapier</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ Agency onboarded 10 clients in month 1<br />✅ 80% reduction in manual admin work<br />✅ Client reported "game-changing" impact</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Need a similar automation?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <!-- DETAIL PANEL: GHL Project 2 -->
-          <div class="project-detail" id="detail-ghl-2">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>Coaching Business Lead Funnel</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/gohighlevel/project-2-screenshot-1.jpg" alt="Funnel Screenshot" loading="lazy" />
-              <img src="images/projects/gohighlevel/project-2-screenshot-2.jpg" alt="Email Sequence" loading="lazy" />
-            </div>
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="GHL Coaching Funnel Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>Life coach was relying on social media DMs for leads. No structured follow-up. Many interested leads went cold.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>Created a GHL landing page with lead magnet, connected to a 7-step email + SMS nurture sequence, ending with a calendar booking link for discovery calls.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>GoHighLevel</span><span>GHL Funnels</span><span>SMS Automation</span><span>Email Sequences</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ 3x more booked discovery calls in 30 days<br />✅ 60% of leads now engage with the email sequence<br />✅ Coach now fully automated follow-up</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Need a similar automation?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <div class="tab-cta">
-            <p>Need GoHighLevel setup or automation?</p>
-            <a href="contact.html" class="btn btn-primary">Contact Me</a>
-          </div>
-
         </div>
         <!-- ==================== END TAB: GoHighLevel ==================== -->
 
 
-        <!-- ==================== TAB: Custom GPT ==================== -->
+        <!-- ==================== TAB: Custom GPT (COMING SOON) ==================== -->
         <div class="tab-content" id="tab-customgpt" role="tabpanel">
-
-          <div class="tab-intro">
-            <h2>Custom GPT &amp; AI Agent Projects</h2>
-            <p>I build AI-powered assistants trained on your business data. Automate customer support, content generation, and decision-making with GPT-powered agents.</p>
+          <div class="coming-soon-full">
+            <div class="cs-icon">⏳</div>
+            <h2 class="cs-title">COMING SOON</h2>
+            <p class="cs-sub">Custom GPT and AI Agent project showcases are under development. Check back soon for demos and case studies!</p>
+            <a href="contact.html" class="cs-cta">Request AI Agent →</a>
           </div>
-
-          <div class="projects-grid">
-
-            <!-- PROJECT CARD START (GPT - Project 1) -->
-            <div class="project-card" data-project-id="gpt-1">
-              <img src="images/projects/customgpt/project-1-thumbnail.jpg" alt="AI Customer Support Bot" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">Custom GPT</span>
-                <h3>AI Customer Support Chatbot</h3>
-                <p>A custom GPT agent trained on the company's knowledge base to answer customer questions 24/7, escalating complex issues to humans automatically.</p>
-                <div class="project-tools">
-                  <span>OpenAI API</span><span>n8n</span><span>Slack</span><span>Notion</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> 70% of support tickets resolved without human intervention.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-gpt-1">View Details</button>
-              </div>
-            </div>
-            <!-- PROJECT CARD END -->
-
-            <!-- PROJECT CARD START (GPT - Project 2) -->
-            <div class="project-card" data-project-id="gpt-2">
-              <img src="images/projects/customgpt/project-2-thumbnail.jpg" alt="AI Content Generator" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">Custom GPT</span>
-                <h3>AI Content Generation Agent</h3>
-                <p>An AI agent that generates SEO blog posts, social media captions, and email newsletters from a single keyword input — fully automated.</p>
-                <div class="project-tools">
-                  <span>OpenAI API</span><span>n8n</span><span>WordPress</span><span>Airtable</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> 20 pieces of content generated per week with zero manual writing.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-gpt-2">View Details</button>
-              </div>
-            </div>
-            <!-- PROJECT CARD END -->
-
-          </div>
-
-          <!-- DETAIL PANEL: GPT Project 1 -->
-          <div class="project-detail" id="detail-gpt-1">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>AI Customer Support Chatbot</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/customgpt/project-1-screenshot-1.jpg" alt="Chatbot Interface" loading="lazy" />
-              <img src="images/projects/customgpt/project-1-screenshot-2.jpg" alt="n8n Workflow" loading="lazy" />
-            </div>
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="AI Chatbot Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>The support team was overwhelmed with repetitive questions about pricing, features, and policies. Response times were 24–48 hours.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>Built a custom GPT agent using the OpenAI API, trained on the company's Notion knowledge base. Integrated via n8n into the website chat widget. Complex questions auto-escalate to a human agent via Slack.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>OpenAI API</span><span>n8n</span><span>Slack</span><span>Notion</span><span>Crisp Chat</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ 70% of tickets resolved without human<br />✅ Response time: instant (24/7)<br />✅ Support team workload reduced by 60%</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Want an AI agent for your business?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <!-- DETAIL PANEL: GPT Project 2 -->
-          <div class="project-detail" id="detail-gpt-2">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>AI Content Generation Agent</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/customgpt/project-2-screenshot-1.jpg" alt="Content Agent UI" loading="lazy" />
-              <img src="images/projects/customgpt/project-2-screenshot-2.jpg" alt="Published Content" loading="lazy" />
-            </div>
-            <!-- ✏️ Replace YOUR_VIDEO_ID_HERE -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Content Agent Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>The marketing team spent 15+ hours per week writing blog posts, social captions, and newsletters manually — limiting their growth.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>An n8n workflow that takes a keyword from Airtable, sends it through a structured GPT prompt chain to generate a full SEO blog post, 5 social captions, and an email newsletter draft — then auto-publishes to WordPress.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>OpenAI API</span><span>n8n</span><span>WordPress API</span><span>Airtable</span><span>Mailchimp</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ 20 content pieces per week, fully automated<br />✅ Marketing team's writing time reduced by 90%<br />✅ SEO traffic increased 35% in 2 months</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Want AI content automation?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <div class="tab-cta">
-            <p>Need a Custom GPT or AI Agent?</p>
-            <a href="contact.html" class="btn btn-primary">Contact Me</a>
-          </div>
-
         </div>
         <!-- ==================== END TAB: Custom GPT ==================== -->
 
 
-                <!-- ==================== TAB: More Automation Services ==================== -->
+        <!-- ==================== TAB: More Services (COMING SOON) ==================== -->
         <div class="tab-content" id="tab-others" role="tabpanel">
-
-          <!-- Title & Subtitle -->
-          <div class="tab-intro" style="text-align: center; max-width: 680px; margin: 10px auto 45px auto;">
-            <h2 style="color: #1e40af !important; font-size: 1.85rem; font-weight: 800; margin-bottom: 12px;">More Automation Services</h2>
-            <p style="color: #475569 !important; font-size: 1.05rem; line-height: 1.6;">Additional automation services will be added here soon.</p>
+          <div class="coming-soon-full">
+            <div class="cs-icon">⏳</div>
+            <h2 class="cs-title">COMING SOON</h2>
+            <p class="cs-sub">Additional automation services and workflow solutions will be added here soon. Have a custom request? Reach out now!</p>
+            <a href="contact.html" class="cs-cta">Request Custom Service →</a>
           </div>
-
-          <!-- 2 Blank 'Coming Soon' Blueprint Cards Grid -->
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 780px; margin: 0 auto 40px auto;">
-            
-            <!-- Blank Card 1 -->
-            <div style="background: hwb(210 61% 31%); border: 2px dashed #94a3b8; border-radius: 16px; padding: 45px 25px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0.85;">
-              <div style="width: 52px; height: 52px; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                <span style="font-size: 24px;">⏳</span>
-              </div>
-              <h3 style="color: #334155 !important; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px 0;">New Service Expansion #1</h3>
-              <p style="color: #64748b !important; font-size: 0.92rem; margin: 0 0 20px 0;">Workflows &amp; API integrations in development</p>
-              <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 800; padding: 5px 14px; border-radius: 50px; letter-spacing: 0.5px;">COMING SOON</span>
-            </div>
-
-            <!-- Blank Card 2 -->
-            <div style="background: hwb(210 61% 31%); border: 2px dashed #94a3b8; border-radius: 16px; padding: 45px 25px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0.85;">
-              <div style="width: 52px; height: 52px; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                <span style="font-size: 24px;">⏳</span>
-              </div>
-              <h3 style="color: #334155 !important; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px 0;">New Service Expansion #2</h3>
-              <p style="color: #64748b !important; font-size: 0.92rem; margin: 0 0 20px 0;">Case studies &amp; video documentation incoming</p>
-              <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.78rem; font-weight: 800; padding: 5px 14px; border-radius: 50px; letter-spacing: 0.5px;">COMING SOON</span>
-            </div>
-
-          </div>
-
-          <!-- Small Urgent Request CTA -->
-          <div style="text-align: center; margin-top: 35px;">
-            <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 10px;">Have a custom automation request right now?</p>
-            <a href="contact.html" class="btn btn-outline" style="border: 2px solid #2563eb; color: #2563eb; font-weight: 700; padding: 8px 22px; border-radius: 8px;">Request Custom Service</a>
-          </div>
-
         </div>
-        <!-- ==================== END TAB: More Automation Services ==================== -->
+        <!-- ==================== END TAB: More Services ==================== -->
 
       </div>
     </section>
@@ -738,313 +372,51 @@
 <footer class="site-footer">
 
   <style>
-    .site-footer,
-    .site-footer * {
-      box-sizing: border-box;
-    }
-
-    .site-footer {
-      background: #0b1120;
-      color: #94a3b8;
-      padding: 65px 0 25px;
-      border-top: 2px solid #2563eb;
-    }
-
-    /*
-      বামে বেশি এবং ডানে কম padding।
-      এতে পুরো footer content ডান দিকে সরবে।
-    */
-    .site-footer .footer-wrapper {
-      width: 100%;
-      max-width: 1300px;
-      margin: 0 auto;
-
-      padding-left: 120px;
-      padding-right: 20px;
-    }
-
-    .site-footer .footer-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr 1fr;
-      gap: 70px;
-      align-items: start;
-    }
-
-    .site-footer .footer-grid > div {
-      min-width: 0;
-      margin: 0;
-      padding: 0;
-      align-self: start;
-    }
-
-    /* Quick Links, Services ও Get in Touch heading */
-    .site-footer h4 {
-      color: #ffffff;
-      font-size: 1.08rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: 0.3px;
-
-      margin: 0 0 22px;
-      padding: 0;
-    }
-
-    /* Redoun logo */
-    .site-footer .footer-brand {
-      display: inline-block;
-      color: #ffffff;
-      font-size: 1.6rem;
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -0.5px;
-      text-decoration: none;
-
-      margin: 0 0 22px;
-      padding: 0;
-
-      /* অন্য heading-এর সঙ্গে visually align করার জন্য */
-      position: relative;
-      top: -2px;
-    }
-
-    .site-footer .footer-brand:hover {
-      color: #ffffff;
-      opacity: 1;
-    }
-
-    .site-footer .footer-desc {
-      color: #94a3b8;
-      font-size: 0.92rem;
-      line-height: 1.6;
-
-      margin: 0 0 22px;
-      max-width: 220px;
-    }
-
-    /*
-      Social buttons:
-      ২টি করে ৩ লাইন।
-      margin auto নেই—Redoun title-এর সঙ্গে left aligned থাকবে।
-    */
-    .site-footer .social-buttons-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 92px);
-      gap: 10px;
-
-      width: 194px;
-      max-width: 194px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .site-footer .subtle-social-btn {
-      display: inline-block;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 6px;
-
-      padding: 6px 12px;
-
-      color: #cbd5e1;
-      font-size: 0.8rem;
-      font-weight: 600;
-      line-height: 1.3;
-      text-align: center;
-      text-decoration: none;
-      white-space: nowrap;
-
-      transition: 0.25s;
-    }
-
-    .site-footer .social-buttons-grid .subtle-social-btn {
-      display: block;
-      width: 92px;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-
-    .site-footer .subtle-social-btn:hover {
-      background: #2563eb;
-      border-color: #2563eb;
-      color: #ffffff;
-      opacity: 1;
-    }
-
-    .site-footer .classic-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .site-footer .classic-list li {
-      margin: 0 0 12px;
-      padding: 0;
-    }
-
-    .site-footer .classic-list li a {
-      color: #94a3b8;
-      font-size: 0.93rem;
-      text-decoration: none;
-      transition: 0.25s;
-    }
-
-    .site-footer .classic-list li a:hover {
-      color: #ffffff;
-      padding-left: 4px;
-      opacity: 1;
-    }
-
-    .site-footer .footer-contact-buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    /* Footer bottom */
-    .site-footer .footer-bottom-slim {
-      margin-top: 55px;
-      padding-top: 25px;
-      border-top: 1px solid #1e293b;
-
-      color: #64748b;
-      font-size: 0.88rem;
-    }
-
-    .site-footer .footer-bottom-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .site-footer .footer-bottom-inner p {
-      margin: 0;
-    }
-
-    .site-footer .footer-bottom-slim a {
-      color: #94a3b8;
-      text-decoration: none;
-    }
-
-    .site-footer .footer-bottom-slim a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-      opacity: 1;
-    }
-
-    /*
-      ছোট desktop/tablet:
-      বাম padding কমানো হবে, কিন্তু ডানের চেয়ে বেশি থাকবে।
-    */
-    @media (min-width: 769px) and (max-width: 1100px) {
-      .site-footer .footer-wrapper {
-        padding-left: 60px;
-        padding-right: 20px;
-      }
-
-      .site-footer .footer-grid {
-        grid-template-columns: 1.2fr 0.85fr 1.25fr 1fr;
-        gap: 32px;
-      }
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .site-footer .footer-wrapper {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
-      .site-footer .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .site-footer .social-buttons-grid {
-        grid-template-columns: repeat(2, 92px);
-        width: 194px;
-        max-width: 194px;
-        margin: 0;
-      }
-
-      .site-footer .footer-bottom-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+    .site-footer, .site-footer * { box-sizing: border-box; }
+    .site-footer { background: #0b1120; color: #94a3b8; padding: 65px 0 25px; border-top: 2px solid #2563eb; }
+    .site-footer .footer-wrapper { width: 100%; max-width: 1300px; margin: 0 auto; padding-left: 120px; padding-right: 20px; }
+    .site-footer .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 70px; align-items: start; }
+    .site-footer .footer-grid > div { min-width: 0; margin: 0; padding: 0; align-self: start; }
+    .site-footer h4 { color: #ffffff; font-size: 1.08rem; font-weight: 700; line-height: 1; letter-spacing: 0.3px; margin: 0 0 22px; padding: 0; }
+    .site-footer .footer-brand { display: inline-block; color: #ffffff; font-size: 1.6rem; font-weight: 900; line-height: 1; letter-spacing: -0.5px; text-decoration: none; margin: 0 0 22px; padding: 0; position: relative; top: -2px; }
+    .site-footer .footer-brand:hover { color: #ffffff; opacity: 1; }
+    .site-footer .footer-desc { color: #94a3b8; font-size: 0.92rem; line-height: 1.6; margin: 0 0 22px; max-width: 220px; }
+    .site-footer .social-buttons-grid { display: grid; grid-template-columns: repeat(2, 92px); gap: 10px; width: 194px; max-width: 194px; margin: 0; padding: 0; }
+    .site-footer .subtle-social-btn { display: inline-block; background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 6px 12px; color: #cbd5e1; font-size: 0.8rem; font-weight: 600; line-height: 1.3; text-align: center; text-decoration: none; white-space: nowrap; transition: 0.25s; }
+    .site-footer .social-buttons-grid .subtle-social-btn { display: block; width: 92px; padding-left: 5px; padding-right: 5px; }
+    .site-footer .subtle-social-btn:hover { background: #2563eb; border-color: #2563eb; color: #ffffff; opacity: 1; }
+    .site-footer .classic-list { list-style: none; padding: 0; margin: 0; }
+    .site-footer .classic-list li { margin: 0 0 12px; padding: 0; }
+    .site-footer .classic-list li a { color: #94a3b8; font-size: 0.93rem; text-decoration: none; transition: 0.25s; }
+    .site-footer .classic-list li a:hover { color: #ffffff; padding-left: 4px; opacity: 1; }
+    .site-footer .footer-contact-buttons { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .site-footer .footer-bottom-slim { margin-top: 55px; padding-top: 25px; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.88rem; }
+    .site-footer .footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    .site-footer .footer-bottom-inner p { margin: 0; }
+    .site-footer .footer-bottom-slim a { color: #94a3b8; text-decoration: none; }
+    .site-footer .footer-bottom-slim a:hover { color: #ffffff; text-decoration: underline; opacity: 1; }
+    @media (min-width: 769px) and (max-width: 1100px) { .site-footer .footer-wrapper { padding-left: 60px; padding-right: 20px; } .site-footer .footer-grid { grid-template-columns: 1.2fr 0.85fr 1.25fr 1fr; gap: 32px; } }
+    @media (max-width: 768px) { .site-footer .footer-wrapper { padding-left: 24px; padding-right: 24px; } .site-footer .footer-grid { grid-template-columns: 1fr; gap: 40px; } .site-footer .social-buttons-grid { grid-template-columns: repeat(2, 92px); width: 194px; max-width: 194px; margin: 0; } .site-footer .footer-bottom-inner { flex-direction: column; align-items: flex-start; } }
   </style>
 
   <div class="footer-wrapper">
-
     <div class="footer-grid">
 
-      <!-- Brand -->
       <div>
-        <a href="index.html" class="footer-brand">
-          ⚡ Redoun
-        </a>
-
-        <p class="footer-desc">
-          Custom Workflow Automation &amp; AI Agent Expert
-        </p>
-
-        <!-- ২টি করে ৩ লাইনে -->
+        <a href="index.html" class="footer-brand">⚡ Redoun</a>
+        <p class="footer-desc">Custom Workflow Automation &amp; AI Agent Expert</p>
         <div class="social-buttons-grid">
-
-          <a href="https://www.fiverr.com/redoun_hossain/"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="subtle-social-btn">
-            Fiverr
-          </a>
-
-          <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="subtle-social-btn">
-            Upwork
-          </a>
-
-          <a href="https://github.com/redoun-hossain"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="subtle-social-btn">
-            GitHub
-          </a>
-
-          <a href="https://www.linkedin.com/in/YOUR_PROFILE"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="subtle-social-btn">
-            LinkedIn
-          </a>
-
-          <a href="https://www.youtube.com/@ArfinSami"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="subtle-social-btn">
-            YouTube
-          </a>
-
-          <a href="#"
-             class="subtle-social-btn"
-             onclick="
-               navigator.clipboard.writeText('email.arfinsami@gmail.com');
-               alert('Business Email copied!\n\nemail.arfinsami@gmail.com');
-               return false;
-             ">
-            Email
-          </a>
-
+          <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
+          <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
+          <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
+          <a href="https://www.youtube.com/@ArfinSami" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
+          <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">Email</a>
         </div>
       </div>
 
-      <!-- Quick Links -->
       <div>
         <h4>Quick Links</h4>
-
         <ul class="classic-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
@@ -1054,82 +426,33 @@
         </ul>
       </div>
 
-      <!-- Services -->
       <div>
         <h4>Services</h4>
-
         <ul class="classic-list">
-          <li>
-            <a href="portfolio.html?tab=n8n">n8n Automation</a>
-          </li>
-
-          <li>
-            <a href="portfolio.html?tab=gohighlevel">
-              GoHighLevel Setup
-            </a>
-          </li>
-
-          <li>
-            <a href="portfolio.html?tab=zapier">
-              Zapier Integration
-            </a>
-          </li>
-
-          <li>
-            <a href="portfolio.html?tab=customgpt">
-              Custom GPT / AI Agent
-            </a>
-          </li>
-
-          <li>
-            <a href="portfolio.html?tab=others">More Services</a>
-          </li>
+          <li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
+          <li><a href="portfolio.html?tab=gohighlevel">GoHighLevel Setup</a></li>
+          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
+          <li><a href="portfolio.html?tab=customgpt">Custom GPT / AI Agent</a></li>
+          <li><a href="portfolio.html?tab=others">More Services</a></li>
         </ul>
       </div>
 
-      <!-- Get in Touch -->
       <div>
         <h4>Get in Touch</h4>
-
         <div class="footer-contact-buttons">
-
-          <a href="https://www.fiverr.com/redoun_hossain/"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="subtle-social-btn">
-            Hire on Fiverr ↗
-          </a>
-
-          <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="subtle-social-btn">
-            Hire on Upwork ↗
-          </a>
-
+          <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
+          <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
         </div>
       </div>
 
     </div>
 
-    <!-- Bottom -->
     <div class="footer-bottom-slim">
       <div class="footer-bottom-inner">
-
-        <p>
-          &copy; <span id="footer-year"></span>
-          Redoun Hossain. All rights reserved.
-        </p>
-
-        <p>
-          <a href="legal.html">Privacy Policy</a>
-          &nbsp; • &nbsp;
-          <a href="legal.html?tab=terms">Terms &amp; Conditions</a>
-        </p>
-
+        <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
+        <p><a href="legal.html">Privacy Policy</a> &nbsp; • &nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
       </div>
     </div>
-
   </div>
 
 </footer>
@@ -1137,7 +460,6 @@
 
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-
   <script src="js/main.js"></script>
 </body>
 </html>
