@@ -31,6 +31,7 @@
     }
     .site-header .nav-hire { background: #ffffff !important; color: #1e40af !important; font-weight: 800 !important; border: none !important; padding: 8px 18px !important; border-radius: 6px !important; }
     
+    /* ✅ Hero নিচের নীল রেখা সরানো */
     .hero { background: #93c5fd !important; background-image: none !important; border-bottom: none !important; }
   </style>
 </head>
@@ -75,7 +76,7 @@
               gap: 8px; 
             }
             
-            /* ✅ Active pill (n8n) - উজ্জ্বল, bold */
+            /* ✅ Active pill (n8n) - উজ্জ্বল, bold, hover নেই (inactive-দের সাথে মিল রাখতে) */
             .tool-pill-active {
               color: #ffffff !important;
               font-weight: 900 !important;
@@ -85,15 +86,9 @@
               border-radius: 50px !important;
               font-size: 0.92rem !important;
               box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
-              transition: all 0.25s ease;
             }
 
-            .tool-pill-active:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 6px 16px rgba(30, 64, 175, 0.4);
-            }
-
-            /* ✅ Inactive pills - সাদা, কিন্তু একটু muted */
+            /* ✅ Inactive pills - সাদা, muted, hover নেই */
             .tool-pill-muted {
               color: #64748b !important;
               font-weight: 700 !important;
@@ -104,12 +99,6 @@
               font-size: 0.85rem !important;
               box-shadow: none;
               opacity: 0.75;
-              transition: all 0.25s ease;
-            }
-
-            .tool-pill-muted:hover {
-              opacity: 1;
-              border-color: #94a3b8;
             }
           </style>
 
@@ -176,6 +165,7 @@
         text-decoration: none !important;
         box-shadow: 0 4px 15px rgba(30, 64, 175, 0.05);
       }
+      /* ✅ শুধু active কার্ডে hover */
       .cards-grid .pastel-card:hover {
         background-color: #ffffff !important;
         border-color: #1e40af !important;
@@ -211,7 +201,7 @@
       }
       .logo-img { width: 28px; height: 28px; object-fit: contain; }
 
-      /* ✅ Inactive/Coming Soon কার্ড - Discolored & Faded */
+      /* ✅ Inactive/Coming Soon কার্ড - Discolored & Faded, hover নেই */
       .coming-soon-card {
         background: #e8e8e8 !important;
         border: 2px dashed #c0c0c0 !important;
@@ -313,7 +303,7 @@
       <div class="service-card pastel-card coming-soon-card">
         <div>
           <div class="logo-white-box">
-            <img src="https://www.google.com/s2/favicons?domain=make.com&sz=128" alt="More Services" class="logo-img" />
+            <span style="font-size:22px; opacity:0.4;">⏳</span>
           </div>
           <h3>More Automation Services</h3>
           <p>Additional automation services will be added here soon.</p>
@@ -347,7 +337,8 @@
         display: flex;
         flex-direction: column;
       }
-      .featured-card-box:hover {
+      /* ✅ শুধু active কার্ডে hover */
+      .featured-card-box:not(.featured-inactive):hover {
         background-color: #ffffff !important;
         transform: translateY(-8px) !important;
         border-color: #2563eb !important;
@@ -397,20 +388,13 @@
         border-radius: 6px !important;
       }
 
-      /* ✅ Inactive/Coming Soon কার্ড - Discolored */
+      /* ✅ Inactive/Coming Soon কার্ড - Discolored, hover নেই */
       .featured-inactive {
         background: #f1f1f1 !important;
         border: 2px dashed #c0c0c0 !important;
         opacity: 0.6 !important;
         filter: grayscale(60%) !important;
         cursor: default !important;
-      }
-      .featured-inactive:hover {
-        background: #f1f1f1 !important;
-        transform: none !important;
-        border-color: #c0c0c0 !important;
-        box-shadow: none !important;
-        opacity: 0.6 !important;
       }
       .featured-inactive h3 {
         color: #6b7280 !important;
