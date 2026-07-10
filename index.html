@@ -172,73 +172,158 @@
           }
           .logo-img { width: 28px; height: 28px; object-fit: contain; }
         </style>
+<!-- ===================== SERVICES SECTION ===================== -->
+<section class="section services" style="background-color: #ffffff !important; padding: 85px 0 !important;">
+  <div class="container">
+    <h2 class="section-title" style="color: #1e40af !important; font-weight: 800;">What I Do</h2>
+    <p class="section-sub" style="color: #475569 !important; margin-bottom: 50px;">Click any service to explore related projects from my portfolio.</p>
 
-        <div class="cards-grid">
+    <style>
+      .cards-grid .pastel-card {
+        background-color: #dbeafe !important;
+        border: 2px solid #bfdbfe !important;
+        border-radius: 16px !important;
+        padding: 30px 24px !important;
+        transition: all 0.3s ease !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-decoration: none !important;
+        box-shadow: 0 4px 15px rgba(30, 64, 175, 0.05);
+      }
+      .cards-grid .pastel-card:hover {
+        background-color: #ffffff !important;
+        border-color: #1e40af !important;
+        transform: translateY(-7px) !important;
+        box-shadow: 0 18px 35px rgba(30, 64, 175, 0.12) !important;
+      }
+      .cards-grid .pastel-card h3 {
+        color: #1e40af !important;
+        font-size: 1.22rem !important;
+        font-weight: 800 !important;
+        margin: 14px 0 10px 0 !important;
+      }
+      .cards-grid .pastel-card p {
+        color: #334155 !important;
+        font-size: 0.95rem !important;
+        line-height: 1.62 !important;
+      }
+      .cards-grid .pastel-card .card-link {
+        color: #2563eb !important;
+        font-weight: 800 !important;
+        margin-top: 20px !important;
+        display: inline-block;
+      }
+      .logo-white-box {
+        width: 50px;
+        height: 50px;
+        background: #ffffff !important;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+      }
+      .logo-img { width: 28px; height: 28px; object-fit: contain; }
 
-          <!-- Card 1: n8n -->
-          <a href="portfolio.html?tab=n8n" class="service-card pastel-card">
-            <div>
-              <div class="logo-white-box">
-                <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128" alt="n8n" class="logo-img" />
-              </div>
-              <h3>n8n Automation</h3>
-              <p>Custom n8n workflows that connect your apps, automate repetitive processes, and save valuable time every week.</p>
-            </div>
-            <span class="card-link">See Projects →</span>
-          </a>
+      /* ✅ Coming Soon কার্ড স্টাইল */
+      .coming-soon-card {
+        background: #b6c0cc !important;
+        border: 1.5px dashed #94a3b8 !important;
+        cursor: default !important;
+        opacity: 0.85 !important;
+      }
+      .coming-soon-card:hover {
+        background: #b6c0cc !important;
+        border-color: #94a3b8 !important;
+        transform: none !important;
+        box-shadow: 0 4px 15px rgba(30, 64, 175, 0.05) !important;
+      }
+      .coming-soon-card h3 {
+        color: #3d4249 !important;
+      }
+      /* ✅ বড় COMING SOON লেখা */
+      .coming-soon-badge {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 8px 20px;
+        background: #3d4249 !important;
+        color: #ffffff !important;
+        font-size: 1.1rem !important;
+        font-weight: 900 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        border-radius: 8px !important;
+        text-align: center;
+      }
+    </style>
 
-          <!-- Card 2: Zapier -->
-          <a href="portfolio.html?tab=zapier" class="service-card pastel-card">
-            <div>
-              <div class="logo-white-box">
-                <img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128" alt="Zapier" class="logo-img" />
-              </div>
-              <h3>Zapier Integration</h3>
-              <p>Zapier automation setups that connect your tools, eliminate manual work, and streamline day-to-day operations.</p>
-            </div>
-            <span class="card-link">See Projects →</span>
-          </a>
+    <div class="cards-grid">
 
-          <!-- Card 3: GoHighLevel -->
-          <a href="portfolio.html?tab=gohighlevel" class="service-card pastel-card">
-            <div>
-              <div class="logo-white-box">
-                <img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=128" alt="GoHighLevel" class="logo-img" />
-              </div>
-              <h3>GoHighLevel Setup</h3>
-              <p>Complete GoHighLevel setup for agencies and coaches, including CRM configuration, workflow automation, funnels, and pipeline management.</p>
-            </div>
-            <span class="card-link">See Projects →</span>
-          </a>
-
-          <!-- Card 4: Custom GPT -->
-          <a href="portfolio.html?tab=customgpt" class="service-card pastel-card">
-            <div>
-              <div class="logo-white-box">
-                <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI" class="logo-img" />
-              </div>
-              <h3>Custom GPT / AI Agent</h3>
-              <p>AI-powered assistants and custom agents built to answer questions, generate content, support customers, and automate workflows.</p>
-            </div>
-            <span class="card-link">See Projects →</span>
-          </a>
-
-                    <!-- Card 5: Coming Soon Teaser -->
-          <div class="service-card pastel-card" style="background:#b6c0cc !important; border:1.5px dashed #94a3b8 !important; cursor:default; opacity:0.8;">
-            <div>
-              <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
-                <span style="font-size:22px;">⏳</span>
-              </div>
-              <h3 style="color:#3d4249 !important;">More Automation Services</h3>
-              <p>Additional automation services will be added here soon.</p>
-            </div>
-            <span class="card-link" style="color:oklab(28.823999999999998% -0.00124 -0.00608) !important; cursor:default;">Coming Soon</span>
+      <!-- ✅ Card 1: n8n (ACTIVE - একমাত্র ক্লিকেবল) -->
+      <a href="portfolio.html?tab=n8n" class="service-card pastel-card">
+        <div>
+          <div class="logo-white-box">
+            <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128" alt="n8n" class="logo-img" />
           </div>
-
+          <h3>n8n Automation</h3>
+          <p>Custom n8n workflows that connect your apps, automate repetitive processes, and save valuable time every week.</p>
         </div>
+        <span class="card-link">See Projects →</span>
+      </a>
+
+      <!-- ⏳ Card 2: Zapier (COMING SOON) -->
+      <div class="service-card pastel-card coming-soon-card">
+        <div>
+          <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
+            <img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128" alt="Zapier" class="logo-img" style="opacity:0.5;" />
+          </div>
+          <h3>Zapier Integration</h3>
+          <p>Zapier automation setups that connect your tools, eliminate manual work, and streamline day-to-day operations.</p>
+        </div>
+        <span class="coming-soon-badge">⏳ COMING SOON</span>
       </div>
-    </section>
-    <!-- ===================== END SERVICES ===================== -->
+
+      <!-- ⏳ Card 3: GoHighLevel (COMING SOON) -->
+      <div class="service-card pastel-card coming-soon-card">
+        <div>
+          <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
+            <img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=128" alt="GoHighLevel" class="logo-img" style="opacity:0.5;" />
+          </div>
+          <h3>GoHighLevel Setup</h3>
+          <p>Complete GoHighLevel setup for agencies and coaches, including CRM configuration, workflow automation, funnels, and pipeline management.</p>
+        </div>
+        <span class="coming-soon-badge">⏳ COMING SOON</span>
+      </div>
+
+      <!-- ⏳ Card 4: Custom GPT (COMING SOON) -->
+      <div class="service-card pastel-card coming-soon-card">
+        <div>
+          <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
+            <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI" class="logo-img" style="opacity:0.5;" />
+          </div>
+          <h3>Custom GPT / AI Agent</h3>
+          <p>AI-powered assistants and custom agents built to answer questions, generate content, support customers, and automate workflows.</p>
+        </div>
+        <span class="coming-soon-badge">⏳ COMING SOON</span>
+      </div>
+
+      <!-- ⏳ Card 5: More Services (COMING SOON) -->
+      <div class="service-card pastel-card coming-soon-card">
+        <div>
+          <div class="logo-white-box" style="background:#cdd1d6 !important; box-shadow:none;">
+            <span style="font-size:22px;">⏳</span>
+          </div>
+          <h3>More Automation Services</h3>
+          <p>Additional automation services will be added here soon.</p>
+        </div>
+        <span class="coming-soon-badge">⏳ COMING SOON</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ===================== END SERVICES ===================== -->
 
 
             <!-- ===================== FEATURED PROJECTS SECTION ===================== -->
