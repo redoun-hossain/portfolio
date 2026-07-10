@@ -478,46 +478,35 @@
     <!-- ===================== END TRUST ===================== -->
 
 
-        <!-- ===================== CTA BANNER ===================== -->
-    <section class="section cta-banner">
-      <div class="container cta-inner">
-        <h2>Ready to Automate Your Business?</h2>
-        <p>Let’s build a smarter workflow that saves time, reduces manual work, and helps your business run more efficiently.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-white" style="font-weight: 800; padding: 12px 30px; border-radius: 8px;">Contact Me</a>
-          <a href="portfolio.html" class="btn btn-outline-white" style="font-weight: 800; padding: 12px 30px; border-radius: 8px; border-width: 2px;">See My Work</a>
-        </div>
-      </div>
-    </section>
-    <!-- ===================== END CTA BANNER ===================== -->
-
-  </main>
-
- <!-- ===================== FOOTER ===================== -->
-<footer class="site-footer" style="background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;">
+       <!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" style="background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;width:100%;box-sizing:border-box;">
 
 <style>
-/* ✅ পুরো ফুটারকে মাঝখানে আনার জন্য এক্সক্লুসিভ র‍্যাপার */
-.footer-wrap {
-  width: 100%;
-  max-width: 1200px; /* স্ট্যান্ডার্ড কন্টেইনার সাইজ */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 24px;
-  box-sizing: border-box;
-  text-align: left;
+/* ✅ ফুটারকে জোর করে পেজের মাঝখানে আনার জন্য */
+.footer-center-box {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  position: relative !important;
+  left: 0 !important;
+  right: 0 !important;
+  text-align: left !important;
 }
 
 /* ✅ গ্রিড লেআউট */
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
-  gap: 50px;
-  align-items: start;
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr !important;
+  gap: 50px !important;
+  align-items: start !important;
 }
 
 /* ✅ হেডিং স্টাইল */
-.footer-wrap h4,
+.footer-center-box h4,
 .footer-brand-title {
   color: #fff;
   font-size: 1.08rem;
@@ -544,25 +533,25 @@
 
 /* ✅ সোশ্যাল বাটন গ্রিড (২টি করে ৩ লাইন + কলামের মাঝখানে) */
 .social-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  max-width: 240px;
-  margin: 0 auto; /* ✅ কলামের ভেতরে সেন্টার */
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 10px !important;
+  max-width: 240px !important;
+  margin: 0 auto !important; /* ✅ কলামের ভেতরে সেন্টার */
 }
 
 .social-grid .social-btn {
-  width: 100%;
-  text-align: center;
-  white-space: nowrap;
-  display: block;
+  width: 100% !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  display: block !important;
 }
 
 /* ✅ লিস্ট স্টাইল */
 .footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .footer-list li { margin-bottom: 12px; }
 .footer-list li a {
@@ -600,12 +589,12 @@
 .footer-bottom a:hover { color: #fff; text-decoration: underline; }
 
 @media (max-width: 768px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-  .social-grid { grid-template-columns: repeat(3, 1fr); max-width: 100%; }
+  .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .social-grid { grid-template-columns: repeat(3, 1fr) !important; max-width: 100% !important; }
 }
 </style>
 
-<div class="footer-wrap">
+<div class="footer-center-box">
 
   <div class="footer-grid">
 
