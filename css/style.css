@@ -1,6 +1,6 @@
 /* =============================================================
    PORTFOLIO WEBSITE - style.css
-   Author: Your Name
+   Author: Redoun Hossain
    ✏️ To change colors: find "--color-primary" etc. at the top
    ✏️ To change spacing: find "--spacing" variables below
    ============================================================= */
@@ -218,7 +218,7 @@ h1, h2, h3, h4 {
 
 /* ===================== HAMBURGER MENU ===================== */
 .hamburger {
-  display: none;                 /* Hidden on desktop */
+  display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -311,7 +311,6 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   box-shadow: var(--shadow-lg);
   border: 6px solid #ffffff;
-  /* Placeholder gradient shown when image is missing */
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 }
 
@@ -405,7 +404,6 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  /* Placeholder colour shown when image is missing */
   background: linear-gradient(135deg, #dbeafe, #ede9fe);
 }
 
@@ -546,7 +544,7 @@ h1, h2, h3, h4 {
   cursor: pointer;
   color: var(--color-text-light);
   transition: color var(--transition), border-color var(--transition);
-  margin-bottom: -2px;  /* overlap the border-bottom of parent */
+  margin-bottom: -2px;
   border-radius: 0;
   font-family: var(--font-main);
 }
@@ -615,7 +613,6 @@ h1, h2, h3, h4 {
 
 
 /* ===================== PROJECT DETAIL PANEL ===================== */
-/* Hidden by default; shown when "View Details" is clicked */
 .project-detail {
   display: none;
   margin-top: 2rem;
@@ -655,7 +652,7 @@ h1, h2, h3, h4 {
 .project-detail h2 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  padding-right: 5rem; /* avoid overlap with close button */
+  padding-right: 5rem;
 }
 
 /* Screenshots grid */
@@ -672,7 +669,6 @@ h1, h2, h3, h4 {
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--color-border);
-  /* Placeholder gradient */
   background: linear-gradient(135deg, #dbeafe, #ede9fe);
 }
 
@@ -680,7 +676,7 @@ h1, h2, h3, h4 {
 .video-embed {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;  /* 16:9 aspect ratio */
+  padding-top: 56.25%;
   margin-bottom: 2rem;
   border-radius: 8px;
   overflow: hidden;
@@ -745,7 +741,6 @@ h1, h2, h3, h4 {
   object-fit: cover;
   border-radius: var(--card-radius);
   box-shadow: var(--shadow-lg);
-  /* Placeholder gradient */
   background: linear-gradient(135deg, #dbeafe, #ede9fe);
 }
 
@@ -974,7 +969,6 @@ h1, h2, h3, h4 {
   background-color: var(--color-success);
   border-radius: 50%;
   flex-shrink: 0;
-  /* Pulsing animation */
   animation: pulse 1.5s infinite;
 }
 
@@ -1234,7 +1228,7 @@ h1, h2, h3, h4 {
   height: 42px;
   font-size: 1.1rem;
   cursor: pointer;
-  display: none;      /* shown by JS when scrolled down */
+  display: none;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-md);
@@ -1346,7 +1340,7 @@ h1, h2, h3, h4 {
   }
 
   .hero-image {
-    order: -1;  /* image above text on mobile */
+    order: -1;
   }
 
   .hero-image img {
@@ -1412,7 +1406,7 @@ h1, h2, h3, h4 {
 /* 🎨 UNIVERSAL MASTER COLOR OVERRIDE v2.0 (FOR ALL 5 PAGES) */
 /* ========================================================== */
 
-/* ১. প্রধান ছাদ (সব পেজের টপ হেডার) - কড়া রাজকীয় নীল */
+/* ১. প্রধান ছাদ (সব পেজের টপ হেডার) - কড়া রাজকীয় নীল */
 .site-header { background: #1e40af !important; }
 .site-header .logo { color: #ffffff !important; }
 
@@ -1443,7 +1437,7 @@ h1, h2, h3, h4 {
   border-radius: 6px !important;
 }
 
-/* ২. জাদুকরী চিট-কোড: হোমপেজের বড় হিরো + বাকি ৪টা পেজের ছোট ব্যানার (সব একসাথে ৫০% আকাশী নীল) */
+/* ২. জাদুকরী চিট-কোড: হোমপেজের বড় হিরো + বাকি ৪টা পেজের ছোট ব্যানার (সব একসাথে ৫০% আকাশী নীল) */
 .hero,
 .page-header,
 .sub-header,
@@ -1451,10 +1445,10 @@ h1, h2, h3, h4 {
 main section:first-of-type {
   background-color: #93c5fd !important;
   background-image: none !important;
-  border-bottom: 3px solid #2563eb !important;
+  border-bottom: none !important; /* ✅ Hero নিচের নীল রেখা সরানো */
 }
 
-/* ছোট ব্যানারগুলোর ভেতরের টাইটেল লেখাগুলো যেন একদম কুচকুচে কালো ও লেজারের মতো স্পষ্ট হয় */
+/* ছোট ব্যানারগুলোর ভেতরের টাইটেল লেখাগুলো যেন একদম কুচকুচে কালো ও লেজারের মতো স্পষ্ট হয় */
 .page-header h1, .page-header h2, .page-header p,
 main section:first-of-type h1, 
 main section:first-of-type h2,
@@ -1467,17 +1461,17 @@ main section:first-of-type p {
 /* 🚀 GLOBAL LIVING HEADER ANIMATION (FOR ALL 5 PAGES)       */
 /* ========================================================== */
 
-/* ১. লোগোতে মাউস নিলে আলতো করে বড় হবে */
+/* ১. লোগোতে মাউস নিলে আলতো করে বড় হবে */
 .site-header .logo { transition: transform 0.3s ease !important; }
 .site-header .logo:hover { transform: scale(1.06) !important; }
 
-/* ২. সাধারণ মেনুগুলোর জীবন্ত লাফ দেওয়ার প্রধান ইঞ্জিন */
+/* ২. সাধারণ মেনুগুলোর জীবন্ত লাফ দেওয়ার প্রধান ইঞ্জিন */
 .site-header .nav-menu ul li a {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
   display: inline-block !important;
 }
 
-/* মাউস নিলে ওপরে উঠবে ও জোরালো সাদা আলো ছড়াবে */
+/* মাউস নিলে ওপরে উঠবে ও জোরালো সাদা আলো ছড়াবে */
 .site-header .nav-menu ul li a:not(.btn):hover {
   opacity: 1 !important;
   transform: translateY(-3px) !important;
@@ -1485,7 +1479,7 @@ main section:first-of-type p {
   color: #ffffff !important;
 }
 
-/* ৩. Hire Me বাটন হোভার লাফ (সলিড প্রিমিয়াম জাম্প) */
+/* ৩. Hire Me বাটন হোভার লাফ (সলিড প্রিমিয়াম জাম্প) */
 .site-header .nav-menu ul li a.nav-hire {
   transition: all 0.25s ease !important;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
@@ -1501,7 +1495,7 @@ main section:first-of-type p {
 /* ========================================================== */
 
 @media screen and (max-width: 768px) {
-  /* মোবাইলের ৩ দাগে চাপ দিলে যে পপ-আপ বাক্সটা নামে, সেটার রঙ ছাদের মতো কড়া নীল করা হলো */
+  /* মোবাইলের ৩ দাগে চাপ দিলে যে পপ-আপ বাক্সটা নামে, সেটার রঙ ছাদের মতো কড়া নীল করা হলো */
   .site-header .nav-menu,
   .site-header .nav-menu.active,
   .site-header .nav-menu.show,
@@ -1512,7 +1506,7 @@ main section:first-of-type p {
     padding: 10px 0 !important;
   }
 
-  /* পপ-আপের ভেতরের সাদা লেখাগুলো যেন একদম লেজারের মতো স্পষ্ট দেখায় */
+  /* পপ-আপের ভেতরের সাদা লেখাগুলো যেন একদম লেজারের মতো স্পষ্ট দেখায় */
   .site-header .nav-menu ul li a {
     color: #ffffff !important;
     opacity: 1 !important;
@@ -1535,30 +1529,4 @@ main section:first-of-type p {
     text-align: center !important;
     display: block !important;
   }
-}
-
-
-/* =========================================
-   🛠️ HERO BORDER-BOTTOM REMOVER (ALL PAGES)
-   ========================================= */
-.hero,
-.page-hero,
-section.hero,
-section.page-hero,
-main > section:first-of-type {
-  border-bottom: none !important;
-  border-bottom-width: 0 !important;
-  border-bottom-style: none !important;
-  border-bottom-color: transparent !important;
-}
-
-/* যদি কোনো ::after pseudo-element থাকে তাহলে সেটাও সরানো */
-.hero::after,
-.page-hero::after,
-section.hero::after,
-section.page-hero::after,
-main > section:first-of-type::after {
-  border-bottom: none !important;
-  content: none !important;
-  display: none !important;
 }
