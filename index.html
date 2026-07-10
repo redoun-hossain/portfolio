@@ -61,58 +61,99 @@
   <main>
 
     <!-- ===================== HERO SECTION ===================== -->
-    <section class="hero">
-      <div class="container hero-inner">
+<section class="hero">
+  <div class="container hero-inner">
 
-        <div class="hero-text">
-          <h1 class="hero-title">Custom Workflow Automation &amp; AI Agent Expert</h1>
+    <div class="hero-text">
+      <h1 class="hero-title">Custom Workflow Automation &amp; AI Agent Expert</h1>
 
-          <style>
-            .hero-pills-bridge { margin: 18px 0 20px 0; display: flex; flex-wrap: wrap; gap: 8px; }
-            .tool-pill { color: #1e40af !important; font-weight: 800 !important; background: #ffffff !important; border: 1.5px solid #2563eb !important; padding: 5px 16px !important; border-radius: 50px !important; font-size: 0.9rem !important; box-shadow: 0 3px 8px rgba(0,0,0,0.06); }
-          </style>
+      <style>
+        .hero-pills-bridge { 
+          margin: 18px 0 20px 0; 
+          display: flex; 
+          flex-wrap: wrap; 
+          gap: 8px; 
+        }
+        
+        /* ✅ Active pill (n8n) - উজ্জ্বল, bold */
+        .tool-pill-active {
+          color: #ffffff !important;
+          font-weight: 900 !important;
+          background: #1e40af !important;
+          border: 2px solid #1e40af !important;
+          padding: 6px 18px !important;
+          border-radius: 50px !important;
+          font-size: 0.92rem !important;
+          box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+          transition: all 0.25s ease;
+        }
 
-          <div class="hero-pills-bridge">
-            <span class="tool-pill">n8n</span>
-            <span class="tool-pill">GoHighLevel</span>
-            <span class="tool-pill">Zapier</span>
-            <span class="tool-pill">CustomGPT</span>
-          </div>
+        .tool-pill-active:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(30, 64, 175, 0.4);
+        }
 
-          <p class="hero-sub" style="color: #0f172a !important; opacity: 1 !important; font-weight: 600 !important; font-size: 1.08rem !important; line-height: 1.65 !important; margin-bottom: 28px !important;">
-            I design and develop AI-powered automation systems and custom workflow solutions that help businesses streamline operations, reduce manual work, and scale efficiently.
-          </p>
+        /* ✅ Inactive pills - সাদা, কিন্তু একটু muted */
+        .tool-pill-muted {
+          color: #64748b !important;
+          font-weight: 700 !important;
+          background: #ffffff !important;
+          border: 1.5px solid #cbd5e1 !important;
+          padding: 5px 16px !important;
+          border-radius: 50px !important;
+          font-size: 0.85rem !important;
+          box-shadow: none;
+          opacity: 0.75;
+          transition: all 0.25s ease;
+        }
 
-          <div class="hero-buttons">
-            <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
-            <a href="contact.html" class="btn btn-outline">Contact Me</a>
-          </div>
+        .tool-pill-muted:hover {
+          opacity: 1;
+          border-color: #94a3b8;
+        }
+      </style>
 
-          <!-- 💥 লেজার-ইনজেক্টেড কুচকুচে কালো লেবেল (জীবনের তরে আর ঝাপসা হবে না) -->
-          <div class="hero-stats" style="margin-top: 35px;">
-            <div class="stat">
-              <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">100%</span>
-              <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Job Success</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">24/7</span>
-              <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Active Support</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">2h</span>
-              <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Avg. Response</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="hero-image">
-          <img src="images/profile.jpg" alt="Redoun Hossain - Automation Expert" loading="eager" />
-        </div>
-
+      <div class="hero-pills-bridge">
+        <span class="tool-pill-active">⚡ n8n</span>
+        <span class="tool-pill-muted">GoHighLevel</span>
+        <span class="tool-pill-muted">Zapier</span>
+        <span class="tool-pill-muted">CustomGPT</span>
       </div>
-    </section>
-    <!-- ===================== END HERO ===================== -->
+
+      <p class="hero-sub" style="color: #0f172a !important; opacity: 1 !important; font-weight: 600 !important; font-size: 1.08rem !important; line-height: 1.65 !important; margin-bottom: 28px !important;">
+        I design and develop AI-powered automation systems and custom workflow solutions that help businesses streamline operations, reduce manual work, and scale efficiently.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+        <a href="contact.html" class="btn btn-outline">Contact Me</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero-stats" style="margin-top: 35px;">
+        <div class="stat">
+          <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">100%</span>
+          <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Job Success</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">24/7</span>
+          <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Active Support</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" style="color: #0f172a !important; font-weight: 900 !important;">2h</span>
+          <span class="stat-label" style="color: #0f172a !important; opacity: 1 !important; font-weight: 800 !important; font-size: 0.95rem !important;">Avg. Response</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+      <img src="images/profile.jpg" alt="Redoun Hossain - Automation Expert" loading="eager" />
+    </div>
+
+  </div>
+</section>
+<!-- ===================== END HERO ===================== -->
 
 
 <!-- ===================== SERVICES SECTION ===================== -->
