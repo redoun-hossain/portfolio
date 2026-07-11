@@ -374,7 +374,7 @@
   <style>
     .site-footer, .site-footer * { box-sizing: border-box; }
     .site-footer { background: #0b1120; color: #94a3b8; padding: 65px 0 25px; border-top: 2px solid #2563eb; }
-    .site-footer .footer-wrapper { width: 100%; max-width: 1300px; margin: 0 auto; padding-left: 120px; padding-right: 20px; }
+    .site-footer .footer-wrapper { width: 100%; max-width: 1300px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
     .site-footer .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 70px; align-items: start; }
     .site-footer .footer-grid > div { min-width: 0; margin: 0; padding: 0; align-self: start; }
     .site-footer h4 { color: #ffffff; font-size: 1.08rem; font-weight: 700; line-height: 1; letter-spacing: 0.3px; margin: 0 0 22px; padding: 0; }
@@ -389,14 +389,15 @@
     .site-footer .classic-list li { margin: 0 0 12px; padding: 0; }
     .site-footer .classic-list li a { color: #94a3b8; font-size: 0.93rem; text-decoration: none; transition: 0.25s; }
     .site-footer .classic-list li a:hover { color: #ffffff; padding-left: 4px; opacity: 1; }
-    .site-footer .footer-contact-buttons { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .site-footer .footer-contact-buttons { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; width: 100%; }
+    .site-footer .footer-contact-buttons .subtle-social-btn { width: 100%; max-width: 220px; padding: 10px 16px; font-size: 0.88rem; text-align: center; white-space: normal; }
     .site-footer .footer-bottom-slim { margin-top: 55px; padding-top: 25px; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.88rem; }
     .site-footer .footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
     .site-footer .footer-bottom-inner p { margin: 0; }
     .site-footer .footer-bottom-slim a { color: #94a3b8; text-decoration: none; }
     .site-footer .footer-bottom-slim a:hover { color: #ffffff; text-decoration: underline; opacity: 1; }
-    @media (min-width: 769px) and (max-width: 1100px) { .site-footer .footer-wrapper { padding-left: 60px; padding-right: 20px; } .site-footer .footer-grid { grid-template-columns: 1.2fr 0.85fr 1.25fr 1fr; gap: 32px; } }
-    @media (max-width: 768px) { .site-footer .footer-wrapper { padding-left: 24px; padding-right: 24px; } .site-footer .footer-grid { grid-template-columns: 1fr; gap: 40px; } .site-footer .social-buttons-grid { grid-template-columns: repeat(2, 92px); width: 194px; max-width: 194px; margin: 0; } .site-footer .footer-bottom-inner { flex-direction: column; align-items: flex-start; } }
+    @media (min-width: 769px) and (max-width: 1100px) { .site-footer .footer-wrapper { padding-left: 20px; padding-right: 20px; } .site-footer .footer-grid { grid-template-columns: 1.2fr 0.85fr 1.25fr 1fr; gap: 32px; } }
+    @media (max-width: 768px) { .site-footer .footer-wrapper { padding-left: 24px; padding-right: 24px; } .site-footer .footer-grid { grid-template-columns: 1fr; gap: 40px; } .site-footer .social-buttons-grid { grid-template-columns: repeat(2, 92px); width: 194px; max-width: 194px; margin: 0; } .site-footer .footer-contact-buttons .subtle-social-btn { max-width: 100%; } .site-footer .footer-bottom-inner { flex-direction: column; align-items: flex-start; } }
   </style>
 
   <div class="footer-wrapper">
@@ -411,7 +412,7 @@
           <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
           <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
           <a href="https://www.youtube.com/@ArfinSami" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
-          <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">Email</a>
+          <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
         </div>
       </div>
 
@@ -442,6 +443,8 @@
         <div class="footer-contact-buttons">
           <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
           <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=email.arfinsami@gmail.com&su=Business%20Inquiry%20%7C%20Portfolio%20Website&body=Hello%20Arfin%20Sami,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20I'm%20interested%20in%20discussing%20a%20project%20with%20you.%0D%0A%0D%0AProject%20Details:%0D%0ABudget:%0D%0ATimeline:%0D%0A%0D%0ABest%20Regards," target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
+          <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">📋 Copy Business Email</a>
         </div>
       </div>
 
