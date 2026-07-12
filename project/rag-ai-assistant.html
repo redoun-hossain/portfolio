@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RAG AI Knowledge Assistant | n8n Project - Redoun Hossain</title>
+  <meta name="description" content="Case study: RAG-based AI assistant built with n8n, OpenAI and Pinecone that resolved 80% of support tickets automatically." />
+  <meta name="author" content="Redoun Hossain" />
+
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* ============ PROJECT PAGE STYLES ============ */
+    .project-page { max-width: 950px; margin: 0 auto; padding: 40px 20px 80px; }
+
+    .project-header { text-align: center; margin-bottom: 40px; }
+    .project-header .back-link { display: inline-block; margin-bottom: 20px; color: #2563eb; text-decoration: none; font-weight: 600; }
+    .project-header .back-link:hover { text-decoration: underline; }
+    .project-header h1 { font-size: 2.2rem; margin: 0 0 15px; color: #0f172a; }
+
+    .tech-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .tech-badges span { background: #eff6ff; border: 1px solid #93c5fd; color: #1d4ed8; font-size: 0.82rem; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+
+    .project-section { margin-bottom: 50px; }
+    .project-section h2 { font-size: 1.5rem; color: #0f172a; border-left: 4px solid #2563eb; padding-left: 12px; margin-bottom: 18px; }
+    .project-section p { line-height: 1.8; color: #334155; }
+
+    /* -------- Image Gallery -------- */
+    .image-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .image-gallery figure { margin: 0; cursor: zoom-in; border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; transition: .3s; }
+    .image-gallery figure:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0,0,0,.15); }
+    .image-gallery img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .image-gallery figcaption { font-size: 0.78rem; text-align: center; padding: 8px; color: #64748b; background: #f8fafc; }
+    @media (max-width: 640px) { .image-gallery { grid-template-columns: repeat(2, 1fr); } }
+
+    /* -------- Workflow Screenshot -------- */
+    .workflow-shot img { width: 100%; border-radius: 12px; border: 1px solid #e2e8f0; cursor: zoom-in; }
+
+    /* -------- Video -------- */
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+    /* -------- Problem / Solution / Impact boxes -------- */
+    .info-box { border-radius: 12px; padding: 25px; margin-bottom: 20px; }
+    .box-problem  { background: #fef2f2; border-left: 5px solid #ef4444; }
+    .box-solution { background: #f0fdf4; border-left: 5px solid #22c55e; }
+    .box-impact   { background: #eff6ff; border-left: 5px solid #2563eb; }
+    .info-box h2 { border: none; padding-left: 0; }
+    .box-impact ul { line-height: 2; color: #1e3a8a; font-weight: 500; }
+
+    /* -------- CTA -------- */
+    .project-cta { text-align: center; background: linear-gradient(135deg, #1e3a8a, #2563eb); color: #fff; border-radius: 16px; padding: 45px 25px; }
+    .project-cta h2 { color: #fff; border: none; padding: 0; }
+    .project-cta p { color: #dbeafe; }
+    .project-cta .btn { margin-top: 15px; background: #fff; color: #1d4ed8; font-weight: 700; }
+
+    /* ============ LIGHTBOX ============ */
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 9999; display: none; align-items: center; justify-content: center; }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 85vh;
+      border-radius: 6px;
+      transition: transform .3s;
+      cursor: zoom-in;
+      user-select: none;
+    }
+    .lightbox img.zoomed { transform: scale(1.8); cursor: zoom-out; }
+    .lightbox .lb-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: #cbd5e1; font-size: .9rem; }
+    .lightbox button {
+      position: absolute; background: rgba(255,255,255,.12); border: none; color: #fff;
+      font-size: 1.6rem; width: 50px; height: 50px; border-radius: 50%;
+      cursor: pointer; transition: .25s; display: flex; align-items: center; justify-content: center;
+    }
+    .lightbox button:hover { background: rgba(255,255,255,.3); }
+    .lb-close { top: 20px; right: 20px; }
+    .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
+    .lb-counter { position: absolute; top: 28px; left: 25px; color: #94a3b8; font-size: .95rem; }
+    @media (max-width: 640px) {
+      .lightbox button { width: 42px; height: 42px; font-size: 1.3rem; }
+      .lb-prev { left: 8px; } .lb-next { right: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER (path-এ ../ ব্যবহার করা হয়েছে) ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">Redoun Hossain</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../contact.html" class="btn btn-primary nav-hire">Hire Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="project-page">
+
+    <!-- 🏷️ TITLE + 🛠️ TECH STACK -->
+    <div class="project-header">
+      <a href="../portfolio.html" class="back-link">← Back to Portfolio</a>
+      <h1>RAG AI Knowledge Assistant</h1>
+      <div class="tech-badges">
+        <span>n8n</span><span>OpenAI GPT-4</span><span>Pinecone</span>
+        <span>Telegram Bot</span><span>Google Drive</span>
+      </div>
+    </div>
+
+    <!-- 📝 OVERVIEW -->
+    <section class="project-section">
+      <h2>📝 Project Overview</h2>
+      <p>A RAG (Retrieval-Augmented Generation) based AI assistant built entirely in n8n. It reads company documents from Google Drive, stores them as vector embeddings in Pinecone, and answers customer questions instantly via Telegram — with accurate, source-based answers instead of AI hallucinations. Complex queries are automatically escalated to a human agent.</p>
+    </section>
+
+    <!-- 🖼️ IMAGE GALLERY -->
+    <section class="project-section">
+      <h2>🖼️ Image Gallery</h2>
+      <div class="image-gallery" id="gallery">
+        <figure>
+          <img src="../images/projects/rag-ai-assistant/cover.jpg" alt="Dashboard Overview" data-caption="Dashboard Overview" loading="lazy" />
+          <figcaption>Dashboard</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="n8n Workflow" data-caption="Complete n8n Workflow" loading="lazy" />
+          <figcaption>n8n Workflow</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/rag-ai-assistant/ai-response.jpg" alt="AI Response Example" data-caption="AI Response in Telegram" loading="lazy" />
+          <figcaption>AI Response</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/rag-ai-assistant/final-output.jpg" alt="Final Output" data-caption="Final Output" loading="lazy" />
+          <figcaption>Final Output</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/rag-ai-assistant/architecture.jpg" alt="Architecture Diagram" data-caption="System Architecture" loading="lazy" />
+          <figcaption>Architecture</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/rag-ai-assistant/results.jpg" alt="Business Results" data-caption="Business Impact Metrics" loading="lazy" />
+          <figcaption>Results</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 🔄 WORKFLOW SCREENSHOT -->
+    <section class="project-section workflow-shot">
+      <h2>🔄 Complete Workflow</h2>
+      <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="Full n8n Workflow Screenshot" data-caption="Full n8n Workflow" loading="lazy" onclick="openFromSingle(this)" />
+    </section>
+
+    <!-- 🎥 VIDEO DEMO -->
+    <section class="project-section">
+      <h2>🎥 Video Demo</h2>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="RAG AI Assistant Demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- ❗ PROBLEM -->
+    <section class="info-box box-problem">
+      <h2>❗ The Problem</h2>
+      <p>The support team spent hours daily answering repetitive questions already covered in company documentation. Customers waited 4+ hours for replies, and after business hours there was no support at all — leading to lost sales and frustrated customers.</p>
+    </section>
+
+    <!-- ✅ SOLUTION -->
+    <section class="info-box box-solution">
+      <h2>✅ The Solution</h2>
+      <p>Built an n8n RAG pipeline: documents from Google Drive are automatically chunked, embedded via OpenAI, and stored in Pinecone. When a customer messages the Telegram bot, the workflow retrieves the most relevant document chunks and GPT-4 generates an accurate, source-grounded answer within seconds. Low-confidence answers trigger automatic human escalation with full conversation context.</p>
+    </section>
+
+    <!-- 📈 BUSINESS IMPACT -->
+    <section class="info-box box-impact">
+      <h2>📈 Business Impact</h2>
+      <ul>
+        <li>✅ <strong>80%</strong> of support tickets resolved automatically</li>
+        <li>✅ Response time: <strong>4 hours → under 10 seconds</strong></li>
+        <li>✅ <strong>24/7</strong> support without extra staff cost</li>
+        <li>✅ Support team workload reduced by <strong>50%</strong></li>
+      </ul>
+    </section>
+
+    <!-- 📞 CTA -->
+    <section class="project-cta">
+      <h2>Need a Similar AI Automation?</h2>
+      <p>Let's build a custom n8n solution for your business.</p>
+      <a href="../contact.html" class="btn">📞 Hire Me</a>
+    </section>
+
+  </main>
+
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox">
+    <span class="lb-counter" id="lbCounter">1 / 6</span>
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+    <img src="" alt="" id="lbImage" />
+    <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- 👉 আপনার portfolio.html-এর footer কোড এখানে paste করুন।
+       শুধু সব link-এর আগে ../ যোগ করবেন
+       (যেমন: index.html → ../index.html, legal.html → ../legal.html) -->
+
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* ================= LIGHTBOX SCRIPT ================= */
+    const galleryImgs = Array.from(document.querySelectorAll('#gallery img'));
+    const lightbox  = document.getElementById('lightbox');
+    const lbImage   = document.getElementById('lbImage');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbCounter = document.getElementById('lbCounter');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      currentIndex = (index + galleryImgs.length) % galleryImgs.length;
+      const img = galleryImgs[currentIndex];
+      lbImage.src = img.src;
+      lbImage.alt = img.alt;
+      lbImage.classList.remove('zoomed');
+      lbCaption.textContent = img.dataset.caption || img.alt;
+      lbCounter.textContent = (currentIndex + 1) + ' / ' + galleryImgs.length;
+    }
+
+    function openLightbox(index) {
+      showImage(index);
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Gallery click
+    galleryImgs.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
+
+    // Workflow single image → open in lightbox (index 1 = workflow)
+    function openFromSingle(el) {
+      const idx = galleryImgs.findIndex(g => g.src === el.src);
+      openLightbox(idx >= 0 ? idx : 0);
+    }
+
+    // Controls
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); showImage(currentIndex - 1); });
+    document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); showImage(currentIndex + 1); });
+
+    // Zoom toggle
+    lbImage.addEventListener('click', e => { e.stopPropagation(); lbImage.classList.toggle('zoomed'); });
+
+    // Backdrop click closes
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    // Keyboard: ESC close, arrows navigate
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    });
+  </script>
+
+</body>
+</html>
