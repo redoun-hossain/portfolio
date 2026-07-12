@@ -11,6 +11,73 @@
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ===== NEW STYLES: Hero Logo Circle + n8n Gradient Cards ===== -->
+  <style>
+    /* ---------- HERO: colorful circle + n8n logo ---------- */
+    .page-hero .hero-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      text-align: left;
+    }
+    .hero-logo-circle {
+      width: 150px;
+      height: 150px;
+      min-width: 150px;
+      border-radius: 50%;
+      padding: 6px;
+      background: conic-gradient(from 180deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #5f27cd, #ff6b6b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      animation: spinGradient 8s linear infinite;
+    }
+    @keyframes spinGradient {
+      from { filter: hue-rotate(0deg); }
+      to   { filter: hue-rotate(360deg); }
+    }
+    .hero-logo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-logo-inner svg { width: 68%; height: auto; }
+
+    @media (max-width: 640px) {
+      .page-hero .hero-flex { flex-direction: column; text-align: center; gap: 20px; }
+      .hero-logo-circle { width: 110px; height: 110px; min-width: 110px; }
+    }
+
+    /* ---------- PROJECT CARDS: light blue gradient + n8n logo ---------- */
+    .n8n-card {
+      background: linear-gradient(160deg, #f0f9ff 0%, #e0f2fe 55%, #bae6fd 100%);
+      border: 1px solid #bae6fd;
+    }
+    .n8n-thumb {
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #e0f2fe 0%, #7dd3fc 60%, #38bdf8 100%);
+      border-radius: 10px 10px 0 0;
+    }
+    .n8n-thumb svg { width: 95px; height: auto; }
+    .n8n-thumb .n8n-thumb-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #075985;
+    }
+  </style>
 </head>
 <body>
 
@@ -39,81 +106,34 @@
 
     <!-- ===================== PAGE HERO ===================== -->
     <section class="page-hero">
-      <div class="container" style="text-align:center;">
-        <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128" 
-             alt="n8n Logo" 
-             style="width:80px;height:80px;margin-bottom:20px;object-fit:contain;" />
-        <h1>n8n Automation Portfolio</h1>
-        <p>Real workflow automation projects built with n8n. Explore case studies, screenshots, video demos, and measurable business results.</p>
-      </div>
-    </section>
-    <!-- ===================== END PAGE HERO ===================== -->
-
-
-    <!-- ===================== n8n CAPABILITIES CARDS ===================== -->
-    <section class="section" style="background:#ffffff;padding:90px 0;">
       <div class="container">
+        <div class="hero-flex">
 
-        <h2 class="section-title" style="color:#1e40af;text-align:center;">What I Build with n8n</h2>
-        <p class="section-sub" style="color:#475569;max-width:760px;margin:0 auto 45px;text-align:center;">
-          Explore the range of automation solutions I create using n8n workflow automation platform.
-        </p>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px;">
-
-          <!-- Card 1 -->
-          <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border-left:5px solid #2563eb;border-radius:12px;padding:30px 25px;text-align:center;box-shadow:0 4px 12px rgba(37,99,235,.12);transition:.3s;">
-            <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n" style="width:45px;height:45px;margin-bottom:15px;object-fit:contain;" />
-            <h3 style="font-size:1.15rem;color:#1e40af;font-weight:700;margin:0;">
-              n8n Workflow Automation
-            </h3>
+          <!-- Colorful circle + n8n logo -->
+          <div class="hero-logo-circle">
+            <div class="hero-logo-inner">
+              <!-- n8n logo (official color #EA4B71) -->
+              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
+                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
+              </svg>
+            </div>
           </div>
 
-          <!-- Card 2 -->
-          <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border-left:5px solid #2563eb;border-radius:12px;padding:30px 25px;text-align:center;box-shadow:0 4px 12px rgba(37,99,235,.12);transition:.3s;">
-            <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n" style="width:45px;height:45px;margin-bottom:15px;object-fit:contain;" />
-            <h3 style="font-size:1.15rem;color:#1e40af;font-weight:700;margin:0;">
-              n8n AI Agent Development
-            </h3>
-          </div>
-
-          <!-- Card 3 -->
-          <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border-left:5px solid #2563eb;border-radius:12px;padding:30px 25px;text-align:center;box-shadow:0 4px 12px rgba(37,99,235,.12);transition:.3s;">
-            <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n" style="width:45px;height:45px;margin-bottom:15px;object-fit:contain;" />
-            <h3 style="font-size:1.15rem;color:#1e40af;font-weight:700;margin:0;">
-              n8n API Integration
-            </h3>
-          </div>
-
-          <!-- Card 4 -->
-          <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border-left:5px solid #2563eb;border-radius:12px;padding:30px 25px;text-align:center;box-shadow:0 4px 12px rgba(37,99,235,.12);transition:.3s;">
-            <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n" style="width:45px;height:45px;margin-bottom:15px;object-fit:contain;" />
-            <h3 style="font-size:1.15rem;color:#1e40af;font-weight:700;margin:0;">
-              n8n CRM Automation
-            </h3>
-          </div>
-
-          <!-- Card 5 -->
-          <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border-left:5px solid #2563eb;border-radius:12px;padding:30px 25px;text-align:center;box-shadow:0 4px 12px rgba(37,99,235,.12);transition:.3s;">
-            <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n" style="width:45px;height:45px;margin-bottom:15px;object-fit:contain;" />
-            <h3 style="font-size:1.15rem;color:#1e40af;font-weight:700;margin:0;">
-              n8n RAG Systems
-            </h3>
-          </div>
-
-          <!-- Card 6 -->
-          <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border-left:5px solid #2563eb;border-radius:12px;padding:30px 25px;text-align:center;box-shadow:0 4px 12px rgba(37,99,235,.12);transition:.3s;">
-            <img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" alt="n8n" style="width:45px;height:45px;margin-bottom:15px;object-fit:contain;" />
-            <h3 style="font-size:1.15rem;color:#1e40af;font-weight:700;margin:0;">
-              n8n Voice AI Automation
-            </h3>
+          <div class="hero-text">
+            <h1>n8n Automation Portfolio</h1>
+            <p>Real workflow automation projects built with n8n. Explore case studies, screenshots, video demos, and measurable business results.</p>
           </div>
 
         </div>
-
       </div>
     </section>
-    <!-- ===================== END n8n CAPABILITIES CARDS ===================== -->
+    <!-- ===================== END PAGE HERO ===================== -->
 
 
     <!-- ===================== PORTFOLIO SECTION ===================== -->
@@ -128,8 +148,19 @@
         <div class="projects-grid">
 
           <!-- PROJECT 1 -->
-          <div class="project-card" data-project-id="n8n-1">
-            <img src="images/projects/n8n/test.jpg" alt="Lead Capture Automation" loading="lazy" class="project-thumb" />
+          <div class="project-card n8n-card" data-project-id="n8n-1">
+            <div class="n8n-thumb">
+              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
+              </svg>
+              <span class="n8n-thumb-text">n8n</span>
+            </div>
             <div class="project-info">
               <span class="project-tag">n8n</span>
               <h3>Lead Capture &amp; CRM Automation</h3>
@@ -143,8 +174,19 @@
           </div>
 
           <!-- PROJECT 2 -->
-          <div class="project-card" data-project-id="n8n-2">
-            <img src="images/projects/n8n/project-2-thumbnail.jpg" alt="Invoice Automation" loading="lazy" class="project-thumb" />
+          <div class="project-card n8n-card" data-project-id="n8n-2">
+            <div class="n8n-thumb">
+              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
+              </svg>
+              <span class="n8n-thumb-text">n8n</span>
+            </div>
             <div class="project-info">
               <span class="project-tag">n8n</span>
               <h3>Invoice &amp; Payment Automation</h3>
@@ -154,6 +196,110 @@
               </div>
               <p class="project-result"><strong>Result:</strong> Eliminated manual invoicing, 100% on-time reminders.</p>
               <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-2">View Details</button>
+            </div>
+          </div>
+
+          <!-- PROJECT 3 -->
+          <div class="project-card n8n-card" data-project-id="n8n-3">
+            <div class="n8n-thumb">
+              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
+              </svg>
+              <span class="n8n-thumb-text">n8n</span>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">n8n</span>
+              <h3>AI-Powered Social Media Auto-Posting</h3>
+              <p>Generate content with AI and auto-publish across multiple social platforms on a smart schedule.</p>
+              <div class="project-tools">
+                <span>n8n</span><span>OpenAI</span><span>Facebook</span><span>LinkedIn</span>
+              </div>
+              <p class="project-result"><strong>Result:</strong> 10+ hours/week saved, consistent daily posting.</p>
+              <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-3">View Details</button>
+            </div>
+          </div>
+
+          <!-- PROJECT 4 -->
+          <div class="project-card n8n-card" data-project-id="n8n-4">
+            <div class="n8n-thumb">
+              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
+              </svg>
+              <span class="n8n-thumb-text">n8n</span>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">n8n</span>
+              <h3>AI Customer Support Chatbot</h3>
+              <p>RAG-based AI chatbot that answers customer questions from your knowledge base, 24/7 — no human needed.</p>
+              <div class="project-tools">
+                <span>n8n</span><span>OpenAI</span><span>Pinecone</span><span>Telegram</span>
+              </div>
+              <p class="project-result"><strong>Result:</strong> 80% of support tickets resolved automatically.</p>
+              <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-4">View Details</button>
+            </div>
+          </div>
+
+          <!-- PROJECT 5 -->
+          <div class="project-card n8n-card" data-project-id="n8n-5">
+            <div class="n8n-thumb">
+              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
+              </svg>
+              <span class="n8n-thumb-text">n8n</span>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">n8n</span>
+              <h3>E-commerce Order Sync Automation</h3>
+              <p>Sync orders between Shopify, inventory sheets, and shipping tools with instant customer notifications.</p>
+              <div class="project-tools">
+                <span>n8n</span><span>Shopify</span><span>Google Sheets</span><span>WhatsApp</span>
+              </div>
+              <p class="project-result"><strong>Result:</strong> Zero order entry errors, real-time inventory updates.</p>
+              <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-5">View Details</button>
+            </div>
+          </div>
+
+          <!-- PROJECT 6 -->
+          <div class="project-card n8n-card" data-project-id="n8n-6">
+            <div class="n8n-thumb">
+              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
+                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
+                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
+              </svg>
+              <span class="n8n-thumb-text">n8n</span>
+            </div>
+            <div class="project-info">
+              <span class="project-tag">n8n</span>
+              <h3>Automated Reports &amp; Data Backup</h3>
+              <p>Auto-generate weekly business reports and back up critical data to cloud storage on schedule.</p>
+              <div class="project-tools">
+                <span>n8n</span><span>Google Drive</span><span>Notion</span><span>Gmail</span>
+              </div>
+              <p class="project-result"><strong>Result:</strong> 100% reliable backups, reports delivered every Monday.</p>
+              <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-6">View Details</button>
             </div>
           </div>
 
@@ -222,6 +368,118 @@
             <div class="detail-section">
               <h3>Result</h3>
               <p>✅ Zero manual invoicing<br />✅ 100% reminder delivery rate<br />✅ 30% faster payment collection</p>
+            </div>
+          </div>
+          <div class="detail-cta">
+            <p>Need a similar automation?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- DETAIL PANEL: n8n Project 3 -->
+        <div class="project-detail" id="detail-n8n-3">
+          <button class="detail-close" aria-label="Close details">✕ Close</button>
+          <h2>AI-Powered Social Media Auto-Posting</h2>
+          <div class="detail-body">
+            <div class="detail-section">
+              <h3>Challenge</h3>
+              <p>The client struggled to post consistently on social media, spending hours writing captions and scheduling posts manually.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Solution</h3>
+              <p>Built an n8n workflow where OpenAI generates engaging captions from content ideas stored in a Google Sheet, then auto-publishes to Facebook and LinkedIn on an optimized schedule.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Tools Used</h3>
+              <div class="project-tools"><span>n8n</span><span>OpenAI</span><span>Facebook API</span><span>LinkedIn API</span><span>Google Sheets</span></div>
+            </div>
+            <div class="detail-section">
+              <h3>Result</h3>
+              <p>✅ 10+ hours saved per week<br />✅ Consistent daily posting across platforms<br />✅ 2x engagement growth in 2 months</p>
+            </div>
+          </div>
+          <div class="detail-cta">
+            <p>Need a similar automation?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- DETAIL PANEL: n8n Project 4 -->
+        <div class="project-detail" id="detail-n8n-4">
+          <button class="detail-close" aria-label="Close details">✕ Close</button>
+          <h2>AI Customer Support Chatbot</h2>
+          <div class="detail-body">
+            <div class="detail-section">
+              <h3>Challenge</h3>
+              <p>The support team was overwhelmed answering the same repetitive questions, and customers waited hours for replies outside business hours.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Solution</h3>
+              <p>Built a RAG-based AI agent in n8n that searches the company knowledge base stored in a vector database and replies instantly via Telegram, escalating complex issues to a human.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Tools Used</h3>
+              <div class="project-tools"><span>n8n</span><span>OpenAI</span><span>Pinecone</span><span>Telegram Bot</span></div>
+            </div>
+            <div class="detail-section">
+              <h3>Result</h3>
+              <p>✅ 80% of tickets resolved automatically<br />✅ 24/7 instant customer support<br />✅ Support team workload cut in half</p>
+            </div>
+          </div>
+          <div class="detail-cta">
+            <p>Need a similar automation?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- DETAIL PANEL: n8n Project 5 -->
+        <div class="project-detail" id="detail-n8n-5">
+          <button class="detail-close" aria-label="Close details">✕ Close</button>
+          <h2>E-commerce Order Sync Automation</h2>
+          <div class="detail-body">
+            <div class="detail-section">
+              <h3>Challenge</h3>
+              <p>Orders had to be manually copied between Shopify, inventory sheets, and the shipping partner — causing errors and delayed deliveries.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Solution</h3>
+              <p>Created an n8n workflow triggered on every new Shopify order that updates inventory, creates a shipping request, and sends the customer a WhatsApp confirmation with tracking info.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Tools Used</h3>
+              <div class="project-tools"><span>n8n</span><span>Shopify</span><span>Google Sheets</span><span>WhatsApp API</span></div>
+            </div>
+            <div class="detail-section">
+              <h3>Result</h3>
+              <p>✅ Zero manual order entry errors<br />✅ Real-time inventory accuracy<br />✅ Faster order fulfillment</p>
+            </div>
+          </div>
+          <div class="detail-cta">
+            <p>Need a similar automation?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- DETAIL PANEL: n8n Project 6 -->
+        <div class="project-detail" id="detail-n8n-6">
+          <button class="detail-close" aria-label="Close details">✕ Close</button>
+          <h2>Automated Reports &amp; Data Backup</h2>
+          <div class="detail-body">
+            <div class="detail-section">
+              <h3>Challenge</h3>
+              <p>Weekly business reports were compiled manually and backups were often forgotten, risking data loss.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Solution</h3>
+              <p>Built a scheduled n8n workflow that pulls data from Notion and Google Sheets, generates a formatted weekly report, emails it to stakeholders, and backs up all data to Google Drive.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Tools Used</h3>
+              <div class="project-tools"><span>n8n</span><span>Notion</span><span>Google Drive</span><span>Google Sheets</span><span>Gmail</span></div>
+            </div>
+            <div class="detail-section">
+              <h3>Result</h3>
+              <p>✅ 100% reliable automated backups<br />✅ Reports delivered every Monday at 9 AM<br />✅ Zero data loss incidents</p>
             </div>
           </div>
           <div class="detail-cta">
