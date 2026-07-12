@@ -4,32 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Portfolio | n8n, Zapier, GoHighLevel, AI Automation Projects</title>
-  <meta name="description" content="Browse real automation projects: n8n workflows, Zapier integrations, GoHighLevel setups, Custom GPT agents. See screenshots, video demos, and results." />
-  <meta name="keywords" content="n8n portfolio, Zapier projects, GoHighLevel automation, custom AI agent, automation freelancer portfolio" />
+  <title>Portfolio | n8n Workflow Automation Projects - Redoun Hossain</title>
+  <meta name="description" content="Browse real n8n automation projects with screenshots, video demos, and measurable results. Custom workflow automation solutions for business process optimization." />
+  <meta name="keywords" content="n8n portfolio, n8n automation projects, workflow automation, business automation, n8n specialist, automation case studies" />
   <meta name="author" content="Redoun Hossain" />
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- 🎨 MASTER OVERRIDE ENGINE -->
-  <style>
-    .site-header { background: #1e40af !important; }
-    .site-header .logo { color: #ffffff !important; }
-    .site-header .nav-menu ul li a { color: #ffffff !important; opacity: 0.9 !important; background: transparent !important; display: inline-block !important; }
-    .site-header .nav-menu ul li a:not(.btn):hover { opacity: 1 !important; transform: translateY(-2px); }
-    .site-header .nav-menu ul li a.active { color: #ffffff !important; background: transparent !important; border-bottom: 3px solid #ffffff !important; font-weight: 900 !important; opacity: 1 !important; }
-    .site-header .nav-hire { background: #ffffff !important; color: #1e40af !important; font-weight: 800 !important; border: none !important; padding: 8px 18px !important; border-radius: 6px !important; }
-    .page-hero { background: #93c5fd !important; background-image: none !important; border-bottom: 3px solid #2563eb !important; }
-    .page-hero h1, .page-hero p { color: #0f172a !important; opacity: 1 !important; }
-  </style>
 </head>
 <body>
 
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">⚡ Redoun</a>
+      <a href="index.html" class="logo">Redoun Hossain</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -52,318 +40,135 @@
     <!-- ===================== PAGE HERO ===================== -->
     <section class="page-hero">
       <div class="container">
-        <h1>My Portfolio</h1>
-        <p>Click a tab to explore real projects across my core automation services and additional workflow solutions.</p>
+        <h1>n8n Automation Portfolio</h1>
+        <p>Real workflow automation projects built with n8n. Explore case studies, screenshots, video demos, and measurable business results.</p>
       </div>
     </section>
     <!-- ===================== END PAGE HERO ===================== -->
 
 
-    <!-- ===================== PORTFOLIO TABS ===================== -->
+    <!-- ===================== PORTFOLIO SECTION ===================== -->
     <section class="section portfolio-section">
       <div class="container">
 
-        <!-- Tab Buttons -->
-        <style>
-          .portfolio-tabs-wrapper {
-            display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; margin: 35px 0 50px 0 !important;
-          }
-          .brand-tab-btn {
-            display: inline-flex !important; align-items: center !important; gap: 9px !important; padding: 10px 24px !important; border-radius: 50px !important; font-weight: 800 !important; font-size: 0.94rem !important; cursor: pointer !important; transition: all 0.25s ease !important; border: 2px solid !important;
-          }
-          .brand-tab-btn:hover { transform: translateY(-3px) scale(1.02); }
+        <div class="tab-intro">
+          <h2>n8n Workflow Automation Projects</h2>
+          <p>I build powerful n8n workflows that connect your tools, automate repetitive tasks, and keep critical business processes running efficiently with minimal manual effort.</p>
+        </div>
 
-          .btn-n8n { background: #ffe4e6 !important; color: #e11d48 !important; border-color: #f43f5e !important; }
-          .btn-n8n.active-brand-tab { background: #e11d48 !important; color: #fff !important; border-color: #e11d48 !important; box-shadow: 0 8px 20px rgba(225,29,72,0.35) !important; }
+        <div class="projects-grid">
 
-          .btn-zapier { background: #ffedd5 !important; color: #ea580c !important; border-color: #f97316 !important; }
-          .btn-zapier.active-brand-tab { background: #ea580c !important; color: #fff !important; border-color: #ea580c !important; box-shadow: 0 8px 20px rgba(234,88,12,0.35) !important; }
+          <!-- PROJECT 1 -->
+          <div class="project-card" data-project-id="n8n-1">
+            <img src="images/projects/n8n/test.jpg" alt="Lead Capture Automation" loading="lazy" class="project-thumb" />
+            <div class="project-info">
+              <span class="project-tag">n8n</span>
+              <h3>Lead Capture &amp; CRM Automation</h3>
+              <p>Auto-capture leads from Facebook Ads and push them into CRM with instant email notifications and Slack alerts.</p>
+              <div class="project-tools">
+                <span>n8n</span><span>Facebook API</span><span>Airtable</span><span>Gmail</span>
+              </div>
+              <p class="project-result"><strong>Result:</strong> Saved 5+ hours/week, 0% leads missed.</p>
+              <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-1">View Details</button>
+            </div>
+          </div>
 
-          .btn-ghl { background: #dbeafe !important; color: #2563eb !important; border-color: #3b82f6 !important; }
-          .btn-ghl.active-brand-tab { background: #2563eb !important; color: #fff !important; border-color: #2563eb !important; box-shadow: 0 8px 20px rgba(37,99,235,0.35) !important; }
-
-          .btn-gpt { background: #d1fae5 !important; color: #059669 !important; border-color: #10b981 !important; }
-          .btn-gpt.active-brand-tab { background: #059669 !important; color: #fff !important; border-color: #059669 !important; box-shadow: 0 8px 20px rgba(5,150,105,0.35) !important; }
-
-          .btn-more { background: #f3e8ff !important; color: #9333ea !important; border-color: #a855f7 !important; }
-          .btn-more.active-brand-tab { background: #9333ea !important; color: #fff !important; border-color: #9333ea !important; box-shadow: 0 8px 20px rgba(147,51,234,0.35) !important; }
-
-          .tab-icon-wrap { width: 24px; height: 24px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-          .tab-icon-wrap img { width: 100%; height: 100%; object-fit: contain; }
-
-          .tab-content { display: none !important; }
-          .tab-content.active, .tab-content.force-show { display: block !important; animation: fadeInBrand 0.35s ease; }
-          @keyframes fadeInBrand { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-
-          /* ✅ বড় COMING SOON কার্ড স্টাইল */
-          .coming-soon-full {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 30px;
-            background: #f1f5f9;
-            border: 3px dashed #cbd5e1;
-            border-radius: 24px;
-            max-width: 600px;
-            margin: 0 auto;
-          }
-          .coming-soon-full .cs-icon {
-            font-size: 64px;
-            margin-bottom: 24px;
-          }
-          .coming-soon-full .cs-title {
-            font-size: 2.8rem !important;
-            font-weight: 900 !important;
-            color: #334155 !important;
-            letter-spacing: 4px !important;
-            text-transform: uppercase !important;
-            margin: 0 0 16px 0 !important;
-            line-height: 1.1 !important;
-          }
-          .coming-soon-full .cs-sub {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin: 0 0 30px 0;
-            line-height: 1.6;
-          }
-          .coming-soon-full .cs-cta {
-            display: inline-block;
-            padding: 12px 28px;
-            background: #2563eb;
-            color: #fff;
-            font-weight: 800;
-            font-size: 0.95rem;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.25s;
-          }
-          .coming-soon-full .cs-cta:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-          }
-        </style>
-
-        <!-- 5 Colorful Brand Buttons -->
-        <div class="portfolio-tabs-wrapper">
-          
-          <button class="brand-tab-btn btn-n8n active-brand-tab" onclick="firePhysicalTab('n8n', this)">
-            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64"/></span> n8n
-          </button>
-
-          <button class="brand-tab-btn btn-zapier" onclick="firePhysicalTab('zapier', this)">
-            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=64"/></span> Zapier
-          </button>
-
-          <button class="brand-tab-btn btn-ghl" onclick="firePhysicalTab('gohighlevel', this)">
-            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=64"/></span> GoHighLevel
-          </button>
-
-          <button class="brand-tab-btn btn-gpt" onclick="firePhysicalTab('customgpt', this)">
-            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=64"/></span> Custom GPT
-          </button>
-
-          <button class="brand-tab-btn btn-more" onclick="firePhysicalTab('others', this)">
-            <span class="tab-icon-wrap"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=64"/></span> More Services
-          </button>
+          <!-- PROJECT 2 -->
+          <div class="project-card" data-project-id="n8n-2">
+            <img src="images/projects/n8n/project-2-thumbnail.jpg" alt="Invoice Automation" loading="lazy" class="project-thumb" />
+            <div class="project-info">
+              <span class="project-tag">n8n</span>
+              <h3>Invoice &amp; Payment Automation</h3>
+              <p>Automatically generate invoices, send payment reminders, and update accounting records when a payment is received.</p>
+              <div class="project-tools">
+                <span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span>
+              </div>
+              <p class="project-result"><strong>Result:</strong> Eliminated manual invoicing, 100% on-time reminders.</p>
+              <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-2">View Details</button>
+            </div>
+          </div>
 
         </div>
 
-        <!-- Tab Switching Script -->
-        <script>
-          function firePhysicalTab(targetId, clickedBtn) {
-            var allBtns = document.querySelectorAll('.brand-tab-btn');
-            for(var i=0; i<allBtns.length; i++) { allBtns[i].classList.remove('active-brand-tab'); }
-            clickedBtn.classList.add('active-brand-tab');
-
-            var allPanels = document.querySelectorAll('.tab-content');
-            for(var j=0; j<allPanels.length; j++) {
-              allPanels[j].style.setProperty('display', 'none', 'important');
-              allPanels[j].classList.remove('force-show');
-            }
-
-            var activePanel = document.getElementById('tab-' + targetId) || document.getElementById(targetId);
-            if(activePanel) {
-              activePanel.style.setProperty('display', 'block', 'important');
-              activePanel.classList.add('force-show');
-            }
-          }
-        </script>
-
-
-        <!-- ==================== TAB: n8n (ACTIVE - Full Projects) ==================== -->
-        <div class="tab-content active" id="tab-n8n" role="tabpanel">
-
-          <div class="tab-intro">
-            <h2>n8n Automation Projects</h2>
-            <p>I build powerful n8n workflows that connect your tools, automate repetitive tasks, and keep critical business processes running efficiently with minimal manual effort.</p>
+        <!-- DETAIL PANEL: n8n Project 1 -->
+        <div class="project-detail" id="detail-n8n-1">
+          <button class="detail-close" aria-label="Close details">✕ Close</button>
+          <h2>Lead Capture &amp; CRM Automation</h2>
+          <div class="detail-screenshots">
+            <img src="images/projects/n8n/test.jpg" alt="Workflow Screenshot 1" loading="lazy" />
+            <img src="images/projects/n8n/test.jpg" alt="Workflow Screenshot 2" loading="lazy" />
+            <img src="images/projects/n8n/test.jpg" alt="Result Screenshot" loading="lazy" />
           </div>
-
-          <div class="projects-grid">
-
-            <!-- PROJECT 1 -->
-            <div class="project-card" data-project-id="n8n-1">
-              <img src="images/projects/n8n/test.jpg" alt="Lead Capture Automation" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">n8n</span>
-                <h3>Lead Capture &amp; CRM Automation</h3>
-                <p>Auto-capture leads from Facebook Ads and push them into CRM with instant email notifications and Slack alerts.</p>
-                <div class="project-tools">
-                  <span>n8n</span><span>Facebook API</span><span>Airtable</span><span>Gmail</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> Saved 5+ hours/week, 0% leads missed.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-1">View Details</button>
-              </div>
-            </div>
-
-            <!-- PROJECT 2 -->
-            <div class="project-card" data-project-id="n8n-2">
-              <img src="images/projects/n8n/project-2-thumbnail.jpg" alt="Invoice Automation" loading="lazy" class="project-thumb" />
-              <div class="project-info">
-                <span class="project-tag">n8n</span>
-                <h3>Invoice &amp; Payment Automation</h3>
-                <p>Automatically generate invoices, send payment reminders, and update accounting records when a payment is received.</p>
-                <div class="project-tools">
-                  <span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span>
-                </div>
-                <p class="project-result"><strong>Result:</strong> Eliminated manual invoicing, 100% on-time reminders.</p>
-                <button class="btn btn-primary btn-sm view-details-btn" data-target="detail-n8n-2">View Details</button>
-              </div>
-            </div>
-
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/k4NjcHPsQOc" title="Lead Capture Automation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
-
-          <!-- DETAIL PANEL: n8n Project 1 -->
-          <div class="project-detail" id="detail-n8n-1">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>Lead Capture &amp; CRM Automation</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/n8n/test.jpg" alt="Workflow Screenshot 1" loading="lazy" />
-              <img src="images/projects/n8n/test.jpg" alt="Workflow Screenshot 2" loading="lazy" />
-              <img src="images/projects/n8n/test.jpg" alt="Result Screenshot" loading="lazy" />
+          <div class="detail-body">
+            <div class="detail-section">
+              <h3>Challenge</h3>
+              <p>The client was manually checking Facebook Ads Manager every few hours and copying leads into a spreadsheet. Leads were being missed and follow-up was delayed by hours.</p>
             </div>
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/k4NjcHPsQOc" title="Lead Capture Automation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <div class="detail-section">
+              <h3>Solution</h3>
+              <p>Built an n8n workflow that triggers every 15 minutes, fetches new leads from the Facebook Lead Ads API, deduplicates them, adds to Airtable CRM, and sends a Slack notification plus a personalized welcome email automatically.</p>
             </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>The client was manually checking Facebook Ads Manager every few hours and copying leads into a spreadsheet. Leads were being missed and follow-up was delayed by hours.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>Built an n8n workflow that triggers every 15 minutes, fetches new leads from the Facebook Lead Ads API, deduplicates them, adds to Airtable CRM, and sends a Slack notification plus a personalized welcome email automatically.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>n8n</span><span>Facebook Lead Ads API</span><span>Airtable</span><span>Gmail</span><span>Slack</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ 100% of leads captured automatically<br />✅ Response time reduced from 4 hours to under 5 minutes<br />✅ Client saved 5+ hours per week</p>
-              </div>
+            <div class="detail-section">
+              <h3>Tools Used</h3>
+              <div class="project-tools"><span>n8n</span><span>Facebook Lead Ads API</span><span>Airtable</span><span>Gmail</span><span>Slack</span></div>
             </div>
-            <div class="detail-cta">
-              <p>Need a similar automation?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            <div class="detail-section">
+              <h3>Result</h3>
+              <p>✅ 100% of leads captured automatically<br />✅ Response time reduced from 4 hours to under 5 minutes<br />✅ Client saved 5+ hours per week</p>
             </div>
           </div>
-
-          <!-- DETAIL PANEL: n8n Project 2 -->
-          <div class="project-detail" id="detail-n8n-2">
-            <button class="detail-close" aria-label="Close details">✕ Close</button>
-            <h2>Invoice &amp; Payment Automation</h2>
-            <div class="detail-screenshots">
-              <img src="images/projects/n8n/project-2-screenshot-1.jpg" alt="Invoice Workflow" loading="lazy" />
-              <img src="images/projects/n8n/project-2-screenshot-2.jpg" alt="Payment Tracking" loading="lazy" />
-            </div>
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Invoice Automation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="detail-body">
-              <div class="detail-section">
-                <h3>Challenge</h3>
-                <p>Manual invoice creation was taking hours each month. Payment reminders were often forgotten, causing late payments and cash flow issues.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Solution</h3>
-                <p>Built a Stripe-triggered n8n workflow that auto-generates PDF invoices, logs them to Google Sheets, and sends scheduled payment reminder emails until the invoice is paid.</p>
-              </div>
-              <div class="detail-section">
-                <h3>Tools Used</h3>
-                <div class="project-tools"><span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span><span>PDF Generator</span></div>
-              </div>
-              <div class="detail-section">
-                <h3>Result</h3>
-                <p>✅ Zero manual invoicing<br />✅ 100% reminder delivery rate<br />✅ 30% faster payment collection</p>
-              </div>
-            </div>
-            <div class="detail-cta">
-              <p>Need a similar automation?</p>
-              <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-          </div>
-
-          <div class="tab-cta">
-            <p>Need similar n8n automation?</p>
+          <div class="detail-cta">
+            <p>Need a similar automation?</p>
             <a href="contact.html" class="btn btn-primary">Contact Me</a>
           </div>
-
         </div>
-        <!-- ==================== END TAB: n8n ==================== -->
 
-
-        <!-- ==================== TAB: Zapier (COMING SOON) ==================== -->
-        <div class="tab-content" id="tab-zapier" role="tabpanel">
-          <div class="coming-soon-full">
-            <div class="cs-icon">⏳</div>
-            <h2 class="cs-title">COMING SOON</h2>
-            <p class="cs-sub">Zapier integration projects are currently being documented and will be published here soon. Stay tuned!</p>
-            <a href="contact.html" class="cs-cta">Request Zapier Automation →</a>
+        <!-- DETAIL PANEL: n8n Project 2 -->
+        <div class="project-detail" id="detail-n8n-2">
+          <button class="detail-close" aria-label="Close details">✕ Close</button>
+          <h2>Invoice &amp; Payment Automation</h2>
+          <div class="detail-screenshots">
+            <img src="images/projects/n8n/project-2-screenshot-1.jpg" alt="Invoice Workflow" loading="lazy" />
+            <img src="images/projects/n8n/project-2-screenshot-2.jpg" alt="Payment Tracking" loading="lazy" />
+          </div>
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Invoice Automation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="detail-body">
+            <div class="detail-section">
+              <h3>Challenge</h3>
+              <p>Manual invoice creation was taking hours each month. Payment reminders were often forgotten, causing late payments and cash flow issues.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Solution</h3>
+              <p>Built a Stripe-triggered n8n workflow that auto-generates PDF invoices, logs them to Google Sheets, and sends scheduled payment reminder emails until the invoice is paid.</p>
+            </div>
+            <div class="detail-section">
+              <h3>Tools Used</h3>
+              <div class="project-tools"><span>n8n</span><span>Stripe</span><span>Google Sheets</span><span>Gmail</span><span>PDF Generator</span></div>
+            </div>
+            <div class="detail-section">
+              <h3>Result</h3>
+              <p>✅ Zero manual invoicing<br />✅ 100% reminder delivery rate<br />✅ 30% faster payment collection</p>
+            </div>
+          </div>
+          <div class="detail-cta">
+            <p>Need a similar automation?</p>
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
           </div>
         </div>
-        <!-- ==================== END TAB: Zapier ==================== -->
 
-
-        <!-- ==================== TAB: GoHighLevel (COMING SOON) ==================== -->
-        <div class="tab-content" id="tab-gohighlevel" role="tabpanel">
-          <div class="coming-soon-full">
-            <div class="cs-icon">⏳</div>
-            <h2 class="cs-title">COMING SOON</h2>
-            <p class="cs-sub">GoHighLevel setup projects and case studies are being prepared and will be available here shortly.</p>
-            <a href="contact.html" class="cs-cta">Request GHL Setup →</a>
-          </div>
+        <div class="tab-cta">
+          <p>Need similar n8n automation?</p>
+          <a href="contact.html" class="btn btn-primary">Contact Me</a>
         </div>
-        <!-- ==================== END TAB: GoHighLevel ==================== -->
-
-
-        <!-- ==================== TAB: Custom GPT (COMING SOON) ==================== -->
-        <div class="tab-content" id="tab-customgpt" role="tabpanel">
-          <div class="coming-soon-full">
-            <div class="cs-icon">⏳</div>
-            <h2 class="cs-title">COMING SOON</h2>
-            <p class="cs-sub">Custom GPT and AI Agent project showcases are under development. Check back soon for demos and case studies!</p>
-            <a href="contact.html" class="cs-cta">Request AI Agent →</a>
-          </div>
-        </div>
-        <!-- ==================== END TAB: Custom GPT ==================== -->
-
-
-        <!-- ==================== TAB: More Services (COMING SOON) ==================== -->
-        <div class="tab-content" id="tab-others" role="tabpanel">
-          <div class="coming-soon-full">
-            <div class="cs-icon">⏳</div>
-            <h2 class="cs-title">COMING SOON</h2>
-            <p class="cs-sub">Additional automation services and workflow solutions will be added here soon. Have a custom request? Reach out now!</p>
-            <a href="contact.html" class="cs-cta">Request Custom Service →</a>
-          </div>
-        </div>
-        <!-- ==================== END TAB: More Services ==================== -->
 
       </div>
     </section>
-    <!-- ===================== END PORTFOLIO TABS ===================== -->
+    <!-- ===================== END PORTFOLIO SECTION ===================== -->
 
   </main>
 
@@ -378,41 +183,45 @@
     .site-footer .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 70px; align-items: start; }
     .site-footer .footer-grid > div { min-width: 0; margin: 0; padding: 0; align-self: start; }
     .site-footer h4 { color: #ffffff; font-size: 1.08rem; font-weight: 700; line-height: 1; letter-spacing: 0.3px; margin: 0 0 22px; padding: 0; }
-    .site-footer .footer-brand { display: inline-block; color: #ffffff; font-size: 1.6rem; font-weight: 900; line-height: 1; letter-spacing: -0.5px; text-decoration: none; margin: 0 0 22px; padding: 0; position: relative; top: -2px; }
+    .site-footer .footer-brand { display: inline-block; color: #ffffff; font-size: 1.65rem; font-weight: 900; line-height: 1; letter-spacing: -0.5px; text-decoration: none; margin: 0 0 18px; padding: 0; transition: .25s; }
     .site-footer .footer-brand:hover { color: #ffffff; opacity: 1; }
-    .site-footer .footer-desc { color: #94a3b8; font-size: 0.92rem; line-height: 1.6; margin: 0 0 22px; max-width: 220px; }
-    .site-footer .social-buttons-grid { display: grid; grid-template-columns: repeat(2, 92px); gap: 10px; width: 194px; max-width: 194px; margin: 0; padding: 0; }
-    .site-footer .subtle-social-btn { display: inline-block; background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 6px 12px; color: #cbd5e1; font-size: 0.8rem; font-weight: 600; line-height: 1.3; text-align: center; text-decoration: none; white-space: nowrap; transition: 0.25s; }
-    .site-footer .social-buttons-grid .subtle-social-btn { display: block; width: 92px; padding-left: 5px; padding-right: 5px; }
-    .site-footer .subtle-social-btn:hover { background: #2563eb; border-color: #2563eb; color: #ffffff; opacity: 1; }
+    .site-footer .footer-desc { color: #94a3b8; font-size: 0.93rem; line-height: 1.75; margin: 0 0 25px; max-width: 300px; }
+    .site-footer .footer-desc strong { display: block; color: #ffffff; font-size: 0.98rem; font-weight: 700; margin-bottom: 12px; line-height: 1.5; }
+    .site-footer .social-buttons-grid { display: grid; grid-template-columns: repeat(2, 92px); gap: 10px; width: 194px; }
+    .site-footer .subtle-social-btn { display: block; width: 92px; background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 7px 10px; color: #cbd5e1; font-size: 0.8rem; font-weight: 600; text-align: center; text-decoration: none; transition: 0.25s; }
+    .site-footer .subtle-social-btn:hover { background: #2563eb; border-color: #2563eb; color: #ffffff; }
     .site-footer .classic-list { list-style: none; padding: 0; margin: 0; }
-    .site-footer .classic-list li { margin: 0 0 12px; padding: 0; }
-    .site-footer .classic-list li a { color: #94a3b8; font-size: 0.93rem; text-decoration: none; transition: 0.25s; }
-    .site-footer .classic-list li a:hover { color: #ffffff; padding-left: 4px; opacity: 1; }
+    .site-footer .classic-list li { margin-bottom: 12px; }
+    .site-footer .classic-list li:last-child { margin-bottom: 0; }
+    .site-footer .classic-list a { color: #94a3b8; text-decoration: none; font-size: 0.93rem; transition: 0.25s; }
+    .site-footer .classic-list a:hover { color: #ffffff; padding-left: 4px; }
     .site-footer .footer-contact-buttons { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; width: 100%; }
-    .site-footer .footer-contact-buttons .subtle-social-btn { width: 100%; max-width: 220px; padding: 10px 16px; font-size: 0.88rem; text-align: center; white-space: normal; }
-    .site-footer .footer-bottom-slim { margin-top: 55px; padding-top: 25px; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.88rem; }
-    .site-footer .footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-    .site-footer .footer-bottom-inner p { margin: 0; }
-    .site-footer .footer-bottom-slim a { color: #94a3b8; text-decoration: none; }
-    .site-footer .footer-bottom-slim a:hover { color: #ffffff; text-decoration: underline; opacity: 1; }
-    @media (min-width: 769px) and (max-width: 1100px) { .site-footer .footer-wrapper { padding-left: 20px; padding-right: 20px; } .site-footer .footer-grid { grid-template-columns: 1.2fr 0.85fr 1.25fr 1fr; gap: 32px; } }
-    @media (max-width: 768px) { .site-footer .footer-wrapper { padding-left: 24px; padding-right: 24px; } .site-footer .footer-grid { grid-template-columns: 1fr; gap: 40px; } .site-footer .social-buttons-grid { grid-template-columns: repeat(2, 92px); width: 194px; max-width: 194px; margin: 0; } .site-footer .footer-contact-buttons .subtle-social-btn { max-width: 100%; } .site-footer .footer-bottom-inner { flex-direction: column; align-items: flex-start; } }
+    .site-footer .footer-contact-buttons .subtle-social-btn { width: 100%; max-width: 220px; padding: 10px 16px; font-size: 0.88rem; white-space: normal; text-align: center; }
+    .site-footer .footer-bottom-slim { margin-top: 55px; padding-top: 25px; border-top: 1px solid #1e293b; }
+    .site-footer .footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
+    .site-footer .footer-bottom-inner p { margin: 0; font-size: 0.88rem; line-height: 1.8; color: #64748b; }
+    .site-footer .footer-bottom-inner span { color: #94a3b8; font-weight: 600; }
+    .site-footer .footer-bottom-inner a { color: #94a3b8; text-decoration: none; transition: 0.25s; }
+    .site-footer .footer-bottom-inner a:hover { color: #ffffff; text-decoration: underline; }
+    @media (min-width: 769px) and (max-width: 1100px) { .site-footer .footer-wrapper { padding-left: 20px; padding-right: 20px; } .site-footer .footer-grid { grid-template-columns: 1.2fr 0.9fr 1.1fr 1fr; gap: 35px; } }
+    @media (max-width: 768px) { .site-footer { padding: 55px 0 20px; } .site-footer .footer-wrapper { padding-left: 24px; padding-right: 24px; } .site-footer .footer-grid { grid-template-columns: 1fr; gap: 40px; } .site-footer .social-buttons-grid { grid-template-columns: repeat(2, 92px); width: 194px; } .site-footer .footer-contact-buttons .subtle-social-btn { max-width: 100%; } .site-footer .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 12px; } }
   </style>
 
   <div class="footer-wrapper">
     <div class="footer-grid">
 
       <div>
-        <a href="index.html" class="footer-brand">⚡ Redoun</a>
-        <p class="footer-desc">Custom Workflow Automation &amp; AI Agent Expert</p>
+        <a href="index.html" class="footer-brand">Redoun Hossain</a>
+        <p class="footer-desc">
+          <strong>Custom n8n Workflow Automation &amp; AI Agent Specialist</strong>
+        </p>
         <div class="social-buttons-grid">
           <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
           <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
           <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
-          <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
           <a href="https://www.youtube.com/@ArfinSami" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
-          <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
+          <a href="https://www.facebook.com/redoun.hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
         </div>
       </div>
 
@@ -423,18 +232,20 @@
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="legal.html">Privacy &amp; Terms</a></li>
+          <li><a href="legal.html">Privacy Policy</a></li>
+          <li><a href="legal.html?tab=terms">Terms &amp; Conditions</a></li>
         </ul>
       </div>
 
       <div>
         <h4>Services</h4>
         <ul class="classic-list">
-          <li><a href="portfolio.html?tab=n8n">n8n Automation</a></li>
-          <li><a href="portfolio.html?tab=gohighlevel">GoHighLevel Setup</a></li>
-          <li><a href="portfolio.html?tab=zapier">Zapier Integration</a></li>
-          <li><a href="portfolio.html?tab=customgpt">Custom GPT / AI Agent</a></li>
-          <li><a href="portfolio.html?tab=others">More Services</a></li>
+          <li><a href="portfolio.html">Custom n8n Workflow Automation</a></li>
+          <li><a href="portfolio.html">AI Agent Development</a></li>
+          <li><a href="portfolio.html">AI Workflow Automation</a></li>
+          <li><a href="portfolio.html">API Integration</a></li>
+          <li><a href="portfolio.html">CRM & Business Process Automation</a></li>
+          <li><a href="portfolio.html">RAG & AI-Powered Automation</a></li>
         </ul>
       </div>
 
@@ -443,7 +254,7 @@
         <div class="footer-contact-buttons">
           <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
           <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=email.arfinsami@gmail.com&su=Business%20Inquiry%20%7C%20Portfolio%20Website&body=Hello%20Arfin%20Sami,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20I'm%20interested%20in%20discussing%20a%20project%20with%20you.%0D%0A%0D%0AProject%20Details:%0D%0ABudget:%0D%0ATimeline:%0D%0A%0D%0ABest%20Regards," target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=email.arfinsami@gmail.com&su=Business%20Inquiry%20from%20Portfolio&body=Hi%20Redoun,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20custom%20n8n%20automation%20project." target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
           <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">📋 Copy Business Email</a>
         </div>
       </div>
@@ -452,7 +263,7 @@
 
     <div class="footer-bottom-slim">
       <div class="footer-bottom-inner">
-        <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
+        <p>&copy; <span id="footer-year"></span> Redoun Hossain. <br><span>Custom n8n Workflow Automation &amp; AI Agent Specialist.</span><br>All rights reserved.</p>
         <p><a href="legal.html">Privacy Policy</a> &nbsp; • &nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
       </div>
     </div>
@@ -463,6 +274,12 @@
 
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  
   <script src="js/main.js"></script>
+  
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
