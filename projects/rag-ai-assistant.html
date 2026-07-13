@@ -39,8 +39,7 @@
       "name": "Redoun Hossain",
       "url": "https://redoun-hossain.com",
       "jobTitle": "n8n Workflow Automation & AI Agent Specialist"
-    },
-    "image": "../images/projects/rag-ai-assistant/cover.jpg"
+    }
   }
   </script>
 
@@ -65,42 +64,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How does RAG (Retrieval-Augmented Generation) work?",
+        "name": "Can this work with my company documents?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "RAG combines information retrieval with AI generation. First, the system searches a vector database for relevant documents, then feeds them to an LLM (like GPT-4o) which generates accurate, grounded answers based on the retrieved content."
+          "text": "Yes, the workflow can be configured to work with your specific company documents. It supports PDFs, Word docs, Google Docs, and plain text files stored in Google Drive or other cloud storage."
         }
       },
       {
         "@type": "Question",
-        "name": "Why use Pinecone as the vector database?",
+        "name": "Can it integrate with WhatsApp or other platforms?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pinecone is a managed vector database optimized for semantic search at scale. It provides fast similarity search, easy integration with n8n, and reliable production performance for RAG systems."
+          "text": "Absolutely. The workflow is built with n8n, which supports integration with WhatsApp, Slack, Discord, Facebook Messenger, custom websites, and many other platforms."
         }
       },
       {
         "@type": "Question",
-        "name": "Can this system work with PDF documents?",
+        "name": "How long does deployment take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The workflow automatically processes PDFs, Word documents, text files, and Google Docs. Documents are chunked, embedded using OpenAI, and stored in Pinecone for semantic retrieval."
+          "text": "Basic deployment typically takes 3-7 days depending on the complexity of your documents and required customizations. Full customization with integrations may take 1-2 weeks."
         }
       },
       {
         "@type": "Question",
-        "name": "How accurate are the AI responses?",
+        "name": "Can you customize this for my business?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Since answers are grounded in your actual company documents, accuracy is significantly higher than pure LLM responses. The workflow also includes confidence scoring and automatic human escalation when needed."
+          "text": "Yes, every workflow is customized based on your specific business needs — including custom prompts, industry-specific logic, integration with your existing tools, and branded responses."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I sync with Google Drive automatically?",
+        "name": "Do you provide ongoing support?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The n8n workflow monitors Google Drive for new or updated documents and automatically re-embeds them into Pinecone, keeping the knowledge base always up to date."
+          "text": "Yes, ongoing support and maintenance packages are available. Details can be discussed based on your specific requirements."
         }
       }
     ]
@@ -116,27 +115,6 @@
     ======================================== */
     * { box-sizing: border-box; }
     .project-page { background: #f8fafc; }
-
-    /* ========================================
-       READING PROGRESS BAR
-    ======================================== */
-    .reading-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: transparent;
-      z-index: 9999;
-      pointer-events: none;
-    }
-    .reading-progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #EA4B71, #f472b6);
-      width: 0%;
-      transition: width 0.15s ease;
-      box-shadow: 0 2px 10px rgba(234, 75, 113, 0.5);
-    }
 
     /* ========================================
        BREADCRUMB + BACK
@@ -228,7 +206,7 @@
       border: 1px solid #bae6fd;
     }
 
-    /* ===== Hero CTA Buttons (Uniform) ===== */
+    /* Hero CTA Buttons - 3 Different Styles */
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -269,25 +247,36 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(234, 75, 113, 0.2);
     }
+    .hero-btn-outline {
+      background: transparent;
+      color: #EA4B71;
+      border: 2px solid #EA4B71;
+    }
+    .hero-btn-outline:hover {
+      background: #EA4B71;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(234, 75, 113, 0.3);
+    }
 
-    /* ===== Quick Info (Redesigned - Compact & Beautiful) ===== */
+    /* Quick Info Bar - 4 items */
     .quick-info-bar {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      max-width: 950px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 760px;
     }
     .info-item {
       background: #ffffff;
       border-radius: 12px;
-      padding: 16px 14px;
+      padding: 18px 14px;
       text-align: center;
       border: 1px solid #fbcfe8;
       transition: 0.3s;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
     .info-item:hover {
       transform: translateY(-4px);
@@ -295,58 +284,58 @@
       box-shadow: 0 8px 20px rgba(234, 75, 113, 0.15);
     }
     .info-icon {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       background: linear-gradient(135deg, #fef2f4, #fce7eb);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
     .info-label {
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       font-weight: 700;
       color: #831843;
       text-transform: uppercase;
       letter-spacing: 0.8px;
     }
     .info-value {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 800;
       color: #0c4a6e;
       line-height: 1.2;
     }
 
     /* ========================================
-       PROJECT STATS (Animated)
+       FEATURE BADGES SECTION
     ======================================== */
-    .stats-section {
-      padding: 60px 0;
+    .feature-badges-section {
+      padding: 50px 0;
       background: #ffffff;
     }
-    .stats-grid {
+    .feature-badges-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
-    .stat-item {
+    .feature-badge {
       text-align: center;
-      padding: 32px 20px;
+      padding: 26px 20px;
       background: linear-gradient(135deg, #fef2f4, #fce7eb);
       border-radius: 16px;
       border: 1px solid #fbcfe8;
       transition: 0.3s;
     }
-    .stat-item:hover {
+    .feature-badge:hover {
       transform: translateY(-6px);
       box-shadow: 0 15px 35px rgba(234, 75, 113, 0.2);
     }
-    .stat-icon {
+    .feature-badge-icon {
       font-size: 2rem;
       margin-bottom: 12px;
     }
-    .stat-label {
+    .feature-badge-label {
       font-size: 1rem;
       color: #0c4a6e;
       font-weight: 800;
@@ -358,7 +347,6 @@
     .project-section { padding: 70px 0; }
     .project-section.bg-white { background: #ffffff; }
     .project-section.bg-gray { background: #f8fafc; }
-    .project-section.bg-pink { background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%); }
 
     .section-header { text-align: center; max-width: 720px; margin: 0 auto 45px; }
     .section-eyebrow {
@@ -385,55 +373,60 @@
     }
 
     /* ========================================
-       OVERVIEW
+       OVERVIEW (No Duplicate Highlights)
     ======================================== */
-    .overview-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 40px;
-      align-items: start;
+    .overview-content {
+      max-width: 850px;
+      margin: 0 auto;
     }
-    .overview-text p {
+    .overview-content p {
       font-size: 1.02rem;
       color: #475569;
       line-height: 1.9;
-      margin: 0 0 16px;
-    }
-    .overview-highlights {
-      background: linear-gradient(135deg, #fef2f4, #fce7eb);
-      border-radius: 16px;
-      padding: 30px;
-      border-left: 5px solid #EA4B71;
-    }
-    .overview-highlights h3 {
-      font-size: 1.2rem;
-      color: #0c4a6e;
       margin: 0 0 18px;
-      font-weight: 800;
     }
-    .overview-highlights ul { list-style: none; padding: 0; margin: 0; }
-    .overview-highlights li {
-      padding: 8px 0 8px 28px;
-      position: relative;
-      color: #334155;
-      font-weight: 500;
-      font-size: 0.94rem;
+    .overview-content p:last-child { margin-bottom: 0; }
+
+    /* ========================================
+       CHALLENGE & SOLUTION
+    ======================================== */
+    .challenge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .challenge-card, .solution-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+      transition: 0.3s;
     }
-    .overview-highlights li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 20px;
-      height: 20px;
-      background: #EA4B71;
-      color: #fff;
-      border-radius: 50%;
+    .challenge-card { border-top: 5px solid #f59e0b; }
+    .solution-card { border-top: 5px solid #10b981; }
+    .challenge-card:hover, .solution-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    }
+    .cs-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+    .challenge-card .cs-icon { background: #fef3c7; }
+    .solution-card .cs-icon { background: #d1fae5; }
+    .challenge-card h3, .solution-card h3 {
+      font-size: 1.3rem;
+      color: #0c4a6e;
+      margin: 0 0 14px;
+      font-weight: 800;
+    }
+    .challenge-card p, .solution-card p {
+      color: #475569;
+      line-height: 1.85;
+      margin: 0;
+      font-size: 0.98rem;
     }
 
     /* ========================================
@@ -483,264 +476,6 @@
       font-size: 0.85rem;
       color: #64748b;
       line-height: 1.5;
-    }
-
-    /* ========================================
-       TECHNOLOGIES
-    ======================================== */
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .tech-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 26px;
-      transition: 0.3s;
-    }
-    .tech-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(234, 75, 113, 0.15);
-      border-color: #fbcfe8;
-    }
-    .tech-card-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 12px;
-    }
-    .tech-icon-box {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #fef2f4, #fce7eb);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-    }
-    .tech-name {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #0c4a6e;
-      margin: 0;
-    }
-    .tech-role {
-      font-size: 0.8rem;
-      color: #EA4B71;
-      font-weight: 600;
-      margin-top: 2px;
-    }
-    .tech-desc {
-      font-size: 0.9rem;
-      color: #64748b;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* ========================================
-       ARCHITECTURE DIAGRAM
-    ======================================== */
-    .architecture-flow {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 30px;
-      background: #ffffff;
-      border-radius: 20px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-    }
-    .arch-node {
-      background: linear-gradient(135deg, #fef2f4, #fce7eb);
-      border: 2px solid #fbcfe8;
-      border-radius: 12px;
-      padding: 16px 20px;
-      text-align: center;
-      min-width: 110px;
-      transition: 0.3s;
-    }
-    .arch-node:hover {
-      transform: scale(1.05);
-      border-color: #EA4B71;
-      box-shadow: 0 6px 18px rgba(234, 75, 113, 0.2);
-    }
-    .arch-node-icon { font-size: 1.6rem; margin-bottom: 6px; }
-    .arch-node-name { font-size: 0.85rem; font-weight: 700; color: #0c4a6e; }
-    .arch-arrow { color: #EA4B71; font-size: 1.5rem; font-weight: 800; }
-
-    /* ========================================
-       WORKFLOW STEPS
-    ======================================== */
-    .workflow-steps {
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .workflow-steps::before {
-      content: '';
-      position: absolute;
-      left: 30px;
-      top: 20px;
-      bottom: 20px;
-      width: 2px;
-      background: linear-gradient(180deg, #EA4B71, #f472b6);
-    }
-    .workflow-step {
-      display: flex;
-      gap: 24px;
-      margin-bottom: 24px;
-      position: relative;
-      align-items: flex-start;
-    }
-    .workflow-step:last-child { margin-bottom: 0; }
-    .step-number {
-      flex-shrink: 0;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #EA4B71, #f472b6);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 800;
-      font-size: 1.2rem;
-      box-shadow: 0 6px 18px rgba(234, 75, 113, 0.3);
-      z-index: 1;
-    }
-    .step-content {
-      flex: 1;
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 20px 24px;
-      border: 1px solid #e2e8f0;
-      transition: 0.3s;
-    }
-    .step-content:hover {
-      border-color: #fbcfe8;
-      box-shadow: 0 6px 20px rgba(234, 75, 113, 0.1);
-    }
-    .step-content h4 {
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-      color: #0c4a6e;
-      font-weight: 800;
-    }
-    .step-content p {
-      margin: 0;
-      color: #64748b;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    /* ========================================
-       BEFORE / AFTER
-    ======================================== */
-    .before-after {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 30px;
-      align-items: stretch;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .ba-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 30px;
-      border-top: 5px solid;
-    }
-    .ba-before { border-top-color: #ef4444; }
-    .ba-after { border-top-color: #10b981; }
-    .ba-label {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-    }
-    .ba-before .ba-label { background: #fee2e2; color: #dc2626; }
-    .ba-after .ba-label { background: #d1fae5; color: #059669; }
-    .ba-card h3 { font-size: 1.2rem; color: #0c4a6e; margin: 0 0 16px; }
-    .ba-card ul { list-style: none; padding: 0; margin: 0; }
-    .ba-card li {
-      padding: 10px 0 10px 26px;
-      position: relative;
-      color: #475569;
-      font-size: 0.94rem;
-    }
-    .ba-before li::before {
-      content: '✕';
-      position: absolute;
-      left: 0;
-      color: #ef4444;
-      font-weight: 700;
-    }
-    .ba-after li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #10b981;
-      font-weight: 700;
-    }
-    .ba-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: #EA4B71;
-    }
-
-    /* ========================================
-       CHALLENGE & SOLUTION
-    ======================================== */
-    .challenge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .challenge-card, .solution-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-      transition: 0.3s;
-    }
-    .challenge-card { border-top: 5px solid #f59e0b; }
-    .solution-card { border-top: 5px solid #10b981; }
-    .challenge-card:hover, .solution-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    }
-    .cs-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 18px;
-    }
-    .challenge-card .cs-icon { background: #fef3c7; }
-    .solution-card .cs-icon { background: #d1fae5; }
-    .challenge-card h3, .solution-card h3 {
-      font-size: 1.3rem;
-      color: #0c4a6e;
-      margin: 0 0 14px;
-      font-weight: 800;
-    }
-    .challenge-card p, .solution-card p {
-      color: #475569;
-      line-height: 1.85;
-      margin: 0;
-      font-size: 0.98rem;
     }
 
     /* ========================================
@@ -908,6 +643,207 @@
     }
 
     /* ========================================
+       WORKFLOW STEPS (with Time)
+    ======================================== */
+    .workflow-steps {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .workflow-steps::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 20px;
+      bottom: 20px;
+      width: 2px;
+      background: linear-gradient(180deg, #EA4B71, #f472b6);
+    }
+    .workflow-step {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      position: relative;
+      align-items: flex-start;
+    }
+    .workflow-step:last-child { margin-bottom: 0; }
+    .step-number {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #EA4B71, #f472b6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 18px rgba(234, 75, 113, 0.3);
+      z-index: 1;
+    }
+    .step-content {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 20px 24px;
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+    }
+    .step-content:hover {
+      border-color: #fbcfe8;
+      box-shadow: 0 6px 20px rgba(234, 75, 113, 0.1);
+    }
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .step-content h4 {
+      margin: 0;
+      font-size: 1.05rem;
+      color: #0c4a6e;
+      font-weight: 800;
+    }
+    .step-time {
+      background: #ecfdf5;
+      color: #065f46;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 1px solid #6ee7b7;
+      white-space: nowrap;
+    }
+    .step-content p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       TECHNOLOGIES
+    ======================================== */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .tech-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 26px;
+      transition: 0.3s;
+    }
+    .tech-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(234, 75, 113, 0.15);
+      border-color: #fbcfe8;
+    }
+    .tech-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .tech-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #fef2f4, #fce7eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+    .tech-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #0c4a6e;
+      margin: 0;
+    }
+    .tech-role {
+      font-size: 0.8rem;
+      color: #EA4B71;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .tech-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ========================================
+       ARCHITECTURE DIAGRAM (with Trust Badges)
+    ======================================== */
+    .architecture-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .architecture-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+      margin-bottom: 24px;
+    }
+    .arch-node {
+      background: linear-gradient(135deg, #fef2f4, #fce7eb);
+      border: 2px solid #fbcfe8;
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+      min-width: 110px;
+      transition: 0.3s;
+    }
+    .arch-node:hover {
+      transform: scale(1.05);
+      border-color: #EA4B71;
+      box-shadow: 0 6px 18px rgba(234, 75, 113, 0.2);
+    }
+    .arch-node-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .arch-node-name { font-size: 0.85rem; font-weight: 700; color: #0c4a6e; }
+    .arch-arrow { color: #EA4B71; font-size: 1.5rem; font-weight: 800; }
+
+    /* Architecture Trust Badges */
+    .arch-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .arch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0c4a6e;
+      transition: 0.3s;
+    }
+    .arch-badge:hover {
+      border-color: #fbcfe8;
+      box-shadow: 0 4px 12px rgba(234, 75, 113, 0.1);
+    }
+
+    /* ========================================
        FAQ
     ======================================== */
     .faq-list { max-width: 850px; margin: 0 auto; }
@@ -969,99 +905,51 @@
     }
 
     /* ========================================
-       RELATED PROJECTS (Portfolio Style)
+       RELATED PROJECTS (Simplified)
     ======================================== */
     .related-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 24px;
     }
-
     .related-card {
-      background: linear-gradient(160deg, #f0f9ff 0%, #e0f2fe 55%, #bae6fd 100%);
-      border: 1px solid #bae6fd;
-      border-radius: 12px;
+      background: #ffffff;
+      border-radius: 14px;
       overflow: hidden;
-      transition: transform .3s, box-shadow .3s;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
+      border: 1px solid #e2e8f0;
       text-decoration: none;
       color: inherit;
+      transition: 0.3s;
+      display: block;
     }
     .related-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(56, 189, 248, 0.35);
+      box-shadow: 0 15px 35px rgba(234, 75, 113, 0.15);
+      border-color: #fbcfe8;
     }
     .related-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       display: block;
-      background: #e0f2fe;
     }
-    .related-brand-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 16px;
-      background: linear-gradient(135deg, #e0f2fe 0%, #7dd3fc 60%, #38bdf8 100%);
-      border-bottom: 1px solid #7dd3fc;
-    }
-    .related-brand-line svg {
-      width: 42px;
-      height: auto;
-    }
-    .related-brand-line .brand-text {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #EA4B71;
-      letter-spacing: 1px;
-    }
-    .related-brand-line .project-number {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #075985;
-    }
-    .related-info {
-      padding: 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .related-tag {
-      display: inline-block;
-      background: #0369a1;
-      color: #ffffff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 10px;
-      align-self: flex-start;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+    .related-info { padding: 22px; }
     .related-info h3 {
-      margin: 6px 0 10px;
-      color: #0c4a6e;
       font-size: 1.15rem;
-      line-height: 1.35;
+      color: #0c4a6e;
+      margin: 0 0 10px;
       font-weight: 800;
     }
     .related-info p {
-      color: #075985;
-      line-height: 1.65;
-      margin: 0 0 14px;
       font-size: 0.9rem;
-      flex: 1;
+      color: #64748b;
+      margin: 0 0 14px;
+      line-height: 1.6;
     }
     .related-info span {
       color: #EA4B71;
       font-weight: 700;
       font-size: 0.88rem;
-      margin-top: auto;
     }
 
     /* ========================================
@@ -1171,15 +1059,13 @@
        RESPONSIVE
     ======================================== */
     @media (max-width: 992px) {
-      .quick-info-bar { grid-template-columns: repeat(3, 1fr); }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .overview-grid { grid-template-columns: 1fr; }
+      .quick-info-bar { grid-template-columns: repeat(2, 1fr); }
+      .feature-badges-grid { grid-template-columns: repeat(2, 1fr); }
+      .challenge-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .tech-grid { grid-template-columns: repeat(2, 1fr); }
       .image-gallery { grid-template-columns: repeat(2, 1fr); }
       .related-grid { grid-template-columns: repeat(2, 1fr); }
-      .before-after { grid-template-columns: 1fr; }
-      .ba-arrow { transform: rotate(90deg); }
       .hero-btn { min-width: 180px; }
     }
     @media (max-width: 640px) {
@@ -1187,11 +1073,10 @@
       .project-title { font-size: 1.9rem; }
       .project-tagline { font-size: 0.98rem; }
       .quick-info-bar { grid-template-columns: repeat(2, 1fr); }
-      .stats-grid { grid-template-columns: 1fr; }
+      .feature-badges-grid { grid-template-columns: 1fr; }
       .section-title { font-size: 1.5rem; }
       .project-section { padding: 50px 0; }
       .features-grid, .tech-grid { grid-template-columns: 1fr; }
-      .challenge-grid { grid-template-columns: 1fr; }
       .image-gallery { grid-template-columns: 1fr; }
       .related-grid { grid-template-columns: 1fr; }
       .project-nav { grid-template-columns: 1fr; text-align: center; }
@@ -1210,12 +1095,6 @@
   </style>
 </head>
 <body>
-
-  <!-- ===================== READING PROGRESS BAR ===================== -->
-  <div class="reading-progress">
-    <div class="reading-progress-bar" id="progressBar"></div>
-  </div>
-
 
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
@@ -1276,7 +1155,7 @@
           <span>Google Drive</span>
         </div>
 
-        <!-- Hero CTA Buttons (3 uniform buttons) -->
+        <!-- Hero CTA Buttons - 3 Different Styles -->
         <div class="hero-buttons">
           <a href="#video-demo" class="hero-btn hero-btn-primary" aria-label="Watch demo video">
             ▶️ Demo Video
@@ -1284,22 +1163,17 @@
           <a href="#project-gallery" class="hero-btn hero-btn-secondary" aria-label="View project screenshots">
             🖼️ Project Screenshots
           </a>
-          <a href="../contact.html" class="hero-btn hero-btn-primary" aria-label="Get similar project">
+          <a href="../contact.html" class="hero-btn hero-btn-outline" aria-label="Get similar project">
             📩 Get Similar Project
           </a>
         </div>
 
-        <!-- Quick Project Info (Compact & Beautiful) -->
+        <!-- Quick Project Info - 4 items -->
         <div class="quick-info-bar">
           <div class="info-item">
             <div class="info-icon">🏷️</div>
             <div class="info-label">Category</div>
             <div class="info-value">AI Agent</div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon">🏢</div>
-            <div class="info-label">Industry</div>
-            <div class="info-value">Support</div>
           </div>
           <div class="info-item">
             <div class="info-icon">🤖</div>
@@ -1322,25 +1196,25 @@
     </section>
 
 
-    <!-- ===================== PROJECT STATS ===================== -->
-    <section class="stats-section">
+    <!-- ===================== FEATURE BADGES ===================== -->
+    <section class="feature-badges-section">
       <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-icon">📚</div>
-            <div class="stat-label">Document Retrieval</div>
+        <div class="feature-badges-grid">
+          <div class="feature-badge">
+            <div class="feature-badge-icon">📚</div>
+            <div class="feature-badge-label">Document Retrieval</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-icon">🔍</div>
-            <div class="stat-label">Semantic Search</div>
+          <div class="feature-badge">
+            <div class="feature-badge-icon">🔍</div>
+            <div class="feature-badge-label">Semantic Search</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-icon">⚡</div>
-            <div class="stat-label">Fast AI Responses</div>
+          <div class="feature-badge">
+            <div class="feature-badge-icon">⚡</div>
+            <div class="feature-badge-label">Fast AI Responses</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-icon">🌐</div>
-            <div class="stat-label">24/7 AI Assistance</div>
+          <div class="feature-badge">
+            <div class="feature-badge-icon">🌐</div>
+            <div class="feature-badge-label">24/7 AI Assistance</div>
           </div>
         </div>
       </div>
@@ -1348,34 +1222,48 @@
 
 
     <!-- ===================== OVERVIEW ===================== -->
-    <section class="project-section bg-white">
+    <section class="project-section bg-gray">
       <div class="container">
         <div class="section-header">
           <span class="section-eyebrow">— Project Overview —</span>
           <h2 class="section-title">What This Project Does</h2>
         </div>
 
-        <div class="overview-grid">
-          <div class="overview-text">
+        <div class="overview-content">
+          <p>
+            This project demonstrates a complete AI-powered Retrieval-Augmented Generation (RAG) workflow developed entirely with n8n. Instead of relying solely on a language model, the assistant retrieves verified information from company documents stored in Google Drive, searches them through Pinecone Vector Database, and generates highly accurate responses using OpenAI GPT-4o.
+          </p>
+          <p>
+            The workflow includes automatic document indexing, semantic search, confidence checking, human escalation logic, and complete logging — making it suitable for real-world business deployment. Customers get instant, source-grounded answers 24/7 without waiting for support agents, while support teams save significant time on repetitive queries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== CHALLENGE & SOLUTION ===================== -->
+    <section class="project-section bg-white">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— The Story —</span>
+          <h2 class="section-title">Challenge &amp; Solution</h2>
+        </div>
+
+        <div class="challenge-grid">
+          <div class="challenge-card">
+            <div class="cs-icon">⚠️</div>
+            <h3>The Challenge</h3>
             <p>
-              This project demonstrates a complete AI-powered Retrieval-Augmented Generation (RAG) workflow developed entirely with n8n. Instead of relying solely on a language model, the assistant retrieves verified information from company documents stored in Google Drive, searches them through Pinecone Vector Database, and generates highly accurate responses using OpenAI GPT-4o.
-            </p>
-            <p>
-              The workflow includes automatic document indexing, semantic search, confidence checking, human escalation logic, and complete logging — making it suitable for real-world business deployment. Customers get instant, source-grounded answers 24/7 without waiting for support agents.
+              Companies receive hundreds of repetitive support questions daily. Support agents spend hours manually searching documentation before replying, and customers often wait several hours for answers — especially outside office hours. This increases workload, reduces customer satisfaction, and slows business operations significantly.
             </p>
           </div>
 
-          <div class="overview-highlights">
-            <h3>Key Highlights</h3>
-            <ul>
-              <li>Built entirely with n8n</li>
-              <li>OpenAI GPT-4o Integration</li>
-              <li>Pinecone Vector Database</li>
-              <li>Google Drive Knowledge Base</li>
-              <li>Telegram AI Assistant</li>
-              <li>Automatic Human Escalation</li>
-              <li>Production-Ready Workflow</li>
-            </ul>
+          <div class="solution-card">
+            <div class="cs-icon">✅</div>
+            <h3>The Solution</h3>
+            <p>
+              A complete RAG AI Assistant built with n8n. Documents are automatically indexed from Google Drive, embedded using OpenAI, and stored in Pinecone. GPT-4o generates accurate responses grounded in company knowledge. When confidence is low, the workflow automatically escalates to a human agent — ensuring quality is never compromised.
+            </p>
           </div>
         </div>
       </div>
@@ -1460,8 +1348,158 @@
     </section>
 
 
-    <!-- ===================== TECHNOLOGIES ===================== -->
+    <!-- ===================== VIDEO DEMO ===================== -->
+    <section class="project-section bg-white" id="video-demo">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— Watch It Work —</span>
+          <h2 class="section-title">Video Demonstration</h2>
+          <p class="section-desc">
+            Complete walkthrough showing workflow execution, document retrieval, AI responses, and real business use cases.
+          </p>
+        </div>
+
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="RAG AI Knowledge Assistant Video Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== IMAGE GALLERY ===================== -->
+    <section class="project-section bg-gray" id="project-gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— Project Screenshots —</span>
+          <h2 class="section-title">Image Gallery</h2>
+          <p class="section-desc">Click any image to view full size with keyboard navigation.</p>
+        </div>
+
+        <div class="image-gallery" id="gallery">
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View n8n Workflow full image" data-index="0">
+            <div class="gallery-item-img-wrap">
+              <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="n8n Workflow Overview" loading="lazy" decoding="async" data-caption="Complete n8n Workflow" />
+              <div class="gallery-overlay"></div>
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+            <div class="gallery-caption">n8n Workflow</div>
+          </div>
+
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View AI Response full image" data-index="1">
+            <div class="gallery-item-img-wrap">
+              <img src="../images/projects/rag-ai-assistant/ai-response.jpg" alt="Telegram AI Response" loading="lazy" decoding="async" data-caption="AI Response in Telegram" />
+              <div class="gallery-overlay"></div>
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+            <div class="gallery-caption">AI Response</div>
+          </div>
+
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View Final Output full image" data-index="2">
+            <div class="gallery-item-img-wrap">
+              <img src="../images/projects/rag-ai-assistant/final-output.jpg" alt="Final Output Screenshot" loading="lazy" decoding="async" data-caption="Final Output & Logs" />
+              <div class="gallery-overlay"></div>
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+            <div class="gallery-caption">Final Output</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== WORKFLOW STEPS (with Time) ===================== -->
     <section class="project-section bg-white">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— Step by Step —</span>
+          <h2 class="section-title">How the Workflow Works</h2>
+          <p class="section-desc">Every step of the RAG pipeline with estimated processing time.</p>
+        </div>
+
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Webhook Trigger</h4>
+                <span class="step-time">⚡ Instant</span>
+              </div>
+              <p>Telegram webhook receives user message and instantly triggers the n8n workflow execution.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Read &amp; Process Message</h4>
+                <span class="step-time">⏱ &lt; 1s</span>
+              </div>
+              <p>n8n extracts the user query, cleans the text, and prepares it for the embedding phase.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Generate Embeddings</h4>
+                <span class="step-time">⏱ 1-2s</span>
+              </div>
+              <p>OpenAI converts the user query into a vector embedding for semantic similarity search.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Pinecone Vector Search</h4>
+                <span class="step-time">⏱ &lt; 1s</span>
+              </div>
+              <p>Query embedding is matched against thousands of pre-indexed document vectors in Pinecone.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>GPT-4o Response Generation</h4>
+                <span class="step-time">⏱ 3-5s</span>
+              </div>
+              <p>Top matching documents are passed to GPT-4o as context to generate a grounded, accurate answer.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Telegram Reply</h4>
+                <span class="step-time">⚡ Instant</span>
+              </div>
+              <p>Response is sent back to the user via Telegram Bot API within seconds.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">7</div>
+            <div class="step-content">
+              <div class="step-header">
+                <h4>Log &amp; Escalate</h4>
+                <span class="step-time">⚡ Background</span>
+              </div>
+              <p>Every interaction is logged. Low-confidence answers automatically escalate to human agents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== TECHNOLOGIES ===================== -->
+    <section class="project-section bg-gray">
       <div class="container">
         <div class="section-header">
           <span class="section-eyebrow">— Tech Stack —</span>
@@ -1540,249 +1578,54 @@
     </section>
 
 
-    <!-- ===================== ARCHITECTURE DIAGRAM ===================== -->
-    <section class="project-section bg-gray">
+    <!-- ===================== ARCHITECTURE DIAGRAM (with Trust Badges) ===================== -->
+    <section class="project-section bg-white">
       <div class="container">
         <div class="section-header">
           <span class="section-eyebrow">— System Design —</span>
           <h2 class="section-title">Architecture Overview</h2>
-          <p class="section-desc">End-to-end flow from user query to AI response.</p>
+          <p class="section-desc">High-level end-to-end flow from user query to AI response.</p>
         </div>
 
-        <div class="architecture-flow">
-          <div class="arch-node">
-            <div class="arch-node-icon">👤</div>
-            <div class="arch-node-name">User</div>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node">
-            <div class="arch-node-icon">💬</div>
-            <div class="arch-node-name">Telegram</div>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node">
-            <div class="arch-node-icon">⚙️</div>
-            <div class="arch-node-name">n8n</div>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node">
-            <div class="arch-node-icon">🔢</div>
-            <div class="arch-node-name">Embedding</div>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node">
-            <div class="arch-node-icon">🧠</div>
-            <div class="arch-node-name">Pinecone</div>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node">
-            <div class="arch-node-icon">🤖</div>
-            <div class="arch-node-name">GPT-4o</div>
-          </div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node">
-            <div class="arch-node-icon">✅</div>
-            <div class="arch-node-name">Response</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ===================== BEFORE / AFTER ===================== -->
-    <section class="project-section bg-white">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">— Transformation —</span>
-          <h2 class="section-title">Before vs After</h2>
-          <p class="section-desc">How this automation transformed the support process.</p>
-        </div>
-
-        <div class="before-after">
-          <div class="ba-card ba-before">
-            <span class="ba-label">Before</span>
-            <h3>Manual Support Process</h3>
-            <ul>
-              <li>Support agents manually search docs for every query</li>
-              <li>Response times of several hours or more</li>
-              <li>No availability outside business hours</li>
-              <li>High workload leading to agent burnout</li>
-              <li>Inconsistent answer quality across agents</li>
-              <li>Growing customer frustration and complaints</li>
-            </ul>
-          </div>
-
-          <div class="ba-arrow">→</div>
-
-          <div class="ba-card ba-after">
-            <span class="ba-label">After</span>
-            <h3>AI-Powered Automation</h3>
-            <ul>
-              <li>Instant AI responses grounded in real documents</li>
-              <li>Average response time under 10 seconds</li>
-              <li>24/7 availability across all time zones</li>
-              <li>Reduced agent workload significantly</li>
-              <li>Consistent, high-quality answers every time</li>
-              <li>Higher customer satisfaction and retention</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ===================== WORKFLOW STEPS ===================== -->
-    <section class="project-section bg-gray">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">— Step by Step —</span>
-          <h2 class="section-title">How the Workflow Works</h2>
-          <p class="section-desc">Every step of the RAG pipeline explained clearly.</p>
-        </div>
-
-        <div class="workflow-steps">
-          <div class="workflow-step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h4>Webhook Trigger</h4>
-              <p>Telegram webhook receives user message and instantly triggers the n8n workflow execution.</p>
+        <div class="architecture-wrapper">
+          <div class="architecture-flow">
+            <div class="arch-node">
+              <div class="arch-node-icon">👤</div>
+              <div class="arch-node-name">User</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+              <div class="arch-node-icon">💬</div>
+              <div class="arch-node-name">Telegram</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+              <div class="arch-node-icon">⚙️</div>
+              <div class="arch-node-name">n8n</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+              <div class="arch-node-icon">🧠</div>
+              <div class="arch-node-name">Pinecone</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+              <div class="arch-node-icon">🤖</div>
+              <div class="arch-node-name">GPT-4o</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+              <div class="arch-node-icon">✅</div>
+              <div class="arch-node-name">Response</div>
             </div>
           </div>
-          <div class="workflow-step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h4>Read & Process Message</h4>
-              <p>n8n extracts the user query, cleans the text, and prepares it for the embedding phase.</p>
-            </div>
-          </div>
-          <div class="workflow-step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h4>Generate Embeddings</h4>
-              <p>OpenAI converts the user query into a vector embedding for semantic similarity search.</p>
-            </div>
-          </div>
-          <div class="workflow-step">
-            <div class="step-number">4</div>
-            <div class="step-content">
-              <h4>Pinecone Vector Search</h4>
-              <p>Query embedding is matched against thousands of pre-indexed document vectors in Pinecone.</p>
-            </div>
-          </div>
-          <div class="workflow-step">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <h4>GPT-4o Response Generation</h4>
-              <p>Top matching documents are passed to GPT-4o as context to generate a grounded, accurate answer.</p>
-            </div>
-          </div>
-          <div class="workflow-step">
-            <div class="step-number">6</div>
-            <div class="step-content">
-              <h4>Telegram Reply</h4>
-              <p>Response is sent back to the user via Telegram Bot API within seconds.</p>
-            </div>
-          </div>
-          <div class="workflow-step">
-            <div class="step-number">7</div>
-            <div class="step-content">
-              <h4>Log & Escalate</h4>
-              <p>Every interaction is logged. Low-confidence answers automatically escalate to human agents.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-
-    <!-- ===================== CHALLENGE & SOLUTION ===================== -->
-    <section class="project-section bg-white">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">— The Story —</span>
-          <h2 class="section-title">Challenge &amp; Solution</h2>
-        </div>
-
-        <div class="challenge-grid">
-          <div class="challenge-card">
-            <div class="cs-icon">⚠️</div>
-            <h3>The Challenge</h3>
-            <p>
-              The company received hundreds of repetitive support questions daily. Support agents spent hours searching documentation before replying, and customers often waited several hours for answers — especially outside office hours. This increased workload, reduced customer satisfaction, and slowed business operations.
-            </p>
-          </div>
-
-          <div class="solution-card">
-            <div class="cs-icon">✅</div>
-            <h3>The Solution</h3>
-            <p>
-              A complete RAG AI Assistant was built with n8n. Documents are automatically indexed from Google Drive, embedded using OpenAI, and stored in Pinecone. GPT-4o generates accurate responses grounded in company knowledge. When confidence is low, the workflow automatically escalates to a human agent — ensuring quality is never compromised.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ===================== VIDEO DEMO ===================== -->
-    <section class="project-section bg-gray" id="video-demo">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">— Watch It Work —</span>
-          <h2 class="section-title">Video Demonstration</h2>
-          <p class="section-desc">
-            Complete walkthrough showing workflow execution, document retrieval, AI responses, and real business use cases.
-          </p>
-        </div>
-
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-            title="RAG AI Knowledge Assistant Video Demo"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ===================== IMAGE GALLERY ===================== -->
-    <section class="project-section bg-white" id="project-gallery">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">— Project Screenshots —</span>
-          <h2 class="section-title">Image Gallery</h2>
-          <p class="section-desc">Click any image to view full size.</p>
-        </div>
-
-        <div class="image-gallery" id="gallery">
-          <div class="gallery-item" tabindex="0" role="button" aria-label="View n8n Workflow full image" data-index="0">
-            <div class="gallery-item-img-wrap">
-              <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="n8n Workflow Overview" loading="lazy" decoding="async" data-caption="Complete n8n Workflow" />
-              <div class="gallery-overlay"></div>
-              <div class="gallery-zoom-icon">🔍</div>
-            </div>
-            <div class="gallery-caption">n8n Workflow</div>
-          </div>
-
-          <div class="gallery-item" tabindex="0" role="button" aria-label="View AI Response full image" data-index="1">
-            <div class="gallery-item-img-wrap">
-              <img src="../images/projects/rag-ai-assistant/ai-response.jpg" alt="Telegram AI Response" loading="lazy" decoding="async" data-caption="AI Response in Telegram" />
-              <div class="gallery-overlay"></div>
-              <div class="gallery-zoom-icon">🔍</div>
-            </div>
-            <div class="gallery-caption">AI Response</div>
-          </div>
-
-          <div class="gallery-item" tabindex="0" role="button" aria-label="View Final Output full image" data-index="2">
-            <div class="gallery-item-img-wrap">
-              <img src="../images/projects/rag-ai-assistant/final-output.jpg" alt="Final Output Screenshot" loading="lazy" decoding="async" data-caption="Final Output & Logs" />
-              <div class="gallery-overlay"></div>
-              <div class="gallery-zoom-icon">🔍</div>
-            </div>
-            <div class="gallery-caption">Final Output</div>
+          <!-- Trust Badges -->
+          <div class="arch-badges">
+            <span class="arch-badge">🔒 Secure Data Flow</span>
+            <span class="arch-badge">⚡ Auto-Scalable</span>
+            <span class="arch-badge">📊 Fully Monitored</span>
+            <span class="arch-badge">🔄 Reliable Failover</span>
           </div>
         </div>
       </div>
@@ -1801,61 +1644,61 @@
         <div class="faq-list">
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              How does RAG (Retrieval-Augmented Generation) work?
+              Can this work with my company documents?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>RAG combines information retrieval with AI generation. First, the system searches a vector database for relevant documents based on semantic similarity, then feeds them to an LLM (like GPT-4o) which generates accurate, grounded answers based on the retrieved content instead of relying only on training data.</p>
+              <p>Yes, the workflow can be configured to work with your specific company documents. It supports PDFs, Word documents, Google Docs, and plain text files stored in Google Drive or other cloud storage. The system automatically processes and indexes them for instant retrieval.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Why use Pinecone as the vector database?
+              Can I use PDF documents?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Pinecone is a managed vector database optimized for semantic search at scale. It provides fast similarity search, easy integration with n8n, automatic scaling, and reliable production performance for RAG systems — without needing to manage infrastructure.</p>
+              <p>Absolutely. PDFs are fully supported. The workflow automatically extracts text from PDF files, chunks them intelligently, generates embeddings using OpenAI, and stores them in Pinecone for fast semantic retrieval.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Can this system work with PDF documents?
+              Can it integrate with WhatsApp or other platforms?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes. The workflow automatically processes PDFs, Word documents, text files, and Google Docs. Documents are intelligently chunked, embedded using OpenAI's embedding models, and stored in Pinecone for fast semantic retrieval.</p>
+              <p>Yes. The workflow is built with n8n, which supports integration with WhatsApp, Slack, Discord, Facebook Messenger, custom websites, and many other platforms. The chat interface can be customized based on your business needs.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              How accurate are the AI responses?
+              How long does deployment take?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Since answers are grounded in your actual company documents rather than only the LLM's training data, accuracy is significantly higher. The workflow also includes confidence scoring and automatic human escalation when needed — ensuring reliability in every response.</p>
+              <p>Basic deployment typically takes 3-7 days depending on the complexity of your documents and required customizations. Full customization with multiple platform integrations may take 1-2 weeks. Timeline is discussed based on specific requirements.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Can I sync with Google Drive automatically?
+              Can you customize this for my business?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes. The n8n workflow continuously monitors Google Drive for new or updated documents and automatically re-embeds them into Pinecone. This keeps your knowledge base always up to date without any manual intervention.</p>
+              <p>Yes, every workflow is customized based on your specific business needs — including custom prompts, industry-specific logic, integration with your existing CRM or support tools, branded responses, and specialized workflows for your use case.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Can this be customized for my business?
+              Do you provide ongoing support?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Absolutely. The entire workflow is built with n8n and can be customized to match your specific business needs — different chat platforms (WhatsApp, Slack, Discord), custom knowledge sources, industry-specific prompts, and integration with your existing CRM or support tools.</p>
+              <p>Yes, ongoing support and maintenance is available. This includes monitoring, updates, optimization, and adjustments as your business needs evolve. Details can be discussed based on your specific requirements.</p>
             </div>
           </div>
         </div>
@@ -1863,12 +1706,12 @@
     </section>
 
 
-    <!-- ===================== RELATED PROJECTS (Portfolio Card Style) ===================== -->
+    <!-- ===================== RELATED PROJECTS (Simplified) ===================== -->
     <section class="project-section bg-white">
       <div class="container">
         <div class="section-header">
           <span class="section-eyebrow">— Explore More —</span>
-          <h2 class="section-title">Related Projects</h2>
+          <h2 class="section-title">More Automation Projects</h2>
           <p class="section-desc">Check out other automation projects built with n8n.</p>
         </div>
 
@@ -1876,69 +1719,27 @@
 
           <a href="lead-automation.html" class="related-card">
             <img src="../images/projects/lead-automation/cover.jpg" alt="Lead Automation" loading="lazy" decoding="async" />
-            <div class="related-brand-line">
-              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
-              </svg>
-              <span class="brand-text">n8n</span>
-              <span class="project-number">Project 02</span>
-            </div>
             <div class="related-info">
-              <span class="related-tag">Lead Automation</span>
               <h3>Lead Capture &amp; CRM Automation</h3>
-              <p>Automatically captures new leads, stores them in a CRM, and instantly notifies the sales team.</p>
+              <p>Automatically captures new leads and instantly notifies the sales team.</p>
               <span>Explore Project →</span>
             </div>
           </a>
 
           <a href="invoice-automation.html" class="related-card">
             <img src="../images/projects/invoice-automation/cover.jpg" alt="Invoice Automation" loading="lazy" decoding="async" />
-            <div class="related-brand-line">
-              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
-              </svg>
-              <span class="brand-text">n8n</span>
-              <span class="project-number">Project 03</span>
-            </div>
             <div class="related-info">
-              <span class="related-tag">Document Automation</span>
               <h3>Invoice &amp; Payment Automation</h3>
-              <p>Automates invoice generation, payment reminders, and record synchronization for financial workflows.</p>
+              <p>Automates invoice generation, reminders, and record synchronization.</p>
               <span>Explore Project →</span>
             </div>
           </a>
 
           <a href="ecommerce-order-sync.html" class="related-card">
             <img src="../images/projects/ecommerce-order-sync/cover.jpg" alt="E-commerce Order Sync" loading="lazy" decoding="async" />
-            <div class="related-brand-line">
-              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
-              </svg>
-              <span class="brand-text">n8n</span>
-              <span class="project-number">Project 04</span>
-            </div>
             <div class="related-info">
-              <span class="related-tag">Business Automation</span>
               <h3>E-commerce Order Sync</h3>
-              <p>Synchronizes online orders, inventory, and customer notifications for reliable order management.</p>
+              <p>Synchronizes online orders, inventory, and customer notifications.</p>
               <span>Explore Project →</span>
             </div>
           </a>
@@ -2095,138 +1896,4 @@
     // Footer Year
     document.getElementById("footer-year").textContent = new Date().getFullYear();
 
-    // ===== Reading Progress Bar =====
-    (function() {
-      const progressBar = document.getElementById('progressBar');
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = (scrollTop / docHeight) * 100;
-        progressBar.style.width = scrolled + '%';
-      });
-    })();
-
-    // ===== FAQ Accordion =====
-    (function() {
-      const faqItems = document.querySelectorAll('.faq-item');
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-          const isOpen = item.classList.contains('open');
-          faqItems.forEach(i => {
-            i.classList.remove('open');
-            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-          });
-          if (!isOpen) {
-            item.classList.add('open');
-            question.setAttribute('aria-expanded', 'true');
-          }
-        });
-      });
-    })();
-
-    // ===== Lightbox (with Keyboard Support) =====
-    (function() {
-      const gallery = document.getElementById('gallery');
-      if (!gallery) return;
-
-      const items = gallery.querySelectorAll('.gallery-item');
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightboxImg');
-      const lightboxCaption = document.getElementById('lightboxCaption');
-      const lightboxCounter = document.getElementById('lightboxCounter');
-      const closeBtn = document.getElementById('lightboxClose');
-      const prevBtn = document.getElementById('lightboxPrev');
-      const nextBtn = document.getElementById('lightboxNext');
-
-      let currentIndex = 0;
-      const images = Array.from(items).map(item => {
-        const img = item.querySelector('img');
-        return { src: img.src, alt: img.alt, caption: img.dataset.caption || img.alt };
-      });
-
-      function openLightbox(index) {
-        currentIndex = index;
-        updateLightbox();
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      function updateLightbox() {
-        const img = images[currentIndex];
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightboxCaption.textContent = img.caption;
-        lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
-      }
-
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateLightbox();
-      }
-
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateLightbox();
-      }
-
-      items.forEach((item, index) => {
-        item.addEventListener('click', () => openLightbox(index));
-        item.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openLightbox(index);
-          }
-        });
-      });
-
-      closeBtn.addEventListener('click', closeLightbox);
-      nextBtn.addEventListener('click', nextImage);
-      prevBtn.addEventListener('click', prevImage);
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') nextImage();
-        if (e.key === 'ArrowLeft') prevImage();
-      });
-    })();
-
-    // ===== Smooth Scroll for Hero Buttons =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // ===== Back to Top =====
-    (function() {
-      const backBtn = document.getElementById('backToTop');
-      if (!backBtn) return;
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-          backBtn.classList.add('show');
-        } else {
-          backBtn.classList.remove('show');
-        }
-      });
-      backBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    })();
-  </script>
-
-</body>
-</html>
+    // ===== FAQ Accordion 
