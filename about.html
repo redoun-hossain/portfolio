@@ -163,40 +163,6 @@
       background: linear-gradient(135deg, #831843 0%, #db2777 50%, #f472b6 100%);
     }
 
-    /* Tab switcher in hero */
-    .hero-tab-switcher {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .hero-tab-pill {
-      padding: 10px 22px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: .92rem;
-      cursor: pointer;
-      border: 2px solid rgba(255,255,255,.4);
-      background: rgba(255,255,255,.1);
-      color: #fff;
-      transition: all .3s;
-      text-decoration: none;
-    }
-
-    .hero-tab-pill:hover,
-    .hero-tab-pill.active {
-      background: #fff;
-      color: #1e40af;
-      border-color: #fff;
-    }
-
-    .hero-tab-pill[data-hero-tab="ghl"]:hover,
-    .hero-tab-pill[data-hero-tab="ghl"].active {
-      color: #9d174d;
-    }
-
     /* ===================== RESPONSIVE ===================== */
     @media (max-width: 600px) {
       .about-tabs-wrapper {
@@ -212,11 +178,6 @@
 
       .about-tab-btn .tab-icon {
         font-size: 1.2rem;
-      }
-
-      .hero-tab-pill {
-        padding: 8px 16px;
-        font-size: .85rem;
       }
     }
   </style>
@@ -251,12 +212,6 @@
       <div class="container">
         <h1>About Me</h1>
         <p>Building intelligent automation and AI agent solutions that streamline business processes and improve productivity.</p>
-
-        <!-- Hero Tab Pills -->
-        <div class="hero-tab-switcher">
-          <a href="#" class="hero-tab-pill active" data-hero-tab="n8n">⚙️ n8n Automation</a>
-          <a href="#" class="hero-tab-pill" data-hero-tab="ghl">🚀 GoHighLevel</a>
-        </div>
       </div>
     </section>
     <!-- ===================== END HERO ===================== -->
@@ -1096,7 +1051,6 @@
     // ===================== TAB SWITCHING LOGIC =====================
     (function() {
       const tabBtns = document.querySelectorAll('.about-tab-btn');
-      const heroTabPills = document.querySelectorAll('.hero-tab-pill');
       const tabContents = {
         'n8n': document.getElementById('tab-n8n'),
         'ghl': document.getElementById('tab-ghl')
@@ -1106,11 +1060,6 @@
         // Update tab buttons
         tabBtns.forEach(btn => {
           btn.classList.toggle('active', btn.dataset.tab === tabName);
-        });
-
-        // Update hero pills
-        heroTabPills.forEach(pill => {
-          pill.classList.toggle('active', pill.dataset.heroTab === tabName);
         });
 
         // Update tab content
@@ -1124,7 +1073,6 @@
           const rect = tabSection.getBoundingClientRect();
           const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           const targetY = scrollTop + rect.top - 120;
-
           window.scrollTo({
             top: targetY,
             behavior: 'smooth'
@@ -1144,15 +1092,7 @@
         });
       });
 
-      // Hero pill click
-      heroTabPills.forEach(pill => {
-        pill.addEventListener('click', function(e) {
-          e.preventDefault();
-          switchTab(this.dataset.heroTab);
-        });
-      });
-
-      // Check URL hash or session storage for default tab
+      // Check URL hash
       const hash = window.location.hash.replace('#', '');
       const savedTab = sessionStorage.getItem('aboutTab');
 
@@ -1161,18 +1101,15 @@
       } else if (hash === 'n8n') {
         switchTab('n8n');
       } else if (savedTab === 'ghl') {
-        // Don't auto-scroll on load
         tabBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === 'ghl'));
-        heroTabPills.forEach(pill => pill.classList.toggle('active', pill.dataset.heroTab === 'ghl'));
         Object.keys(tabContents).forEach(key => tabContents[key].classList.toggle('active', key === 'ghl'));
       }
 
-      // URL parameter support: ?tab=ghl
+      // URL parameter support
       const urlParams = new URLSearchParams(window.location.search);
       const tabParam = urlParams.get('tab');
       if (tabParam === 'ghl' || tabParam === 'gohighlevel') {
         tabBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === 'ghl'));
-        heroTabPills.forEach(pill => pill.classList.toggle('active', pill.dataset.heroTab === 'ghl'));
         Object.keys(tabContents).forEach(key => tabContents[key].classList.toggle('active', key === 'ghl'));
       }
 
