@@ -4,10 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- ===================== SEO ===================== -->
   <title>RAG AI Knowledge Assistant | n8n AI Agent Project | Redoun Hossain</title>
   <meta name="description" content="Production-ready RAG AI Knowledge Assistant built with n8n, OpenAI GPT-4o, Pinecone and Telegram. AI Agent that answers questions from company documents using Retrieval-Augmented Generation." />
-  <meta name="keywords" content="n8n, AI Agent, RAG, OpenAI GPT-4o, Pinecone, Telegram Bot, Workflow Automation, AI Assistant" />
+  <meta name="keywords" content="n8n, AI Agent, RAG, OpenAI GPT-4o, Pinecone, Telegram Bot, Workflow Automation, AI Assistant, Vector Database, Semantic Search" />
   <meta name="author" content="Redoun Hossain" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://redoun-hossain.com/projects/rag-ai-assistant.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="RAG AI Knowledge Assistant | n8n Automation Project" />
+  <meta property="og:description" content="AI Agent built with n8n + OpenAI + Pinecone that automatically answers company document questions using RAG." />
+  <meta property="og:image" content="../images/projects/rag-ai-assistant/cover.jpg" />
+  <meta property="og:url" content="https://redoun-hossain.com/projects/rag-ai-assistant.html" />
+  <meta property="og:site_name" content="Redoun Hossain Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RAG AI Knowledge Assistant" />
+  <meta name="twitter:description" content="Production-ready AI Agent powered by n8n, OpenAI GPT-4o and Pinecone" />
+  <meta name="twitter:image" content="../images/projects/rag-ai-assistant/cover.jpg" />
+  <meta name="twitter:creator" content="@redounhossain" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "RAG AI Knowledge Assistant",
+    "description": "Production-ready RAG AI Assistant built with n8n, OpenAI GPT-4o and Pinecone for automated document-based customer support.",
+    "programmingLanguage": ["n8n", "JavaScript", "JSON"],
+    "codeRepository": "https://github.com/redoun-hossain/rag-ai-assistant",
+    "author": {
+      "@type": "Person",
+      "name": "Redoun Hossain",
+      "url": "https://redoun-hossain.com",
+      "jobTitle": "n8n Workflow Automation & AI Agent Specialist"
+    },
+    "dateCreated": "2026-01-15",
+    "dateModified": "2026-02-10",
+    "image": "../images/projects/rag-ai-assistant/cover.jpg"
+  }
+  </script>
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://redoun-hossain.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://redoun-hossain.com/portfolio.html" },
+      { "@type": "ListItem", "position": 3, "name": "RAG AI Knowledge Assistant" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does RAG (Retrieval-Augmented Generation) work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAG combines information retrieval with AI generation. First, the system searches a vector database for relevant documents, then feeds them to an LLM (like GPT-4o) which generates accurate, grounded answers based on the retrieved content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why use Pinecone as the vector database?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pinecone is a managed vector database optimized for semantic search at scale. It provides fast similarity search, easy integration with n8n, and reliable production performance for RAG systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this system work with PDF documents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The workflow automatically processes PDFs, Word documents, text files, and Google Docs. Documents are chunked, embedded using OpenAI, and stored in Pinecone for semantic retrieval."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate are the AI responses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Since answers are grounded in your actual company documents, accuracy is significantly higher than pure LLM responses. The workflow also includes confidence scoring and automatic human escalation when needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I sync with Google Drive automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The n8n workflow monitors Google Drive for new or updated documents and automatically re-embeds them into Pinecone, keeping the knowledge base always up to date."
+        }
+      }
+    ]
+  }
+  </script>
 
   <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="../css/style.css" />
@@ -17,37 +119,71 @@
        BASE
     ======================================== */
     * { box-sizing: border-box; }
+    .project-page { background: #f8fafc; }
 
-    .project-page {
-      background: #f8fafc;
-      padding-bottom: 0;
+    /* ========================================
+       READING PROGRESS BAR
+    ======================================== */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    .reading-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #EA4B71, #f472b6);
+      width: 0%;
+      transition: width 0.15s ease;
+      box-shadow: 0 2px 10px rgba(234, 75, 113, 0.5);
     }
 
     /* ========================================
-       BACK LINK
+       BREADCRUMB + BACK
     ======================================== */
-    .back-link-wrap {
+    .breadcrumb-wrap {
       background: #ffffff;
       border-bottom: 1px solid #e2e8f0;
-      padding: 20px 0;
+      padding: 16px 0;
     }
-
+    .breadcrumb-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: #64748b;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a {
+      color: #64748b;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .breadcrumb a:hover { color: #EA4B71; }
+    .breadcrumb .separator { color: #cbd5e1; }
+    .breadcrumb .current { color: #EA4B71; font-weight: 600; }
     .back-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
+      gap: 6px;
+      font-size: 0.88rem;
       font-weight: 600;
       color: #EA4B71;
       text-decoration: none;
       transition: 0.3s;
     }
-
-    .back-link:hover {
-      gap: 12px;
-      color: #d63d63;
-    }
-
+    .back-link:hover { gap: 10px; }
 
     /* ========================================
        PROJECT HERO
@@ -56,7 +192,19 @@
       padding: 60px 0 40px;
       background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%);
     }
-
+    .project-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      font-size: 0.85rem;
+      color: #831843;
+    }
+    .project-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
     .project-category-badge {
       display: inline-block;
       background: #ffffff;
@@ -66,11 +214,10 @@
       font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.5px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       border: 2px solid #fbcfe8;
       text-transform: uppercase;
     }
-
     .project-title {
       font-size: 2.6rem;
       line-height: 1.2;
@@ -79,22 +226,19 @@
       margin: 0 0 18px;
       letter-spacing: -0.5px;
     }
-
     .project-tagline {
       font-size: 1.1rem;
       color: #475569;
       line-height: 1.75;
       max-width: 780px;
-      margin: 0 0 28px;
+      margin: 0 0 24px;
     }
-
     .hero-tech-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 26px;
     }
-
     .hero-tech-badges span {
       background: #ffffff;
       color: #0369a1;
@@ -103,6 +247,53 @@
       font-size: 0.85rem;
       font-weight: 600;
       border: 1px solid #bae6fd;
+    }
+
+    /* Hero CTA Buttons */
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .hero-btn-primary {
+      background: #EA4B71;
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(234, 75, 113, 0.3);
+    }
+    .hero-btn-primary:hover {
+      background: #d63d63;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(234, 75, 113, 0.4);
+    }
+    .hero-btn-secondary {
+      background: #ffffff;
+      color: #0c4a6e;
+      border: 2px solid #e2e8f0;
+    }
+    .hero-btn-secondary:hover {
+      border-color: #EA4B71;
+      color: #EA4B71;
+      transform: translateY(-2px);
+    }
+    .hero-btn-ghost {
+      background: transparent;
+      color: #EA4B71;
+      border: 2px solid transparent;
+    }
+    .hero-btn-ghost:hover {
+      background: rgba(234, 75, 113, 0.1);
     }
 
     /* Quick Info Bar */
@@ -116,16 +307,8 @@
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
       border: 1px solid #fbcfe8;
     }
-
-    .info-item {
-      text-align: center;
-      padding: 8px;
-    }
-
-    .info-item + .info-item {
-      border-left: 1px dashed #fce7eb;
-    }
-
+    .info-item { text-align: center; padding: 8px; }
+    .info-item + .info-item { border-left: 1px dashed #fce7eb; }
     .info-label {
       font-size: 0.72rem;
       font-weight: 700;
@@ -134,22 +317,56 @@
       letter-spacing: 1px;
       margin-bottom: 8px;
     }
-
     .info-value {
       font-size: 1rem;
       font-weight: 800;
       color: #0c4a6e;
     }
 
+    /* ========================================
+       PROJECT STATS (Animated Counters)
+    ======================================== */
+    .stats-section {
+      padding: 60px 0;
+      background: #ffffff;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #fef2f4, #fce7eb);
+      border-radius: 16px;
+      border: 1px solid #fbcfe8;
+      transition: 0.3s;
+    }
+    .stat-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(234, 75, 113, 0.2);
+    }
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #EA4B71, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      color: #831843;
+      font-weight: 700;
+    }
 
     /* ========================================
        COVER IMAGE
     ======================================== */
-    .cover-image-section {
-      padding: 40px 0;
-      background: #f8fafc;
-    }
-
+    .cover-image-section { padding: 40px 0; background: #f8fafc; }
     .cover-image {
       max-width: 1100px;
       margin: 0 auto;
@@ -158,30 +375,59 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
       border: 1px solid #e2e8f0;
     }
+    .cover-image img { width: 100%; display: block; }
 
-    .cover-image img {
-      width: 100%;
-      display: block;
+    /* ========================================
+       BUILT WITH (Logo Row)
+    ======================================== */
+    .built-with {
+      padding: 40px 0;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
     }
-
+    .built-with-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .built-with-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .built-with-logos {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .bw-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #0c4a6e;
+      font-weight: 700;
+      font-size: 0.95rem;
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+    .bw-item:hover { opacity: 1; transform: scale(1.05); }
+    .bw-item span { font-size: 1.4rem; }
 
     /* ========================================
        SECTIONS
     ======================================== */
-    .project-section {
-      padding: 70px 0;
-    }
-
+    .project-section { padding: 70px 0; }
     .project-section.bg-white { background: #ffffff; }
     .project-section.bg-gray { background: #f8fafc; }
     .project-section.bg-pink { background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%); }
 
-    .section-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 45px;
-    }
-
+    .section-header { text-align: center; max-width: 720px; margin: 0 auto 45px; }
     .section-eyebrow {
       display: inline-block;
       color: #EA4B71;
@@ -191,7 +437,6 @@
       text-transform: uppercase;
       margin-bottom: 12px;
     }
-
     .section-title {
       font-size: 2rem;
       font-weight: 800;
@@ -199,14 +444,12 @@
       margin: 0 0 14px;
       line-height: 1.3;
     }
-
     .section-desc {
       font-size: 1rem;
       color: #475569;
       line-height: 1.75;
       margin: 0;
     }
-
 
     /* ========================================
        OVERVIEW
@@ -217,34 +460,25 @@
       gap: 40px;
       align-items: start;
     }
-
     .overview-text p {
       font-size: 1.02rem;
       color: #475569;
       line-height: 1.9;
       margin: 0 0 16px;
     }
-
     .overview-highlights {
       background: linear-gradient(135deg, #fef2f4, #fce7eb);
       border-radius: 16px;
       padding: 30px;
       border-left: 5px solid #EA4B71;
     }
-
     .overview-highlights h3 {
       font-size: 1.2rem;
       color: #0c4a6e;
       margin: 0 0 18px;
       font-weight: 800;
     }
-
-    .overview-highlights ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
+    .overview-highlights ul { list-style: none; padding: 0; margin: 0; }
     .overview-highlights li {
       padding: 8px 0 8px 28px;
       position: relative;
@@ -252,7 +486,6 @@
       font-weight: 500;
       font-size: 0.94rem;
     }
-
     .overview-highlights li::before {
       content: '✓';
       position: absolute;
@@ -270,166 +503,320 @@
       font-weight: 700;
     }
 
+    /* ========================================
+       FEATURES GRID
+    ======================================== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feature-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: 0.3s;
+    }
+    .feature-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(234, 75, 113, 0.12);
+      border-color: #fbcfe8;
+    }
+    .feature-check {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #EA4B71, #f472b6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    .feature-item h4 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+      color: #0c4a6e;
+      font-weight: 700;
+    }
+    .feature-item p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
 
     /* ========================================
-       TECHNOLOGIES
+       TECHNOLOGIES (with descriptions)
     ======================================== */
     .tech-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-
     .tech-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 14px;
-      padding: 24px 16px;
-      text-align: center;
+      padding: 26px;
       transition: 0.3s;
     }
-
     .tech-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 30px rgba(234, 75, 113, 0.15);
       border-color: #fbcfe8;
     }
-
-    .tech-icon {
-      font-size: 2.4rem;
+    .tech-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
       margin-bottom: 12px;
     }
-
+    .tech-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #fef2f4, #fce7eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
     .tech-name {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 800;
       color: #0c4a6e;
-      margin-bottom: 4px;
+      margin: 0;
     }
-
-    .tech-version {
+    .tech-role {
       font-size: 0.8rem;
+      color: #EA4B71;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .tech-desc {
+      font-size: 0.9rem;
       color: #64748b;
-      font-weight: 500;
+      line-height: 1.6;
+      margin: 0;
     }
 
+    /* ========================================
+       WORKFLOW STEPS (Timeline)
+    ======================================== */
+    .workflow-steps {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .workflow-steps::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 20px;
+      bottom: 20px;
+      width: 2px;
+      background: linear-gradient(180deg, #EA4B71, #f472b6);
+    }
+    .workflow-step {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      position: relative;
+      align-items: flex-start;
+    }
+    .workflow-step:last-child { margin-bottom: 0; }
+    .step-number {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #EA4B71, #f472b6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 18px rgba(234, 75, 113, 0.3);
+      z-index: 1;
+    }
+    .step-content {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 20px 24px;
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+    }
+    .step-content:hover {
+      border-color: #fbcfe8;
+      box-shadow: 0 6px 20px rgba(234, 75, 113, 0.1);
+    }
+    .step-content h4 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: #0c4a6e;
+      font-weight: 800;
+    }
+    .step-content p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       ARCHITECTURE DIAGRAM
+    ======================================== */
+    .architecture-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    }
+    .arch-node {
+      background: linear-gradient(135deg, #fef2f4, #fce7eb);
+      border: 2px solid #fbcfe8;
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+      min-width: 110px;
+      transition: 0.3s;
+    }
+    .arch-node:hover {
+      transform: scale(1.05);
+      border-color: #EA4B71;
+      box-shadow: 0 6px 18px rgba(234, 75, 113, 0.2);
+    }
+    .arch-node-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .arch-node-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0c4a6e;
+    }
+    .arch-arrow {
+      color: #EA4B71;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
 
     /* ========================================
        WORKFLOW IMAGE
     ======================================== */
     .workflow-image {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 30px auto 0;
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid #e2e8f0;
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
       background: #fff;
     }
-
     .workflow-image img {
       width: 100%;
       display: block;
       cursor: zoom-in;
       transition: transform 0.4s;
     }
-
-    .workflow-image:hover img {
-      transform: scale(1.02);
-    }
-
+    .workflow-image:hover img { transform: scale(1.02); }
 
     /* ========================================
-       BUSINESS IMPACT
+       BEFORE / AFTER
     ======================================== */
-    .impact-grid {
+    .before-after {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 30px;
+      align-items: stretch;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-
-    .impact-card {
+    .ba-card {
       background: #ffffff;
       border-radius: 16px;
-      padding: 32px 20px;
-      text-align: center;
-      border: 1px solid #e2e8f0;
-      transition: 0.3s;
-      position: relative;
-      overflow: hidden;
+      padding: 30px;
+      border-top: 5px solid;
     }
-
-    .impact-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #EA4B71, #f472b6);
-    }
-
-    .impact-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(234, 75, 113, 0.15);
-    }
-
-    .impact-number {
-      font-size: 2.5rem;
+    .ba-before { border-top-color: #ef4444; }
+    .ba-after { border-top-color: #10b981; }
+    .ba-label {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #EA4B71, #f472b6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 10px;
-      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
     }
-
-    .impact-label {
-      font-size: 0.95rem;
-      font-weight: 700;
+    .ba-before .ba-label { background: #fee2e2; color: #dc2626; }
+    .ba-after .ba-label { background: #d1fae5; color: #059669; }
+    .ba-card h3 {
+      font-size: 1.2rem;
       color: #0c4a6e;
-      margin-bottom: 4px;
+      margin: 0 0 16px;
     }
-
-    .impact-sub {
-      font-size: 0.82rem;
-      color: #64748b;
+    .ba-card ul { list-style: none; padding: 0; margin: 0; }
+    .ba-card li {
+      padding: 10px 0 10px 26px;
+      position: relative;
+      color: #475569;
+      font-size: 0.94rem;
     }
-
+    .ba-before li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: #ef4444;
+      font-weight: 700;
+    }
+    .ba-after li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: 700;
+    }
+    .ba-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #EA4B71;
+    }
 
     /* ========================================
        CHALLENGE & SOLUTION
     ======================================== */
-    .challenge-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .challenge-card,
-    .solution-card {
+    .challenge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .challenge-card, .solution-card {
       background: #ffffff;
       border-radius: 16px;
       padding: 32px;
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
       transition: 0.3s;
     }
-
-    .challenge-card {
-      border-top: 5px solid #f59e0b;
-    }
-
-    .solution-card {
-      border-top: 5px solid #10b981;
-    }
-
-    .challenge-card:hover,
-    .solution-card:hover {
+    .challenge-card { border-top: 5px solid #f59e0b; }
+    .solution-card { border-top: 5px solid #10b981; }
+    .challenge-card:hover, .solution-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
     }
-
     .cs-icon {
       width: 50px;
       height: 50px;
@@ -440,44 +827,50 @@
       font-size: 1.5rem;
       margin-bottom: 18px;
     }
-
-    .challenge-card .cs-icon {
-      background: #fef3c7;
-      color: #d97706;
-    }
-
-    .solution-card .cs-icon {
-      background: #d1fae5;
-      color: #059669;
-    }
-
-    .challenge-card h3,
-    .solution-card h3 {
+    .challenge-card .cs-icon { background: #fef3c7; }
+    .solution-card .cs-icon { background: #d1fae5; }
+    .challenge-card h3, .solution-card h3 {
       font-size: 1.3rem;
       color: #0c4a6e;
       margin: 0 0 14px;
       font-weight: 800;
     }
-
-    .challenge-card p,
-    .solution-card p {
+    .challenge-card p, .solution-card p {
       color: #475569;
       line-height: 1.85;
       margin: 0;
       font-size: 0.98rem;
     }
 
+    /* ========================================
+       VIDEO SECTION
+    ======================================== */
+    .video-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      background: #000;
+      position: relative;
+    }
+    .video-wrapper iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      display: block;
+    }
 
     /* ========================================
-       IMAGE GALLERY
+       IMAGE GALLERY (Premium with Lightbox)
     ======================================== */
     .image-gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-
     .gallery-item {
+      position: relative;
       background: #ffffff;
       border-radius: 14px;
       overflow: hidden;
@@ -485,24 +878,60 @@
       cursor: pointer;
       transition: 0.3s;
     }
-
+    .gallery-item:focus {
+      outline: 3px solid #EA4B71;
+      outline-offset: 2px;
+    }
     .gallery-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     }
-
+    .gallery-item-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 220px;
+    }
     .gallery-item img {
       width: 100%;
-      height: 220px;
+      height: 100%;
       object-fit: cover;
       display: block;
       transition: 0.4s;
     }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(234, 75, 113, 0.85));
+      opacity: 0;
+      transition: 0.3s;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 20px;
     }
-
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-zoom-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      background: #ffffff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #EA4B71;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .gallery-item:hover .gallery-zoom-icon {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
     .gallery-caption {
       padding: 14px 18px;
       font-size: 0.9rem;
@@ -512,6 +941,203 @@
       background: #f8fafc;
     }
 
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 85vh;
+      position: relative;
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 8px;
+      display: block;
+    }
+    .lightbox-close, .lightbox-prev, .lightbox-next {
+      position: absolute;
+      background: #ffffff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #0c4a6e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      z-index: 10001;
+    }
+    .lightbox-close { top: 20px; right: 20px; }
+    .lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+    .lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+    .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+      background: #EA4B71;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+    .lightbox-prev:hover { transform: translateY(-50%) scale(1.1); }
+    .lightbox-next:hover { transform: translateY(-50%) scale(1.1); }
+    .lightbox-caption {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .lightbox-counter {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* ========================================
+       FAQ
+    ======================================== */
+    .faq-list {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .faq-item.open { border-color: #fbcfe8; box-shadow: 0 6px 20px rgba(234, 75, 113, 0.1); }
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0c4a6e;
+      transition: 0.2s;
+    }
+    .faq-question:hover { color: #EA4B71; }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, #EA4B71, #f472b6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 24px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      padding: 0 24px 22px;
+    }
+    .faq-answer p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    /* ========================================
+       TESTIMONIAL
+    ======================================== */
+    .testimonial-card {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border-top: 5px solid #EA4B71;
+      position: relative;
+    }
+    .testimonial-quote {
+      font-size: 4rem;
+      color: #fbcfe8;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      letter-spacing: 4px;
+    }
+    .testimonial-text {
+      font-size: 1.1rem;
+      color: #334155;
+      line-height: 1.75;
+      font-style: italic;
+      margin: 0 0 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    .author-avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #EA4B71, #f472b6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .author-info {
+      text-align: left;
+    }
+    .author-name {
+      font-weight: 800;
+      color: #0c4a6e;
+      display: block;
+    }
+    .author-role {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
 
     /* ========================================
        RELATED PROJECTS
@@ -521,7 +1147,6 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
-
     .related-card {
       background: #ffffff;
       border-radius: 14px;
@@ -532,37 +1157,35 @@
       transition: 0.3s;
       display: block;
     }
-
     .related-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 15px 35px rgba(234, 75, 113, 0.15);
       border-color: #fbcfe8;
     }
-
     .related-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       display: block;
     }
-
-    .related-info {
-      padding: 20px;
-    }
-
+    .related-info { padding: 20px; }
     .related-info h3 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #0c4a6e;
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       font-weight: 800;
     }
-
+    .related-info p {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin: 0 0 12px;
+      line-height: 1.6;
+    }
     .related-info span {
       color: #EA4B71;
       font-weight: 700;
       font-size: 0.88rem;
     }
-
 
     /* ========================================
        PROJECT NAVIGATION
@@ -574,11 +1197,8 @@
       align-items: center;
       padding: 40px 0;
       border-top: 1px solid #e2e8f0;
-      border-bottom: 1px solid #e2e8f0;
     }
-
-    .nav-prev,
-    .nav-next {
+    .nav-prev, .nav-next {
       text-decoration: none;
       color: inherit;
       padding: 16px 20px;
@@ -587,29 +1207,23 @@
       background: #ffffff;
       border: 1px solid #e2e8f0;
     }
-
     .nav-prev { text-align: left; }
     .nav-next { text-align: right; }
-
-    .nav-prev:hover,
-    .nav-next:hover {
+    .nav-prev:hover, .nav-next:hover {
       background: #fef2f4;
       border-color: #fbcfe8;
     }
-
     .nav-label {
       display: block;
       font-size: 0.8rem;
       color: #64748b;
       margin-bottom: 4px;
     }
-
     .nav-title {
       display: block;
       font-weight: 700;
       color: #0c4a6e;
     }
-
     .nav-center {
       text-decoration: none;
       background: #EA4B71;
@@ -619,49 +1233,36 @@
       font-weight: 700;
       transition: 0.3s;
     }
-
-    .nav-center:hover {
-      background: #d63d63;
-      transform: translateY(-2px);
-    }
-
+    .nav-center:hover { background: #d63d63; transform: translateY(-2px); }
 
     /* ========================================
        CTA
     ======================================== */
     .project-cta {
-      padding: 70px 20px;
+      padding: 80px 20px;
       text-align: center;
       background: linear-gradient(135deg, #831843 0%, #EA4B71 50%, #f472b6 100%);
       color: #fff;
     }
-
-    .cta-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
+    .cta-inner { max-width: 720px; margin: 0 auto; }
     .project-cta h2 {
       font-size: 2rem;
       color: #ffffff;
       margin: 0 0 16px;
       font-weight: 800;
     }
-
     .project-cta p {
       font-size: 1.05rem;
       color: #fce7eb;
       line-height: 1.75;
       margin: 0 0 30px;
     }
-
     .cta-buttons {
       display: flex;
       gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
     }
-
     .btn-white {
       background: #ffffff;
       color: #EA4B71;
@@ -672,12 +1273,10 @@
       transition: 0.3s;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     }
-
     .btn-white:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
     }
-
     .btn-outline-white {
       background: transparent;
       color: #ffffff;
@@ -688,12 +1287,7 @@
       border: 2px solid #ffffff;
       transition: 0.3s;
     }
-
-    .btn-outline-white:hover {
-      background: #ffffff;
-      color: #EA4B71;
-    }
-
+    .btn-outline-white:hover { background: #ffffff; color: #EA4B71; }
 
     /* ========================================
        RESPONSIVE
@@ -701,13 +1295,16 @@
     @media (max-width: 992px) {
       .quick-info-bar { grid-template-columns: repeat(3, 1fr); }
       .info-item:nth-child(4) { border-left: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .overview-grid { grid-template-columns: 1fr; }
-      .tech-grid { grid-template-columns: repeat(3, 1fr); }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
       .impact-grid { grid-template-columns: repeat(2, 1fr); }
       .image-gallery { grid-template-columns: repeat(2, 1fr); }
       .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .before-after { grid-template-columns: 1fr; }
+      .ba-arrow { transform: rotate(90deg); }
     }
-
     @media (max-width: 640px) {
       .project-hero { padding: 40px 0 30px; }
       .project-title { font-size: 1.9rem; }
@@ -715,9 +1312,11 @@
       .quick-info-bar { grid-template-columns: repeat(2, 1fr); padding: 18px; }
       .info-item + .info-item { border-left: none; }
       .info-item { padding: 12px 8px; border-radius: 8px; background: #fef2f4; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-number { font-size: 2.2rem; }
       .section-title { font-size: 1.5rem; }
       .project-section { padding: 50px 0; }
-      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .features-grid, .tech-grid { grid-template-columns: 1fr; }
       .challenge-grid { grid-template-columns: 1fr; }
       .image-gallery { grid-template-columns: 1fr; }
       .related-grid { grid-template-columns: 1fr; }
@@ -726,10 +1325,25 @@
       .project-cta h2 { font-size: 1.5rem; }
       .cta-buttons { flex-direction: column; }
       .btn-white, .btn-outline-white { width: 100%; }
+      .hero-buttons { flex-direction: column; }
+      .hero-btn { width: 100%; justify-content: center; }
+      .breadcrumb-inner { flex-direction: column; align-items: flex-start; }
+      .built-with-inner { gap: 20px; }
+      .built-with-logos { gap: 20px; justify-content: center; }
+      .arch-node { min-width: 90px; padding: 12px 14px; }
+      .arch-arrow { display: none; }
+      .lightbox { padding: 20px; }
+      .lightbox-close, .lightbox-prev, .lightbox-next { width: 40px; height: 40px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ===================== READING PROGRESS BAR ===================== -->
+  <div class="reading-progress">
+    <div class="reading-progress-bar" id="progressBar"></div>
+  </div>
+
 
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
@@ -749,15 +1363,23 @@
       </nav>
     </div>
   </header>
-  <!-- ===================== END HEADER ===================== -->
 
 
   <main class="project-page">
 
-    <!-- ===================== BACK LINK ===================== -->
-    <div class="back-link-wrap">
+    <!-- ===================== BREADCRUMB ===================== -->
+    <div class="breadcrumb-wrap">
       <div class="container">
-        <a href="../portfolio.html" class="back-link">← Back to Portfolio</a>
+        <div class="breadcrumb-inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">›</span>
+            <a href="../portfolio.html">Portfolio</a>
+            <span class="separator">›</span>
+            <span class="current">RAG AI Knowledge Assistant</span>
+          </nav>
+          <a href="../portfolio.html" class="back-link" aria-label="Back to portfolio">← Back to Portfolio</a>
+        </div>
       </div>
     </div>
 
@@ -765,6 +1387,12 @@
     <!-- ===================== PROJECT HERO ===================== -->
     <section class="project-hero">
       <div class="container">
+
+        <div class="project-meta">
+          <span>📅 Updated Feb 2026</span>
+          <span>⏱ 5 min read</span>
+          <span>🏷 Version 1.2</span>
+        </div>
 
         <span class="project-category-badge">🤖 AI Agent / RAG System</span>
 
@@ -780,6 +1408,23 @@
           <span>Pinecone</span>
           <span>Telegram</span>
           <span>Google Drive</span>
+        </div>
+
+        <!-- Hero CTA Buttons -->
+        <div class="hero-buttons">
+          <a href="#video-demo" class="hero-btn hero-btn-primary" aria-label="Watch live demo">
+            ▶ Live Demo
+          </a>
+          <a href="#" class="hero-btn hero-btn-secondary" aria-label="View on GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#" class="hero-btn hero-btn-secondary" aria-label="Download workflow file">
+            📥 Workflow JSON
+          </a>
+          <a href="../contact.html" class="hero-btn hero-btn-ghost" aria-label="Contact for similar project">
+            💬 Get Similar Project
+          </a>
         </div>
 
         <!-- Quick Info Bar -->
@@ -810,11 +1455,53 @@
     </section>
 
 
+    <!-- ===================== PROJECT STATS ===================== -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-target="500" data-suffix="+">0</div>
+            <div class="stat-label">Documents Indexed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="95" data-suffix="%">0</div>
+            <div class="stat-label">Answer Accuracy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="10" data-suffix="s" data-prefix="<">0</div>
+            <div class="stat-label">Average Response</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Availability</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- ===================== COVER IMAGE ===================== -->
     <section class="cover-image-section">
       <div class="container">
         <div class="cover-image">
-          <img src="../images/projects/rag-ai-assistant/cover.jpg" alt="RAG AI Knowledge Assistant built with n8n" loading="lazy" />
+          <img src="../images/projects/rag-ai-assistant/cover.jpg" alt="RAG AI Knowledge Assistant built with n8n" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== BUILT WITH ===================== -->
+    <section class="built-with">
+      <div class="container">
+        <div class="built-with-inner">
+          <span class="built-with-label">Built With</span>
+          <div class="built-with-logos">
+            <div class="bw-item"><span>⚙️</span> n8n</div>
+            <div class="bw-item"><span>🤖</span> OpenAI</div>
+            <div class="bw-item"><span>🧠</span> Pinecone</div>
+            <div class="bw-item"><span>💬</span> Telegram</div>
+            <div class="bw-item"><span>📂</span> Google Drive</div>
+          </div>
         </div>
       </div>
     </section>
@@ -823,14 +1510,12 @@
     <!-- ===================== OVERVIEW ===================== -->
     <section class="project-section bg-white">
       <div class="container">
-
         <div class="section-header">
           <span class="section-eyebrow">— Project Overview —</span>
           <h2 class="section-title">What This Project Does</h2>
         </div>
 
         <div class="overview-grid">
-
           <div class="overview-text">
             <p>
               This project demonstrates a complete AI-powered Retrieval-Augmented Generation (RAG) workflow developed entirely with n8n. Instead of relying solely on a language model, the assistant retrieves verified information from company documents stored in Google Drive, searches them through Pinecone Vector Database, and generates highly accurate responses using OpenAI GPT-4o.
@@ -852,119 +1537,324 @@
               <li>Production-Ready Workflow</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
 
+
+    <!-- ===================== KEY FEATURES ===================== -->
+    <section class="project-section bg-gray">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— What's Included —</span>
+          <h2 class="section-title">Key Features</h2>
+          <p class="section-desc">Every feature designed for real-world production use.</p>
         </div>
 
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>RAG Retrieval</h4>
+              <p>Grounded answers from company documents</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>Semantic Search</h4>
+              <p>Understands meaning, not just keywords</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>GPT-4o Powered</h4>
+              <p>Latest OpenAI model for accurate responses</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>Vector Database</h4>
+              <p>Fast Pinecone-powered similarity search</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>Human Escalation</h4>
+              <p>Auto-routes complex queries to agents</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>Telegram Bot</h4>
+              <p>Instant messaging interface for users</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>Google Drive Sync</h4>
+              <p>Auto-updates knowledge base on changes</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>Auto Embedding</h4>
+              <p>Documents auto-processed on upload</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <h4>Low Hallucination</h4>
+              <p>Answers grounded in real source data</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
 
     <!-- ===================== TECHNOLOGIES ===================== -->
-    <section class="project-section bg-gray">
+    <section class="project-section bg-white">
       <div class="container">
-
         <div class="section-header">
           <span class="section-eyebrow">— Tech Stack —</span>
           <h2 class="section-title">Technologies Used</h2>
-          <p class="section-desc">Modern automation and AI tools working together to deliver reliable results.</p>
+          <p class="section-desc">Modern automation and AI tools working together.</p>
         </div>
 
         <div class="tech-grid">
-
           <div class="tech-card">
-            <div class="tech-icon">⚙️</div>
-            <div class="tech-name">n8n</div>
-            <div class="tech-version">Automation Platform</div>
+            <div class="tech-card-header">
+              <div class="tech-icon-box">⚙️</div>
+              <div>
+                <h3 class="tech-name">n8n</h3>
+                <div class="tech-role">Automation Platform</div>
+              </div>
+            </div>
+            <p class="tech-desc">Core workflow orchestration platform connecting all services and managing the entire RAG pipeline.</p>
           </div>
 
           <div class="tech-card">
-            <div class="tech-icon">🤖</div>
-            <div class="tech-name">OpenAI</div>
-            <div class="tech-version">GPT-4o</div>
+            <div class="tech-card-header">
+              <div class="tech-icon-box">🤖</div>
+              <div>
+                <h3 class="tech-name">OpenAI GPT-4o</h3>
+                <div class="tech-role">Language Model</div>
+              </div>
+            </div>
+            <p class="tech-desc">Latest multimodal LLM used for generating accurate, grounded responses based on retrieved context.</p>
           </div>
 
           <div class="tech-card">
-            <div class="tech-icon">🧠</div>
-            <div class="tech-name">Pinecone</div>
-            <div class="tech-version">Vector Database</div>
+            <div class="tech-card-header">
+              <div class="tech-icon-box">🧠</div>
+              <div>
+                <h3 class="tech-name">Pinecone</h3>
+                <div class="tech-role">Vector Database</div>
+              </div>
+            </div>
+            <p class="tech-desc">Managed vector database for lightning-fast semantic search across thousands of document embeddings.</p>
           </div>
 
           <div class="tech-card">
-            <div class="tech-icon">💬</div>
-            <div class="tech-name">Telegram</div>
-            <div class="tech-version">Bot API</div>
+            <div class="tech-card-header">
+              <div class="tech-icon-box">💬</div>
+              <div>
+                <h3 class="tech-name">Telegram</h3>
+                <div class="tech-role">Chat Interface</div>
+              </div>
+            </div>
+            <p class="tech-desc">Bot API integration providing users with a familiar and reliable messaging interface for AI interactions.</p>
           </div>
 
           <div class="tech-card">
-            <div class="tech-icon">📂</div>
-            <div class="tech-name">Google Drive</div>
-            <div class="tech-version">Knowledge Base</div>
+            <div class="tech-card-header">
+              <div class="tech-icon-box">📂</div>
+              <div>
+                <h3 class="tech-name">Google Drive</h3>
+                <div class="tech-role">Knowledge Base</div>
+              </div>
+            </div>
+            <p class="tech-desc">Central document repository with automatic sync — new files trigger the embedding pipeline instantly.</p>
           </div>
 
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-box">🔗</div>
+              <div>
+                <h3 class="tech-name">Webhooks</h3>
+                <div class="tech-role">Event Triggers</div>
+              </div>
+            </div>
+            <p class="tech-desc">Real-time event handling connecting user messages, document updates, and AI processing pipelines.</p>
+          </div>
         </div>
-
       </div>
     </section>
 
 
-    <!-- ===================== COMPLETE WORKFLOW ===================== -->
+    <!-- ===================== ARCHITECTURE DIAGRAM ===================== -->
+    <section class="project-section bg-gray">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— System Design —</span>
+          <h2 class="section-title">Architecture Overview</h2>
+          <p class="section-desc">End-to-end flow from user query to AI response.</p>
+        </div>
+
+        <div class="architecture-flow">
+          <div class="arch-node">
+            <div class="arch-node-icon">👤</div>
+            <div class="arch-node-name">User</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-node-icon">💬</div>
+            <div class="arch-node-name">Telegram</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-node-icon">⚙️</div>
+            <div class="arch-node-name">n8n</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-node-icon">🔢</div>
+            <div class="arch-node-name">Embedding</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-node-icon">🧠</div>
+            <div class="arch-node-name">Pinecone</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-node-icon">🤖</div>
+            <div class="arch-node-name">GPT-4o</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">
+            <div class="arch-node-icon">✅</div>
+            <div class="arch-node-name">Response</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== WORKFLOW STEPS ===================== -->
     <section class="project-section bg-white">
       <div class="container">
-
         <div class="section-header">
-          <span class="section-eyebrow">— How It Works —</span>
-          <h2 class="section-title">Complete n8n Workflow</h2>
-          <p class="section-desc">
-            The workflow collects documents from Google Drive, converts them into embeddings, stores in Pinecone, searches using vector similarity, and generates grounded answers with GPT-4o before responding through Telegram.
-          </p>
+          <span class="section-eyebrow">— Step by Step —</span>
+          <h2 class="section-title">How the Workflow Works</h2>
+          <p class="section-desc">Every step of the RAG pipeline explained clearly.</p>
+        </div>
+
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Webhook Trigger</h4>
+              <p>Telegram webhook receives user message and instantly triggers the n8n workflow execution.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Read & Process Message</h4>
+              <p>n8n extracts the user query, cleans the text, and prepares it for the embedding phase.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Generate Embeddings</h4>
+              <p>OpenAI converts the user query into a vector embedding for semantic similarity search.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Pinecone Vector Search</h4>
+              <p>Query embedding is matched against thousands of pre-indexed document vectors in Pinecone.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>GPT-4o Response Generation</h4>
+              <p>Top matching documents are passed to GPT-4o as context to generate a grounded, accurate answer.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <h4>Telegram Reply</h4>
+              <p>Response is sent back to the user via Telegram Bot API within seconds.</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">7</div>
+            <div class="step-content">
+              <h4>Log & Escalate</h4>
+              <p>Every interaction is logged. Low-confidence answers automatically escalate to human agents.</p>
+            </div>
+          </div>
         </div>
 
         <div class="workflow-image">
-          <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="Complete n8n RAG AI Workflow" loading="lazy" />
+          <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="Complete n8n RAG AI Workflow" loading="lazy" decoding="async" />
         </div>
-
       </div>
     </section>
 
 
-    <!-- ===================== BUSINESS IMPACT ===================== -->
+    <!-- ===================== BEFORE / AFTER ===================== -->
     <section class="project-section bg-gray">
       <div class="container">
-
         <div class="section-header">
-          <span class="section-eyebrow">— Real Results —</span>
-          <h2 class="section-title">Business Impact</h2>
-          <p class="section-desc">Measurable outcomes that translate directly to business value.</p>
+          <span class="section-eyebrow">— Transformation —</span>
+          <h2 class="section-title">Before vs After</h2>
+          <p class="section-desc">How this automation transformed the support process.</p>
         </div>
 
-        <div class="impact-grid">
-
-          <div class="impact-card">
-            <div class="impact-number">80%</div>
-            <div class="impact-label">Tickets Resolved</div>
-            <div class="impact-sub">Automatically by AI</div>
+        <div class="before-after">
+          <div class="ba-card ba-before">
+            <span class="ba-label">Before</span>
+            <h3>Manual Support Process</h3>
+            <ul>
+              <li>Support agents manually search docs for every query</li>
+              <li>Response times of several hours or more</li>
+              <li>No availability outside business hours</li>
+              <li>High workload leading to agent burnout</li>
+              <li>Inconsistent answer quality across agents</li>
+              <li>Growing customer frustration and complaints</li>
+            </ul>
           </div>
 
-          <div class="impact-card">
-            <div class="impact-number">10s</div>
-            <div class="impact-label">Response Time</div>
-            <div class="impact-sub">Average Customer Reply</div>
-          </div>
+          <div class="ba-arrow">→</div>
 
-          <div class="impact-card">
-            <div class="impact-number">24/7</div>
-            <div class="impact-label">Availability</div>
-            <div class="impact-sub">Always Online</div>
+          <div class="ba-card ba-after">
+            <span class="ba-label">After</span>
+            <h3>AI-Powered Automation</h3>
+            <ul>
+              <li>Instant AI responses grounded in real documents</li>
+              <li>Average response time under 10 seconds</li>
+              <li>24/7 availability across all time zones</li>
+              <li>50% reduction in agent workload</li>
+              <li>Consistent, high-quality answers every time</li>
+              <li>Higher customer satisfaction and retention</li>
+            </ul>
           </div>
-
-          <div class="impact-card">
-            <div class="impact-number">50%</div>
-            <div class="impact-label">Less Manual Work</div>
-            <div class="impact-sub">Reduced Support Load</div>
-          </div>
-
         </div>
-
       </div>
     </section>
 
@@ -972,14 +1862,12 @@
     <!-- ===================== CHALLENGE & SOLUTION ===================== -->
     <section class="project-section bg-white">
       <div class="container">
-
         <div class="section-header">
           <span class="section-eyebrow">— The Story —</span>
           <h2 class="section-title">Challenge &amp; Solution</h2>
         </div>
 
         <div class="challenge-grid">
-
           <div class="challenge-card">
             <div class="cs-icon">⚠️</div>
             <h3>The Challenge</h3>
@@ -995,50 +1883,179 @@
               A complete RAG AI Assistant was built with n8n. Documents are automatically indexed from Google Drive, embedded using OpenAI, and stored in Pinecone. GPT-4o generates accurate responses grounded in company knowledge. When confidence is low, the workflow automatically escalates to a human agent — ensuring quality is never compromised.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
 
+
+    <!-- ===================== VIDEO DEMO ===================== -->
+    <section class="project-section bg-gray" id="video-demo">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— Watch It Work —</span>
+          <h2 class="section-title">Video Demonstration</h2>
+          <p class="section-desc">
+            Complete walkthrough showing workflow execution, document retrieval, AI responses, and real business use cases.
+          </p>
         </div>
 
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="RAG AI Knowledge Assistant Video Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
     </section>
 
 
     <!-- ===================== IMAGE GALLERY ===================== -->
-    <section class="project-section bg-gray">
+    <section class="project-section bg-white">
       <div class="container">
-
         <div class="section-header">
           <span class="section-eyebrow">— Project Screenshots —</span>
           <h2 class="section-title">Image Gallery</h2>
-          <p class="section-desc">Visual walkthrough of the project in action.</p>
+          <p class="section-desc">Click any image to view full size.</p>
         </div>
 
-        <div class="image-gallery">
-
-          <div class="gallery-item">
-            <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="n8n Workflow Overview" loading="lazy" />
+        <div class="image-gallery" id="gallery">
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View n8n Workflow full image" data-index="0">
+            <div class="gallery-item-img-wrap">
+              <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="n8n Workflow Overview" loading="lazy" decoding="async" data-caption="Complete n8n Workflow" />
+              <div class="gallery-overlay"></div>
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
             <div class="gallery-caption">n8n Workflow</div>
           </div>
 
-          <div class="gallery-item">
-            <img src="../images/projects/rag-ai-assistant/ai-response.jpg" alt="Telegram AI Response" loading="lazy" />
-            <div class="gallery-caption">AI Response in Telegram</div>
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View AI Response full image" data-index="1">
+            <div class="gallery-item-img-wrap">
+              <img src="../images/projects/rag-ai-assistant/ai-response.jpg" alt="Telegram AI Response" loading="lazy" decoding="async" data-caption="AI Response in Telegram" />
+              <div class="gallery-overlay"></div>
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+            <div class="gallery-caption">AI Response</div>
           </div>
 
-          <div class="gallery-item">
-            <img src="../images/projects/rag-ai-assistant/final-output.jpg" alt="Final Output" loading="lazy" />
+          <div class="gallery-item" tabindex="0" role="button" aria-label="View Final Output full image" data-index="2">
+            <div class="gallery-item-img-wrap">
+              <img src="../images/projects/rag-ai-assistant/final-output.jpg" alt="Final Output Screenshot" loading="lazy" decoding="async" data-caption="Final Output & Logs" />
+              <div class="gallery-overlay"></div>
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
             <div class="gallery-caption">Final Output</div>
           </div>
+        </div>
+      </div>
+    </section>
 
+
+    <!-- ===================== TESTIMONIAL ===================== -->
+    <section class="project-section bg-pink">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— Client Feedback —</span>
+          <h2 class="section-title">What The Client Says</h2>
         </div>
 
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial-text">
+            The RAG AI Assistant completely transformed our customer support. Our team's workload dropped by 50%, response times improved dramatically, and customers love the instant answers. The workflow is reliable, easy to maintain, and delivers real business value every single day.
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div class="author-info">
+              <span class="author-name">Sarah Kim</span>
+              <span class="author-role">Head of Customer Success</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="project-section bg-white">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">— Common Questions —</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Everything you need to know about this project.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How does RAG (Retrieval-Augmented Generation) work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>RAG combines information retrieval with AI generation. First, the system searches a vector database for relevant documents based on semantic similarity, then feeds them to an LLM (like GPT-4o) which generates accurate, grounded answers based on the retrieved content instead of relying only on training data.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Why use Pinecone as the vector database?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Pinecone is a managed vector database optimized for semantic search at scale. It provides fast similarity search, easy integration with n8n, automatic scaling, and reliable production performance for RAG systems — without needing to manage infrastructure.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can this system work with PDF documents?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The workflow automatically processes PDFs, Word documents, text files, and Google Docs. Documents are intelligently chunked, embedded using OpenAI's embedding models, and stored in Pinecone for fast semantic retrieval.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How accurate are the AI responses?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Since answers are grounded in your actual company documents rather than only the LLM's training data, accuracy is significantly higher. The workflow also includes confidence scoring and automatic human escalation when needed — ensuring reliability in every response.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I sync with Google Drive automatically?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The n8n workflow continuously monitors Google Drive for new or updated documents and automatically re-embeds them into Pinecone. This keeps your knowledge base always up to date without any manual intervention.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can this be customized for my business?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. The entire workflow is built with n8n and can be customized to match your specific business needs — different chat platforms (WhatsApp, Slack, Discord), custom knowledge sources, industry-specific prompts, and integration with your existing CRM or support tools.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
 
     <!-- ===================== RELATED PROJECTS ===================== -->
-    <section class="project-section bg-white">
+    <section class="project-section bg-gray">
       <div class="container">
-
         <div class="section-header">
           <span class="section-eyebrow">— Explore More —</span>
           <h2 class="section-title">Related Projects</h2>
@@ -1046,54 +2063,45 @@
         </div>
 
         <div class="related-grid">
-
           <a href="lead-automation.html" class="related-card">
-            <img src="../images/projects/lead-automation/cover.jpg" alt="Lead Automation" loading="lazy" />
+            <img src="../images/projects/lead-automation/cover.jpg" alt="Lead Automation" loading="lazy" decoding="async" />
             <div class="related-info">
               <h3>Lead Capture &amp; CRM Automation</h3>
+              <p>Automatically capture leads and notify sales teams.</p>
               <span>Explore Project →</span>
             </div>
           </a>
 
           <a href="invoice-automation.html" class="related-card">
-            <img src="../images/projects/invoice-automation/cover.jpg" alt="Invoice Automation" loading="lazy" />
+            <img src="../images/projects/invoice-automation/cover.jpg" alt="Invoice Automation" loading="lazy" decoding="async" />
             <div class="related-info">
               <h3>Invoice &amp; Payment Automation</h3>
+              <p>Auto-generate invoices and payment reminders.</p>
               <span>Explore Project →</span>
             </div>
           </a>
 
           <a href="ecommerce-order-sync.html" class="related-card">
-            <img src="../images/projects/ecommerce-order-sync/cover.jpg" alt="E-commerce Order Sync" loading="lazy" />
+            <img src="../images/projects/ecommerce-order-sync/cover.jpg" alt="E-commerce Order Sync" loading="lazy" decoding="async" />
             <div class="related-info">
               <h3>E-commerce Order Sync</h3>
+              <p>Sync orders, inventory, and customer notifications.</p>
               <span>Explore Project →</span>
             </div>
           </a>
-
         </div>
 
-      </div>
-    </section>
-
-
-    <!-- ===================== PROJECT NAVIGATION ===================== -->
-    <section class="bg-white">
-      <div class="container">
-        <div class="project-nav">
-
-          <a href="#" class="nav-prev">
+        <!-- ===== PROJECT NAVIGATION ===== -->
+        <div class="project-nav" style="margin-top:50px;">
+          <a href="#" class="nav-prev" aria-label="Previous project">
             <span class="nav-label">← Previous</span>
             <span class="nav-title">Coming Soon</span>
           </a>
-
-          <a href="../portfolio.html" class="nav-center">All Projects</a>
-
-          <a href="lead-automation.html" class="nav-next">
+          <a href="../portfolio.html" class="nav-center" aria-label="View all projects">All Projects</a>
+          <a href="lead-automation.html" class="nav-next" aria-label="Next project">
             <span class="nav-label">Next Project →</span>
             <span class="nav-title">Lead Automation</span>
           </a>
-
         </div>
       </div>
     </section>
@@ -1107,8 +2115,8 @@
           Let's build an intelligent automation solution tailored specifically for your business. Whether you need AI Agents, RAG systems, workflow automation, or custom n8n workflows — I'm ready to help.
         </p>
         <div class="cta-buttons">
-          <a href="../contact.html" class="btn-white">Let's Discuss Your Project</a>
-          <a href="../portfolio.html" class="btn-outline-white">View Portfolio</a>
+          <a href="../contact.html" class="btn-white" aria-label="Contact to discuss project">Let's Discuss Your Project</a>
+          <a href="../portfolio.html" class="btn-outline-white" aria-label="View portfolio">View Portfolio</a>
         </div>
       </div>
     </section>
@@ -1116,9 +2124,21 @@
   </main>
 
 
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-counter" id="lightboxCounter">1 / 3</div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
-
     <style>
       .site-footer,.site-footer *{box-sizing:border-box;}
       .site-footer{background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;}
@@ -1151,7 +2171,6 @@
 
     <div class="footer-wrapper">
       <div class="footer-grid">
-
         <div>
           <a href="../index.html" class="footer-brand">Redoun Hossain</a>
           <p class="footer-desc">
@@ -1200,7 +2219,6 @@
             <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">📋 Copy Business Email</a>
           </div>
         </div>
-
       </div>
 
       <div class="footer-bottom-slim">
@@ -1210,9 +2228,7 @@
         </div>
       </div>
     </div>
-
   </footer>
-  <!-- ===================== END FOOTER ===================== -->
 
 
   <!-- ===================== Back To Top ===================== -->
@@ -1222,7 +2238,158 @@
   <!-- ===================== Scripts ===================== -->
   <script src="../js/main.js"></script>
   <script>
+    // Footer Year
     document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+    // ===== Reading Progress Bar =====
+    (function() {
+      const progressBar = document.getElementById('progressBar');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+      });
+    })();
+
+    // ===== Animated Counters =====
+    (function() {
+      const counters = document.querySelectorAll('.stat-number[data-target]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const prefix = el.dataset.prefix || '';
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                el.textContent = prefix + target + suffix;
+                clearInterval(timer);
+              } else {
+                el.textContent = prefix + Math.floor(current) + suffix;
+              }
+            }, 16);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(counter => observer.observe(counter));
+    })();
+
+    // ===== FAQ Accordion =====
+    (function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          faqItems.forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            question.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
+    // ===== Lightbox (with Keyboard Support) =====
+    (function() {
+      const gallery = document.getElementById('gallery');
+      if (!gallery) return;
+
+      const items = gallery.querySelectorAll('.gallery-item');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxCounter = document.getElementById('lightboxCounter');
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+
+      let currentIndex = 0;
+      const images = Array.from(items).map(item => {
+        const img = item.querySelector('img');
+        return { src: img.src, alt: img.alt, caption: img.dataset.caption || img.alt };
+      });
+
+      function openLightbox(index) {
+        currentIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function updateLightbox() {
+        const img = images[currentIndex];
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = img.caption;
+        lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightbox();
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightbox();
+      }
+
+      items.forEach((item, index) => {
+        item.addEventListener('click', () => openLightbox(index));
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      nextBtn.addEventListener('click', nextImage);
+      prevBtn.addEventListener('click', prevImage);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      });
+    })();
+
+    // ===== Back to Top =====
+    (function() {
+      const backBtn = document.getElementById('backToTop');
+      if (!backBtn) return;
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          backBtn.classList.add('show');
+        } else {
+          backBtn.classList.remove('show');
+        }
+      });
+      backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
   </script>
 
 </body>
