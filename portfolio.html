@@ -12,108 +12,194 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- ===== STYLES ===== -->
   <style>
-    /* ---------- HERO ---------- */
+    /* ========================================
+       HERO - Clean, No Logo
+    ======================================== */
     .page-hero {
-      padding: 80px 0 50px;
+      padding: 90px 0 60px;
       background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%);
-    }
-    .page-hero .hero-flex {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      text-align: left;
+      text-align: center;
     }
 
-    /* n8n Brand Matching Logo */
-    .hero-logo-circle {
-      width: 130px;
-      height: 130px;
-      min-width: 130px;
-      border-radius: 50%;
-      padding: 6px;
-      background: linear-gradient(135deg, #EA4B71 0%, #f472b6 50%, #EA4B71 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 35px rgba(234, 75, 113, 0.35);
-      position: relative;
-      animation: pulseGlow 3s ease-in-out infinite;
+    .hero-content-center {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 10px 35px rgba(234, 75, 113, 0.35); }
-      50% { box-shadow: 0 10px 45px rgba(234, 75, 113, 0.55); }
-    }
-    .hero-logo-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
+
+    .hero-badge {
+      display: inline-block;
       background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-    .hero-logo-inner svg { 
-      width: 68%; 
-      height: auto; 
+      color: #EA4B71;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 22px;
+      border: 2px solid #fbcfe8;
+      box-shadow: 0 4px 12px rgba(234, 75, 113, 0.12);
     }
 
-    .hero-text h1 {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
+    .page-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
       color: #0c4a6e;
-    }
-    .hero-text > p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #475569;
-      max-width: 600px;
+      line-height: 1.25;
+      font-weight: 800;
     }
 
-    /* Trust Line - matching n8n brand */
+    .hero-description {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: #475569;
+      margin: 0 auto 24px;
+      max-width: 720px;
+    }
+
     .hero-trust-line {
-      margin-top: 20px;
-      padding: 14px 22px;
-      background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%);
+      display: inline-block;
+      margin-top: 8px;
+      padding: 14px 24px;
+      background: #ffffff;
       border-left: 4px solid #EA4B71;
       border-radius: 0 8px 8px 0;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       color: #831843;
       font-weight: 500;
-      max-width: 600px;
+      max-width: 680px;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     @media (max-width: 640px) {
       .page-hero { padding: 60px 0 40px; }
-      .page-hero .hero-flex { flex-direction: column; text-align: center; gap: 20px; }
-      .hero-logo-circle { width: 110px; height: 110px; min-width: 110px; }
-      .hero-text h1 { font-size: 1.7rem; }
-      .hero-trust-line { text-align: center; border-left: none; border-top: 4px solid #EA4B71; border-radius: 8px 8px 0 0; }
+      .page-hero h1 { font-size: 1.8rem; }
+      .hero-description { font-size: 0.98rem; }
+      .hero-badge { font-size: 0.8rem; padding: 6px 16px; }
+      .hero-trust-line {
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid #EA4B71;
+        border-radius: 8px 8px 0 0;
+        font-size: 0.88rem;
+      }
     }
 
-    /* ---------- PORTFOLIO INTRO ---------- */
-    .portfolio-intro {
-      padding: 40px 0 50px;
+
+    /* ========================================
+       PORTFOLIO INTRO CARD
+    ======================================== */
+    .portfolio-intro-section {
+      padding: 60px 20px 40px;
+      background: #f8fafc;
+    }
+
+    .intro-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 45px 40px;
+      border-left: 6px solid #EA4B71;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .intro-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(234, 75, 113, 0.12);
+    }
+
+    .intro-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 2px dashed #fce7eb;
+    }
+
+    .intro-icon {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #fef2f4, #fce7eb);
+      padding: 12px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .intro-card-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #0c4a6e;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .intro-card-text {
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.85;
+      margin: 0 0 28px;
+    }
+
+    .intro-highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .highlight-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 10px;
+      background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%);
+      border-radius: 10px;
+      transition: transform 0.25s;
+    }
+
+    .highlight-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .highlight-icon {
+      font-size: 1.6rem;
+    }
+
+    .highlight-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #831843;
       text-align: center;
     }
-    .portfolio-intro p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #475569;
-      padding: 0 20px;
+
+    @media (max-width: 640px) {
+      .portfolio-intro-section { padding: 40px 15px 30px; }
+      .intro-card { padding: 30px 24px; }
+      .intro-card-header { flex-direction: column; text-align: center; gap: 10px; }
+      .intro-card-header h2 { font-size: 1.2rem; }
+      .intro-card-text { font-size: 0.94rem; }
+      .intro-highlights { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .highlight-icon { font-size: 1.4rem; }
+      .highlight-text { font-size: 0.78rem; }
     }
 
-    /* ---------- PROJECTS SECTION ---------- */
+
+    /* ========================================
+       PROJECTS SECTION
+    ======================================== */
     .portfolio-section {
       padding: 0 0 60px;
     }
-    
-    /* ---------- PROJECT CARDS ---------- */
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -123,6 +209,10 @@
       padding: 0 50px;
     }
 
+
+    /* ========================================
+       PROJECT CARDS
+    ======================================== */
     .n8n-card {
       background: linear-gradient(160deg, #f0f9ff 0%, #e0f2fe 55%, #bae6fd 100%);
       border: 1px solid #bae6fd;
@@ -133,12 +223,12 @@
       flex-direction: column;
       cursor: pointer;
     }
+
     .n8n-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 15px 35px rgba(56, 189, 248, 0.35);
     }
 
-    /* Cover Image */
     .project-cover-img {
       width: 100%;
       height: 260px;
@@ -157,11 +247,13 @@
       background: linear-gradient(135deg, #e0f2fe 0%, #7dd3fc 60%, #38bdf8 100%);
       border-bottom: 1px solid #7dd3fc;
     }
+
     .n8n-brand-line svg {
       width: 50px;
       height: auto;
       flex-shrink: 0;
     }
+
     .n8n-brand-line .brand-text {
       font-size: 1.5rem;
       font-weight: 800;
@@ -169,6 +261,7 @@
       letter-spacing: 1px;
       flex-shrink: 0;
     }
+
     .n8n-brand-line .project-number {
       font-size: 1.3rem;
       font-weight: 800;
@@ -178,12 +271,13 @@
     }
 
     /* Card Info */
-    .n8n-card .project-info { 
-      padding: 24px; 
-      flex: 1; 
-      display: flex; 
-      flex-direction: column; 
+    .n8n-card .project-info {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
+
     .n8n-card .project-tag {
       display: inline-block;
       background: #0369a1;
@@ -197,13 +291,15 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .n8n-card .project-info h3 { 
-      margin: 10px 0 14px; 
+
+    .n8n-card .project-info h3 {
+      margin: 10px 0 14px;
       color: #0c4a6e;
       font-size: 1.35rem;
       line-height: 1.35;
     }
-    .n8n-card .project-info > p { 
+
+    .n8n-card .project-info > p {
       flex: 0;
       color: #075985;
       line-height: 1.75;
@@ -211,13 +307,14 @@
     }
 
     /* Tech Badges */
-    .tech-badges { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 8px; 
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-top: 18px;
       margin-bottom: 14px;
     }
+
     .tech-badges span {
       background: #ffffff;
       border: 1px solid #7dd3fc;
@@ -230,19 +327,21 @@
     }
 
     /* Business Impact */
-    .business-impact { 
-      font-size: 0.88rem; 
-      color: #0c4a6e; 
+    .business-impact {
+      font-size: 0.88rem;
+      color: #0c4a6e;
       margin: 14px 0 18px;
       font-weight: 500;
       padding-top: 14px;
       border-top: 1px dashed #7dd3fc;
     }
+
     .business-impact ul {
       list-style: none;
       padding: 0;
       margin: 8px 0 0;
     }
+
     .business-impact li {
       padding: 4px 0;
       padding-left: 20px;
@@ -250,6 +349,7 @@
       font-size: 0.85rem;
       color: #075985;
     }
+
     .business-impact li::before {
       content: "✔";
       position: absolute;
@@ -258,35 +358,41 @@
       font-weight: 700;
     }
 
-    /* Button */
-    .n8n-card .btn { 
-      margin-top: auto; 
+    .n8n-card .btn {
+      margin-top: auto;
       align-self: flex-start;
       pointer-events: none;
     }
 
-    /* ---------- CTA SECTION ---------- */
+
+    /* ========================================
+       CTA SECTION
+    ======================================== */
     .portfolio-cta {
       padding: 80px 20px;
       text-align: center;
       background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%);
       margin-top: 60px;
     }
+
     .portfolio-cta .cta-inner {
       max-width: 720px;
       margin: 0 auto;
     }
+
     .portfolio-cta h2 {
       font-size: 1.9rem;
       color: #0c4a6e;
       margin-bottom: 16px;
     }
+
     .portfolio-cta p {
       font-size: 1.05rem;
       color: #475569;
       line-height: 1.7;
       margin-bottom: 30px;
     }
+
     .portfolio-cta .btn {
       display: inline-block;
       padding: 14px 32px;
@@ -299,12 +405,17 @@
       transition: 0.3s;
       box-shadow: 0 6px 18px rgba(234, 75, 113, 0.3);
     }
+
     .portfolio-cta .btn:hover {
       background: #d63d63;
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(234, 75, 113, 0.4);
     }
 
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
     @media (max-width: 768px) {
       .projects-grid {
         grid-template-columns: 1fr;
@@ -319,21 +430,11 @@
         gap: 8px;
         padding: 12px 16px;
       }
-      .n8n-brand-line svg {
-        width: 40px;
-      }
-      .n8n-brand-line .brand-text {
-        font-size: 1.2rem;
-      }
-      .n8n-brand-line .project-number {
-        font-size: 1.1rem;
-      }
-      .portfolio-cta {
-        padding: 60px 20px;
-      }
-      .portfolio-cta h2 {
-        font-size: 1.5rem;
-      }
+      .n8n-brand-line svg { width: 40px; }
+      .n8n-brand-line .brand-text { font-size: 1.2rem; }
+      .n8n-brand-line .project-number { font-size: 1.1rem; }
+      .portfolio-cta { padding: 60px 20px; }
+      .portfolio-cta h2 { font-size: 1.5rem; }
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -369,34 +470,21 @@
 
   <main>
 
-    <!-- ===================== PAGE HERO ===================== -->
+    <!-- ===================== PAGE HERO (Clean - No Logo) ===================== -->
     <section class="page-hero">
       <div class="container">
-        <div class="hero-flex">
+        <div class="hero-content-center">
 
-          <!-- n8n Brand Matching Logo -->
-          <div class="hero-logo-circle">
-            <div class="hero-logo-inner">
-              <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
-                <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="40" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="45.5" y1="18.5" x2="60" y2="10" stroke="#EA4B71" stroke-width="4"/>
-                <line x1="45.5" y1="27.5" x2="60" y2="36" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="66" cy="7" r="6" stroke="#EA4B71" stroke-width="4"/>
-                <circle cx="66" cy="39" r="6" stroke="#EA4B71" stroke-width="4"/>
-              </svg>
-            </div>
-          </div>
+          <span class="hero-badge">⚡ n8n Automation Portfolio</span>
 
-          <div class="hero-text">
-            <h1>n8n Workflow Automation Portfolio</h1>
-            <p>Explore a collection of workflow automation projects built with n8n to solve real business challenges. These portfolio projects demonstrate my approach to designing reliable automation workflows, AI-powered solutions, API integrations, and scalable business process automation.</p>
-            
-            <!-- Trust Line -->
-            <div class="hero-trust-line">
-              Each project showcases practical workflow design, clean automation architecture, and solutions built to improve business efficiency using n8n.
-            </div>
+          <h1>n8n Workflow Automation Portfolio</h1>
+
+          <p class="hero-description">
+            Explore a collection of workflow automation projects built with n8n to solve real business challenges. These portfolio projects demonstrate my approach to designing reliable automation workflows, AI-powered solutions, API integrations, and scalable business process automation.
+          </p>
+
+          <div class="hero-trust-line">
+            Each project showcases practical workflow design, clean automation architecture, and solutions built to improve business efficiency using n8n.
           </div>
 
         </div>
@@ -405,23 +493,56 @@
     <!-- ===================== END PAGE HERO ===================== -->
 
 
-    <!-- ===================== PORTFOLIO INTRO ===================== -->
-    <section class="portfolio-intro">
-      <p>This portfolio highlights selected n8n workflow automation projects that demonstrate how I design automation solutions for real business needs. Each project focuses on simplifying repetitive tasks, connecting business applications, improving operational efficiency, and building reliable workflows that deliver practical value.</p>
+    <!-- ===================== PORTFOLIO INTRO CARD ===================== -->
+    <section class="portfolio-intro-section">
+      <div class="container">
+
+        <div class="intro-card">
+
+          <div class="intro-card-header">
+            <span class="intro-icon">🎯</span>
+            <h2>Real Business Automation Solutions</h2>
+          </div>
+
+          <p class="intro-card-text">
+            This portfolio highlights selected n8n workflow automation projects that demonstrate how I design automation solutions for real business needs. Each project focuses on simplifying repetitive tasks, connecting business applications, improving operational efficiency, and building reliable workflows that deliver practical value.
+          </p>
+
+          <div class="intro-highlights">
+            <div class="highlight-item">
+              <span class="highlight-icon">⚙️</span>
+              <span class="highlight-text">Custom Workflows</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🤖</span>
+              <span class="highlight-text">AI-Powered</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🔗</span>
+              <span class="highlight-text">API Integration</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">📈</span>
+              <span class="highlight-text">Business Ready</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </section>
-    <!-- ===================== END PORTFOLIO INTRO ===================== -->
+    <!-- ===================== END PORTFOLIO INTRO CARD ===================== -->
 
 
     <!-- ===================== PORTFOLIO SECTION ===================== -->
     <section class="portfolio-section">
 
-      <!-- ===== PROJECTS GRID ===== -->
       <div class="projects-grid">
 
-        <!-- CARD 1: RAG AI Assistant -->
-        <a href="projects/rag-ai-assistant.html" class="project-card n8n-card" style="text-decoration: none; color: inherit;">
+        <!-- ===== CARD 1: RAG AI Assistant ===== -->
+        <a href="projects/rag-ai-assistant.html" class="project-card n8n-card" style="text-decoration:none;color:inherit;">
           <img src="images/projects/rag-ai-assistant/cover.jpg" alt="RAG AI Knowledge Assistant built with n8n" class="project-cover-img" loading="lazy" />
-          
+
           <div class="n8n-brand-line">
             <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
               <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
@@ -440,7 +561,7 @@
             <span class="project-tag">RAG System</span>
             <h3>RAG AI Knowledge Assistant</h3>
             <p>An AI-powered knowledge assistant that retrieves information from company documents using Retrieval-Augmented Generation (RAG) to deliver fast and accurate responses.</p>
-            
+
             <div class="tech-badges">
               <span>n8n</span>
               <span>OpenAI</span>
@@ -461,10 +582,11 @@
           </div>
         </a>
 
-        <!-- CARD 2: Lead Automation -->
-        <a href="projects/lead-automation.html" class="project-card n8n-card" style="text-decoration: none; color: inherit;">
+
+        <!-- ===== CARD 2: Lead Automation ===== -->
+        <a href="projects/lead-automation.html" class="project-card n8n-card" style="text-decoration:none;color:inherit;">
           <img src="images/projects/lead-automation/cover.jpg" alt="Lead Capture and CRM Automation built with n8n" class="project-cover-img" loading="lazy" />
-          
+
           <div class="n8n-brand-line">
             <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
               <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
@@ -483,7 +605,7 @@
             <span class="project-tag">Lead Automation</span>
             <h3>Lead Capture &amp; CRM Automation</h3>
             <p>Automatically captures new leads, stores them in a CRM, and instantly notifies the sales team through connected business applications.</p>
-            
+
             <div class="tech-badges">
               <span>n8n</span>
               <span>Facebook API</span>
@@ -504,10 +626,11 @@
           </div>
         </a>
 
-        <!-- CARD 3: Invoice Automation -->
-        <a href="projects/invoice-automation.html" class="project-card n8n-card" style="text-decoration: none; color: inherit;">
+
+        <!-- ===== CARD 3: Invoice Automation ===== -->
+        <a href="projects/invoice-automation.html" class="project-card n8n-card" style="text-decoration:none;color:inherit;">
           <img src="images/projects/invoice-automation/cover.jpg" alt="Invoice and Payment Automation built with n8n" class="project-cover-img" loading="lazy" />
-          
+
           <div class="n8n-brand-line">
             <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
               <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
@@ -526,7 +649,7 @@
             <span class="project-tag">Document Automation</span>
             <h3>Invoice &amp; Payment Automation</h3>
             <p>Automates invoice generation, payment reminders, and record synchronization to simplify financial workflows and reduce manual effort.</p>
-            
+
             <div class="tech-badges">
               <span>n8n</span>
               <span>Stripe</span>
@@ -547,10 +670,11 @@
           </div>
         </a>
 
-        <!-- CARD 4: E-commerce Order Sync -->
-        <a href="projects/ecommerce-order-sync.html" class="project-card n8n-card" style="text-decoration: none; color: inherit;">
+
+        <!-- ===== CARD 4: E-commerce Order Sync ===== -->
+        <a href="projects/ecommerce-order-sync.html" class="project-card n8n-card" style="text-decoration:none;color:inherit;">
           <img src="images/projects/ecommerce-order-sync/cover.jpg" alt="E-commerce Order Sync Automation built with n8n" class="project-cover-img" loading="lazy" />
-          
+
           <div class="n8n-brand-line">
             <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
               <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
@@ -569,7 +693,7 @@
             <span class="project-tag">Business Automation</span>
             <h3>E-commerce Order Sync</h3>
             <p>Synchronizes online orders, inventory, and customer notifications to create a faster and more reliable order management workflow.</p>
-            
+
             <div class="tech-badges">
               <span>n8n</span>
               <span>Shopify</span>
@@ -590,10 +714,11 @@
           </div>
         </a>
 
-        <!-- CARD 5: Social Media AI -->
-        <a href="projects/social-media-ai.html" class="project-card n8n-card" style="text-decoration: none; color: inherit;">
+
+        <!-- ===== CARD 5: Social Media AI ===== -->
+        <a href="projects/social-media-ai.html" class="project-card n8n-card" style="text-decoration:none;color:inherit;">
           <img src="images/projects/social-media-ai/cover.jpg" alt="AI Social Media Auto-Posting built with n8n" class="project-cover-img" loading="lazy" />
-          
+
           <div class="n8n-brand-line">
             <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
               <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
@@ -612,7 +737,7 @@
             <span class="project-tag">AI Agent</span>
             <h3>AI Social Media Auto-Posting</h3>
             <p>Uses AI to generate content and automatically publish posts across social media platforms through scheduled workflows.</p>
-            
+
             <div class="tech-badges">
               <span>n8n</span>
               <span>OpenAI</span>
@@ -633,10 +758,11 @@
           </div>
         </a>
 
-        <!-- CARD 6: Reports & Backup -->
-        <a href="projects/reports-backup.html" class="project-card n8n-card" style="text-decoration: none; color: inherit;">
+
+        <!-- ===== CARD 6: Reports & Backup ===== -->
+        <a href="projects/reports-backup.html" class="project-card n8n-card" style="text-decoration:none;color:inherit;">
           <img src="images/projects/reports-backup/cover.jpg" alt="Automated Reports and Backup System built with n8n" class="project-cover-img" loading="lazy" />
-          
+
           <div class="n8n-brand-line">
             <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
               <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
@@ -655,7 +781,7 @@
             <span class="project-tag">Business Automation</span>
             <h3>Automated Reports &amp; Backup</h3>
             <p>Automatically generates business reports and performs scheduled cloud backups to ensure consistent reporting and secure data management.</p>
-            
+
             <div class="tech-badges">
               <span>n8n</span>
               <span>Notion</span>
@@ -678,6 +804,7 @@
 
       </div>
 
+
       <!-- ===== CTA SECTION ===== -->
       <div class="portfolio-cta">
         <div class="cta-inner">
@@ -694,319 +821,114 @@
 
 
   <!-- ===================== FOOTER ===================== -->
-<footer class="site-footer">
+  <footer class="site-footer">
 
-<style>
-.site-footer,
-.site-footer *{
-box-sizing:border-box;
-}
+    <style>
+      .site-footer,.site-footer *{box-sizing:border-box;}
+      .site-footer{background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;}
+      .site-footer .footer-wrapper{width:100%;max-width:1300px;margin:0 auto;padding-left:20px;padding-right:20px;}
+      .site-footer .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:70px;align-items:start;}
+      .site-footer .footer-grid>div{min-width:0;margin:0;padding:0;align-self:start;}
+      .site-footer h4{color:#ffffff;font-size:1.08rem;font-weight:700;letter-spacing:.3px;line-height:1;margin:0 0 22px;}
+      .site-footer .footer-brand{display:inline-block;text-decoration:none;color:#ffffff;font-size:1.65rem;font-weight:900;letter-spacing:-.5px;margin-bottom:18px;transition:.25s;}
+      .site-footer .footer-brand:hover{color:#ffffff;opacity:1;}
+      .site-footer .footer-desc{max-width:300px;font-size:.93rem;line-height:1.75;color:#94a3b8;margin:0 0 25px;}
+      .site-footer .footer-desc strong{display:block;color:#ffffff;font-size:.98rem;font-weight:700;margin-bottom:12px;line-height:1.5;}
+      .site-footer .social-buttons-grid{display:grid;grid-template-columns:repeat(2,92px);gap:10px;width:194px;}
+      .site-footer .subtle-social-btn{display:block;width:92px;background:#1e293b;border:1px solid #334155;border-radius:6px;padding:7px 10px;color:#cbd5e1;font-size:.8rem;font-weight:600;text-decoration:none;text-align:center;transition:.25s;}
+      .site-footer .subtle-social-btn:hover{background:#2563eb;border-color:#2563eb;color:#ffffff;}
+      .site-footer .classic-list{list-style:none;padding:0;margin:0;}
+      .site-footer .classic-list li{margin-bottom:12px;}
+      .site-footer .classic-list li:last-child{margin-bottom:0;}
+      .site-footer .classic-list a{color:#94a3b8;text-decoration:none;font-size:.93rem;transition:.25s;}
+      .site-footer .classic-list a:hover{color:#ffffff;padding-left:4px;}
+      .site-footer .footer-contact-buttons{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;}
+      .site-footer .footer-contact-buttons .subtle-social-btn{width:100%;max-width:220px;padding:10px 16px;font-size:.88rem;white-space:normal;text-align:center;}
+      .site-footer .footer-bottom-slim{margin-top:55px;padding-top:25px;border-top:1px solid #1e293b;}
+      .site-footer .footer-bottom-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;}
+      .site-footer .footer-bottom-inner p{margin:0;font-size:.88rem;line-height:1.8;color:#64748b;}
+      .site-footer .footer-bottom-inner span{color:#94a3b8;font-weight:600;}
+      .site-footer .footer-bottom-inner a{color:#94a3b8;text-decoration:none;transition:.25s;}
+      .site-footer .footer-bottom-inner a:hover{color:#ffffff;text-decoration:underline;}
+      @media(min-width:769px)and(max-width:1100px){.site-footer .footer-wrapper{padding-left:20px;padding-right:20px;}.site-footer .footer-grid{grid-template-columns:1.2fr .9fr 1.1fr 1fr;gap:35px;}}
+      @media(max-width:768px){.site-footer{padding:55px 0 20px;}.site-footer .footer-wrapper{padding-left:24px;padding-right:24px;}.site-footer .footer-grid{grid-template-columns:1fr;gap:40px;}.site-footer .social-buttons-grid{grid-template-columns:repeat(2,92px);width:194px;}.site-footer .footer-contact-buttons .subtle-social-btn{max-width:100%;}.site-footer .footer-bottom-inner{flex-direction:column;align-items:flex-start;gap:12px;}}
+    </style>
 
-.site-footer{
-background:#0b1120;
-color:#94a3b8;
-padding:65px 0 25px;
-border-top:2px solid #2563eb;
-}
+    <div class="footer-wrapper">
+      <div class="footer-grid">
 
-.site-footer .footer-wrapper{
-width:100%;
-max-width:1300px;
-margin:0 auto;
-padding-left:20px;
-padding-right:20px;
-}
+        <div>
+          <a href="index.html" class="footer-brand">Redoun Hossain</a>
+          <p class="footer-desc">
+            <strong>Custom n8n Workflow Automation &amp; AI Agent Specialist</strong>
+          </p>
+          <div class="social-buttons-grid">
+            <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
+            <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
+            <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
+            <a href="https://www.youtube.com/@ArfinSami" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
+            <a href="https://www.facebook.com/redoun.hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
+          </div>
+        </div>
 
-.site-footer .footer-grid{
-display:grid;
-grid-template-columns:1.3fr 1fr 1fr 1fr;
-gap:70px;
-align-items:start;
-}
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="classic-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="legal.html">Privacy Policy</a></li>
+            <li><a href="legal.html?tab=terms">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
 
-.site-footer .footer-grid>div{
-min-width:0;
-margin:0;
-padding:0;
-align-self:start;
-}
+        <div>
+          <h4>Services</h4>
+          <ul class="classic-list">
+            <li><a href="portfolio.html">Custom n8n Workflow Automation</a></li>
+            <li><a href="portfolio.html">AI Agent Development</a></li>
+            <li><a href="portfolio.html">AI Workflow Automation</a></li>
+            <li><a href="portfolio.html">API Integration</a></li>
+            <li><a href="portfolio.html">CRM & Business Process Automation</a></li>
+            <li><a href="portfolio.html">RAG & AI-Powered Automation</a></li>
+          </ul>
+        </div>
 
-.site-footer h4{
-color:#ffffff;
-font-size:1.08rem;
-font-weight:700;
-letter-spacing:.3px;
-line-height:1;
-margin:0 0 22px;
-}
+        <div>
+          <h4>Get in Touch</h4>
+          <div class="footer-contact-buttons">
+            <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
+            <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=email.arfinsami@gmail.com&su=Business%20Inquiry%20from%20Portfolio&body=Hi%20Redoun,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20custom%20n8n%20automation%20project." target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
+            <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">📋 Copy Business Email</a>
+          </div>
+        </div>
 
-.site-footer .footer-brand{
-display:inline-block;
-text-decoration:none;
-color:#ffffff;
-font-size:1.65rem;
-font-weight:900;
-letter-spacing:-.5px;
-margin-bottom:18px;
-transition:.25s;
-}
+      </div>
 
-.site-footer .footer-brand:hover{
-color:#ffffff;
-opacity:1;
-}
-
-.site-footer .footer-desc{
-max-width:300px;
-font-size:.93rem;
-line-height:1.75;
-color:#94a3b8;
-margin:0 0 25px;
-}
-
-.site-footer .footer-desc strong{
-display:block;
-color:#ffffff;
-font-size:.98rem;
-font-weight:700;
-margin-bottom:12px;
-line-height:1.5;
-}
-
-.site-footer .social-buttons-grid{
-display:grid;
-grid-template-columns:repeat(2,92px);
-gap:10px;
-width:194px;
-}
-
-.site-footer .subtle-social-btn{
-display:block;
-width:92px;
-background:#1e293b;
-border:1px solid #334155;
-border-radius:6px;
-padding:7px 10px;
-color:#cbd5e1;
-font-size:.8rem;
-font-weight:600;
-text-decoration:none;
-text-align:center;
-transition:.25s;
-}
-
-.site-footer .subtle-social-btn:hover{
-background:#2563eb;
-border-color:#2563eb;
-color:#ffffff;
-}
-
-.site-footer .classic-list{
-list-style:none;
-padding:0;
-margin:0;
-}
-
-.site-footer .classic-list li{
-margin-bottom:12px;
-}
-
-.site-footer .classic-list li:last-child{
-margin-bottom:0;
-}
-
-.site-footer .classic-list a{
-color:#94a3b8;
-text-decoration:none;
-font-size:.93rem;
-transition:.25s;
-}
-
-.site-footer .classic-list a:hover{
-color:#ffffff;
-padding-left:4px;
-}
-
-.site-footer .footer-contact-buttons{
-display:flex;
-flex-direction:column;
-align-items:flex-start;
-gap:12px;
-width:100%;
-}
-
-.site-footer .footer-contact-buttons .subtle-social-btn{
-width:100%;
-max-width:220px;
-padding:10px 16px;
-font-size:.88rem;
-white-space:normal;
-text-align:center;
-}
-
-.site-footer .footer-bottom-slim{
-margin-top:55px;
-padding-top:25px;
-border-top:1px solid #1e293b;
-}
-
-.site-footer .footer-bottom-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.site-footer .footer-bottom-inner p{
-margin:0;
-font-size:.88rem;
-line-height:1.8;
-color:#64748b;
-}
-
-.site-footer .footer-bottom-inner span{
-color:#94a3b8;
-font-weight:600;
-}
-
-.site-footer .footer-bottom-inner a{
-color:#94a3b8;
-text-decoration:none;
-transition:.25s;
-}
-
-.site-footer .footer-bottom-inner a:hover{
-color:#ffffff;
-text-decoration:underline;
-}
-
-@media (min-width:769px) and (max-width:1100px){
-
-.site-footer .footer-wrapper{
-padding-left:20px;
-padding-right:20px;
-}
-
-.site-footer .footer-grid{
-grid-template-columns:1.2fr .9fr 1.1fr 1fr;
-gap:35px;
-}
-
-}
-
-@media (max-width:768px){
-
-.site-footer{
-padding:55px 0 20px;
-}
-
-.site-footer .footer-wrapper{
-padding-left:24px;
-padding-right:24px;
-}
-
-.site-footer .footer-grid{
-grid-template-columns:1fr;
-gap:40px;
-}
-
-.site-footer .social-buttons-grid{
-grid-template-columns:repeat(2,92px);
-width:194px;
-}
-
-.site-footer .footer-contact-buttons .subtle-social-btn{
-max-width:100%;
-}
-
-.site-footer .footer-bottom-inner{
-flex-direction:column;
-align-items:flex-start;
-gap:12px;
-}
-
-}
-
-</style>
-
-<div class="footer-wrapper">
-
-  <div class="footer-grid">
-
-    <div>
-      <a href="index.html" class="footer-brand">Redoun Hossain</a>
-      <p class="footer-desc">
-        <strong>Custom n8n Workflow Automation &amp; AI Agent Specialist</strong>
-      </p>
-      <div class="social-buttons-grid">
-        <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
-        <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
-        <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
-        <a href="https://www.linkedin.com/in/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
-        <a href="https://www.youtube.com/@ArfinSami" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
-        <a href="https://www.facebook.com/redoun.hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
+      <div class="footer-bottom-slim">
+        <div class="footer-bottom-inner">
+          <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
+          <p><a href="legal.html">Privacy Policy</a> &nbsp; • &nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
+        </div>
       </div>
     </div>
 
-    <div>
-      <h4>Quick Links</h4>
-      <ul class="classic-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="legal.html">Privacy Policy</a></li>
-        <li><a href="legal.html?tab=terms">Terms &amp; Conditions</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Services</h4>
-      <ul class="classic-list">
-        <li><a href="portfolio.html">Custom n8n Workflow Automation</a></li>
-        <li><a href="portfolio.html">AI Agent Development</a></li>
-        <li><a href="portfolio.html">AI Workflow Automation</a></li>
-        <li><a href="portfolio.html">API Integration</a></li>
-        <li><a href="portfolio.html">CRM & Business Process Automation</a></li>
-        <li><a href="portfolio.html">RAG & AI-Powered Automation</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Get in Touch</h4>
-      <div class="footer-contact-buttons">
-        <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
-        <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=email.arfinsami@gmail.com&su=Business%20Inquiry%20from%20Portfolio&body=Hi%20Redoun,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20custom%20n8n%20automation%20project." target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
-        <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">📋 Copy Business Email</a>
-      </div>
-    </div>
-
-  </div>
-
-    <div class="footer-bottom-slim">
-      <div class="footer-bottom-inner">
-        <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
-        <p><a href="legal.html">Privacy Policy</a> &nbsp; • &nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
-      </div>
-    </div>
-  </div>
-
-</footer>
-<!-- ===================== END FOOTER ===================== -->
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
 
 
-<!-- ===================== Back To Top ===================== -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <!-- ===================== Back To Top ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
 
-<!-- ===================== Scripts ===================== -->
-<script src="js/main.js"></script>
-
-<script>
-document.getElementById("footer-year").textContent = new Date().getFullYear();
-</script>
+  <!-- ===================== Scripts ===================== -->
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
