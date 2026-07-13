@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Portfolio | n8n Workflow Automation Projects - Redoun Hossain</title>
-  <meta name="description" content="Browse real n8n automation projects with screenshots, video demos, and measurable results. Custom workflow automation solutions for business process optimization." />
-  <meta name="keywords" content="n8n portfolio, n8n automation projects, workflow automation, business automation, n8n specialist, automation case studies" />
+  <title>n8n Workflow Automation Portfolio | AI Agents, RAG, CRM & Business Automation - Redoun Hossain</title>
+  <meta name="description" content="Explore production-ready n8n workflow automation projects including AI Agents, RAG systems, CRM automation, API integrations, business process automation, and intelligent workflows." />
+  <meta name="keywords" content="n8n portfolio, n8n automation projects, workflow automation, AI agent development, RAG systems, CRM automation, API integration, business process automation, intelligent workflows" />
   <meta name="author" content="Redoun Hossain" />
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- ===== NEW STYLES: Hero Logo Circle + n8n Gradient Cards ===== -->
+  <!-- ===== STYLES ===== -->
   <style>
-    /* ---------- HERO: colorful circle + n8n logo ---------- */
+    /* ---------- HERO ---------- */
     .page-hero {
-      padding: 80px 0 60px;
+      padding: 80px 0 50px;
     }
     .page-hero .hero-flex {
       display: flex;
@@ -53,15 +53,55 @@
     }
     .hero-logo-inner svg { width: 65%; height: auto; }
 
+    .hero-text h1 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .hero-text > p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #475569;
+      max-width: 600px;
+    }
+
+    /* Trust Line */
+    .hero-trust-line {
+      margin-top: 20px;
+      padding: 14px 22px;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 4px solid #0369a1;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.92rem;
+      color: #0c4a6e;
+      font-weight: 500;
+      max-width: 600px;
+    }
+
     @media (max-width: 640px) {
       .page-hero { padding: 60px 0 40px; }
       .page-hero .hero-flex { flex-direction: column; text-align: center; gap: 20px; }
       .hero-logo-circle { width: 100px; height: 100px; min-width: 100px; }
+      .hero-text h1 { font-size: 1.7rem; }
+      .hero-trust-line { text-align: center; border-left: none; border-top: 4px solid #0369a1; border-radius: 8px 8px 0 0; }
+    }
+
+    /* ---------- PORTFOLIO INTRO ---------- */
+    .portfolio-intro {
+      padding: 30px 0 50px;
+      text-align: center;
+    }
+    .portfolio-intro p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #475569;
+      padding: 0 20px;
     }
 
     /* ---------- PROJECTS SECTION ---------- */
     .portfolio-section {
-      padding: 60px 0 80px;
+      padding: 0 0 60px;
     }
     
     /* ---------- PROJECT CARDS ---------- */
@@ -98,7 +138,7 @@
       background: #e0f2fe;
     }
 
-    /* n8n Logo + Text + Project Number Line */
+    /* n8n Brand Line */
     .n8n-brand-line {
       display: flex;
       align-items: center;
@@ -179,12 +219,50 @@
       white-space: nowrap;
     }
 
-    /* Project Result */
-    .project-result { 
-      font-size: 0.9rem; 
+    /* Workflow Features */
+    .workflow-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0;
+      padding: 12px 0;
+      border-top: 1px dashed #7dd3fc;
+      border-bottom: 1px dashed #7dd3fc;
+    }
+    .workflow-features span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* Business Impact */
+    .business-impact { 
+      font-size: 0.88rem; 
       color: #0c4a6e; 
       margin: 14px 0 18px;
       font-weight: 500;
+    }
+    .business-impact ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+    }
+    .business-impact li {
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.85rem;
+      color: #075985;
+    }
+    .business-impact li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #0369a1;
+      font-weight: 700;
     }
 
     /* Button */
@@ -192,6 +270,45 @@
       margin-top: auto; 
       align-self: flex-start;
       pointer-events: none;
+    }
+
+    /* ---------- CTA SECTION ---------- */
+    .portfolio-cta {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      margin-top: 60px;
+    }
+    .portfolio-cta .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .portfolio-cta h2 {
+      font-size: 1.8rem;
+      color: #0c4a6e;
+      margin-bottom: 16px;
+    }
+    .portfolio-cta p {
+      font-size: 1.05rem;
+      color: #075985;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .portfolio-cta .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: #0369a1;
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .portfolio-cta .btn:hover {
+      background: #075985;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(3, 105, 161, 0.3);
     }
 
     @media (max-width: 768px) {
@@ -216,6 +333,12 @@
       }
       .n8n-brand-line .project-number {
         font-size: 1.1rem;
+      }
+      .portfolio-cta {
+        padding: 60px 20px;
+      }
+      .portfolio-cta h2 {
+        font-size: 1.5rem;
       }
     }
 
@@ -260,7 +383,6 @@
           <!-- Colorful circle + n8n logo -->
           <div class="hero-logo-circle">
             <div class="hero-logo-inner">
-              <!-- n8n logo (official color #EA4B71) -->
               <svg viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="n8n logo">
                 <circle cx="10" cy="23" r="7" stroke="#EA4B71" stroke-width="4"/>
                 <line x1="17" y1="23" x2="33" y2="23" stroke="#EA4B71" stroke-width="4"/>
@@ -274,14 +396,26 @@
           </div>
 
           <div class="hero-text">
-            <h1>n8n Automation Portfolio</h1>
-            <p>Real workflow automation projects built with n8n. Explore case studies, screenshots, video demos, and measurable business results.</p>
+            <h1>n8n Workflow Automation Portfolio</h1>
+            <p>Explore real-world n8n workflow automation projects that demonstrate how I build AI agents, business automation, API integrations, RAG systems, and intelligent workflows designed to solve practical business challenges.</p>
+            
+            <!-- Trust Line -->
+            <div class="hero-trust-line">
+              Every project shown here reflects my approach to building reliable, scalable, and production-ready automation solutions with n8n.
+            </div>
           </div>
 
         </div>
       </div>
     </section>
     <!-- ===================== END PAGE HERO ===================== -->
+
+
+    <!-- ===================== PORTFOLIO INTRO ===================== -->
+    <section class="portfolio-intro">
+      <p>These projects represent the types of automation solutions I build for businesses using n8n. Each workflow is designed to eliminate repetitive work, connect business systems, improve operational efficiency, and create measurable business value.</p>
+    </section>
+    <!-- ===================== END PORTFOLIO INTRO ===================== -->
 
 
     <!-- ===================== PORTFOLIO SECTION ===================== -->
@@ -309,22 +443,35 @@
           </div>
 
           <div class="project-info">
-            <span class="project-tag">n8n + AI</span>
+            <span class="project-tag">RAG System</span>
             <h3>RAG AI Knowledge Assistant</h3>
             <p>AI chatbot that answers questions from company documents using RAG — accurate, instant, 24/7 available.</p>
+            
             <div class="tech-badges">
               <span>n8n</span>
               <span>OpenAI</span>
               <span>Pinecone</span>
               <span>Telegram</span>
               <span>LangChain</span>
-              <span>PostgreSQL</span>
-              <span>Embedding</span>
               <span>Vector DB</span>
-              <span>API</span>
-              <span>Webhooks</span>
             </div>
-            <p class="project-result">📈 <strong>Result:</strong> 80% support tickets resolved automatically.</p>
+
+            <div class="workflow-features">
+              <span>Webhook</span>
+              <span>AI</span>
+              <span>API</span>
+              <span>Database</span>
+            </div>
+
+            <div class="business-impact">
+              <strong>Business Impact:</strong>
+              <ul>
+                <li>Faster response time</li>
+                <li>Reduced manual work</li>
+                <li>Improved workflow efficiency</li>
+              </ul>
+            </div>
+
             <span class="btn btn-primary btn-sm">View Details →</span>
           </div>
         </a>
@@ -348,9 +495,10 @@
           </div>
 
           <div class="project-info">
-            <span class="project-tag">n8n</span>
+            <span class="project-tag">Lead Automation</span>
             <h3>Lead Capture &amp; CRM Automation</h3>
             <p>Auto-capture Facebook leads into CRM with instant email notifications and Slack alerts — zero missed leads.</p>
+            
             <div class="tech-badges">
               <span>n8n</span>
               <span>Facebook API</span>
@@ -358,12 +506,24 @@
               <span>Slack</span>
               <span>Gmail</span>
               <span>Webhooks</span>
-              <span>Google Sheets</span>
-              <span>Zapier</span>
-              <span>HubSpot</span>
-              <span>Salesforce</span>
             </div>
-            <p class="project-result">📈 <strong>Result:</strong> 5+ hours/week saved, 0% leads missed.</p>
+
+            <div class="workflow-features">
+              <span>Webhook</span>
+              <span>API</span>
+              <span>CRM</span>
+              <span>Email</span>
+            </div>
+
+            <div class="business-impact">
+              <strong>Business Impact:</strong>
+              <ul>
+                <li>Reduced manual data entry</li>
+                <li>Improved lead response time</li>
+                <li>Streamlined sales workflow</li>
+              </ul>
+            </div>
+
             <span class="btn btn-primary btn-sm">View Details →</span>
           </div>
         </a>
@@ -387,22 +547,35 @@
           </div>
 
           <div class="project-info">
-            <span class="project-tag">n8n</span>
+            <span class="project-tag">Document Automation</span>
             <h3>Invoice &amp; Payment Automation</h3>
             <p>Auto-generate PDF invoices, send smart payment reminders, and sync accounting records automatically.</p>
+            
             <div class="tech-badges">
               <span>n8n</span>
               <span>Stripe</span>
               <span>Google Sheets</span>
               <span>Gmail</span>
               <span>PDF Generator</span>
-              <span>QuickBooks</span>
               <span>PayPal</span>
-              <span>Xero</span>
-              <span>Webhooks</span>
-              <span>Cron</span>
             </div>
-            <p class="project-result">📈 <strong>Result:</strong> 30% faster payment collection.</p>
+
+            <div class="workflow-features">
+              <span>API</span>
+              <span>PDF</span>
+              <span>Email</span>
+              <span>Scheduler</span>
+            </div>
+
+            <div class="business-impact">
+              <strong>Business Impact:</strong>
+              <ul>
+                <li>Faster payment collection</li>
+                <li>Reduced manual invoicing</li>
+                <li>Improved cash flow tracking</li>
+              </ul>
+            </div>
+
             <span class="btn btn-primary btn-sm">View Details →</span>
           </div>
         </a>
@@ -426,22 +599,35 @@
           </div>
 
           <div class="project-info">
-            <span class="project-tag">n8n</span>
+            <span class="project-tag">Business Automation</span>
             <h3>E-commerce Order Sync</h3>
             <p>Sync Shopify orders with inventory and shipping tools, plus instant WhatsApp order confirmations.</p>
+            
             <div class="tech-badges">
               <span>n8n</span>
               <span>Shopify</span>
               <span>WhatsApp</span>
               <span>Google Sheets</span>
-              <span>WooCommerce</span>
-              <span>ShipStation</span>
               <span>Twilio</span>
-              <span>SMS</span>
-              <span>Inventory Sync</span>
               <span>API</span>
             </div>
-            <p class="project-result">📈 <strong>Result:</strong> Zero order entry errors.</p>
+
+            <div class="workflow-features">
+              <span>Webhook</span>
+              <span>API</span>
+              <span>Inventory</span>
+              <span>SMS</span>
+            </div>
+
+            <div class="business-impact">
+              <strong>Business Impact:</strong>
+              <ul>
+                <li>Zero order entry errors</li>
+                <li>Improved inventory accuracy</li>
+                <li>Faster order processing</li>
+              </ul>
+            </div>
+
             <span class="btn btn-primary btn-sm">View Details →</span>
           </div>
         </a>
@@ -465,22 +651,35 @@
           </div>
 
           <div class="project-info">
-            <span class="project-tag">n8n + AI</span>
+            <span class="project-tag">AI Agent</span>
             <h3>AI Social Media Auto-Posting</h3>
             <p>AI generates engaging captions and auto-publishes to Facebook &amp; LinkedIn on an optimized schedule.</p>
+            
             <div class="tech-badges">
               <span>n8n</span>
               <span>OpenAI</span>
               <span>Facebook</span>
               <span>LinkedIn</span>
               <span>Twitter</span>
-              <span>Instagram</span>
-              <span>Buffer</span>
-              <span>Content AI</span>
+              <span>Scheduler</span>
+            </div>
+
+            <div class="workflow-features">
+              <span>AI</span>
+              <span>API</span>
               <span>Scheduler</span>
               <span>Analytics</span>
             </div>
-            <p class="project-result">📈 <strong>Result:</strong> 10+ hours/week saved, 2x engagement.</p>
+
+            <div class="business-impact">
+              <strong>Business Impact:</strong>
+              <ul>
+                <li>Reduced content creation time</li>
+                <li>Consistent posting schedule</li>
+                <li>Improved social engagement</li>
+              </ul>
+            </div>
+
             <span class="btn btn-primary btn-sm">View Details →</span>
           </div>
         </a>
@@ -504,26 +703,48 @@
           </div>
 
           <div class="project-info">
-            <span class="project-tag">n8n</span>
+            <span class="project-tag">Business Automation</span>
             <h3>Automated Reports &amp; Backup</h3>
             <p>Weekly business reports auto-generated and delivered, with scheduled cloud backups of all critical data.</p>
+            
             <div class="tech-badges">
               <span>n8n</span>
               <span>Notion</span>
               <span>Google Drive</span>
               <span>Gmail</span>
               <span>AWS S3</span>
-              <span>Dropbox</span>
-              <span>PostgreSQL</span>
-              <span>MongoDB</span>
               <span>Cron</span>
-              <span>PDF</span>
             </div>
-            <p class="project-result">📈 <strong>Result:</strong> 100% reliable backups, zero data loss.</p>
+
+            <div class="workflow-features">
+              <span>Scheduler</span>
+              <span>Cloud</span>
+              <span>PDF</span>
+              <span>Email</span>
+            </div>
+
+            <div class="business-impact">
+              <strong>Business Impact:</strong>
+              <ul>
+                <li>Reliable automated backups</li>
+                <li>Reduced manual reporting</li>
+                <li>Improved data security</li>
+              </ul>
+            </div>
+
             <span class="btn btn-primary btn-sm">View Details →</span>
           </div>
         </a>
 
+      </div>
+
+      <!-- ===== CTA SECTION ===== -->
+      <div class="portfolio-cta">
+        <div class="cta-inner">
+          <h2>Need a Workflow Similar to These?</h2>
+          <p>Let's discuss how a custom n8n automation solution can streamline your business operations, reduce manual work, and create measurable business value.</p>
+          <a href="contact.html" class="btn">Discuss Your Project →</a>
+        </div>
       </div>
 
     </section>
@@ -574,71 +795,4 @@
         <p class="footer-desc">
           <strong>Custom n8n Workflow Automation &amp; AI Agent Specialist</strong>
         </p>
-        <div class="social-buttons-grid">
-          <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
-          <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
-          <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
-          <a href="https://www.linkedin.com/in/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
-          <a href="https://www.youtube.com/@ArfinSami" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
-          <a href="https://www.facebook.com/redoun.hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
-        </div>
-      </div>
-
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="classic-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="legal.html">Privacy Policy</a></li>
-          <li><a href="legal.html?tab=terms">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Services</h4>
-        <ul class="classic-list">
-          <li><a href="portfolio.html">Custom n8n Workflow Automation</a></li>
-          <li><a href="portfolio.html">AI Agent Development</a></li>
-          <li><a href="portfolio.html">AI Workflow Automation</a></li>
-          <li><a href="portfolio.html">API Integration</a></li>
-          <li><a href="portfolio.html">CRM & Business Process Automation</a></li>
-          <li><a href="portfolio.html">RAG & AI-Powered Automation</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Get in Touch</h4>
-        <div class="footer-contact-buttons">
-          <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
-          <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=email.arfinsami@gmail.com&su=Business%20Inquiry%20from%20Portfolio&body=Hi%20Redoun,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20custom%20n8n%20automation%20project." target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
-          <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">📋 Copy Business Email</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom-slim">
-      <div class="footer-bottom-inner">
-        <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
-        <p><a href="legal.html">Privacy Policy</a> &nbsp; • &nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
-      </div>
-    </div>
-  </div>
-
-</footer>
-<!-- ===================== END FOOTER ===================== -->
-
-
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-  
-  <script src="js/main.js"></script>
-  
-  <script>
-    document.getElementById("footer-year").textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+        <div 
