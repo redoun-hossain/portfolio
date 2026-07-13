@@ -1,390 +1,780 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>RAG AI Knowledge Assistant | n8n AI Agent Project - Redoun Hossain</title>
-<meta name="description" content="A production-ready RAG AI Knowledge Assistant built with n8n, OpenAI GPT-4o and Pinecone. Retrieves answers from company documents and delivers them instantly through Telegram." />
-<meta name="keywords" content="n8n, RAG, AI Agent, OpenAI GPT-4o, Pinecone, Telegram bot, workflow automation, AI knowledge assistant" />
-<meta name="author" content="Redoun Hossain" />
+  <title>RAG AI Knowledge Assistant | n8n AI Agent Project | Redoun Hossain</title>
+  <meta name="description" content="Production-ready RAG AI Knowledge Assistant built with n8n, OpenAI GPT-4o, Pinecone and Telegram. AI Agent that answers questions from company documents using Retrieval-Augmented Generation." />
+  <meta name="keywords" content="n8n, AI Agent, RAG, OpenAI GPT-4o, Pinecone, Telegram Bot, Workflow Automation, AI Assistant" />
+  <meta name="author" content="Redoun Hossain" />
 
-<meta property="og:type" content="website" />
-<meta property="og:title" content="RAG AI Knowledge Assistant | n8n AI Agent Project" />
-<meta property="og:description" content="Production-ready n8n AI agent that answers company document questions using Retrieval-Augmented Generation." />
-<meta property="og:image" content="../images/projects/rag-ai-assistant/cover.jpg" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/style.css" />
 
-<link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ========================================
+       BASE
+    ======================================== */
+    * { box-sizing: border-box; }
 
-<style>
-  /* ========================================
-     PROJECT HERO
-  ======================================== */
-  .project-hero { padding: 40px 0 0; }
+    .project-page {
+      background: #f8fafc;
+      padding-bottom: 0;
+    }
 
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #0369a1;
-    margin-bottom: 26px;
-    transition: gap .25s;
-  }
-  .back-link:hover { gap: 12px; color: #EA4B71; }
+    /* ========================================
+       BACK LINK
+    ======================================== */
+    .back-link-wrap {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 20px 0;
+    }
 
-  .project-hero-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 44px;
-    box-shadow: 0 15px 40px rgba(15, 23, 42, .07);
-  }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #EA4B71;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-  .project-tag-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-    color: #0369a1;
-    padding: 7px 18px;
-    border-radius: 999px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: .3px;
-    margin-bottom: 20px;
-  }
+    .back-link:hover {
+      gap: 12px;
+      color: #d63d63;
+    }
 
-  .project-hero-card h1 {
-    font-size: 2.4rem;
-    line-height: 1.25;
-    font-weight: 800;
-    color: #0c4a6e;
-    margin-bottom: 18px;
-  }
 
-  .project-hero-card .lede {
-    font-size: 1.08rem;
-    color: #475569;
-    line-height: 1.8;
-    max-width: 760px;
-    margin-bottom: 26px;
-  }
+    /* ========================================
+       PROJECT HERO
+    ======================================== */
+    .project-hero {
+      padding: 60px 0 40px;
+      background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%);
+    }
 
-  .project-hero-card .tech-badges { margin: 0 0 36px; }
-  .project-hero-card .tech-badges span {
-    background: #ffffff;
-    border: 1px solid #bae6fd;
-    color: #0369a1;
-    font-weight: 700;
-    padding: 8px 16px;
-  }
+    .project-category-badge {
+      display: inline-block;
+      background: #ffffff;
+      color: #EA4B71;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      border: 2px solid #fbcfe8;
+      text-transform: uppercase;
+    }
 
-  .quick-info-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    margin-bottom: 36px;
-  }
+    .project-title {
+      font-size: 2.6rem;
+      line-height: 1.2;
+      font-weight: 800;
+      color: #0c4a6e;
+      margin: 0 0 18px;
+      letter-spacing: -0.5px;
+    }
 
-  .quick-info-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 18px;
-    text-align: center;
-    transition: transform .3s, box-shadow .3s;
-  }
-  .quick-info-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(3,105,161,.1); }
-  .quick-info-card .label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: .07em;
-    margin-bottom: 8px;
-  }
-  .quick-info-card .value { font-size: 1rem; font-weight: 800; color: #0c4a6e; }
+    .project-tagline {
+      font-size: 1.1rem;
+      color: #475569;
+      line-height: 1.75;
+      max-width: 780px;
+      margin: 0 0 28px;
+    }
 
-  .cover-image {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
-  }
-  .cover-image img { width: 100%; display: block; }
+    .hero-tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
 
-  @media (max-width: 900px) {
-    .quick-info-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (max-width: 640px) {
-    .project-hero-card { padding: 28px; }
-    .project-hero-card h1 { font-size: 1.7rem; }
-    .quick-info-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+    .hero-tech-badges span {
+      background: #ffffff;
+      color: #0369a1;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid #bae6fd;
+    }
 
-  /* ========================================
-     SHARED SECTION WRAPPER
-  ======================================== */
-  .proj-section { padding: 80px 0; }
-  .proj-section.alt { background: #f8fafc; }
+    /* Quick Info Bar */
+    .quick-info-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      border: 1px solid #fbcfe8;
+    }
 
-  .section-eyebrow {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #EA4B71;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    margin-bottom: 10px;
-  }
+    .info-item {
+      text-align: center;
+      padding: 8px;
+    }
 
-  .section-heading {
-    font-size: 1.9rem;
-    font-weight: 800;
-    color: #0c4a6e;
-    margin-bottom: 20px;
-  }
+    .info-item + .info-item {
+      border-left: 1px dashed #fce7eb;
+    }
 
-  /* ========================================
-     OVERVIEW
-  ======================================== */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 44px;
-    align-items: start;
-  }
-  .overview-grid p { font-size: 1.03rem; color: #475569; line-height: 1.9; }
+    .info-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #831843;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
 
-  .overview-highlight {
-    background: linear-gradient(160deg, #fef2f4 0%, #fce7eb 100%);
-    border-left: 5px solid #EA4B71;
-    padding: 30px;
-    border-radius: 16px;
-  }
-  .overview-highlight h3 { font-size: 1.15rem; color: #0c4a6e; margin-bottom: 16px; }
-  .overview-highlight ul { padding-left: 18px; margin: 0; }
-  .overview-highlight li { color: #334155; margin-bottom: 12px; font-size: 0.96rem; }
-  .overview-highlight li:last-child { margin-bottom: 0; }
+    .info-value {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0c4a6e;
+    }
 
-  @media (max-width: 900px) { .overview-grid { grid-template-columns: 1fr; } }
 
-  /* ========================================
-     CHALLENGE & SOLUTION
-  ======================================== */
-  .cs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-  .cs-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 32px;
-  }
-  .cs-card .cs-icon { font-size: 1.6rem; margin-bottom: 14px; }
-  .cs-card h3 { font-size: 1.15rem; color: #0c4a6e; margin-bottom: 12px; }
-  .cs-card p { color: #475569; line-height: 1.85; font-size: 0.97rem; }
-  .cs-card.solution { border-top: 4px solid #EA4B71; }
-  .cs-card.challenge { border-top: 4px solid #94a3b8; }
+    /* ========================================
+       COVER IMAGE
+    ======================================== */
+    .cover-image-section {
+      padding: 40px 0;
+      background: #f8fafc;
+    }
 
-  @media (max-width: 800px) { .cs-grid { grid-template-columns: 1fr; } }
+    .cover-image {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      border: 1px solid #e2e8f0;
+    }
 
-  /* ========================================
-     TECHNOLOGIES
-  ======================================== */
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 18px;
-  }
-  .tech-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 26px 18px;
-    text-align: center;
-    transition: transform .3s, box-shadow .3s;
-  }
-  .tech-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(3,105,161,.1); }
-  .tech-card .tech-icon { font-size: 2rem; margin-bottom: 12px; }
-  .tech-card .tech-name { font-weight: 700; color: #0c4a6e; font-size: 1rem; margin-bottom: 4px; }
-  .tech-card .tech-role { font-size: 0.82rem; color: #64748b; }
+    .cover-image img {
+      width: 100%;
+      display: block;
+    }
 
-  @media (max-width: 900px) { .tech-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 560px) { .tech-grid { grid-template-columns: repeat(2, 1fr); } }
 
-  /* ========================================
-     GALLERY
-  ======================================== */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-  .gallery-grid figure {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    overflow: hidden;
-    margin: 0;
-    cursor: zoom-in;
-    transition: transform .3s, box-shadow .3s;
-  }
-  .gallery-grid figure:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(15,23,42,.1); }
-  .gallery-grid img { width: 100%; height: 210px; object-fit: cover; display: block; }
-  .gallery-grid figcaption {
-    padding: 14px 16px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #0c4a6e;
-    background: #f8fafc;
-  }
+    /* ========================================
+       SECTIONS
+    ======================================== */
+    .project-section {
+      padding: 70px 0;
+    }
 
-  @media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .gallery-grid { grid-template-columns: 1fr; } }
+    .project-section.bg-white { background: #ffffff; }
+    .project-section.bg-gray { background: #f8fafc; }
+    .project-section.bg-pink { background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%); }
 
-  /* Lightbox */
-  .lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(12, 20, 33, .88);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-  }
-  .lightbox.is-open { display: flex; }
-  .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 12px; }
-  .lightbox-close {
-    position: absolute;
-    top: 24px;
-    right: 30px;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-    background: none;
-    border: none;
-  }
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 45px;
+    }
 
-  /* ========================================
-     BUSINESS IMPACT
-  ======================================== */
-  .impact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-  .impact-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 32px 18px;
-    text-align: center;
-    transition: transform .3s, box-shadow .3s;
-  }
-  .impact-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(234,75,113,.14); }
-  .impact-card .impact-number { font-size: 2.1rem; font-weight: 800; color: #EA4B71; margin-bottom: 8px; }
-  .impact-card p { color: #475569; font-weight: 600; font-size: 0.92rem; margin: 0; }
+    .section-eyebrow {
+      display: inline-block;
+      color: #EA4B71;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
 
-  @media (max-width: 900px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0c4a6e;
+      margin: 0 0 14px;
+      line-height: 1.3;
+    }
 
-  /* ========================================
-     RELATED PROJECTS
-  ======================================== */
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-  .related-card {
-    display: block;
-    text-decoration: none;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 26px;
-    transition: transform .3s, box-shadow .3s;
-  }
-  .related-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(3,105,161,.12); }
-  .related-card .related-icon { font-size: 1.6rem; margin-bottom: 12px; }
-  .related-card h3 { color: #0c4a6e; font-size: 1.05rem; margin-bottom: 8px; }
-  .related-card p { color: #64748b; font-size: 0.9rem; line-height: 1.7; margin-bottom: 14px; }
-  .related-card span.link { color: #EA4B71; font-weight: 700; font-size: 0.9rem; }
+    .section-desc {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.75;
+      margin: 0;
+    }
 
-  @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr; } }
 
-  /* ========================================
-     PROJECT CTA
-  ======================================== */
-  .project-cta {
-    text-align: center;
-    background: linear-gradient(135deg, #fef2f4 0%, #fce7eb 100%);
-    border-radius: 20px;
-    padding: 60px 30px;
-  }
-  .project-cta h2 { font-size: 1.7rem; color: #0c4a6e; margin-bottom: 14px; }
-  .project-cta p { color: #475569; max-width: 600px; margin: 0 auto 26px; line-height: 1.8; }
-  .project-cta .btn { box-shadow: 0 6px 18px rgba(234,75,113,.3); }
+    /* ========================================
+       OVERVIEW
+    ======================================== */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
 
-  /* ========================================
-     PROJECT NAV
-  ======================================== */
-  .project-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 30px;
-    border-top: 1px solid #e2e8f0;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .project-navigation a { font-weight: 700; color: #0369a1; text-decoration: none; }
-  .project-navigation a:hover { color: #EA4B71; }
-</style>
+    .overview-text p {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.9;
+      margin: 0 0 16px;
+    }
+
+    .overview-highlights {
+      background: linear-gradient(135deg, #fef2f4, #fce7eb);
+      border-radius: 16px;
+      padding: 30px;
+      border-left: 5px solid #EA4B71;
+    }
+
+    .overview-highlights h3 {
+      font-size: 1.2rem;
+      color: #0c4a6e;
+      margin: 0 0 18px;
+      font-weight: 800;
+    }
+
+    .overview-highlights ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .overview-highlights li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: #334155;
+      font-weight: 500;
+      font-size: 0.94rem;
+    }
+
+    .overview-highlights li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 20px;
+      height: 20px;
+      background: #EA4B71;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+
+    /* ========================================
+       TECHNOLOGIES
+    ======================================== */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .tech-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(234, 75, 113, 0.15);
+      border-color: #fbcfe8;
+    }
+
+    .tech-icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .tech-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0c4a6e;
+      margin-bottom: 4px;
+    }
+
+    .tech-version {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+
+    /* ========================================
+       WORKFLOW IMAGE
+    ======================================== */
+    .workflow-image {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      background: #fff;
+    }
+
+    .workflow-image img {
+      width: 100%;
+      display: block;
+      cursor: zoom-in;
+      transition: transform 0.4s;
+    }
+
+    .workflow-image:hover img {
+      transform: scale(1.02);
+    }
+
+
+    /* ========================================
+       BUSINESS IMPACT
+    ======================================== */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .impact-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px 20px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #EA4B71, #f472b6);
+    }
+
+    .impact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(234, 75, 113, 0.15);
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #EA4B71, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .impact-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0c4a6e;
+      margin-bottom: 4px;
+    }
+
+    .impact-sub {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+
+    /* ========================================
+       CHALLENGE & SOLUTION
+    ======================================== */
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .challenge-card,
+    .solution-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+      transition: 0.3s;
+    }
+
+    .challenge-card {
+      border-top: 5px solid #f59e0b;
+    }
+
+    .solution-card {
+      border-top: 5px solid #10b981;
+    }
+
+    .challenge-card:hover,
+    .solution-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .cs-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .challenge-card .cs-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .solution-card .cs-icon {
+      background: #d1fae5;
+      color: #059669;
+    }
+
+    .challenge-card h3,
+    .solution-card h3 {
+      font-size: 1.3rem;
+      color: #0c4a6e;
+      margin: 0 0 14px;
+      font-weight: 800;
+    }
+
+    .challenge-card p,
+    .solution-card p {
+      color: #475569;
+      line-height: 1.85;
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+
+    /* ========================================
+       IMAGE GALLERY
+    ======================================== */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #0c4a6e;
+      text-align: center;
+      background: #f8fafc;
+    }
+
+
+    /* ========================================
+       RELATED PROJECTS
+    ======================================== */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .related-card {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      color: inherit;
+      transition: 0.3s;
+      display: block;
+    }
+
+    .related-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(234, 75, 113, 0.15);
+      border-color: #fbcfe8;
+    }
+
+    .related-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .related-info {
+      padding: 20px;
+    }
+
+    .related-info h3 {
+      font-size: 1.1rem;
+      color: #0c4a6e;
+      margin: 0 0 10px;
+      font-weight: 800;
+    }
+
+    .related-info span {
+      color: #EA4B71;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+
+    /* ========================================
+       PROJECT NAVIGATION
+    ======================================== */
+    .project-nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 40px 0;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .nav-prev,
+    .nav-next {
+      text-decoration: none;
+      color: inherit;
+      padding: 16px 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+    }
+
+    .nav-prev { text-align: left; }
+    .nav-next { text-align: right; }
+
+    .nav-prev:hover,
+    .nav-next:hover {
+      background: #fef2f4;
+      border-color: #fbcfe8;
+    }
+
+    .nav-label {
+      display: block;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+
+    .nav-title {
+      display: block;
+      font-weight: 700;
+      color: #0c4a6e;
+    }
+
+    .nav-center {
+      text-decoration: none;
+      background: #EA4B71;
+      color: #ffffff;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .nav-center:hover {
+      background: #d63d63;
+      transform: translateY(-2px);
+    }
+
+
+    /* ========================================
+       CTA
+    ======================================== */
+    .project-cta {
+      padding: 70px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #831843 0%, #EA4B71 50%, #f472b6 100%);
+      color: #fff;
+    }
+
+    .cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .project-cta h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin: 0 0 16px;
+      font-weight: 800;
+    }
+
+    .project-cta p {
+      font-size: 1.05rem;
+      color: #fce7eb;
+      line-height: 1.75;
+      margin: 0 0 30px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      background: #ffffff;
+      color: #EA4B71;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid #ffffff;
+      transition: 0.3s;
+    }
+
+    .btn-outline-white:hover {
+      background: #ffffff;
+      color: #EA4B71;
+    }
+
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+    @media (max-width: 992px) {
+      .quick-info-bar { grid-template-columns: repeat(3, 1fr); }
+      .info-item:nth-child(4) { border-left: none; }
+      .overview-grid { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: repeat(3, 1fr); }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+      .image-gallery { grid-template-columns: repeat(2, 1fr); }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .project-hero { padding: 40px 0 30px; }
+      .project-title { font-size: 1.9rem; }
+      .project-tagline { font-size: 0.98rem; }
+      .quick-info-bar { grid-template-columns: repeat(2, 1fr); padding: 18px; }
+      .info-item + .info-item { border-left: none; }
+      .info-item { padding: 12px 8px; border-radius: 8px; background: #fef2f4; }
+      .section-title { font-size: 1.5rem; }
+      .project-section { padding: 50px 0; }
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .challenge-grid { grid-template-columns: 1fr; }
+      .image-gallery { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .project-nav { grid-template-columns: 1fr; text-align: center; }
+      .nav-prev, .nav-next { text-align: center; }
+      .project-cta h2 { font-size: 1.5rem; }
+      .cta-buttons { flex-direction: column; }
+      .btn-white, .btn-outline-white { width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="../index.html" class="logo">Redoun Hossain</a>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../portfolio.html" class="active">Portfolio</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-        <li><a href="../contact.html" class="btn btn-primary nav-hire">Hire Me</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<!-- ===================== END HEADER ===================== -->
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">Redoun Hossain</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../contact.html" class="btn btn-primary nav-hire">Hire Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===================== END HEADER ===================== -->
 
-<main>
-  <div class="container">
 
-    <!-- ===================== HERO ===================== -->
+  <main class="project-page">
+
+    <!-- ===================== BACK LINK ===================== -->
+    <div class="back-link-wrap">
+      <div class="container">
+        <a href="../portfolio.html" class="back-link">← Back to Portfolio</a>
+      </div>
+    </div>
+
+
+    <!-- ===================== PROJECT HERO ===================== -->
     <section class="project-hero">
-      <a href="../portfolio.html" class="back-link">&larr; Back to Portfolio</a>
+      <div class="container">
 
-      <div class="project-hero-card">
-        <span class="project-tag-badge">RAG System &middot; AI Agent Automation</span>
-        <h1>RAG AI Knowledge Assistant</h1>
-        <p class="lede">
-          A production-ready Retrieval-Augmented Generation (RAG) assistant built with n8n, OpenAI GPT-4o
-          and Pinecone. It searches a company's own documents for the right answer, then replies through
-          Telegram in seconds &mdash; so customers get accurate, source-grounded support around the clock.
+        <span class="project-category-badge">🤖 AI Agent / RAG System</span>
+
+        <h1 class="project-title">RAG AI Knowledge Assistant</h1>
+
+        <p class="project-tagline">
+          A production-ready Retrieval-Augmented Generation (RAG) AI Assistant built with n8n, OpenAI GPT-4o and Pinecone. Automatically searches company knowledge, retrieves relevant information, and delivers accurate 24/7 responses through Telegram.
         </p>
 
-        <div class="tech-badges">
+        <div class="hero-tech-badges">
           <span>n8n</span>
           <span>OpenAI GPT-4o</span>
           <span>Pinecone</span>
@@ -392,355 +782,448 @@
           <span>Google Drive</span>
         </div>
 
-        <div class="quick-info-grid">
-          <div class="quick-info-card">
-            <div class="label">Category</div>
-            <div class="value">AI Agent</div>
+        <!-- Quick Info Bar -->
+        <div class="quick-info-bar">
+          <div class="info-item">
+            <div class="info-label">Category</div>
+            <div class="info-value">AI Agent</div>
           </div>
-          <div class="quick-info-card">
-            <div class="label">Industry</div>
-            <div class="value">Customer Support</div>
+          <div class="info-item">
+            <div class="info-label">Industry</div>
+            <div class="info-value">Customer Support</div>
           </div>
-          <div class="quick-info-card">
-            <div class="label">Build Time</div>
-            <div class="value">3 Days</div>
+          <div class="info-item">
+            <div class="info-label">Duration</div>
+            <div class="info-value">3 Days</div>
           </div>
-          <div class="quick-info-card">
-            <div class="label">Platform</div>
-            <div class="value">Telegram</div>
+          <div class="info-item">
+            <div class="info-label">Platform</div>
+            <div class="info-value">Telegram</div>
           </div>
-          <div class="quick-info-card">
-            <div class="label">Status</div>
-            <div class="value">Production Ready</div>
+          <div class="info-item">
+            <div class="info-label">Status</div>
+            <div class="info-value">Production Ready</div>
           </div>
         </div>
 
+      </div>
+    </section>
+
+
+    <!-- ===================== COVER IMAGE ===================== -->
+    <section class="cover-image-section">
+      <div class="container">
         <div class="cover-image">
-          <img src="../images/projects/rag-ai-assistant/cover.jpg" alt="RAG AI Knowledge Assistant dashboard" loading="lazy" />
+          <img src="../images/projects/rag-ai-assistant/cover.jpg" alt="RAG AI Knowledge Assistant built with n8n" loading="lazy" />
         </div>
       </div>
     </section>
+
 
     <!-- ===================== OVERVIEW ===================== -->
-    <section class="proj-section">
-      <span class="section-eyebrow">Overview</span>
-      <h2 class="section-heading">What This Assistant Does</h2>
+    <section class="project-section bg-white">
+      <div class="container">
 
-      <div class="overview-grid">
-        <p>
-          Instead of relying on an LLM's general knowledge, this assistant answers only from a company's
-          own documents. Files stored in Google Drive are converted into embeddings and indexed in
-          Pinecone, so every reply comes from real, verified content. When a customer messages Telegram
-          with a question, n8n retrieves the closest matching passages and GPT-4o turns them into a clear,
-          accurate answer. If the assistant isn't confident in a match, the conversation is escalated to a
-          human agent instead of guessing.
-        </p>
-
-        <div class="overview-highlight">
-          <h3>Project Highlights</h3>
-          <ul>
-            <li>Built entirely in n8n, no custom backend required</li>
-            <li>OpenAI GPT-4o for grounded, accurate answers</li>
-            <li>Pinecone vector search for fast document retrieval</li>
-            <li>Automatic escalation to a human when confidence is low</li>
-            <li>Delivered through Telegram for instant, 24/7 replies</li>
-          </ul>
+        <div class="section-header">
+          <span class="section-eyebrow">— Project Overview —</span>
+          <h2 class="section-title">What This Project Does</h2>
         </div>
+
+        <div class="overview-grid">
+
+          <div class="overview-text">
+            <p>
+              This project demonstrates a complete AI-powered Retrieval-Augmented Generation (RAG) workflow developed entirely with n8n. Instead of relying solely on a language model, the assistant retrieves verified information from company documents stored in Google Drive, searches them through Pinecone Vector Database, and generates highly accurate responses using OpenAI GPT-4o.
+            </p>
+            <p>
+              The workflow includes automatic document indexing, semantic search, confidence checking, human escalation logic, and complete logging — making it suitable for real-world business deployment. Customers get instant, source-grounded answers 24/7 without waiting for support agents.
+            </p>
+          </div>
+
+          <div class="overview-highlights">
+            <h3>Key Highlights</h3>
+            <ul>
+              <li>Built entirely with n8n</li>
+              <li>OpenAI GPT-4o Integration</li>
+              <li>Pinecone Vector Database</li>
+              <li>Google Drive Knowledge Base</li>
+              <li>Telegram AI Assistant</li>
+              <li>Automatic Human Escalation</li>
+              <li>Production-Ready Workflow</li>
+            </ul>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
-    <!-- ===================== CHALLENGE & SOLUTION ===================== -->
-    <section class="proj-section alt">
-      <span class="section-eyebrow">The Problem</span>
-      <h2 class="section-heading">Challenge &amp; Solution</h2>
-
-      <div class="cs-grid">
-        <div class="cs-card challenge">
-          <div class="cs-icon">&#10071;</div>
-          <h3>The Challenge</h3>
-          <p>
-            The support team received hundreds of repetitive questions every day and spent hours digging
-            through documentation to answer them. Customers often waited hours for a reply, especially
-            outside office hours, which increased workload and hurt satisfaction.
-          </p>
-        </div>
-        <div class="cs-card solution">
-          <div class="cs-icon">&#9989;</div>
-          <h3>The Solution</h3>
-          <p>
-            A RAG assistant now indexes company documents automatically and answers questions in real
-            time through Telegram. GPT-4o generates responses strictly from retrieved company knowledge,
-            and low-confidence queries are routed to a human agent instead of being guessed at.
-          </p>
-        </div>
-      </div>
-    </section>
 
     <!-- ===================== TECHNOLOGIES ===================== -->
-    <section class="proj-section">
-      <span class="section-eyebrow">Stack</span>
-      <h2 class="section-heading">Technologies Used</h2>
+    <section class="project-section bg-gray">
+      <div class="container">
 
-      <div class="tech-grid">
-        <div class="tech-card">
-          <div class="tech-icon">&#9889;</div>
-          <div class="tech-name">n8n</div>
-          <div class="tech-role">Workflow Engine</div>
+        <div class="section-header">
+          <span class="section-eyebrow">— Tech Stack —</span>
+          <h2 class="section-title">Technologies Used</h2>
+          <p class="section-desc">Modern automation and AI tools working together to deliver reliable results.</p>
         </div>
-        <div class="tech-card">
-          <div class="tech-icon">&#129504;</div>
-          <div class="tech-name">OpenAI</div>
-          <div class="tech-role">GPT-4o</div>
+
+        <div class="tech-grid">
+
+          <div class="tech-card">
+            <div class="tech-icon">⚙️</div>
+            <div class="tech-name">n8n</div>
+            <div class="tech-version">Automation Platform</div>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-icon">🤖</div>
+            <div class="tech-name">OpenAI</div>
+            <div class="tech-version">GPT-4o</div>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-icon">🧠</div>
+            <div class="tech-name">Pinecone</div>
+            <div class="tech-version">Vector Database</div>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-icon">💬</div>
+            <div class="tech-name">Telegram</div>
+            <div class="tech-version">Bot API</div>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-icon">📂</div>
+            <div class="tech-name">Google Drive</div>
+            <div class="tech-version">Knowledge Base</div>
+          </div>
+
         </div>
-        <div class="tech-card">
-          <div class="tech-icon">&#128196;</div>
-          <div class="tech-name">Pinecone</div>
-          <div class="tech-role">Vector Database</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon">&#128172;</div>
-          <div class="tech-name">Telegram</div>
-          <div class="tech-role">Bot API</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon">&#128193;</div>
-          <div class="tech-name">Google Drive</div>
-          <div class="tech-role">Knowledge Base</div>
-        </div>
+
       </div>
     </section>
 
-    <!-- ===================== GALLERY ===================== -->
-    <section class="proj-section alt">
-      <span class="section-eyebrow">Inside The Build</span>
-      <h2 class="section-heading">Workflow &amp; Results</h2>
 
-      <div class="gallery-grid" id="gallery">
-        <figure onclick="openLightbox('../images/projects/rag-ai-assistant/workflow.jpg','Complete n8n workflow')">
-          <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="Complete n8n workflow for the RAG assistant" loading="lazy" />
-          <figcaption>Complete n8n Workflow</figcaption>
-        </figure>
-        <figure onclick="openLightbox('../images/projects/rag-ai-assistant/architecture.jpg','System architecture')">
-          <img src="../images/projects/rag-ai-assistant/architecture.jpg" alt="RAG system architecture diagram" loading="lazy" />
-          <figcaption>System Architecture</figcaption>
-        </figure>
-        <figure onclick="openLightbox('../images/projects/rag-ai-assistant/ai-response.jpg','Telegram AI response')">
-          <img src="../images/projects/rag-ai-assistant/ai-response.jpg" alt="AI assistant responding in Telegram" loading="lazy" />
-          <figcaption>Telegram AI Response</figcaption>
-        </figure>
-        <figure onclick="openLightbox('../images/projects/rag-ai-assistant/final-output.jpg','Final output')">
-          <img src="../images/projects/rag-ai-assistant/final-output.jpg" alt="Final assistant output example" loading="lazy" />
-          <figcaption>Final Output</figcaption>
-        </figure>
-        <figure onclick="openLightbox('../images/projects/rag-ai-assistant/results.jpg','Business results')">
-          <img src="../images/projects/rag-ai-assistant/results.jpg" alt="Business results after deployment" loading="lazy" />
-          <figcaption>Business Results</figcaption>
-        </figure>
-        <figure onclick="openLightbox('../images/projects/rag-ai-assistant/cover.jpg','Project dashboard')">
-          <img src="../images/projects/rag-ai-assistant/cover.jpg" alt="Project dashboard overview" loading="lazy" />
-          <figcaption>Project Dashboard</figcaption>
-        </figure>
+    <!-- ===================== COMPLETE WORKFLOW ===================== -->
+    <section class="project-section bg-white">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-eyebrow">— How It Works —</span>
+          <h2 class="section-title">Complete n8n Workflow</h2>
+          <p class="section-desc">
+            The workflow collects documents from Google Drive, converts them into embeddings, stores in Pinecone, searches using vector similarity, and generates grounded answers with GPT-4o before responding through Telegram.
+          </p>
+        </div>
+
+        <div class="workflow-image">
+          <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="Complete n8n RAG AI Workflow" loading="lazy" />
+        </div>
+
       </div>
     </section>
+
 
     <!-- ===================== BUSINESS IMPACT ===================== -->
-    <section class="proj-section">
-      <span class="section-eyebrow">Outcome</span>
-      <h2 class="section-heading">Business Impact</h2>
+    <section class="project-section bg-gray">
+      <div class="container">
 
-      <div class="impact-grid">
-        <div class="impact-card">
-          <div class="impact-number">80%</div>
-          <p>Support Tickets Resolved Automatically</p>
+        <div class="section-header">
+          <span class="section-eyebrow">— Real Results —</span>
+          <h2 class="section-title">Business Impact</h2>
+          <p class="section-desc">Measurable outcomes that translate directly to business value.</p>
         </div>
-        <div class="impact-card">
-          <div class="impact-number">10s</div>
-          <p>Average Response Time</p>
+
+        <div class="impact-grid">
+
+          <div class="impact-card">
+            <div class="impact-number">80%</div>
+            <div class="impact-label">Tickets Resolved</div>
+            <div class="impact-sub">Automatically by AI</div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-number">10s</div>
+            <div class="impact-label">Response Time</div>
+            <div class="impact-sub">Average Customer Reply</div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-number">24/7</div>
+            <div class="impact-label">Availability</div>
+            <div class="impact-sub">Always Online</div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-number">50%</div>
+            <div class="impact-label">Less Manual Work</div>
+            <div class="impact-sub">Reduced Support Load</div>
+          </div>
+
         </div>
-        <div class="impact-card">
-          <div class="impact-number">24/7</div>
-          <p>Always-On Availability</p>
-        </div>
-        <div class="impact-card">
-          <div class="impact-number">50%</div>
-          <p>Less Manual Support Work</p>
-        </div>
+
       </div>
     </section>
 
-    <!-- ===================== RELATED + CTA ===================== -->
-    <section class="proj-section alt">
-      <span class="section-eyebrow">Explore More</span>
-      <h2 class="section-heading">Related Projects</h2>
 
-      <div class="related-grid">
-        <a href="lead-automation.html" class="related-card">
-          <div class="related-icon">&#127919;</div>
-          <h3>Lead Capture &amp; CRM Automation</h3>
-          <p>Automatically captures, qualifies and routes new leads into a CRM using n8n.</p>
-          <span class="link">View Project &rarr;</span>
-        </a>
-        <a href="invoice-automation.html" class="related-card">
-          <div class="related-icon">&#128196;</div>
-          <h3>Invoice &amp; Payment Automation</h3>
-          <p>Generates, sends and tracks invoices automatically, without manual follow-up.</p>
-          <span class="link">View Project &rarr;</span>
-        </a>
-        <a href="ecommerce-order-sync.html" class="related-card">
-          <div class="related-icon">&#128202;</div>
-          <h3>E-commerce Order Sync</h3>
-          <p>Keeps orders, inventory and customer notifications in sync in real time.</p>
-          <span class="link">View Project &rarr;</span>
-        </a>
+    <!-- ===================== CHALLENGE & SOLUTION ===================== -->
+    <section class="project-section bg-white">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-eyebrow">— The Story —</span>
+          <h2 class="section-title">Challenge &amp; Solution</h2>
+        </div>
+
+        <div class="challenge-grid">
+
+          <div class="challenge-card">
+            <div class="cs-icon">⚠️</div>
+            <h3>The Challenge</h3>
+            <p>
+              The company received hundreds of repetitive support questions daily. Support agents spent hours searching documentation before replying, and customers often waited several hours for answers — especially outside office hours. This increased workload, reduced customer satisfaction, and slowed business operations.
+            </p>
+          </div>
+
+          <div class="solution-card">
+            <div class="cs-icon">✅</div>
+            <h3>The Solution</h3>
+            <p>
+              A complete RAG AI Assistant was built with n8n. Documents are automatically indexed from Google Drive, embedded using OpenAI, and stored in Pinecone. GPT-4o generates accurate responses grounded in company knowledge. When confidence is low, the workflow automatically escalates to a human agent — ensuring quality is never compromised.
+            </p>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
-    <!-- ===================== CTA ===================== -->
-    <section class="proj-section">
-      <div class="project-cta">
-        <h2>Need a Similar AI Automation?</h2>
-        <p>
-          I build custom AI agents and n8n workflow automations for real business needs &mdash; from
-          RAG assistants to CRM and API integrations.
-        </p>
-        <a href="../contact.html" class="btn btn-primary">Hire Me &rarr;</a>
+
+    <!-- ===================== IMAGE GALLERY ===================== -->
+    <section class="project-section bg-gray">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-eyebrow">— Project Screenshots —</span>
+          <h2 class="section-title">Image Gallery</h2>
+          <p class="section-desc">Visual walkthrough of the project in action.</p>
+        </div>
+
+        <div class="image-gallery">
+
+          <div class="gallery-item">
+            <img src="../images/projects/rag-ai-assistant/workflow.jpg" alt="n8n Workflow Overview" loading="lazy" />
+            <div class="gallery-caption">n8n Workflow</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="../images/projects/rag-ai-assistant/ai-response.jpg" alt="Telegram AI Response" loading="lazy" />
+            <div class="gallery-caption">AI Response in Telegram</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="../images/projects/rag-ai-assistant/final-output.jpg" alt="Final Output" loading="lazy" />
+            <div class="gallery-caption">Final Output</div>
+          </div>
+
+        </div>
+
       </div>
     </section>
+
+
+    <!-- ===================== RELATED PROJECTS ===================== -->
+    <section class="project-section bg-white">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-eyebrow">— Explore More —</span>
+          <h2 class="section-title">Related Projects</h2>
+          <p class="section-desc">Check out other automation projects built with n8n.</p>
+        </div>
+
+        <div class="related-grid">
+
+          <a href="lead-automation.html" class="related-card">
+            <img src="../images/projects/lead-automation/cover.jpg" alt="Lead Automation" loading="lazy" />
+            <div class="related-info">
+              <h3>Lead Capture &amp; CRM Automation</h3>
+              <span>Explore Project →</span>
+            </div>
+          </a>
+
+          <a href="invoice-automation.html" class="related-card">
+            <img src="../images/projects/invoice-automation/cover.jpg" alt="Invoice Automation" loading="lazy" />
+            <div class="related-info">
+              <h3>Invoice &amp; Payment Automation</h3>
+              <span>Explore Project →</span>
+            </div>
+          </a>
+
+          <a href="ecommerce-order-sync.html" class="related-card">
+            <img src="../images/projects/ecommerce-order-sync/cover.jpg" alt="E-commerce Order Sync" loading="lazy" />
+            <div class="related-info">
+              <h3>E-commerce Order Sync</h3>
+              <span>Explore Project →</span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
 
     <!-- ===================== PROJECT NAVIGATION ===================== -->
-    <section class="proj-section" style="padding-top:0;">
-      <div class="project-navigation">
-        <a href="../portfolio.html">&larr; Back to Portfolio</a>
-        <a href="lead-automation.html">Next Project: Lead Automation &rarr;</a>
+    <section class="bg-white">
+      <div class="container">
+        <div class="project-nav">
+
+          <a href="#" class="nav-prev">
+            <span class="nav-label">← Previous</span>
+            <span class="nav-title">Coming Soon</span>
+          </a>
+
+          <a href="../portfolio.html" class="nav-center">All Projects</a>
+
+          <a href="lead-automation.html" class="nav-next">
+            <span class="nav-label">Next Project →</span>
+            <span class="nav-title">Lead Automation</span>
+          </a>
+
+        </div>
       </div>
     </section>
 
-  </div>
-</main>
 
-<!-- ===================== LIGHTBOX ===================== -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
-  <img id="lightbox-img" src="" alt="" />
-</div>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="site-footer">
-
-  <style>
-    .site-footer,.site-footer *{box-sizing:border-box;}
-    .site-footer{background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;}
-    .site-footer .footer-wrapper{width:100%;max-width:1300px;margin:0 auto;padding-left:20px;padding-right:20px;}
-    .site-footer .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:70px;align-items:start;}
-    .site-footer .footer-grid>div{min-width:0;margin:0;padding:0;align-self:start;}
-    .site-footer h4{color:#ffffff;font-size:1.08rem;font-weight:700;letter-spacing:.3px;line-height:1;margin:0 0 22px;}
-    .site-footer .footer-brand{display:inline-block;text-decoration:none;color:#ffffff;font-size:1.65rem;font-weight:900;letter-spacing:-.5px;margin-bottom:18px;transition:.25s;}
-    .site-footer .footer-brand:hover{color:#ffffff;opacity:1;}
-    .site-footer .footer-desc{max-width:300px;font-size:.93rem;line-height:1.75;color:#94a3b8;margin:0 0 25px;}
-    .site-footer .footer-desc strong{display:block;color:#ffffff;font-size:.98rem;font-weight:700;margin-bottom:12px;line-height:1.5;}
-    .site-footer .social-buttons-grid{display:grid;grid-template-columns:repeat(2,92px);gap:10px;width:194px;}
-    .site-footer .subtle-social-btn{display:block;width:92px;background:#1e293b;border:1px solid #334155;border-radius:6px;padding:7px 10px;color:#cbd5e1;font-size:.8rem;font-weight:600;text-decoration:none;text-align:center;transition:.25s;}
-    .site-footer .subtle-social-btn:hover{background:#2563eb;border-color:#2563eb;color:#ffffff;}
-    .site-footer .classic-list{list-style:none;padding:0;margin:0;}
-    .site-footer .classic-list li{margin-bottom:12px;}
-    .site-footer .classic-list li:last-child{margin-bottom:0;}
-    .site-footer .classic-list a{color:#94a3b8;text-decoration:none;font-size:.93rem;transition:.25s;}
-    .site-footer .classic-list a:hover{color:#ffffff;padding-left:4px;}
-    .site-footer .footer-contact-buttons{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;}
-    .site-footer .footer-contact-buttons .subtle-social-btn{width:100%;max-width:220px;padding:10px 16px;font-size:.88rem;white-space:normal;text-align:center;}
-    .site-footer .footer-bottom-slim{margin-top:55px;padding-top:25px;border-top:1px solid #1e293b;}
-    .site-footer .footer-bottom-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;}
-    .site-footer .footer-bottom-inner p{margin:0;font-size:.88rem;line-height:1.8;color:#64748b;}
-    .site-footer .footer-bottom-inner span{color:#94a3b8;font-weight:600;}
-    .site-footer .footer-bottom-inner a{color:#94a3b8;text-decoration:none;transition:.25s;}
-    .site-footer .footer-bottom-inner a:hover{color:#ffffff;text-decoration:underline;}
-    @media(min-width:769px)and(max-width:1100px){.site-footer .footer-wrapper{padding-left:20px;padding-right:20px;}.site-footer .footer-grid{grid-template-columns:1.2fr .9fr 1.1fr 1fr;gap:35px;}}
-    @media(max-width:768px){.site-footer{padding:55px 0 20px;}.site-footer .footer-wrapper{padding-left:24px;padding-right:24px;}.site-footer .footer-grid{grid-template-columns:1fr;gap:40px;}.site-footer .social-buttons-grid{grid-template-columns:repeat(2,92px);width:194px;}.site-footer .footer-contact-buttons .subtle-social-btn{max-width:100%;}.site-footer .footer-bottom-inner{flex-direction:column;align-items:flex-start;gap:12px;}}
-  </style>
-
-  <div class="footer-wrapper">
-    <div class="footer-grid">
-
-      <div>
-        <a href="../index.html" class="footer-brand">Redoun Hossain</a>
-        <p class="footer-desc">
-          <strong>Custom n8n Workflow Automation &amp; AI Agent Specialist</strong>
+    <!-- ===================== CTA ===================== -->
+    <section class="project-cta">
+      <div class="cta-inner">
+        <h2>Need a Similar AI Automation?</h2>
+        <p>
+          Let's build an intelligent automation solution tailored specifically for your business. Whether you need AI Agents, RAG systems, workflow automation, or custom n8n workflows — I'm ready to help.
         </p>
-        <div class="social-buttons-grid">
-          <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
-          <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
-          <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
-          <a href="https://www.linkedin.com/in/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
-          <a href="https://www.youtube.com/@ArfinSami" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
-          <a href="https://www.facebook.com/redoun.hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
+        <div class="cta-buttons">
+          <a href="../contact.html" class="btn-white">Let's Discuss Your Project</a>
+          <a href="../portfolio.html" class="btn-outline-white">View Portfolio</a>
         </div>
       </div>
+    </section>
 
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="classic-list">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../portfolio.html">Portfolio</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../legal.html">Privacy Policy</a></li>
-          <li><a href="../legal.html?tab=terms">Terms &amp; Conditions</a></li>
-        </ul>
+  </main>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+
+    <style>
+      .site-footer,.site-footer *{box-sizing:border-box;}
+      .site-footer{background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;}
+      .site-footer .footer-wrapper{width:100%;max-width:1300px;margin:0 auto;padding-left:20px;padding-right:20px;}
+      .site-footer .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:70px;align-items:start;}
+      .site-footer .footer-grid>div{min-width:0;margin:0;padding:0;align-self:start;}
+      .site-footer h4{color:#ffffff;font-size:1.08rem;font-weight:700;letter-spacing:.3px;line-height:1;margin:0 0 22px;}
+      .site-footer .footer-brand{display:inline-block;text-decoration:none;color:#ffffff;font-size:1.65rem;font-weight:900;letter-spacing:-.5px;margin-bottom:18px;transition:.25s;}
+      .site-footer .footer-brand:hover{color:#ffffff;opacity:1;}
+      .site-footer .footer-desc{max-width:300px;font-size:.93rem;line-height:1.75;color:#94a3b8;margin:0 0 25px;}
+      .site-footer .footer-desc strong{display:block;color:#ffffff;font-size:.98rem;font-weight:700;margin-bottom:12px;line-height:1.5;}
+      .site-footer .social-buttons-grid{display:grid;grid-template-columns:repeat(2,92px);gap:10px;width:194px;}
+      .site-footer .subtle-social-btn{display:block;width:92px;background:#1e293b;border:1px solid #334155;border-radius:6px;padding:7px 10px;color:#cbd5e1;font-size:.8rem;font-weight:600;text-decoration:none;text-align:center;transition:.25s;}
+      .site-footer .subtle-social-btn:hover{background:#2563eb;border-color:#2563eb;color:#ffffff;}
+      .site-footer .classic-list{list-style:none;padding:0;margin:0;}
+      .site-footer .classic-list li{margin-bottom:12px;}
+      .site-footer .classic-list li:last-child{margin-bottom:0;}
+      .site-footer .classic-list a{color:#94a3b8;text-decoration:none;font-size:.93rem;transition:.25s;}
+      .site-footer .classic-list a:hover{color:#ffffff;padding-left:4px;}
+      .site-footer .footer-contact-buttons{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;}
+      .site-footer .footer-contact-buttons .subtle-social-btn{width:100%;max-width:220px;padding:10px 16px;font-size:.88rem;white-space:normal;text-align:center;}
+      .site-footer .footer-bottom-slim{margin-top:55px;padding-top:25px;border-top:1px solid #1e293b;}
+      .site-footer .footer-bottom-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;}
+      .site-footer .footer-bottom-inner p{margin:0;font-size:.88rem;line-height:1.8;color:#64748b;}
+      .site-footer .footer-bottom-inner a{color:#94a3b8;text-decoration:none;transition:.25s;}
+      .site-footer .footer-bottom-inner a:hover{color:#ffffff;text-decoration:underline;}
+      @media(min-width:769px)and(max-width:1100px){.site-footer .footer-wrapper{padding-left:20px;padding-right:20px;}.site-footer .footer-grid{grid-template-columns:1.2fr .9fr 1.1fr 1fr;gap:35px;}}
+      @media(max-width:768px){.site-footer{padding:55px 0 20px;}.site-footer .footer-wrapper{padding-left:24px;padding-right:24px;}.site-footer .footer-grid{grid-template-columns:1fr;gap:40px;}.site-footer .social-buttons-grid{grid-template-columns:repeat(2,92px);width:194px;}.site-footer .footer-contact-buttons .subtle-social-btn{max-width:100%;}.site-footer .footer-bottom-inner{flex-direction:column;align-items:flex-start;gap:12px;}}
+    </style>
+
+    <div class="footer-wrapper">
+      <div class="footer-grid">
+
+        <div>
+          <a href="../index.html" class="footer-brand">Redoun Hossain</a>
+          <p class="footer-desc">
+            <strong>Custom n8n Workflow Automation &amp; AI Agent Specialist</strong>
+          </p>
+          <div class="social-buttons-grid">
+            <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
+            <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
+            <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
+            <a href="https://www.youtube.com/@ArfinSami" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
+            <a href="https://www.facebook.com/redoun.hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="classic-list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../portfolio.html">Portfolio</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../legal.html">Privacy Policy</a></li>
+            <li><a href="../legal.html?tab=terms">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul class="classic-list">
+            <li><a href="../portfolio.html">Custom n8n Workflow Automation</a></li>
+            <li><a href="../portfolio.html">AI Agent Development</a></li>
+            <li><a href="../portfolio.html">AI Workflow Automation</a></li>
+            <li><a href="../portfolio.html">API Integration</a></li>
+            <li><a href="../portfolio.html">CRM & Business Process Automation</a></li>
+            <li><a href="../portfolio.html">RAG & AI-Powered Automation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <div class="footer-contact-buttons">
+            <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
+            <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=email.arfinsami@gmail.com&su=Business%20Inquiry%20from%20Portfolio&body=Hi%20Redoun,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20custom%20n8n%20automation%20project." target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
+            <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">📋 Copy Business Email</a>
+          </div>
+        </div>
+
       </div>
 
-      <div>
-        <h4>Services</h4>
-        <ul class="classic-list">
-          <li><a href="../portfolio.html">Custom n8n Workflow Automation</a></li>
-          <li><a href="../portfolio.html">AI Agent Development</a></li>
-          <li><a href="../portfolio.html">AI Workflow Automation</a></li>
-          <li><a href="../portfolio.html">API Integration</a></li>
-          <li><a href="../portfolio.html">CRM &amp; Business Process Automation</a></li>
-          <li><a href="../portfolio.html">RAG &amp; AI-Powered Automation</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Get in Touch</h4>
-        <div class="footer-contact-buttons">
-          <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr &#8599;</a>
-          <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork &#8599;</a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=email.arfinsami@gmail.com&su=Business%20Inquiry%20from%20Portfolio&body=Hi%20Redoun,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20custom%20n8n%20automation%20project." target="_blank" rel="noopener noreferrer" class="subtle-social-btn">&#128231; Contact via Gmail</a>
-          <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('email.arfinsami@gmail.com');alert('Business Email copied!\n\nemail.arfinsami@gmail.com');return false;">&#128203; Copy Business Email</a>
+      <div class="footer-bottom-slim">
+        <div class="footer-bottom-inner">
+          <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
+          <p><a href="../legal.html">Privacy Policy</a> &nbsp; • &nbsp; <a href="../legal.html?tab=terms">Terms &amp; Conditions</a></p>
         </div>
       </div>
-
     </div>
 
-    <div class="footer-bottom-slim">
-      <div class="footer-bottom-inner">
-        <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
-        <p><a href="../legal.html">Privacy Policy</a> &nbsp; &bull; &nbsp; <a href="../legal.html?tab=terms">Terms &amp; Conditions</a></p>
-      </div>
-    </div>
-  </div>
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
 
-</footer>
-<!-- ===================== END FOOTER ===================== -->
 
-<button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+  <!-- ===================== Back To Top ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-<script src="../js/main.js"></script>
-<script>
-  document.getElementById("footer-year").textContent = new Date().getFullYear();
 
-  function openLightbox(src, alt) {
-    document.getElementById("lightbox-img").src = src;
-    document.getElementById("lightbox-img").alt = alt;
-    document.getElementById("lightbox").classList.add("is-open");
-  }
-  function closeLightbox() {
-    document.getElementById("lightbox").classList.remove("is-open");
-  }
-  document.getElementById("lightbox").addEventListener("click", function (e) {
-    if (e.target.id === "lightbox") closeLightbox();
-  });
-</script>
+  <!-- ===================== Scripts ===================== -->
+  <script src="../js/main.js"></script>
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
