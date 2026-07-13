@@ -149,7 +149,7 @@
       border: 1px solid #1e40af;
     }
 
-    /* Hero CTA Buttons (Centered) */
+    /* Hero CTA Buttons */
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -202,7 +202,7 @@
       transform: translateY(-2px);
     }
 
-    /* Quick Info Bar (Centered) */
+    /* Quick Info Bar */
     .quick-info-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -253,7 +253,7 @@
     }
 
     /* ========================================
-       FEATURE BADGES (Section 3)
+       FEATURE BADGES
     ======================================== */
     .feature-badges-section {
       padding: 70px 0;
@@ -269,7 +269,7 @@
       padding: 32px 20px;
       background: #ffffff;
       border-radius: 16px;
-      border: 1px solid #bfdbfe;
+      border: 2px solid #bfdbfe;
       transition: 0.3s;
       box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
     }
@@ -326,25 +326,26 @@
     }
 
     /* ========================================
-       OVERVIEW (Styled Card - Blue Left Border)
+       OVERVIEW (White BG → Blue gradient card)
     ======================================== */
     .overview-card {
       max-width: 900px;
       margin: 0 auto;
-      background: #ffffff;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
       border-radius: 18px;
       padding: 50px;
+      border: 2px solid #bfdbfe;
       border-left: 6px solid #1e40af;
-      box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08);
+      box-shadow: 0 8px 30px rgba(30, 64, 175, 0.12);
       transition: 0.3s;
     }
     .overview-card:hover {
-      box-shadow: 0 10px 30px rgba(30, 64, 175, 0.15);
+      box-shadow: 0 14px 40px rgba(30, 64, 175, 0.2);
       transform: translateY(-3px);
     }
     .overview-card p {
       font-size: 1.05rem;
-      color: #334155;
+      color: #1e293b;
       line-height: 1.95;
       margin: 0 0 24px;
     }
@@ -405,7 +406,7 @@
     }
 
     /* ========================================
-       KEY FEATURES GRID
+       KEY FEATURES GRID (Gray BG → Blue bordered cards)
     ======================================== */
     .features-grid {
       display: grid;
@@ -414,21 +415,21 @@
     }
     .feature-item {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-left: 4px solid transparent;
+      border: 2px solid #bfdbfe;
+      border-left: 5px solid #1e40af;
       border-radius: 12px;
       padding: 24px;
       display: flex;
       align-items: flex-start;
       gap: 14px;
       transition: 0.3s;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.08);
     }
     .feature-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(30, 64, 175, 0.15);
-      border-left-color: #1e40af;
-      border-color: #bfdbfe;
+      box-shadow: 0 12px 30px rgba(30, 64, 175, 0.18);
+      border-color: #1e40af;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
     }
     .feature-check {
       flex-shrink: 0;
@@ -476,7 +477,7 @@
     }
 
     /* ========================================
-       IMAGE GALLERY
+       IMAGE GALLERY (White BG → Blue bordered cards)
     ======================================== */
     .image-gallery {
       display: grid;
@@ -485,12 +486,13 @@
     }
     .gallery-item {
       position: relative;
-      background: #f8fafc;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
       border-radius: 14px;
       overflow: hidden;
-      border: 1px solid #e2e8f0;
+      border: 2px solid #bfdbfe;
       cursor: pointer;
       transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.1);
     }
     .gallery-item:focus {
       outline: 3px solid #1e40af;
@@ -498,7 +500,7 @@
     }
     .gallery-item:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(30, 64, 175, 0.2);
+      box-shadow: 0 18px 40px rgba(30, 64, 175, 0.22);
       border-color: #1e40af;
     }
     .gallery-item-img-wrap {
@@ -538,6 +540,7 @@
       color: #1e40af;
       opacity: 0;
       transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
     }
     .gallery-item:hover .gallery-zoom-icon {
       opacity: 1;
@@ -549,7 +552,7 @@
       font-weight: 700;
       color: #1e40af;
       text-align: center;
-      background: #ffffff;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
     }
 
     /* Lightbox */
@@ -709,7 +712,7 @@
     }
 
     /* ========================================
-       TECHNOLOGIES
+       TECHNOLOGIES (Gray BG → Blue bordered cards)
     ======================================== */
     .tech-grid {
       display: grid;
@@ -718,16 +721,17 @@
     }
     .tech-card {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
+      border: 2px solid #bfdbfe;
       border-radius: 14px;
       padding: 28px;
       transition: 0.3s;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.08);
     }
     .tech-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(30, 64, 175, 0.18);
-      border-color: #bfdbfe;
+      box-shadow: 0 15px 35px rgba(30, 64, 175, 0.2);
+      border-color: #1e40af;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
     }
     .tech-card-header {
       display: flex;
@@ -774,8 +778,8 @@
       margin: 0 auto;
       background: #ffffff;
       border-radius: 20px;
-      border: 1px solid #bfdbfe;
-      box-shadow: 0 10px 40px rgba(30, 64, 175, 0.12);
+      border: 2px solid #bfdbfe;
+      box-shadow: 0 10px 40px rgba(30, 64, 175, 0.15);
       padding: 30px 20px;
       overflow-x: auto;
     }
@@ -887,7 +891,7 @@
     }
 
     /* ========================================
-       RELATED PROJECTS
+       RELATED PROJECTS (White BG → Blue bordered cards)
     ======================================== */
     .related-grid {
       display: grid;
@@ -895,8 +899,8 @@
       gap: 26px;
     }
     .related-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
+      background: linear-gradient(160deg, #eff6ff 0%, #dbeafe 55%, #bfdbfe 100%);
+      border: 2px solid #bfdbfe;
       border-radius: 14px;
       overflow: hidden;
       text-decoration: none;
@@ -904,11 +908,11 @@
       transition: 0.3s;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.1);
     }
     .related-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
+      box-shadow: 0 20px 40px rgba(30, 64, 175, 0.22);
       border-color: #1e40af;
     }
     .related-card img {
@@ -922,6 +926,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      background: #ffffff;
     }
     .related-info h3 {
       margin: 0 0 10px;
@@ -945,7 +950,7 @@
     }
 
     /* ========================================
-       PROJECT NAVIGATION
+       PROJECT NAVIGATION (Blue bordered cards)
     ======================================== */
     .project-nav {
       display: grid;
@@ -962,16 +967,17 @@
       padding: 18px 22px;
       border-radius: 12px;
       transition: 0.3s;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 2px solid #bfdbfe;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
     }
     .nav-prev { text-align: left; }
     .nav-next { text-align: right; }
     .nav-prev:hover, .nav-next:hover {
-      background: #eff6ff;
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
       border-color: #1e40af;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(30, 64, 175, 0.2);
     }
     .nav-label {
       display: block;
@@ -1001,7 +1007,7 @@
     }
 
     /* ========================================
-       CTA BANNER (Match About page)
+       CTA BANNER
     ======================================== */
     .project-cta {
       padding: 90px 20px;
@@ -1161,7 +1167,7 @@
     </div>
 
 
-    <!-- ===================== PROJECT HERO (Centered) ===================== -->
+    <!-- ===================== PROJECT HERO ===================== -->
     <section class="project-hero">
       <div class="container">
         <div class="hero-content-wrap">
@@ -1247,7 +1253,7 @@
     </section>
 
 
-    <!-- ===================== OVERVIEW (Styled Card) ===================== -->
+    <!-- ===================== OVERVIEW ===================== -->
     <section class="project-section bg-white">
       <div class="container">
         <div class="section-header">
@@ -1604,7 +1610,7 @@
     </section>
 
 
-    <!-- ===================== ARCHITECTURE (Single Line) ===================== -->
+    <!-- ===================== ARCHITECTURE ===================== -->
     <section class="project-section bg-blue">
       <div class="container">
         <div class="section-header">
@@ -1655,7 +1661,7 @@
     </section>
 
 
-    <!-- ===================== FAQ (Purple) ===================== -->
+    <!-- ===================== FAQ ===================== -->
     <section class="project-section bg-purple">
       <div class="container">
         <div class="section-header">
@@ -1915,7 +1921,6 @@
   <script>
     document.getElementById("footer-year").textContent = new Date().getFullYear();
 
-    // FAQ Accordion
     (function() {
       const faqItems = document.querySelectorAll('.faq-item');
       faqItems.forEach(item => {
@@ -1934,7 +1939,6 @@
       });
     })();
 
-    // Lightbox
     (function() {
       const gallery = document.getElementById('gallery');
       if (!gallery) return;
@@ -1988,7 +1992,6 @@
       });
     })();
 
-    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -1996,7 +1999,6 @@
       });
     });
 
-    // Back to Top
     (function() {
       const backBtn = document.getElementById('backToTop');
       if (!backBtn) return;
