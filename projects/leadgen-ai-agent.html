@@ -172,32 +172,32 @@
       border: 2px solid transparent;
     }
     .hero-btn-primary {
-      background: #1e40af;
+      background: #EA4B71;
       color: #ffffff;
-      box-shadow: 0 6px 18px rgba(30, 64, 175, 0.3);
+      box-shadow: 0 6px 18px rgba(234, 75, 113, 0.3);
     }
     .hero-btn-primary:hover {
-      background: #1e3a8a;
+      background: #d63d63;
       transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(30, 64, 175, 0.4);
+      box-shadow: 0 10px 24px rgba(234, 75, 113, 0.4);
     }
     .hero-btn-secondary {
       background: #ffffff;
-      color: #1e40af;
-      border-color: #1e40af;
+      color: #EA4B71;
+      border-color: #EA4B71;
     }
     .hero-btn-secondary:hover {
-      background: #eff6ff;
+      background: #fef2f4;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(30, 64, 175, 0.2);
+      box-shadow: 0 8px 20px rgba(234, 75, 113, 0.2);
     }
     .hero-btn-outline {
       background: transparent;
-      color: #1e40af;
-      border-color: #1e40af;
+      color: #EA4B71;
+      border-color: #EA4B71;
     }
     .hero-btn-outline:hover {
-      background: #1e40af;
+      background: #EA4B71;
       color: #ffffff;
       transform: translateY(-2px);
     }
@@ -258,34 +258,6 @@
     .feature-badges-section {
       padding: 70px 0;
       background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-    }
-    .feature-badges-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .feature-badge {
-      text-align: center;
-      padding: 32px 20px;
-      background: #ffffff;
-      border-radius: 16px;
-      border: 2px solid #bfdbfe;
-      transition: 0.3s;
-      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
-    }
-    .feature-badge:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(30, 64, 175, 0.2);
-      border-color: #1e40af;
-    }
-    .feature-badge-icon {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
-    .feature-badge-label {
-      font-size: 1rem;
-      color: #0f172a;
-      font-weight: 800;
     }
 
     /* ========================================
@@ -1094,7 +1066,6 @@
     ======================================== */
     @media (max-width: 992px) {
       .quick-info-bar { grid-template-columns: repeat(2, 1fr); }
-      .feature-badges-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .tech-grid { grid-template-columns: repeat(2, 1fr); }
       .image-gallery { grid-template-columns: repeat(2, 1fr); }
@@ -1107,8 +1078,7 @@
       .project-hero { padding: 50px 0 40px; }
       .project-title { font-size: 1.9rem; }
       .project-tagline { font-size: 0.98rem; }
-      .quick-info-bar { gap: 10px; }
-      .feature-badges-grid { grid-template-columns: 1fr; }
+      .quick-info-bar { gap: 10px; grid-template-columns: repeat(2, 1fr); }
       .section-title { font-size: 1.5rem; }
       .project-section { padding: 55px 0; }
       .features-grid, .tech-grid { grid-template-columns: 1fr; }
@@ -1200,53 +1170,34 @@
             </a>
           </div>
 
-          <div class="quick-info-bar">
-            <div class="info-item">
-              <div class="info-icon">🏷️</div>
-              <div class="info-label">Category</div>
-              <div class="info-value">Lead Gen</div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon">🤖</div>
-              <div class="info-label">AI Model</div>
-              <div class="info-value">GPT-4o</div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon">💼</div>
-              <div class="info-label">Platform</div>
-              <div class="info-value">Multi-Source</div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon">✅</div>
-              <div class="info-label">Status</div>
-              <div class="info-value">Production Ready</div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
 
-    <!-- ===================== FEATURE BADGES ===================== -->
+    <!-- ===================== FEATURE BADGES / QUICK INFO ===================== -->
     <section class="feature-badges-section">
       <div class="container">
-        <div class="feature-badges-grid">
-          <div class="feature-badge">
-            <div class="feature-badge-icon">🎯</div>
-            <div class="feature-badge-label">Auto Lead Capture</div>
+        <div class="quick-info-bar" style="max-width:none;grid-template-columns:repeat(4,1fr);">
+          <div class="info-item">
+            <div class="info-icon">🏷️</div>
+            <div class="info-label">Category</div>
+            <div class="info-value">Lead Gen</div>
           </div>
-          <div class="feature-badge">
-            <div class="feature-badge-icon">🧠</div>
-            <div class="feature-badge-label">AI Lead Scoring</div>
+          <div class="info-item">
+            <div class="info-icon">🤖</div>
+            <div class="info-label">AI Model</div>
+            <div class="info-value">GPT-4o</div>
           </div>
-          <div class="feature-badge">
-            <div class="feature-badge-icon">⚡</div>
-            <div class="feature-badge-label">Instant Notifications</div>
+          <div class="info-item">
+            <div class="info-icon">💼</div>
+            <div class="info-label">Platform</div>
+            <div class="info-value">Multi-Source</div>
           </div>
-          <div class="feature-badge">
-            <div class="feature-badge-icon">📊</div>
-            <div class="feature-badge-label">CRM Integration</div>
+          <div class="info-item">
+            <div class="info-icon">✅</div>
+            <div class="info-label">Status</div>
+            <div class="info-value">Production Ready</div>
           </div>
         </div>
       </div>
