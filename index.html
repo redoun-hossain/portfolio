@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- ===================== SEO META TAGS ===================== -->
   <title>Redoun Hossain | n8n Workflow Automation & AI Agent Specialist</title>
   <meta name="description" content="I build intelligent n8n workflow automation and AI agent solutions that help businesses streamline operations, reduce manual work, and scale efficiently." />
   <meta name="keywords" content="n8n automation, AI workflow automation, AI agent developer, n8n specialist, business process automation, workflow automation expert, RAG systems, API integration, webhook integration" />
@@ -22,9 +23,10 @@
   <style>
     /* ===================== HOME PAGE CUSTOM STYLES ===================== */
 
-    .home-hero{
+    /* Hero - use .hero class so css/style.css image styling stays intact */
+    .hero.home-hero-bg{
       background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%) !important;
-      padding:90px 0 60px !important;
+      background-image:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%) !important;
       border-bottom:none !important;
     }
 
@@ -44,15 +46,14 @@
     .hero-title-home{
       color:#0f172a !important;
       font-weight:900 !important;
-      line-height:1.08 !important;
+      line-height:1.12 !important;
       margin-bottom:20px !important;
-      font-size:clamp(2.35rem,4.5vw,4.2rem) !important;
-      letter-spacing:-.03em;
+      font-size:clamp(2.1rem,4vw,3.6rem) !important;
+      letter-spacing:-.02em;
     }
 
     .hero-title-home .hero-line{
       display:block;
-      white-space:nowrap;
     }
 
     .hero-title-home .hero-line-accent{
@@ -68,12 +69,12 @@
       max-width:650px;
     }
 
-    .hero-stats .stat-number{
+    .hero.home-hero-bg .hero-stats .stat-number{
       color:#1e40af !important;
       font-weight:900 !important;
     }
 
-    .hero-stats .stat-label{
+    .hero.home-hero-bg .hero-stats .stat-label{
       color:#334155 !important;
       font-weight:700 !important;
     }
@@ -194,111 +195,128 @@
     /* Featured Projects */
     .home-featured-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-      gap:24px;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:28px;
       margin-top:40px;
     }
 
-    .featured-project-link{
-      display:block;
-      text-decoration:none;
-      color:inherit;
-      height:100%;
-    }
-
-    .featured-project-card{
+    .home-project-card{
       background:#ffffff;
-      border:2px solid #dbeafe;
-      border-radius:18px;
+      border:1px solid #e2e8f0;
+      border-radius:14px;
       overflow:hidden;
       box-shadow:0 4px 15px rgba(30,64,175,.06);
-      transition:all .32s ease;
+      transition:all 0.3s ease;
       display:flex;
       flex-direction:column;
-      height:100%;
+      text-decoration:none;
+      color:inherit;
+      cursor:pointer;
     }
 
-    .featured-project-link:hover .featured-project-card{
-      transform:translateY(-8px);
+    .home-project-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 35px rgba(30,64,175,.15);
       border-color:#2563eb;
-      box-shadow:0 18px 34px rgba(37,99,235,.16);
     }
 
-    .featured-project-thumb{
-      width:100%;
-      aspect-ratio:16/9;
-      object-fit:cover;
+    .home-project-card .proj-img{
       background:#dbeafe;
+      min-height:220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .home-project-card .proj-img img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
       display:block;
     }
 
-    .featured-project-body{
+    .home-project-card .proj-banner{
+      background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+
+    .home-project-card .proj-banner img{
+      width:20px;
+      height:20px;
+      filter:brightness(0) invert(1);
+    }
+
+    .home-project-card .proj-banner span{
+      color:#ffffff;
+      font-weight:800;
+      font-size:1rem;
+      letter-spacing:0.5px;
+    }
+
+    .home-project-card .proj-body{
       padding:26px 24px;
       display:flex;
       flex-direction:column;
       flex-grow:1;
     }
 
-    .featured-project-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:#eff6ff;
-      border:1.5px solid #bfdbfe;
-      padding:6px 14px 6px 10px;
-      border-radius:999px;
+    .home-project-card .proj-cat{
+      display:inline-block;
+      background:#1e3a8a;
+      color:#ffffff;
+      padding:6px 16px;
+      border-radius:50px;
+      font-size:0.72rem;
       font-weight:800;
-      font-size:.82rem;
-      color:#1e40af;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:16px;
       width:fit-content;
-      margin-bottom:14px;
-      box-shadow:0 2px 8px rgba(0,0,0,.04);
     }
 
-    .featured-project-badge img{
-      width:18px;
-      height:18px;
-      object-fit:contain;
-      flex-shrink:0;
+    .home-project-card h3{
+      color:#1e3a8a;
+      font-size:1.3rem;
+      font-weight:900;
+      margin:0 0 12px;
+      line-height:1.3;
     }
 
-    .featured-project-card h3{
-      color:#1e40af;
-      font-size:1.2rem;
-      font-weight:800;
-      margin:0 0 10px;
-    }
-
-    .featured-project-card p{
-      color:#334155;
-      font-size:.95rem;
+    .home-project-card p{
+      color:#475569;
+      font-size:0.93rem;
       line-height:1.65;
-      margin:0 0 18px;
+      margin:0 0 20px;
+      flex-grow:1;
     }
 
-    .featured-project-tools{
+    .home-project-card .proj-tags{
       display:flex;
       flex-wrap:wrap;
-      gap:7px;
-      margin-top:auto;
+      gap:6px;
     }
 
-    .featured-project-tools span{
-      background:#f8fafc;
-      color:#334155;
+    .home-project-card .proj-tags span{
+      background:#eff6ff;
+      color:#1e40af;
       border:1px solid #bfdbfe;
       font-weight:700;
-      font-size:.78rem;
-      padding:5px 10px;
-      border-radius:7px;
+      font-size:0.72rem;
+      padding:4px 10px;
+      border-radius:50px;
+      white-space:nowrap;
     }
 
-    .featured-project-cta{
-      margin-top:22px;
+    .home-project-card .proj-cta{
+      margin-top:18px;
       display:inline-block;
       color:#2563eb;
       font-weight:800;
-      font-size:.95rem;
+      font-size:0.95rem;
     }
 
     /* Trust */
@@ -399,14 +417,6 @@
     }
 
     @media (max-width: 768px){
-      .home-hero{
-        padding:75px 0 50px !important;
-      }
-
-      .hero-title-home .hero-line{
-        white-space:normal;
-      }
-
       .proof-buttons{
         gap:12px;
       }
@@ -447,7 +457,7 @@
   <main>
 
     <!-- ===================== 1. HERO ===================== -->
-    <section class="hero home-hero">
+    <section class="hero home-hero-bg">
       <div class="container hero-inner">
 
         <div class="hero-text">
@@ -576,7 +586,7 @@
         </div>
 
         <div style="text-align:center;">
-          <a href="about.html#what-i-build" class="section-jump-link">
+          <a href="about.html#services" class="section-jump-link">
             See All Services on About Page →
           </a>
         </div>
@@ -585,242 +595,98 @@
     </section>
     <!-- ===================== END WHAT I BUILD ===================== -->
 
-<!-- ===================== 4. FEATURED PROJECTS ===================== -->
-<section class="section featured-projects" style="background:#f8fafc;padding:90px 0;">
-  <div class="container">
 
-    <h2 class="section-title" style="color:#1e40af;font-weight:800;">Featured Projects</h2>
-    <p class="section-sub" style="color:#475569;max-width:720px;margin:0 auto 50px;">
-      A selection of n8n automation projects showcasing real-world business solutions and measurable results.
-    </p>
+    <!-- ===================== 4. FEATURED PROJECTS ===================== -->
+    <section class="section featured-projects" style="background:#f8fafc;padding:90px 0;">
+      <div class="container">
 
-    <div class="cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
+        <h2 class="section-title" style="color:#1e40af;font-weight:800;">Featured Projects</h2>
+        <p class="section-sub" style="color:#475569;max-width:720px;margin:0 auto 50px;">
+          A selection of n8n automation projects showcasing real-world business solutions and measurable results.
+        </p>
 
-      <!-- ==================== Card 01: Lead Generation AI Agent ==================== -->
-      <a href="projects/leadgen-ai-agent.html" class="project-card" style="
-        background:#ffffff;
-        border:1px solid #e2e8f0;
-        border-radius:14px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(30,64,175,.06);
-        transition:all 0.3s ease;
-        display:flex;
-        flex-direction:column;
-        text-decoration:none;
-        cursor:pointer;
-      " onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
+        <div class="home-featured-grid">
 
-        <!-- Image Area -->
-        <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
-          <img src="images/projects/n8n/n8n-featured-project-01.jpg" alt="Lead Generation AI Agent built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
-        </div>
+          <!-- Card 01: Lead Generation AI Agent -->
+          <a href="projects/leadgen-ai-agent.html" class="home-project-card">
+            <div class="proj-img">
+              <img src="images/projects/n8n/n8n-featured-project-01.jpg" alt="Lead Generation AI Agent built with n8n" loading="lazy" />
+            </div>
+            <div class="proj-banner">
+              <img src="https://n8n.io/favicon.ico" alt="n8n" />
+              <span>n8n Featured Project 01</span>
+            </div>
+            <div class="proj-body">
+              <span class="proj-cat">AI AGENT</span>
+              <h3>Lead Generation AI Agent</h3>
+              <p>Automated lead capture and qualification system powered by AI agents, integrating with CRM and communication platforms to grow your sales pipeline.</p>
+              <div class="proj-tags">
+                <span>n8n</span>
+                <span>OpenAI</span>
+                <span>Airtable</span>
+                <span>Slack</span>
+              </div>
+              <span class="proj-cta">Explore Project →</span>
+            </div>
+          </a>
 
-        <!-- Blue Banner with n8n Logo -->
-        <div style="
-          background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);
-          padding:14px 20px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          gap:10px;
-        ">
-          <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
-          <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 01</span>
-        </div>
+          <!-- Card 02: RAG AI Knowledge Assistant -->
+          <a href="projects/rag-ai-assistant.html" class="home-project-card">
+            <div class="proj-img">
+              <img src="images/projects/n8n/n8n-featured-project-02.jpg" alt="RAG AI Knowledge Assistant built with n8n" loading="lazy" />
+            </div>
+            <div class="proj-banner">
+              <img src="https://n8n.io/favicon.ico" alt="n8n" />
+              <span>n8n Featured Project 02</span>
+            </div>
+            <div class="proj-body">
+              <span class="proj-cat">AI AGENT</span>
+              <h3>RAG AI Knowledge Assistant</h3>
+              <p>AI-powered knowledge base assistant using RAG architecture, vector databases, and n8n workflows for accurate, context-aware responses from your business data.</p>
+              <div class="proj-tags">
+                <span>n8n</span>
+                <span>OpenAI</span>
+                <span>Pinecone</span>
+                <span>LangChain</span>
+              </div>
+              <span class="proj-cta">Explore Project →</span>
+            </div>
+          </a>
 
-        <!-- Card Body -->
-        <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
-
-          <!-- Category Badge -->
-          <div style="margin-bottom:16px;">
-            <span style="
-              display:inline-block;
-              background:#1e3a8a;
-              color:#ffffff;
-              padding:6px 16px;
-              border-radius:50px;
-              font-size:0.72rem;
-              font-weight:800;
-              letter-spacing:1px;
-              text-transform:uppercase;
-            ">AI AGENT</span>
-          </div>
-
-          <!-- Title -->
-          <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">
-            Lead Generation AI Agent
-          </h3>
-
-          <!-- Description -->
-          <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">
-            Automated lead capture and qualification system powered by AI agents, integrating with CRM and communication platforms to grow your sales pipeline.
-          </p>
-
-          <!-- Tool Tags (Fixed to 1 Line) -->
-          <div style="display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding-bottom:4px;scrollbar-width:none;-ms-overflow-style:none;">
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">n8n</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">OpenAI</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">Airtable</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">Slack</span>
-          </div>
-
-        </div>
-      </a>
-
-
-      <!-- ==================== Card 02: RAG AI Knowledge Assistant ==================== -->
-      <a href="projects/rag-ai-assistant.html" class="project-card" style="
-        background:#ffffff;
-        border:1px solid #e2e8f0;
-        border-radius:14px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(30,64,175,.06);
-        transition:all 0.3s ease;
-        display:flex;
-        flex-direction:column;
-        text-decoration:none;
-        cursor:pointer;
-      " onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
-
-        <!-- Image Area -->
-        <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
-          <img src="images/projects/n8n/n8n-featured-project-02.jpg" alt="RAG AI Knowledge Assistant built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
-        </div>
-
-        <!-- Blue Banner with n8n Logo -->
-        <div style="
-          background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);
-          padding:14px 20px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          gap:10px;
-        ">
-          <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
-          <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 02</span>
-        </div>
-
-        <!-- Card Body -->
-        <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
-
-          <!-- Category Badge -->
-          <div style="margin-bottom:16px;">
-            <span style="
-              display:inline-block;
-              background:#1e3a8a;
-              color:#ffffff;
-              padding:6px 16px;
-              border-radius:50px;
-              font-size:0.72rem;
-              font-weight:800;
-              letter-spacing:1px;
-              text-transform:uppercase;
-            ">AI AGENT</span>
-          </div>
-
-          <!-- Title -->
-          <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">
-            RAG AI Knowledge Assistant
-          </h3>
-
-          <!-- Description -->
-          <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">
-            AI-powered knowledge base assistant using RAG architecture, vector databases, and n8n workflows for accurate, context-aware responses from your business data.
-          </p>
-
-          <!-- Tool Tags (Fixed to 1 Line) -->
-          <div style="display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding-bottom:4px;scrollbar-width:none;-ms-overflow-style:none;">
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">n8n</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">OpenAI</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">Pinecone</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">LangChain</span>
-          </div>
+          <!-- Card 03: Appointment Booking AI Agent -->
+          <a href="projects/appointment-agent.html" class="home-project-card">
+            <div class="proj-img">
+              <img src="images/projects/n8n/n8n-featured-project-03.jpg" alt="Appointment Booking AI Agent built with n8n" loading="lazy" />
+            </div>
+            <div class="proj-banner">
+              <img src="https://n8n.io/favicon.ico" alt="n8n" />
+              <span>n8n Featured Project 03</span>
+            </div>
+            <div class="proj-body">
+              <span class="proj-cat">BUSINESS AUTOMATION</span>
+              <h3>Appointment Booking AI Agent</h3>
+              <p>AI-powered appointment scheduling system that handles booking, reminders, and client communication automatically via n8n workflows and messaging platforms.</p>
+              <div class="proj-tags">
+                <span>n8n</span>
+                <span>OpenAI</span>
+                <span>G-Cal</span>
+                <span>WhatsApp</span>
+              </div>
+              <span class="proj-cta">Explore Project →</span>
+            </div>
+          </a>
 
         </div>
-      </a>
 
-
-      <!-- ==================== Card 03: Appointment Booking AI Agent ==================== -->
-      <a href="projects/appointment-agent.htm" class="project-card" style="
-        background:#ffffff;
-        border:1px solid #e2e8f0;
-        border-radius:14px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(30,64,175,.06);
-        transition:all 0.3s ease;
-        display:flex;
-        flex-direction:column;
-        text-decoration:none;
-        cursor:pointer;
-      " onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
-
-        <!-- Image Area -->
-        <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
-          <img src="images/projects/n8n/n8n-featured-project-03.jpg" alt="Appointment Booking AI Agent built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
+        <!-- Section Bottom CTA -->
+        <div style="margin-top:55px;text-align:center;">
+          <a href="portfolio.html" class="btn btn-primary" style="padding:14px 36px;font-weight:800;border-radius:50px;box-shadow:0 10px 25px -5px rgba(37,99,235,0.4);">Explore All Projects</a>
         </div>
 
-        <!-- Blue Banner with n8n Logo -->
-        <div style="
-          background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);
-          padding:14px 20px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          gap:10px;
-        ">
-          <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
-          <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 03</span>
-        </div>
+      </div>
+    </section>
+    <!-- ===================== END FEATURED PROJECTS ===================== -->
 
-        <!-- Card Body -->
-        <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
-
-          <!-- Category Badge -->
-          <div style="margin-bottom:16px;">
-            <span style="
-              display:inline-block;
-              background:#1e3a8a;
-              color:#ffffff;
-              padding:6px 16px;
-              border-radius:50px;
-              font-size:0.72rem;
-              font-weight:800;
-              letter-spacing:1px;
-              text-transform:uppercase;
-            ">BUSINESS AUTOMATION</span>
-          </div>
-
-          <!-- Title -->
-          <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">
-            Appointment Booking AI Agent
-          </h3>
-
-          <!-- Description -->
-          <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">
-            AI-powered appointment scheduling system that handles booking, reminders, and client communication automatically via n8n workflows and messaging platforms.
-          </p>
-
-          <!-- Tool Tags (Fixed to 1 Line) -->
-          <div style="display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding-bottom:4px;scrollbar-width:none;-ms-overflow-style:none;">
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">n8n</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">OpenAI</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">Google Calendar</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.75rem;padding:5px 12px;border-radius:50px;white-space:nowrap;">WhatsApp</span>
-          </div>
-
-        </div>
-      </a>
-
-    </div>
-
-    <!-- Section Bottom CTA -->
-    <div style="margin-top:55px;text-align:center;">
-      <a href="portfolio.html" class="btn btn-primary" style="padding:14px 36px;font-weight:800;border-radius:50px;box-shadow:0 10px 25px -5px rgba(37,99,235,0.4);">Explore All Projects</a>
-    </div>
-
-  </div>
-</section>
-<!-- ===================== END FEATURED PROJECTS ===================== -->
 
     <!-- ===================== 5. WHY CLIENTS TRUST ME ===================== -->
     <section class="section trust" style="background:#ffffff;padding:90px 0;">
@@ -889,7 +755,7 @@
         </div>
 
         <div style="text-align:center;">
-          <a href="about.html#tools-technologies" class="section-jump-link">
+          <a href="about.html#tools" class="section-jump-link">
             See Full Tech Stack on About Page →
           </a>
         </div>
