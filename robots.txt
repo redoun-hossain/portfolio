@@ -1,12 +1,4 @@
-# robots.txt
-# ✏️ IMPORTANT: Replace the sitemap URL below with your real GitHub Pages URL.
-# Example: https://johndoe.github.io/my-portfolio/sitemap.xml
-# After you host on GitHub Pages, your URL will look like:
-#   https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME/
-
-# Allow all search engine robots to crawl the entire website
 User-agent: *
 Allow: /
 
-# Point to your sitemap file (change URL to match your real site)
-Sitemap: https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME/sitemap.xml
+Sitemap: https://redoun-hossain.github.io/portfolio/sitemap.xml

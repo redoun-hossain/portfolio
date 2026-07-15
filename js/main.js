@@ -1,6 +1,6 @@
 /* =============================================================
    PORTFOLIO WEBSITE - main.js
-   Author: Your Name
+   Author: Redoun Hossain
    This file handles all JavaScript for the entire website.
    It is safe to use on pages that don't have every element —
    it always checks if an element exists before using it.
@@ -59,73 +59,7 @@
 
 
 /* =============================================================
-   3. PORTFOLIO TABS SYSTEM
-   Used on: portfolio.html
-   Switches between n8n / Zapier / GoHighLevel / Custom GPT / Others tabs.
-   Also reads the URL query parameter ?tab=xxx to open the right tab
-   when navigating from another page (e.g., service cards on homepage).
-   ============================================================= */
-(function initPortfolioTabs() {
-  var tabButtons  = document.querySelectorAll('.portfolio-section .tab-btn');
-  var tabContents = document.querySelectorAll('.portfolio-section .tab-content');
-
-  // If no tabs found on this page, stop
-  if (!tabButtons.length || !tabContents.length) return;
-
-  // Function to activate a tab by its data-tab value
-  function activateTab(targetTabId) {
-    tabButtons.forEach(function (btn) {
-      var isActive = (btn.getAttribute('data-tab') === targetTabId);
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-
-    tabContents.forEach(function (content) {
-      // Each tab content panel has id="tab-n8n", "tab-zapier", etc.
-      var isActive = (content.id === 'tab-' + targetTabId);
-      content.classList.toggle('active', isActive);
-    });
-
-    // Close any open detail panels when switching tabs
-    closeAllDetailPanels();
-  }
-
-  // Attach click listeners to each tab button
-  tabButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var target = btn.getAttribute('data-tab');
-      activateTab(target);
-    });
-  });
-
-  // Check URL for ?tab=xxx parameter (e.g., portfolio.html?tab=zapier)
-  var urlParams    = new URLSearchParams(window.location.search);
-  var tabFromURL   = urlParams.get('tab');
-
-  if (tabFromURL) {
-    // Try to find a matching tab button
-    var found = false;
-    tabButtons.forEach(function (btn) {
-      if (btn.getAttribute('data-tab') === tabFromURL) {
-        found = true;
-      }
-    });
-    if (found) {
-      activateTab(tabFromURL);
-      // Smooth scroll to the tabs section
-      var portfolioSection = document.querySelector('.portfolio-section');
-      if (portfolioSection) {
-        setTimeout(function () {
-          portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-      }
-    }
-  }
-})();
-
-
-/* =============================================================
-   4. PROJECT "VIEW DETAILS" OPEN / CLOSE
+   3. PROJECT "VIEW DETAILS" OPEN / CLOSE
    Used on: portfolio.html
    When the user clicks "View Details", the matching detail panel
    slides open on the same page. Clicking "Close" or clicking
