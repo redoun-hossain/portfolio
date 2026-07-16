@@ -68,6 +68,54 @@
       max-width:650px;
     }
 
+    .home-hero .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      max-width:620px;
+      margin-top:30px;
+    }
+
+    .home-hero .hero-stats .stat{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      min-width:0;
+      padding:13px 15px;
+      background:#ffffff;
+      border:1px solid #bfdbfe;
+      border-radius:12px;
+      box-shadow:0 6px 16px rgba(37,99,235,.10);
+    }
+
+    .home-hero .hero-stats .stat-icon{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;
+      height:34px;
+      flex:0 0 34px;
+      border-radius:9px;
+      background:#eff6ff;
+      font-size:1.05rem;
+    }
+
+    .home-hero .hero-stats h3{
+      margin:0 0 2px;
+      color:#1e40af;
+      font-size:1rem;
+      font-weight:900;
+      line-height:1.1;
+    }
+
+    .home-hero .hero-stats p{
+      margin:0;
+      color:#475569;
+      font-size:.72rem;
+      font-weight:700;
+      line-height:1.25;
+    }
+
     .hero-stats .stat-number{
       color:#1e40af !important;
       font-weight:900 !important;
@@ -407,6 +455,11 @@
         white-space:normal;
       }
 
+      .home-hero .hero-stats{
+        grid-template-columns:1fr;
+        max-width:100%;
+      }
+
       .proof-buttons{
         gap:12px;
       }
@@ -471,18 +524,15 @@
          <div class="hero-stats">
 
 <div class="stat">
-<h3>n8n</h3>
-<p>Platform Focus</p>
+<span class="stat-icon">⚙️</span><div><h3>n8n</h3><p>Platform Focus</p></div>
 </div>
 
 <div class="stat">
-<h3>AI</h3>
-<p>Automation Solutions</p>
+<span class="stat-icon">🤖</span><div><h3>AI</h3><p>Automation Solutions</p></div>
 </div>
 
 <div class="stat">
-<h3>API</h3>
-<p>Integration Expert</p>
+<span class="stat-icon">🔗</span><div><h3>API</h3><p>Integration Expert</p></div>
 </div>
 
 </div>
@@ -824,9 +874,7 @@
           </div>
 
           <a
-            href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="certificate.html"
             class="cert-mini-btn"
           >
             View Certificate →
@@ -1151,7 +1199,7 @@
           <div class="footer-contact-buttons">
             <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
             <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ai.redounhossain@gmail.com&su=Business%20Inquiry%20from%20Portfolio&body=Hi%20Redoun,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20custom%20n8n%20automation%20project." target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
+            <a href="mailto:ai.redounhossain@gmail.com?subject=Business%20Inquiry%20from%20Portfolio" class="subtle-social-btn">📧 Contact by Email</a>
             <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('ai.redounhossain@gmail.com');alert('Business Email copied!\n\nai.redounhossain@gmail.com');return false;">📋 Copy Business Email</a>
           </div>
         </div>

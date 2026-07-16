@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Mastery Certificate | Redoun Hossain</title>
+  <meta name="description" content="View Redoun Hossain's AI Mastery Certificate." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .certificate-page { background:#f8fafc; min-height:100vh; padding:48px 0 70px; }
+    .certificate-wrap { max-width:1000px; margin:0 auto; text-align:center; }
+    .certificate-wrap h1 { color:#581c87; margin:0 0 10px; font-size:clamp(1.8rem,4vw,2.6rem); }
+    .certificate-wrap p { color:#475569; margin:0 0 28px; }
+    .certificate-viewer { background:#fff; border:2px solid #d8b4fe; border-radius:16px; overflow:hidden; box-shadow:0 12px 30px rgba(88,28,135,.14); }
+    .certificate-viewer object { display:block; width:100%; height:min(76vh,900px); min-height:520px; }
+    .certificate-fallback { padding:36px 24px; color:#334155; }
+    .certificate-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:24px; }
+    .certificate-actions a { display:inline-flex; align-items:center; justify-content:center; padding:13px 20px; border-radius:10px; font-weight:800; text-decoration:none; }
+    .certificate-open { background:#7c3aed; color:#fff; }
+    .certificate-download { background:#fff; color:#7c3aed; border:2px solid #7c3aed; }
+    @media (max-width:640px) { .certificate-page { padding:32px 0 50px; } .certificate-viewer object { height:68vh; min-height:410px; } .certificate-actions a { width:100%; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Redoun Hossain</a>
+      <a href="about.html" class="btn btn-outline">Back to About</a>
+    </div>
+  </header>
+  <main class="certificate-page">
+    <div class="container certificate-wrap">
+      <h1>AI Mastery Certificate</h1>
+      <p>Certificate of completion for AI agent development and n8n workflow automation.</p>
+      <div class="certificate-viewer">
+        <object data="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" type="application/pdf">
+          <div class="certificate-fallback">
+            <p>Your browser cannot display this PDF in-page.</p>
+            <a href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" target="_blank" rel="noopener noreferrer">Open the certificate PDF</a>
+          </div>
+        </object>
+      </div>
+      <div class="certificate-actions">
+        <a class="certificate-open" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+        <a class="certificate-download" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" download>Download Certificate</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

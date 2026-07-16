@@ -10,14 +10,14 @@
   <meta name="keywords" content="n8n, AI Agent, Lead Generation, LeadGen, OpenAI GPT-4o, HubSpot, Slack, Workflow Automation, Sales Automation, Facebook Ads" />
   <meta name="author" content="Redoun Hossain" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://redoun-hossain.com/projects/leadgen-ai-agent.html" />
+  <link rel="canonical" href="https://redoun-hossain.github.io/portfolio/projects/leadgen-ai-agent.html" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="LeadGen AI Agent Assistant | n8n Automation Project" />
   <meta property="og:description" content="AI Agent built with n8n + OpenAI + HubSpot that automatically captures, qualifies and distributes leads." />
   <meta property="og:image" content="../images/projects/leadgen-ai-agent/cover.jpg" />
-  <meta property="og:url" content="https://redoun-hossain.com/projects/leadgen-ai-agent.html" />
+  <meta property="og:url" content="https://redoun-hossain.github.io/portfolio/projects/leadgen-ai-agent.html" />
   <meta property="og:site_name" content="Redoun Hossain Portfolio" />
 
   <!-- Twitter Card -->
@@ -37,7 +37,7 @@
     "author": {
       "@type": "Person",
       "name": "Redoun Hossain",
-      "url": "https://redoun-hossain.com",
+      "url": "https://redoun-hossain.github.io/portfolio/",
       "jobTitle": "n8n Workflow Automation & AI Agent Specialist"
     },
     "image": "../images/projects/leadgen-ai-agent/cover.jpg"
@@ -1075,6 +1075,31 @@
       .overview-card { padding: 40px 30px; }
     }
     @media (max-width: 640px) {
+      .project-hero, .feature-badges-section, .project-section, .project-cta, .site-footer {
+        max-width: 100%;
+        overflow-x: clip;
+      }
+      .hero-btn, .btn-white, .btn-outline-white {
+        box-sizing: border-box;
+      }
+      .site-footer .footer-wrapper {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .feature-badges-section .quick-info-bar {
+        display: flex !important;
+        overflow-x: auto;
+        grid-template-columns: none !important;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
+        padding: 4px 2px 14px;
+        scrollbar-width: thin;
+      }
+      .feature-badges-section .quick-info-bar .info-item {
+        flex: 0 0 152px;
+        min-height: 150px;
+        scroll-snap-align: start;
+      }
       .project-hero { padding: 50px 0 40px; }
       .project-title { font-size: 1.9rem; }
       .project-tagline { font-size: 0.98rem; }
@@ -1165,8 +1190,8 @@
             <a href="#project-gallery" class="hero-btn hero-btn-secondary" aria-label="View project screenshots">
               🖼️ Project Screenshots
             </a>
-            <a href="../contact.html" class="hero-btn hero-btn-outline" aria-label="Get similar project">
-              📩 Get Similar Project
+            <a href="../contact.html" class="hero-btn hero-btn-outline" aria-label="Discuss a similar project">
+              📩 Discuss a Similar Project
             </a>
           </div>
 
@@ -1849,7 +1874,7 @@
           <div class="footer-contact-buttons">
             <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
             <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ai.redounhossain@gmail.com&su=Business%20Inquiry%20from%20Portfolio&body=Hi%20Redoun,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20custom%20n8n%20automation%20project." target="_blank" rel="noopener noreferrer" class="subtle-social-btn">📧 Contact via Gmail</a>
+<a href="mailto:ai.redounhossain@gmail.com?subject=Business%20Inquiry%20from%20Portfolio" class="subtle-social-btn">📧 Contact by Email</a>
             <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('ai.redounhossain@gmail.com');alert('Business Email copied!\n\nai.redounhossain@gmail.com');return false;">📋 Copy Business Email</a>
           </div>
         </div>
