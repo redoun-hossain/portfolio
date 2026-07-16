@@ -7,19 +7,35 @@
   <title>AI Mastery Certificate | Redoun Hossain</title>
   <meta name="description" content="View Redoun Hossain's AI Mastery Certificate." />
 
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
+    /* ===================== CERTIFICATE PAGE ===================== */
     .certificate-page{
-      background:#f8fafc;
+      background:linear-gradient(135deg,#f8fafc 0%,#eff6ff 100%);
       min-height:100vh;
-      padding:48px 0 70px;
+      padding:60px 0 70px;
     }
 
     .certificate-wrap{
-      max-width:1000px;
+      max-width:1100px;
       margin:0 auto;
+      padding:0 24px;
       text-align:center;
+    }
+
+    .cert-badge{
+      display:inline-block;
+      background:linear-gradient(135deg,#7c3aed 0%,#8b5cf6 100%);
+      color:#ffffff;
+      font-weight:800;
+      font-size:.88rem;
+      padding:8px 18px;
+      border-radius:999px;
+      box-shadow:0 6px 16px rgba(124,58,237,.25);
+      letter-spacing:.3px;
+      margin-bottom:16px;
     }
 
     .certificate-wrap h1{
@@ -27,64 +43,192 @@
       margin:0 0 10px;
       font-size:clamp(1.8rem,4vw,2.6rem);
       font-weight:900;
+      letter-spacing:-.02em;
     }
 
-    .certificate-wrap p{
+    .certificate-wrap > p{
       color:#475569;
-      margin:0 0 28px;
+      margin:0 0 32px;
+      font-size:1.02rem;
       line-height:1.7;
     }
 
+    /* Certificate Card */
     .certificate-viewer{
-      background:#fff;
+      background:#ffffff;
       border:2px solid #d8b4fe;
       border-radius:16px;
       overflow:hidden;
       box-shadow:0 12px 30px rgba(88,28,135,.14);
-      padding:16px;
+    }
+
+    /* Toolbar */
+    .cert-toolbar{
+      background:linear-gradient(135deg,#581c87 0%,#7c3aed 100%);
+      padding:12px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .cert-toolbar-title{
+      color:#ffffff;
+      font-weight:800;
+      font-size:.95rem;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .cert-toolbar-actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .cert-toolbar-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:rgba(255,255,255,.15);
+      color:#ffffff;
+      border:1px solid rgba(255,255,255,.25);
+      padding:7px 14px;
+      border-radius:8px;
+      font-weight:700;
+      font-size:.85rem;
+      text-decoration:none;
+      transition:.25s ease;
+      cursor:pointer;
+    }
+
+    .cert-toolbar-btn:hover{
+      background:rgba(255,255,255,.28);
+      transform:translateY(-1px);
+    }
+
+    /* Image wrapper */
+    .cert-image-wrapper{
+      padding:20px;
+      background:#f8fafc;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
     .certificate-image{
       display:block;
       width:100%;
+      max-width:1000px;
       height:auto;
-      border-radius:12px;
-      border:1px solid #e2e8f0;
-      background:#ffffff;
+      border-radius:8px;
+      box-shadow:0 4px 15px rgba(0,0,0,.08);
+      cursor:zoom-in;
+      transition:transform .3s ease;
     }
 
+    .certificate-image:hover{
+      transform:scale(1.01);
+    }
+
+    /* Zoom modal */
+    .cert-zoom-modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.92);
+      z-index:9999;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      cursor:zoom-out;
+    }
+
+    .cert-zoom-modal.active{
+      display:flex;
+    }
+
+    .cert-zoom-modal img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      border-radius:8px;
+    }
+
+    .cert-zoom-close{
+      position:absolute;
+      top:20px;
+      right:20px;
+      width:44px;
+      height:44px;
+      background:rgba(255,255,255,.15);
+      color:#ffffff;
+      border:none;
+      border-radius:50%;
+      font-size:1.4rem;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:.25s ease;
+      z-index:10000;
+    }
+
+    .cert-zoom-close:hover{
+      background:rgba(255,255,255,.3);
+    }
+
+    .cert-zoom-hint{
+      position:absolute;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(255,255,255,.15);
+      color:#ffffff;
+      padding:8px 16px;
+      border-radius:999px;
+      font-size:.85rem;
+      font-weight:600;
+      pointer-events:none;
+    }
+
+    /* Bottom actions */
     .certificate-actions{
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
       gap:12px;
-      margin-top:24px;
+      margin-top:28px;
     }
 
     .certificate-actions a{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:13px 20px;
+      gap:8px;
+      padding:13px 24px;
       border-radius:10px;
       font-weight:800;
+      font-size:.95rem;
       text-decoration:none;
       transition:.25s ease;
     }
 
     .certificate-open{
-      background:#7c3aed;
-      color:#fff;
-      box-shadow:0 8px 18px rgba(124,58,237,.25);
+      background:linear-gradient(135deg,#7c3aed 0%,#8b5cf6 100%);
+      color:#ffffff;
+      box-shadow:0 6px 15px rgba(124,58,237,.25);
     }
 
     .certificate-open:hover{
       transform:translateY(-2px);
-      box-shadow:0 12px 24px rgba(124,58,237,.32);
+      box-shadow:0 10px 20px rgba(124,58,237,.35);
     }
 
     .certificate-download{
-      background:#fff;
+      background:#ffffff;
       color:#7c3aed;
       border:2px solid #7c3aed;
     }
@@ -94,28 +238,61 @@
       transform:translateY(-2px);
     }
 
+    .cert-back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:24px;
+      padding:11px 22px;
+      background:#ffffff;
+      color:#475569;
+      border:2px solid #e2e8f0;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.92rem;
+      transition:.25s ease;
+    }
+
+    .cert-back-link:hover{
+      background:#f1f5f9;
+      color:#1e293b;
+      border-color:#cbd5e1;
+      transform:translateY(-2px);
+    }
+
     .certificate-note{
       margin-top:18px !important;
       color:#64748b !important;
-      font-size:.9rem;
+      font-size:.88rem;
     }
 
-    @media (max-width:640px){
+    /* ===================== MOBILE ===================== */
+    @media (max-width:768px){
       .certificate-page{
-        padding:32px 0 50px;
+        padding:40px 0 50px;
       }
 
-      .certificate-viewer{
-        padding:10px;
-        border-radius:14px;
+      .cert-image-wrapper{
+        padding:12px;
       }
 
-      .certificate-image{
-        border-radius:10px;
+      .cert-toolbar{
+        padding:10px 16px;
+      }
+
+      .cert-toolbar-title{
+        font-size:.88rem;
+      }
+
+      .cert-toolbar-btn{
+        padding:6px 12px;
+        font-size:.8rem;
       }
 
       .certificate-actions{
         flex-direction:column;
+        align-items:stretch;
       }
 
       .certificate-actions a{
@@ -127,55 +304,239 @@
 
 <body>
 
+  <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Redoun Hossain</a>
-      <a href="about.html" class="btn btn-outline">Back to About</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="btn btn-primary nav-hire">Hire Me</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
+  <!-- ===================== END HEADER ===================== -->
 
   <main class="certificate-page">
-    <div class="container certificate-wrap">
+    <div class="certificate-wrap">
 
+      <span class="cert-badge">🎓 Professional Certification</span>
       <h1>AI Mastery Certificate</h1>
+      <p>Certificate of completion for AI agent development and n8n workflow automation.</p>
 
-      <p>
-        Certificate of completion for AI agent development and n8n workflow automation.
-      </p>
-
+      <!-- Certificate Card -->
       <div class="certificate-viewer">
-        <img
-          src="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg"
-          alt="AI Mastery Certificate - Redoun Hossain"
-          class="certificate-image"
-        />
+
+        <!-- Toolbar -->
+        <div class="cert-toolbar">
+          <div class="cert-toolbar-title">
+            <span>🏆</span>
+            <span>Certificate of Achievement</span>
+          </div>
+          <div class="cert-toolbar-actions">
+            <a href="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" target="_blank" rel="noopener noreferrer" class="cert-toolbar-btn">
+              🔗 Open Full Size
+            </a>
+            <a href="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" download class="cert-toolbar-btn">
+              ⬇️ Download
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Image -->
+        <div class="cert-image-wrapper">
+          <img
+            src="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg"
+            alt="AI Mastery Certificate - Redoun Hossain"
+            class="certificate-image"
+            id="certImage"
+            loading="eager"
+          />
+        </div>
+
       </div>
 
+      <!-- Bottom Actions -->
       <div class="certificate-actions">
-        <a
-          class="certificate-open"
-          href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open PDF
+        <a class="certificate-open" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" target="_blank" rel="noopener noreferrer">
+          🔗 View Full Size
         </a>
-
-        <a
-          class="certificate-download"
-          href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf"
-          download
-        >
-          Download Certificate
+        <a class="certificate-download" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" download>
+          ⬇️ Download Certificate
         </a>
       </div>
 
       <p class="certificate-note">
-        Mobile browsers may not display PDF inside the page, so this page uses an image preview.
+        💡 Tip: Click on the certificate image to view it in full screen.
       </p>
+
+      <div>
+        <a href="index.html" class="cert-back-link">← Back to Home</a>
+      </div>
 
     </div>
   </main>
+
+  <!-- Zoom Modal -->
+  <div class="cert-zoom-modal" id="certZoomModal">
+    <button class="cert-zoom-close" id="certZoomClose" aria-label="Close">✕</button>
+    <img src="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" alt="Certificate Zoomed" />
+    <div class="cert-zoom-hint">Click anywhere or press ESC to close</div>
+  </div>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <style>
+      .site-footer,.site-footer *{box-sizing:border-box;}
+      .site-footer{background:#0b1120;color:#94a3b8;padding:65px 0 25px;border-top:2px solid #2563eb;}
+      .site-footer .footer-wrapper{width:100%;max-width:1300px;margin:0 auto;padding-left:20px;padding-right:20px;}
+      .site-footer .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:70px;align-items:start;}
+      .site-footer .footer-grid>div{min-width:0;margin:0;padding:0;align-self:start;}
+      .site-footer h4{color:#ffffff;font-size:1.08rem;font-weight:700;letter-spacing:.3px;line-height:1;margin:0 0 22px;}
+      .site-footer .footer-brand{display:inline-block;text-decoration:none;color:#ffffff;font-size:1.65rem;font-weight:900;letter-spacing:-.5px;margin-bottom:18px;transition:.25s;}
+      .site-footer .footer-brand:hover{color:#ffffff;opacity:1;}
+      .site-footer .footer-desc{max-width:300px;font-size:.93rem;line-height:1.75;color:#94a3b8;margin:0 0 25px;}
+      .site-footer .footer-desc strong{display:block;color:#ffffff;font-size:.98rem;font-weight:700;margin-bottom:12px;line-height:1.5;}
+      .site-footer .social-buttons-grid{display:grid;grid-template-columns:repeat(2,92px);gap:10px;width:194px;}
+      .site-footer .subtle-social-btn{display:block;width:92px;background:#1e293b;border:1px solid #334155;border-radius:6px;padding:7px 10px;color:#cbd5e1;font-size:.8rem;font-weight:600;text-decoration:none;text-align:center;transition:.25s;}
+      .site-footer .subtle-social-btn:hover{background:#2563eb;border-color:#2563eb;color:#ffffff;}
+      .site-footer .classic-list{list-style:none;padding:0;margin:0;}
+      .site-footer .classic-list li{margin-bottom:12px;}
+      .site-footer .classic-list li:last-child{margin-bottom:0;}
+      .site-footer .classic-list a{color:#94a3b8;text-decoration:none;font-size:.93rem;transition:.25s;}
+      .site-footer .classic-list a:hover{color:#ffffff;padding-left:4px;}
+      .site-footer .footer-contact-buttons{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;}
+      .site-footer .footer-contact-buttons .subtle-social-btn{width:100%;max-width:220px;padding:10px 16px;font-size:.88rem;white-space:normal;text-align:center;}
+      .site-footer .footer-bottom-slim{margin-top:55px;padding-top:25px;border-top:1px solid #1e293b;}
+      .site-footer .footer-bottom-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;}
+      .site-footer .footer-bottom-inner p{margin:0;font-size:.88rem;line-height:1.8;color:#64748b;}
+      .site-footer .footer-bottom-inner span{color:#94a3b8;font-weight:600;}
+      .site-footer .footer-bottom-inner a{color:#94a3b8;text-decoration:none;transition:.25s;}
+      .site-footer .footer-bottom-inner a:hover{color:#ffffff;text-decoration:underline;}
+      @media (min-width:769px) and (max-width:1100px){
+        .site-footer .footer-wrapper{padding-left:20px;padding-right:20px;}
+        .site-footer .footer-grid{grid-template-columns:1.2fr .9fr 1.1fr 1fr;gap:35px;}
+      }
+      @media (max-width:768px){
+        .site-footer{padding:55px 0 20px;}
+        .site-footer .footer-wrapper{padding-left:24px;padding-right:24px;}
+        .site-footer .footer-grid{grid-template-columns:1fr;gap:40px;}
+        .site-footer .social-buttons-grid{grid-template-columns:repeat(2,92px);width:194px;}
+        .site-footer .footer-contact-buttons .subtle-social-btn{max-width:100%;}
+        .site-footer .footer-bottom-inner{flex-direction:column;align-items:flex-start;gap:12px;}
+      }
+    </style>
+
+    <div class="footer-wrapper">
+      <div class="footer-grid">
+
+        <div>
+          <a href="index.html" class="footer-brand">Redoun Hossain</a>
+          <p class="footer-desc">
+            <strong>Custom n8n Workflow Automation &amp; AI Agent Specialist</strong>
+          </p>
+          <div class="social-buttons-grid">
+            <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
+            <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
+            <a href="https://github.com/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/redoun-hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">LinkedIn</a>
+            <a href="https://www.youtube.com/@RedounHossainAI" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">YouTube</a>
+            <a href="https://www.facebook.com/redoun.hossain" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Facebook</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="classic-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="legal.html">Privacy Policy</a></li>
+            <li><a href="legal.html?tab=terms">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul class="classic-list">
+            <li><a href="portfolio.html">Custom n8n Workflow Automation</a></li>
+            <li><a href="portfolio.html">AI Agent Development</a></li>
+            <li><a href="portfolio.html">AI Workflow Automation</a></li>
+            <li><a href="portfolio.html">API Integration</a></li>
+            <li><a href="portfolio.html">CRM &amp; Business Process Automation</a></li>
+            <li><a href="portfolio.html">RAG &amp; AI-Powered Automation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <div class="footer-contact-buttons">
+            <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Fiverr ↗</a>
+            <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Hire on Upwork ↗</a>
+            <a href="mailto:ai.redounhossain@gmail.com?subject=Business%20Inquiry%20from%20Portfolio" class="subtle-social-btn">📧 Contact by Email</a>
+            <a href="#" class="subtle-social-btn" onclick="navigator.clipboard.writeText('ai.redounhossain@gmail.com');alert('Business Email copied!\n\nai.redounhossain@gmail.com');return false;">📋 Copy Business Email</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-slim">
+        <div class="footer-bottom-inner">
+          <p>&copy; <span id="footer-year"></span> Redoun Hossain. All rights reserved.</p>
+          <p><a href="legal.html">Privacy Policy</a> &nbsp; • &nbsp; <a href="legal.html?tab=terms">Terms &amp; Conditions</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+    // Zoom modal functionality
+    const certImage = document.getElementById('certImage');
+    const zoomModal = document.getElementById('certZoomModal');
+    const zoomClose = document.getElementById('certZoomClose');
+
+    if(certImage && zoomModal){
+      certImage.addEventListener('click', () => {
+        zoomModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      zoomModal.addEventListener('click', (e) => {
+        if(e.target === zoomModal || e.target.tagName === 'IMG'){
+          zoomModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+
+      zoomClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        zoomModal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && zoomModal.classList.contains('active')){
+          zoomModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
