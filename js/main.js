@@ -337,3 +337,24 @@
     }
   });
 })();
+
+
+/* =============================================================
+   10. OPTIONAL DEVICE PREVIEW TOOL
+   Keep js/device-preview.js for testing. Delete that one file
+   before publishing to hide the preview tool everywhere.
+   ============================================================= */
+(function loadOptionalDevicePreview() {
+  if (window.top !== window.self) return;
+
+  var currentScript = document.currentScript;
+  if (!currentScript || !currentScript.src) return;
+
+  var previewScript = document.createElement('script');
+  previewScript.src = new URL('device-preview.js', currentScript.src).href;
+  previewScript.defer = true;
+  previewScript.onerror = function () {
+    previewScript.remove();
+  };
+  document.head.appendChild(previewScript);
+})();

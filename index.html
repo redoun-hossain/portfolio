@@ -30,16 +30,11 @@
 
     /* Keep the desktop profile photo perfectly square before the circular crop. */
     @media (min-width:769px){
-      .home-hero .hero-image{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-      }
-
       .home-hero .hero-image img{
         width:clamp(260px,28vw,380px) !important;
         height:clamp(260px,28vw,380px) !important;
         max-width:none !important;
+        margin:0;
         aspect-ratio:1 / 1;
         object-fit:cover;
         border-radius:50% !important;
