@@ -28,46 +28,6 @@
       border-bottom:none !important;
     }
 
-    /* ===================== HERO CENTER FIX ===================== */
-    .home-hero .hero-inner{
-      display:flex !important;
-      flex-direction:row !important;
-      align-items:center !important;
-      justify-content:center !important;
-      gap:50px !important;
-      max-width:1200px !important;
-      margin:0 auto !important;
-      padding-left:24px !important;
-      padding-right:24px !important;
-      grid-template-columns:unset !important;
-    }
-
-    .home-hero .hero-text{
-      flex:0 1 600px !important;
-      min-width:0 !important;
-    }
-
-    .home-hero .hero-image{
-      flex:0 0 auto !important;
-      display:flex !important;
-      align-items:center !important;
-      justify-content:center !important;
-    }
-
-    /* Keep the desktop profile photo perfectly square before the circular crop. */
-    @media (min-width:769px){
-      .home-hero .hero-image img{
-        width:clamp(260px,26vw,360px) !important;
-        height:clamp(260px,26vw,360px) !important;
-        max-width:none !important;
-        margin:0;
-        aspect-ratio:1 / 1;
-        object-fit:cover;
-        border-radius:50% !important;
-        display:block;
-      }
-    }
-
     .hero-pill{
       display:inline-block;
       background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);
@@ -88,11 +48,12 @@
       margin-bottom:20px !important;
       font-size:clamp(2.35rem,4.5vw,4.2rem) !important;
       letter-spacing:-.03em;
+      max-width:100% !important;
     }
 
     .hero-title-home .hero-line{
       display:block;
-      white-space:nowrap;
+      white-space:normal !important;
     }
 
     .hero-title-home .hero-line-accent{
@@ -486,18 +447,81 @@
       box-shadow:0 10px 20px rgba(124,58,237,.35);
     }
 
+    /* ===================== HERO BALANCE FIX ===================== */
+    .home-hero .hero-inner{
+      display:flex !important;
+      flex-direction:row !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap:40px !important;
+      max-width:1360px !important;
+      margin:0 auto !important;
+      padding-left:40px !important;
+      padding-right:40px !important;
+      box-sizing:border-box;
+      grid-template-columns:unset !important;
+    }
+
+    .home-hero .hero-text{
+      flex:1 1 0% !important;
+      min-width:0 !important;
+      max-width:720px !important;
+    }
+
+    .home-hero .hero-image{
+      flex:0 0 auto !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+    }
+
+    @media (min-width:769px){
+      .home-hero .hero-image img{
+        width:clamp(260px,26vw,360px) !important;
+        height:clamp(260px,26vw,360px) !important;
+        max-width:none !important;
+        aspect-ratio:1 / 1;
+        object-fit:cover;
+        border-radius:50% !important;
+        display:block;
+        margin:0;
+      }
+    }
+
+    /* ===================== MOBILE ===================== */
     @media (max-width: 768px){
       .home-hero{
         padding:75px 0 50px !important;
       }
 
-      .hero-title-home .hero-line{
-        white-space:normal;
+      .home-hero .hero-inner{
+        flex-direction:column !important;
+        text-align:center !important;
+        gap:30px !important;
+        padding-left:24px !important;
+        padding-right:24px !important;
+      }
+
+      .home-hero .hero-image{
+        order:-1 !important;
+      }
+
+      .home-hero .hero-text{
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+        max-width:100% !important;
+      }
+
+      .home-hero .hero-buttons{
+        justify-content:center !important;
       }
 
       .home-hero .hero-stats{
         grid-template-columns:1fr;
         max-width:100%;
+        margin-left:auto !important;
+        margin-right:auto !important;
       }
 
       .proof-buttons{
@@ -511,31 +535,6 @@
 
       .cert-mini-card{
         padding:30px 24px;
-      }
-
-      .home-hero .hero-inner{
-        flex-direction:column !important;
-        text-align:center !important;
-        gap:30px !important;
-      }
-
-      .home-hero .hero-image{
-        order:-1 !important;
-      }
-
-      .home-hero .hero-text{
-        display:flex !important;
-        flex-direction:column !important;
-        align-items:center !important;
-      }
-
-      .home-hero .hero-buttons{
-        justify-content:center !important;
-      }
-
-      .home-hero .hero-stats{
-        margin-left:auto !important;
-        margin-right:auto !important;
       }
     }
 
