@@ -28,11 +28,37 @@
       border-bottom:none !important;
     }
 
+    /* ===================== HERO CENTER FIX ===================== */
+    .home-hero .hero-inner{
+      display:flex !important;
+      flex-direction:row !important;
+      align-items:center !important;
+      justify-content:center !important;
+      gap:50px !important;
+      max-width:1200px !important;
+      margin:0 auto !important;
+      padding-left:24px !important;
+      padding-right:24px !important;
+      grid-template-columns:unset !important;
+    }
+
+    .home-hero .hero-text{
+      flex:0 1 600px !important;
+      min-width:0 !important;
+    }
+
+    .home-hero .hero-image{
+      flex:0 0 auto !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+    }
+
     /* Keep the desktop profile photo perfectly square before the circular crop. */
     @media (min-width:769px){
       .home-hero .hero-image img{
-        width:clamp(260px,28vw,380px) !important;
-        height:clamp(260px,28vw,380px) !important;
+        width:clamp(260px,26vw,360px) !important;
+        height:clamp(260px,26vw,360px) !important;
         max-width:none !important;
         margin:0;
         aspect-ratio:1 / 1;
@@ -486,35 +512,7 @@
       .cert-mini-card{
         padding:30px 24px;
       }
-    }
 
-    /* ===================== HERO CENTER FIX — ONLY POSITIONING ===================== */
-    .home-hero .hero-inner{
-      display:flex !important;
-      flex-direction:row !important;
-      align-items:center !important;
-      justify-content:space-between !important;
-      gap:40px !important;
-      max-width:1200px !important;
-      margin:0 auto !important;
-      padding-left:24px !important;
-      padding-right:24px !important;
-      grid-template-columns:unset !important;
-    }
-
-    .home-hero .hero-text{
-      flex:1 1 0% !important;
-      min-width:0 !important;
-    }
-
-    .home-hero .hero-image{
-      flex:0 0 auto !important;
-      display:flex !important;
-      align-items:center !important;
-      justify-content:center !important;
-    }
-
-    @media (max-width:768px){
       .home-hero .hero-inner{
         flex-direction:column !important;
         text-align:center !important;
@@ -748,7 +746,6 @@
           <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">Lead Generation AI Agent</h3>
           <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">Automated lead capture and qualification system powered by AI agents, integrating with CRM and communication platforms to grow your sales pipeline.</p>
           
-          <!-- Fixed Tags Container -->
           <div style="display:flex;flex-wrap:wrap;gap:6px;">
             <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
             <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
@@ -789,7 +786,6 @@
           <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">RAG AI Knowledge Assistant</h3>
           <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">AI-powered knowledge base assistant using RAG architecture, vector databases, and n8n workflows for accurate, context-aware responses from your business data.</p>
           
-          <!-- Fixed Tags Container -->
           <div style="display:flex;flex-wrap:wrap;gap:6px;">
             <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
             <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
@@ -830,7 +826,6 @@
           <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">Appointment Booking AI Agent</h3>
           <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">AI-powered appointment scheduling system that handles booking, reminders, and client communication automatically via n8n workflows and messaging platforms.</p>
           
-          <!-- Fixed Tags Container (WhatsApp will fit now) -->
           <div style="display:flex;flex-wrap:wrap;gap:6px;">
             <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
             <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
