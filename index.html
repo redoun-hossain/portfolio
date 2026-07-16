@@ -461,29 +461,10 @@
       grid-template-columns:unset !important;
     }
 
-    /* ===================== HERO TEXT CENTER (Option B) ===================== */
     .home-hero .hero-text{
       flex:0 1 720px !important;
       min-width:0 !important;
       max-width:720px !important;
-      display:flex !important;
-      flex-direction:column !important;
-      align-items:center !important;
-      text-align:center !important;
-    }
-
-    .home-hero .hero-text .hero-sub-home{
-      margin-left:auto !important;
-      margin-right:auto !important;
-    }
-
-    .home-hero .hero-text .hero-buttons{
-      justify-content:center !important;
-    }
-
-    .home-hero .hero-text .hero-stats{
-      margin-left:auto !important;
-      margin-right:auto !important;
     }
 
     .home-hero .hero-image{
@@ -532,6 +513,7 @@
         flex:1 1 auto !important;
       }
 
+      /* Mobile-এ title wrap হতে পারবে, না হলে overflow হবে */
       .hero-title-home .hero-line{
         white-space:normal !important;
       }
