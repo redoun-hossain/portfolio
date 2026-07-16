@@ -28,6 +28,25 @@
       border-bottom:none !important;
     }
 
+    /* Keep the desktop profile photo perfectly square before the circular crop. */
+    @media (min-width:769px){
+      .home-hero .hero-image{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+
+      .home-hero .hero-image img{
+        width:clamp(260px,28vw,380px) !important;
+        height:clamp(260px,28vw,380px) !important;
+        max-width:none !important;
+        aspect-ratio:1 / 1;
+        object-fit:cover;
+        border-radius:50% !important;
+        display:block;
+      }
+    }
+
     .hero-pill{
       display:inline-block;
       background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);
