@@ -28,20 +28,6 @@
       border-bottom:none !important;
     }
 
-    /* Keep the desktop profile photo perfectly square before the circular crop. */
-    @media (min-width:769px){
-      .home-hero .hero-image img{
-        width:clamp(260px,28vw,380px) !important;
-        height:clamp(260px,28vw,380px) !important;
-        max-width:none !important;
-        margin:0;
-        aspect-ratio:1 / 1;
-        object-fit:cover;
-        border-radius:50% !important;
-        display:block;
-      }
-    }
-
     .hero-pill{
       display:inline-block;
       background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);
@@ -79,14 +65,14 @@
       line-height:1.75 !important;
       margin-bottom:32px !important;
       font-weight:500 !important;
-      max-width:650px;
+      max-width:100%;
     }
 
     .home-hero .hero-stats{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:12px;
-      max-width:620px;
+      max-width:100%;
       margin-top:30px;
     }
 
@@ -487,6 +473,93 @@
         padding:30px 24px;
       }
     }
+
+    /* ===================== HERO SECTION CENTER FIX ===================== */
+
+    .home-hero .hero-inner{
+      display:flex !important;
+      flex-direction:row !important;
+      align-items:center !important;
+      justify-content:center !important;
+      gap:clamp(40px,5vw,80px) !important;
+      max-width:1200px !important;
+      margin:0 auto !important;
+      padding-left:24px !important;
+      padding-right:24px !important;
+      grid-template-columns:unset !important;
+    }
+
+    .home-hero .hero-text{
+      flex:1 1 0% !important;
+      max-width:580px !important;
+      min-width:0 !important;
+    }
+
+    .home-hero .hero-image{
+      flex:0 0 auto !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      min-width:0 !important;
+    }
+
+    @media (min-width:769px){
+      .home-hero .hero-image img{
+        width:clamp(260px,28vw,360px) !important;
+        height:clamp(260px,28vw,360px) !important;
+        max-width:none !important;
+        margin:0 !important;
+        aspect-ratio:1 / 1 !important;
+        object-fit:cover !important;
+        border-radius:50% !important;
+        display:block !important;
+        border:6px solid #ffffff !important;
+        box-shadow:0 8px 32px rgba(37,99,235,.18) !important;
+      }
+    }
+
+    @media (max-width:768px){
+      .home-hero .hero-inner{
+        flex-direction:column !important;
+        text-align:center !important;
+        gap:32px !important;
+      }
+
+      .home-hero .hero-image{
+        order:-1 !important;
+        width:100% !important;
+      }
+
+      .home-hero .hero-image img{
+        width:clamp(160px,48vw,240px) !important;
+        height:clamp(160px,48vw,240px) !important;
+        margin:0 auto !important;
+        border-radius:50% !important;
+        object-fit:cover !important;
+        border:6px solid #ffffff !important;
+        box-shadow:0 8px 32px rgba(37,99,235,.18) !important;
+      }
+
+      .home-hero .hero-text{
+        flex:1 1 auto !important;
+        max-width:100% !important;
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+      }
+
+      .home-hero .hero-buttons{
+        justify-content:center !important;
+      }
+
+      .home-hero .hero-stats{
+        grid-template-columns:1fr !important;
+        max-width:320px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -535,21 +608,17 @@
             <a href="contact.html" class="btn btn-outline">Contact Me</a>
           </div>
 
-         <div class="hero-stats">
-
-<div class="stat">
-<span class="stat-icon">⚙️</span><div><h3>n8n</h3><p>Platform Focus</p></div>
-</div>
-
-<div class="stat">
-<span class="stat-icon">🤖</span><div><h3>AI</h3><p>Automation Solutions</p></div>
-</div>
-
-<div class="stat">
-<span class="stat-icon">🔗</span><div><h3>API</h3><p>Integration Expert</p></div>
-</div>
-
-</div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-icon">⚙️</span><div><h3>n8n</h3><p>Platform Focus</p></div>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">🤖</span><div><h3>AI</h3><p>Automation Solutions</p></div>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">🔗</span><div><h3>API</h3><p>Integration Expert</p></div>
+            </div>
+          </div>
 
         </div>
 
@@ -566,27 +635,22 @@
     <section class="proof-bar-home">
       <div class="container">
         <div class="proof-buttons">
-
           <div class="proof-chip">
             <span class="check">✓</span>
             <span>AI Agents</span>
           </div>
-
           <div class="proof-chip">
             <span class="check">✓</span>
             <span>API Integration</span>
           </div>
-
           <div class="proof-chip">
             <span class="check">✓</span>
             <span>Webhook Integration</span>
           </div>
-
           <div class="proof-chip">
             <span class="check">✓</span>
             <span>Business Automation</span>
           </div>
-
         </div>
       </div>
     </section>
@@ -604,43 +668,36 @@
         </p>
 
         <div class="home-service-grid">
-
           <div class="home-service-card">
             <div class="icon">⚙️</div>
             <h3>Custom Workflow Automation</h3>
             <p>Tailored n8n workflows that connect apps, automate repetitive tasks, and streamline your business operations.</p>
           </div>
-
           <div class="home-service-card">
             <div class="icon">🤖</div>
             <h3>AI Agents</h3>
             <p>Intelligent AI agents that handle tasks, support decisions, and power smarter automation across business workflows.</p>
           </div>
-
           <div class="home-service-card">
             <div class="icon">📚</div>
             <h3>RAG Systems</h3>
             <p>Retrieval-Augmented Generation systems that connect AI with your knowledge base for accurate, context-aware responses.</p>
           </div>
-
           <div class="home-service-card">
             <div class="icon">🔗</div>
             <h3>API &amp; Webhook Integration</h3>
             <p>Seamless API and webhook integrations that connect tools, sync data, and trigger reliable real-time automation.</p>
           </div>
-
           <div class="home-service-card">
             <div class="icon">🏢</div>
             <h3>CRM &amp; Business Process Automation</h3>
             <p>Automate CRM workflows, sales processes, and internal operations to save time and improve business efficiency.</p>
           </div>
-
           <div class="home-service-card">
             <div class="icon">🎯</div>
             <h3>Lead Generation Automation</h3>
             <p>Capture, organize, qualify, and route leads automatically through n8n-powered lead generation workflows.</p>
           </div>
-
         </div>
 
         <div style="text-align:center;">
@@ -653,149 +710,103 @@
     </section>
     <!-- ===================== END WHAT I BUILD ===================== -->
 
-<!-- ===================== 4. FEATURED PROJECTS ===================== -->
-<section class="section featured-projects" style="background:#f8fafc;padding:90px 0;">
-  <div class="container">
 
-    <h2 class="section-title" style="color:#1e40af;font-weight:800;">Featured Projects</h2>
-    <p class="section-sub" style="color:#475569;max-width:720px;margin:0 auto 50px;">
-      A selection of n8n automation projects showcasing real-world business solutions and measurable results.
-    </p>
+    <!-- ===================== 4. FEATURED PROJECTS ===================== -->
+    <section class="section featured-projects" style="background:#f8fafc;padding:90px 0;">
+      <div class="container">
 
-    <div class="cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
+        <h2 class="section-title" style="color:#1e40af;font-weight:800;">Featured Projects</h2>
+        <p class="section-sub" style="color:#475569;max-width:720px;margin:0 auto 50px;">
+          A selection of n8n automation projects showcasing real-world business solutions and measurable results.
+        </p>
 
-      <!-- ==================== Card 01: Lead Generation AI Agent ==================== -->
-      <a href="projects/leadgen-ai-agent.html" class="project-card" style="
-        background:#ffffff;
-        border:1px solid #e2e8f0;
-        border-radius:14px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(30,64,175,.06);
-        transition:all 0.3s ease;
-        display:flex;
-        flex-direction:column;
-        text-decoration:none;
-        cursor:pointer;
-      " onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
+        <div class="cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
 
-        <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
-          <img src="images/projects/n8n/n8n-featured-project-01.jpg" alt="Lead Generation AI Agent built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
+          <!-- Card 01 -->
+          <a href="projects/leadgen-ai-agent.html" class="project-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 4px 15px rgba(30,64,175,.06);transition:all 0.3s ease;display:flex;flex-direction:column;text-decoration:none;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
+            <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
+              <img src="images/projects/n8n/n8n-featured-project-01.jpg" alt="Lead Generation AI Agent built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
+            </div>
+            <div style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:10px;">
+              <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
+              <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 01</span>
+            </div>
+            <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
+              <div style="margin-bottom:16px;">
+                <span style="display:inline-block;background:#1e3a8a;color:#ffffff;padding:6px 16px;border-radius:50px;font-size:0.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;">AI AGENT</span>
+              </div>
+              <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">Lead Generation AI Agent</h3>
+              <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">Automated lead capture and qualification system powered by AI agents, integrating with CRM and communication platforms to grow your sales pipeline.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">Airtable</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">Slack</span>
+              </div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:24px;background:#1e40af;color:#ffffff;padding:10px 18px;border-radius:8px;font-size:0.86rem;font-weight:800;">Explore Project →</span>
+            </div>
+          </a>
+
+          <!-- Card 02 -->
+          <a href="projects/rag-ai-assistant.html" class="project-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 4px 15px rgba(30,64,175,.06);transition:all 0.3s ease;display:flex;flex-direction:column;text-decoration:none;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
+            <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
+              <img src="images/projects/n8n/n8n-featured-project-02.jpg" alt="RAG AI Knowledge Assistant built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
+            </div>
+            <div style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:10px;">
+              <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
+              <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 02</span>
+            </div>
+            <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
+              <div style="margin-bottom:16px;">
+                <span style="display:inline-block;background:#1e3a8a;color:#ffffff;padding:6px 16px;border-radius:50px;font-size:0.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;">AI AGENT</span>
+              </div>
+              <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">RAG AI Knowledge Assistant</h3>
+              <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">AI-powered knowledge base assistant using RAG architecture, vector databases, and n8n workflows for accurate, context-aware responses from your business data.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">Pinecone</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">LangChain</span>
+              </div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:24px;background:#1e40af;color:#ffffff;padding:10px 18px;border-radius:8px;font-size:0.86rem;font-weight:800;">Explore Project →</span>
+            </div>
+          </a>
+
+          <!-- Card 03 -->
+          <a href="projects/appointment-agent.html" class="project-card" style="background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 4px 15px rgba(30,64,175,.06);transition:all 0.3s ease;display:flex;flex-direction:column;text-decoration:none;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
+            <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
+              <img src="images/projects/n8n/n8n-featured-project-03.jpg" alt="Appointment Booking AI Agent built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
+            </div>
+            <div style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:10px;">
+              <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
+              <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 03</span>
+            </div>
+            <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
+              <div style="margin-bottom:16px;">
+                <span style="display:inline-block;background:#1e3a8a;color:#ffffff;padding:6px 16px;border-radius:50px;font-size:0.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;">BUSINESS AUTOMATION</span>
+              </div>
+              <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">Appointment Booking AI Agent</h3>
+              <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">AI-powered appointment scheduling system that handles booking, reminders, and client communication automatically via n8n workflows and messaging platforms.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">G-Cal</span>
+                <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">WhatsApp</span>
+              </div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:24px;background:#1e40af;color:#ffffff;padding:10px 18px;border-radius:8px;font-size:0.86rem;font-weight:800;">Explore Project →</span>
+            </div>
+          </a>
+
         </div>
 
-        <div style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:10px;">
-          <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
-          <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 01</span>
+        <div style="margin-top:55px;text-align:center;">
+          <a href="portfolio.html" class="btn btn-primary" style="padding:14px 36px;font-weight:800;border-radius:50px;box-shadow:0 10px 25px -5px rgba(37,99,235,0.4);">Explore All Projects</a>
         </div>
 
-        <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
-          <div style="margin-bottom:16px;">
-            <span style="display:inline-block;background:#1e3a8a;color:#ffffff;padding:6px 16px;border-radius:50px;font-size:0.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;">AI AGENT</span>
-          </div>
-          <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">Lead Generation AI Agent</h3>
-          <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">Automated lead capture and qualification system powered by AI agents, integrating with CRM and communication platforms to grow your sales pipeline.</p>
-          
-          <!-- Fixed Tags Container -->
-          <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">Airtable</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">Slack</span>
-          </div>
-          <span style="display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:24px;background:#1e40af;color:#ffffff;padding:10px 18px;border-radius:8px;font-size:0.86rem;font-weight:800;">Explore Project →</span>
-        </div>
-      </a>
+      </div>
+    </section>
+    <!-- ===================== END FEATURED PROJECTS ===================== -->
 
-      <!-- ==================== Card 02: RAG AI Knowledge Assistant ==================== -->
-      <a href="projects/rag-ai-assistant.html" class="project-card" style="
-        background:#ffffff;
-        border:1px solid #e2e8f0;
-        border-radius:14px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(30,64,175,.06);
-        transition:all 0.3s ease;
-        display:flex;
-        flex-direction:column;
-        text-decoration:none;
-        cursor:pointer;
-      " onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
-
-        <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
-          <img src="images/projects/n8n/n8n-featured-project-02.jpg" alt="RAG AI Knowledge Assistant built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
-        </div>
-
-        <div style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:10px;">
-          <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
-          <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 02</span>
-        </div>
-
-        <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
-          <div style="margin-bottom:16px;">
-            <span style="display:inline-block;background:#1e3a8a;color:#ffffff;padding:6px 16px;border-radius:50px;font-size:0.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;">AI AGENT</span>
-          </div>
-          <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">RAG AI Knowledge Assistant</h3>
-          <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">AI-powered knowledge base assistant using RAG architecture, vector databases, and n8n workflows for accurate, context-aware responses from your business data.</p>
-          
-          <!-- Fixed Tags Container -->
-          <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">Pinecone</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">LangChain</span>
-          </div>
-          <span style="display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:24px;background:#1e40af;color:#ffffff;padding:10px 18px;border-radius:8px;font-size:0.86rem;font-weight:800;">Explore Project →</span>
-        </div>
-      </a>
-
-      <!-- ==================== Card 03: Appointment Booking AI Agent ==================== -->
-      <a href="projects/appointment-agent.html" class="project-card" style="
-        background:#ffffff;
-        border:1px solid #e2e8f0;
-        border-radius:14px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(30,64,175,.06);
-        transition:all 0.3s ease;
-        display:flex;
-        flex-direction:column;
-        text-decoration:none;
-        cursor:pointer;
-      " onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 18px 35px rgba(30,64,175,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 15px rgba(30,64,175,.06)'">
-
-        <div style="background:#dbeafe;min-height:220px;display:flex;align-items:center;justify-content:center;">
-          <img src="images/projects/n8n/n8n-featured-project-03.jpg" alt="Appointment Booking AI Agent built with n8n" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;" />
-        </div>
-
-        <div style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:10px;">
-          <img src="https://n8n.io/favicon.ico" alt="n8n" style="width:20px;height:20px;filter:brightness(0) invert(1);" />
-          <span style="color:#ffffff;font-weight:800;font-size:1rem;letter-spacing:0.5px;">n8n Featured Project 03</span>
-        </div>
-
-        <div style="padding:26px 24px;display:flex;flex-direction:column;flex-grow:1;">
-          <div style="margin-bottom:16px;">
-            <span style="display:inline-block;background:#1e3a8a;color:#ffffff;padding:6px 16px;border-radius:50px;font-size:0.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;">BUSINESS AUTOMATION</span>
-          </div>
-          <h3 style="color:#1e3a8a;font-size:1.35rem;font-weight:900;margin:0 0 12px;line-height:1.3;">Appointment Booking AI Agent</h3>
-          <p style="color:#475569;font-size:0.93rem;line-height:1.65;margin:0 0 22px;flex-grow:1;">AI-powered appointment scheduling system that handles booking, reminders, and client communication automatically via n8n workflows and messaging platforms.</p>
-          
-          <!-- Fixed Tags Container (WhatsApp will fit now) -->
-          <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">n8n</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">OpenAI</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">G-Cal</span>
-            <span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-weight:700;font-size:0.72rem;padding:4px 10px;border-radius:50px;">WhatsApp</span>
-          </div>
-          <span style="display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:24px;background:#1e40af;color:#ffffff;padding:10px 18px;border-radius:8px;font-size:0.86rem;font-weight:800;">Explore Project →</span>
-        </div>
-      </a>
-
-    </div>
-
-    <div style="margin-top:55px;text-align:center;">
-      <a href="portfolio.html" class="btn btn-primary" style="padding:14px 36px;font-weight:800;border-radius:50px;box-shadow:0 10px 25px -5px rgba(37,99,235,0.4);">Explore All Projects</a>
-    </div>
-
-  </div>
-</section>
-<!-- ===================== END FEATURED PROJECTS ===================== -->
 
     <!-- ===================== 5. WHY CLIENTS TRUST ME ===================== -->
     <section class="section trust" style="background:#ffffff;padding:90px 0;">
@@ -808,31 +819,26 @@
         </p>
 
         <div class="trust-grid">
-
           <div class="trust-card trust-mint-card">
             <div class="trust-icon-box">✅</div>
             <h3 style="color:#14532d;font-size:1.15rem;font-weight:800;margin:18px 0 10px;">Reliable &amp; Production-Ready Solutions</h3>
             <p style="color:#334155;font-size:0.95rem;line-height:1.62;margin:0;">Every automation is carefully built, tested, and optimized to run reliably in real-world business environments.</p>
           </div>
-
           <div class="trust-card trust-mint-card">
             <div class="trust-icon-box">💬</div>
             <h3 style="color:#14532d;font-size:1.15rem;font-weight:800;margin:18px 0 10px;">Clear &amp; Responsive Communication</h3>
             <p style="color:#334155;font-size:0.95rem;line-height:1.62;margin:0;">Professional and timely communication throughout every project — from planning to final delivery.</p>
           </div>
-
           <div class="trust-card trust-mint-card">
             <div class="trust-icon-box">🎯</div>
             <h3 style="color:#14532d;font-size:1.15rem;font-weight:800;margin:18px 0 10px;">Business-Focused Approach</h3>
             <p style="color:#334155;font-size:0.95rem;line-height:1.62;margin:0;">Every workflow is designed around your business goals, ensuring practical results and long-term value.</p>
           </div>
-
           <div class="trust-card trust-mint-card">
             <div class="trust-icon-box">🛡️</div>
             <h3 style="color:#14532d;font-size:1.15rem;font-weight:800;margin:18px 0 10px;">Post-Delivery Support</h3>
             <p style="color:#334155;font-size:0.95rem;line-height:1.62;margin:0;">Support is available for setup, troubleshooting, and keeping your automation workflows running smoothly.</p>
           </div>
-
         </div>
 
       </div>
@@ -886,13 +892,7 @@
               <p style="color:#6b21a8;font-size:0.95rem;margin:0;line-height:1.6;">Professionally trained in AI Agents, n8n workflow automation, API integration, and modern AI technologies.</p>
             </div>
           </div>
-
-          <a
-            href="certificate.html"
-            class="cert-mini-btn"
-          >
-            View Certificate →
-          </a>
+          <a href="certificate.html" class="cert-mini-btn">View Certificate →</a>
         </div>
 
       </div>
@@ -1169,11 +1169,9 @@
 
         <div>
           <a href="index.html" class="footer-brand">Redoun Hossain</a>
-
           <p class="footer-desc">
             <strong>Custom n8n Workflow Automation &amp; AI Agent Specialist</strong>
           </p>
-
           <div class="social-buttons-grid">
             <a href="https://www.fiverr.com/redoun_hossain/" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Fiverr</a>
             <a href="https://www.upwork.com/freelancers/~0135d259d3bcdf2afe" target="_blank" rel="noopener noreferrer" class="subtle-social-btn">Upwork</a>
@@ -1242,4 +1240,4 @@
   </script>
 
 </body>
-</html> 
+</html>

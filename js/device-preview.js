@@ -10,7 +10,7 @@
 
   var style = document.createElement('style');
   style.textContent = [
-    '#device-preview-launcher{position:fixed;right:18px;bottom:18px;z-index:99998;border:0;border-radius:999px;background:#1d4ed8;color:#fff;padding:12px 16px;font:700 14px/1 system-ui,sans-serif;box-shadow:0 10px 24px rgba(15,23,42,.28);cursor:pointer;}',
+    '#device-preview-launcher{position:fixed;left:18px;bottom:18px;z-index:99998;border:0;border-radius:999px;background:#1d4ed8;color:#fff;padding:12px 16px;font:700 14px/1 system-ui,sans-serif;box-shadow:0 10px 24px rgba(15,23,42,.28);cursor:pointer;}',
     '#device-preview-modal{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(15,23,42,.78);}',
     '#device-preview-modal.is-open{display:flex;}',
     '.device-preview-panel{width:min(1280px,100%);height:min(860px,100%);display:flex;flex-direction:column;overflow:hidden;border-radius:16px;background:#0f172a;box-shadow:0 25px 70px rgba(0,0,0,.45);}',
@@ -20,7 +20,7 @@
     '.device-preview-toolbar button:hover,.device-preview-toolbar button.is-active{background:#2563eb;border-color:#60a5fa;color:#fff;}',
     '.device-preview-stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:flex-start;overflow:auto;padding:22px;background:#334155;}',
     '.device-preview-frame{height:100%;min-height:520px;border:0;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.35);}',
-    '@media(max-width:600px){#device-preview-launcher{right:12px;bottom:12px;}.device-preview-toolbar strong{width:100%;}.device-preview-stage{padding:12px;}.device-preview-frame{min-height:440px;}}'
+    '@media(max-width:600px){#device-preview-launcher{left:12px;bottom:12px;}.device-preview-toolbar strong{width:100%;}.device-preview-stage{padding:12px;}.device-preview-frame{min-height:440px;}}'
   ].join('');
   document.head.appendChild(style);
 
