@@ -5,16 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>AI Mastery Certificate | Redoun Hossain</title>
-  <meta name="description" content="View Redoun Hossain's AI Mastery Certificate." />
+  <meta name="description" content="View Redoun Hossain's AI Mastery Certificate - AI agent development and n8n workflow automation." />
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-    /* ===================== CERTIFICATE PAGE ===================== */
+    /* ===================== HERO SECTION ===================== */
+    .cert-hero{
+      background:linear-gradient(135deg,#581c87 0%,#7c3aed 50%,#8b5cf6 100%);
+      padding:70px 0 60px;
+      text-align:center;
+      color:#ffffff;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cert-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 20% 30%, rgba(255,255,255,.08) 0%, transparent 50%),
+                 radial-gradient(circle at 80% 70%, rgba(255,255,255,.06) 0%, transparent 50%);
+      pointer-events:none;
+    }
+
+    .cert-hero-inner{
+      max-width:900px;
+      margin:0 auto;
+      padding:0 24px;
+      position:relative;
+      z-index:1;
+    }
+
+    .cert-hero-badge{
+      display:inline-block;
+      background:rgba(255,255,255,.18);
+      backdrop-filter:blur(10px);
+      color:#ffffff;
+      font-weight:800;
+      font-size:.88rem;
+      padding:8px 20px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.25);
+      letter-spacing:.3px;
+      margin-bottom:20px;
+    }
+
+    .cert-hero h1{
+      color:#ffffff;
+      margin:0 0 16px;
+      font-size:clamp(2rem,4.5vw,3rem);
+      font-weight:900;
+      letter-spacing:-.02em;
+      line-height:1.15;
+    }
+
+    .cert-hero-sub{
+      color:rgba(255,255,255,.92);
+      margin:0 auto 28px;
+      font-size:1.08rem;
+      line-height:1.7;
+      max-width:680px;
+      font-weight:500;
+    }
+
+    .cert-hero-stats{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .cert-hero-stat{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,.12);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.2);
+      padding:10px 18px;
+      border-radius:999px;
+      color:#ffffff;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    /* ===================== CERTIFICATE CONTENT ===================== */
     .certificate-page{
       background:linear-gradient(135deg,#f8fafc 0%,#eff6ff 100%);
-      min-height:100vh;
       padding:60px 0 70px;
     }
 
@@ -22,35 +102,6 @@
       max-width:1100px;
       margin:0 auto;
       padding:0 24px;
-      text-align:center;
-    }
-
-    .cert-badge{
-      display:inline-block;
-      background:linear-gradient(135deg,#7c3aed 0%,#8b5cf6 100%);
-      color:#ffffff;
-      font-weight:800;
-      font-size:.88rem;
-      padding:8px 18px;
-      border-radius:999px;
-      box-shadow:0 6px 16px rgba(124,58,237,.25);
-      letter-spacing:.3px;
-      margin-bottom:16px;
-    }
-
-    .certificate-wrap h1{
-      color:#581c87;
-      margin:0 0 10px;
-      font-size:clamp(1.8rem,4vw,2.6rem);
-      font-weight:900;
-      letter-spacing:-.02em;
-    }
-
-    .certificate-wrap > p{
-      color:#475569;
-      margin:0 0 32px;
-      font-size:1.02rem;
-      line-height:1.7;
     }
 
     /* Certificate Card */
@@ -62,56 +113,29 @@
       box-shadow:0 12px 30px rgba(88,28,135,.14);
     }
 
-    /* Toolbar */
+    /* Toolbar - title only */
     .cert-toolbar{
       background:linear-gradient(135deg,#581c87 0%,#7c3aed 100%);
-      padding:12px 20px;
+      padding:14px 22px;
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
+      justify-content:center;
       gap:10px;
     }
 
     .cert-toolbar-title{
       color:#ffffff;
       font-weight:800;
-      font-size:.95rem;
+      font-size:1rem;
       display:flex;
       align-items:center;
-      gap:8px;
+      gap:10px;
+      letter-spacing:.3px;
     }
 
-    .cert-toolbar-actions{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-    }
-
-    .cert-toolbar-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      background:rgba(255,255,255,.15);
-      color:#ffffff;
-      border:1px solid rgba(255,255,255,.25);
-      padding:7px 14px;
-      border-radius:8px;
-      font-weight:700;
-      font-size:.85rem;
-      text-decoration:none;
-      transition:.25s ease;
-      cursor:pointer;
-    }
-
-    .cert-toolbar-btn:hover{
-      background:rgba(255,255,255,.28);
-      transform:translateY(-1px);
-    }
-
-    /* Image wrapper */
-    .cert-image-wrapper{
-      padding:20px;
+    /* Image Viewer - all devices */
+    .cert-image-viewer{
+      padding:24px;
       background:#f8fafc;
       display:flex;
       justify-content:center;
@@ -200,7 +224,7 @@
       flex-wrap:wrap;
       justify-content:center;
       gap:12px;
-      margin-top:28px;
+      margin-top:32px;
     }
 
     .certificate-actions a{
@@ -208,7 +232,7 @@
       align-items:center;
       justify-content:center;
       gap:8px;
-      padding:13px 24px;
+      padding:14px 28px;
       border-radius:10px;
       font-weight:800;
       font-size:.95rem;
@@ -216,13 +240,13 @@
       transition:.25s ease;
     }
 
-    .certificate-open{
+    .certificate-open-pdf{
       background:linear-gradient(135deg,#7c3aed 0%,#8b5cf6 100%);
       color:#ffffff;
       box-shadow:0 6px 15px rgba(124,58,237,.25);
     }
 
-    .certificate-open:hover{
+    .certificate-open-pdf:hover{
       transform:translateY(-2px);
       box-shadow:0 10px 20px rgba(124,58,237,.35);
     }
@@ -242,15 +266,14 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
-      margin-top:24px;
-      padding:11px 22px;
+      padding:14px 28px;
       background:#ffffff;
       color:#475569;
       border:2px solid #e2e8f0;
-      border-radius:999px;
+      border-radius:10px;
       text-decoration:none;
       font-weight:700;
-      font-size:.92rem;
+      font-size:.95rem;
       transition:.25s ease;
     }
 
@@ -262,32 +285,32 @@
     }
 
     .certificate-note{
-      margin-top:18px !important;
+      text-align:center;
+      margin-top:22px !important;
       color:#64748b !important;
       font-size:.88rem;
     }
 
     /* ===================== MOBILE ===================== */
     @media (max-width:768px){
+      .cert-hero{
+        padding:55px 0 45px;
+      }
+
       .certificate-page{
         padding:40px 0 50px;
       }
 
-      .cert-image-wrapper{
-        padding:12px;
+      .cert-image-viewer{
+        padding:14px;
       }
 
       .cert-toolbar{
-        padding:10px 16px;
+        padding:12px 16px;
       }
 
       .cert-toolbar-title{
-        font-size:.88rem;
-      }
-
-      .cert-toolbar-btn{
-        padding:6px 12px;
-        font-size:.8rem;
+        font-size:.92rem;
       }
 
       .certificate-actions{
@@ -297,6 +320,15 @@
 
       .certificate-actions a{
         width:100%;
+      }
+
+      .cert-hero-stats{
+        gap:8px;
+      }
+
+      .cert-hero-stat{
+        font-size:.82rem;
+        padding:8px 14px;
       }
     }
   </style>
@@ -324,64 +356,74 @@
   </header>
   <!-- ===================== END HEADER ===================== -->
 
-  <main class="certificate-page">
-    <div class="certificate-wrap">
+  <main>
 
-      <span class="cert-badge">🎓 Professional Certification</span>
-      <h1>AI Mastery Certificate</h1>
-      <p>Certificate of completion for AI agent development and n8n workflow automation.</p>
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="cert-hero">
+      <div class="cert-hero-inner">
+        <span class="cert-hero-badge">🎓 Professional Certification</span>
+        <h1>AI Mastery Certificate</h1>
+        <p class="cert-hero-sub">
+          Certificate of achievement for completing the AI Mastery Course — covering AI agent development, n8n workflow automation, LangChain, API integration, and modern AI technologies.
+        </p>
+        <div class="cert-hero-stats">
+          <span class="cert-hero-stat">🏆 Hablu Programmer</span>
+          <span class="cert-hero-stat">📅 May 2026</span>
+          <span class="cert-hero-stat">🎯 Batch-06</span>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== END HERO ===================== -->
 
-      <!-- Certificate Card -->
-      <div class="certificate-viewer">
+    <!-- ===================== CERTIFICATE CONTENT ===================== -->
+    <section class="certificate-page">
+      <div class="certificate-wrap">
 
-        <!-- Toolbar -->
-        <div class="cert-toolbar">
-          <div class="cert-toolbar-title">
-            <span>🏆</span>
-            <span>Certificate of Achievement</span>
+        <!-- Certificate Card -->
+        <div class="certificate-viewer">
+
+          <!-- Toolbar - title only -->
+          <div class="cert-toolbar">
+            <div class="cert-toolbar-title">
+              <span>🏆</span>
+              <span>Certificate of Achievement</span>
+            </div>
           </div>
-          <div class="cert-toolbar-actions">
-            <a href="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" target="_blank" rel="noopener noreferrer" class="cert-toolbar-btn">
-              🔗 Open Full Size
-            </a>
-            <a href="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" download class="cert-toolbar-btn">
-              ⬇️ Download
-            </a>
+
+          <!-- Image Viewer - all devices -->
+          <div class="cert-image-viewer">
+            <img
+              src="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg"
+              alt="AI Mastery Certificate - Redoun Hossain"
+              class="certificate-image"
+              id="certImage"
+              loading="eager"
+            />
           </div>
+
         </div>
 
-        <!-- Certificate Image -->
-        <div class="cert-image-wrapper">
-          <img
-            src="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg"
-            alt="AI Mastery Certificate - Redoun Hossain"
-            class="certificate-image"
-            id="certImage"
-            loading="eager"
-          />
+        <!-- Bottom Actions -->
+        <div class="certificate-actions">
+          <a class="certificate-open-pdf" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" target="_blank" rel="noopener noreferrer">
+            📄 Open PDF
+          </a>
+          <a class="certificate-download" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" download>
+            ⬇️ Download Certificate
+          </a>
+          <a href="index.html" class="cert-back-link">
+            ← Back to Home
+          </a>
         </div>
 
+        <p class="certificate-note">
+          💡 Tip: Click on the certificate image to view it in full screen.
+        </p>
+
       </div>
+    </section>
+    <!-- ===================== END CERTIFICATE CONTENT ===================== -->
 
-      <!-- Bottom Actions -->
-      <div class="certificate-actions">
-        <a class="certificate-open" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" target="_blank" rel="noopener noreferrer">
-          🔗 View Full Size
-        </a>
-        <a class="certificate-download" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.jpg" download>
-          ⬇️ Download Certificate
-        </a>
-      </div>
-
-      <p class="certificate-note">
-        💡 Tip: Click on the certificate image to view it in full screen.
-      </p>
-
-      <div>
-        <a href="index.html" class="cert-back-link">← Back to Home</a>
-      </div>
-
-    </div>
   </main>
 
   <!-- Zoom Modal -->
