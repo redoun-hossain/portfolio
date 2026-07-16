@@ -9,7 +9,6 @@
   <meta name="keywords" content="n8n automation, AI workflow automation, AI agent developer, n8n specialist, business process automation, workflow automation expert, RAG systems, API integration, webhook integration" />
   <meta name="author" content="Redoun Hossain" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Redoun Hossain | n8n Workflow Automation & AI Agent Specialist" />
   <meta property="og:description" content="Intelligent n8n workflow automation and AI agent solutions that help businesses streamline operations and scale efficiently." />
   <meta property="og:type" content="website" />
@@ -44,16 +43,16 @@
     .hero-title-home{
       color:#0f172a !important;
       font-weight:900 !important;
-      line-height:1.1 !important;
+      line-height:1.12 !important;
       margin-bottom:20px !important;
-      font-size:clamp(2rem, 3.6vw, 3.4rem) !important;
+      font-size:clamp(1.85rem, 3.1vw, 3rem) !important;
       letter-spacing:-.02em;
       max-width:100% !important;
     }
 
     .hero-title-home .hero-line{
       display:block;
-      white-space:normal !important;
+      white-space:nowrap;
     }
 
     .hero-title-home .hero-line-accent{
@@ -66,14 +65,14 @@
       line-height:1.75 !important;
       margin-bottom:32px !important;
       font-weight:500 !important;
-      max-width:600px;
+      max-width:640px;
     }
 
     .home-hero .hero-stats{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:12px;
-      max-width:600px;
+      max-width:620px;
       margin-top:30px;
     }
 
@@ -453,7 +452,7 @@
       flex-direction:row !important;
       align-items:center !important;
       justify-content:center !important;
-      gap:60px !important;
+      gap:50px !important;
       max-width:1200px !important;
       margin:0 auto !important;
       padding-left:24px !important;
@@ -463,9 +462,9 @@
     }
 
     .home-hero .hero-text{
-      flex:0 1 620px !important;
+      flex:0 1 720px !important;
       min-width:0 !important;
-      max-width:620px !important;
+      max-width:720px !important;
     }
 
     .home-hero .hero-image{
@@ -477,8 +476,8 @@
 
     @media (min-width:769px){
       .home-hero .hero-image img{
-        width:clamp(260px,26vw,340px) !important;
-        height:clamp(260px,26vw,340px) !important;
+        width:clamp(240px,24vw,320px) !important;
+        height:clamp(240px,24vw,320px) !important;
         max-width:none !important;
         aspect-ratio:1 / 1;
         object-fit:cover;
@@ -512,6 +511,11 @@
         align-items:center !important;
         max-width:100% !important;
         flex:1 1 auto !important;
+      }
+
+      /* Mobile-এ title wrap হতে পারবে, না হলে overflow হবে */
+      .hero-title-home .hero-line{
+        white-space:normal !important;
       }
 
       .home-hero .hero-buttons{
