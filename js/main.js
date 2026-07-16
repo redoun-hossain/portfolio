@@ -351,7 +351,7 @@
   if (!currentScript || !currentScript.src) return;
 
   var previewScript = document.createElement('script');
-  previewScript.src = new URL('device-preview.js', currentScript.src).href;
+  previewScript.src = new URL('device-preview.js?v=2', currentScript.src).href;
   previewScript.defer = true;
   previewScript.onerror = function () {
     previewScript.remove();
