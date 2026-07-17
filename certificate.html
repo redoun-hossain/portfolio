@@ -166,6 +166,42 @@
       transform:scale(1.01);
     }
 
+    /* Card Footer - View Full Size button attached to card */
+    .cert-card-footer{
+      background:#ffffff;
+      border-top:1px solid #e9d5ff;
+      padding:16px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .cert-view-fullsize-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:linear-gradient(135deg,#f5f3ff 0%,#ede9fe 100%);
+      color:#7c3aed;
+      border:2px solid #c4b5fd;
+      padding:11px 26px;
+      border-radius:10px;
+      font-weight:800;
+      font-size:.95rem;
+      text-decoration:none;
+      cursor:pointer;
+      transition:.25s ease;
+      font-family:inherit;
+    }
+
+    .cert-view-fullsize-btn:hover{
+      background:linear-gradient(135deg,#7c3aed 0%,#8b5cf6 100%);
+      color:#ffffff;
+      border-color:#7c3aed;
+      transform:translateY(-2px);
+      box-shadow:0 8px 18px rgba(124,58,237,.25);
+    }
+
     /* Zoom modal */
     .cert-zoom-modal{
       display:none;
@@ -233,7 +269,7 @@
       flex-wrap:wrap;
       justify-content:center;
       gap:12px;
-      margin-top:32px;
+      margin-top:28px;
     }
 
     .certificate-actions a,
@@ -295,7 +331,14 @@
       font-size:.88rem;
     }
 
-    /* ===================== MOBILE ===================== */
+    /* ===================== MOBILE & TABLET ===================== */
+    @media (max-width:1024px){
+      /* Hide View PDF button on mobile & tablet */
+      .cert-view-pdf-btn{
+        display:none !important;
+      }
+    }
+
     @media (max-width:768px){
       .cert-hero{
         padding:55px 0 45px;
@@ -324,6 +367,15 @@
 
       .cert-toolbar-title{
         font-size:.92rem;
+      }
+
+      .cert-card-footer{
+        padding:14px 16px;
+      }
+
+      .cert-view-fullsize-btn{
+        width:100%;
+        padding:12px 20px;
       }
 
       .certificate-actions{
@@ -419,25 +471,33 @@
             />
           </div>
 
+          <!-- Card Footer - View Full Size (attached to card) -->
+          <div class="cert-card-footer">
+            <button type="button" class="cert-view-fullsize-btn" id="viewFullSizeBtn">
+              🔍 View Full Size
+            </button>
+          </div>
+
         </div>
 
         <!-- Bottom Actions -->
         <div class="certificate-actions">
-          <a class="certificate-open-pdf" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" target="_blank" rel="noopener noreferrer">
+          <a class="certificate-open-pdf cert-view-pdf-btn" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" target="_blank" rel="noopener noreferrer">
             📄 View PDF
           </a>
           <a class="certificate-download" href="certificates/Redoun-Hossain-AI-Mastery-Certificate.pdf" download>
-            ⬇️ Download Certificate
+            ⬇️ Download PDF
           </a>
           <button
-  class="cert-back-btn"
-  onclick="if(document.referrer){history.back();}else{window.location.href='index.html';}">
-  ← Back to Previous Page
-</button>
+            type="button"
+            class="cert-back-btn"
+            onclick="if(document.referrer){history.back();}else{window.location.href='index.html';}">
+            ← Back to Previous Page
+          </button>
         </div>
 
         <p class="certificate-note">
-          💡 Click the certificate to view it in full screen.
+          💡 Click the certificate or "View Full Size" to see it in full screen.
         </p>
 
       </div>
@@ -571,30 +631,44 @@
     const certImage = document.getElementById('certImage');
     const zoomModal = document.getElementById('certZoomModal');
     const zoomClose = document.getElementById('certZoomClose');
+    const viewFullSizeBtn = document.getElementById('viewFullSizeBtn');
+
+    function openZoom(){
+      zoomModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeZoom(){
+      zoomModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
     if(certImage && zoomModal){
-      certImage.addEventListener('click', () => {
-        zoomModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
+      // Click on image
+      certImage.addEventListener('click', openZoom);
 
+      // Click on View Full Size button
+      if(viewFullSizeBtn){
+        viewFullSizeBtn.addEventListener('click', openZoom);
+      }
+
+      // Click outside or on image in modal
       zoomModal.addEventListener('click', (e) => {
         if(e.target === zoomModal || e.target.tagName === 'IMG'){
-          zoomModal.classList.remove('active');
-          document.body.style.overflow = '';
+          closeZoom();
         }
       });
 
+      // Close button
       zoomClose.addEventListener('click', (e) => {
         e.stopPropagation();
-        zoomModal.classList.remove('active');
-        document.body.style.overflow = '';
+        closeZoom();
       });
 
+      // ESC key
       document.addEventListener('keydown', (e) => {
         if(e.key === 'Escape' && zoomModal.classList.contains('active')){
-          zoomModal.classList.remove('active');
-          document.body.style.overflow = '';
+          closeZoom();
         }
       });
     }
