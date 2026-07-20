@@ -9,8 +9,8 @@ const CHAT_CONFIG = {
        ON/OFF SWITCHES
        ========================================== */
 
-    CHAT_WIDGET_ENABLED: true,       /* true = Chat Widget ON, false = OFF */
-    DEVICE_PREVIEW_ENABLED: true,    /* true = Preview Tool ON, false = OFF */
+    CHAT_WIDGET_ENABLED: false,       /* true = Chat Widget ON, false = OFF */
+    DEVICE_PREVIEW_ENABLED: false,    /* true = Preview Tool ON, false = OFF */
 
     /* ==========================================
        ASSISTANT
