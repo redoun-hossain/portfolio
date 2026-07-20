@@ -19,7 +19,7 @@ const CHAT_CONFIG = {
      * true  = Widget ON (visible)
      * false = Widget OFF (hidden)
      */
-    ENABLED: false,
+    CHAT_CONFIG ENABLED: false,
 
     /**
      * true  = Preview Tool ON (📱 button দেখাবে)
