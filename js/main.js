@@ -377,11 +377,11 @@
     basePath = pathParts.join('/') + '/';
   }
 
-  // Files to load in order
+  // Files to load in order (config first, then others)
   var files = [
-    'chat-widget/device-preview.js',
     'chat-widget/webhook-config.js',
     'chat-widget/config.js',
+    'chat-widget/device-preview.js',
     'chat-widget/chat-widget.js'
   ];
 
