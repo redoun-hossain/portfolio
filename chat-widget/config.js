@@ -12,6 +12,16 @@
 const CHAT_CONFIG = {
 
     // ============================================================
+    // 🔘 WIDGET TOGGLE
+    // ============================================================
+
+    /**
+     * true  = Widget ON (visible)
+     * false = Widget OFF (hidden)
+     */
+    ENABLED: true,
+
+    // ============================================================
     // 🤖 ASSISTANT IDENTITY
     // ============================================================
 
@@ -46,6 +56,14 @@ const CHAT_CONFIG = {
     // ============================================================
     // 🎨 APPEARANCE
     // ============================================================
+
+    /**
+     * Default theme when first opened
+     * 'dark'  = Always dark (default)
+     * 'light' = Always light
+     * 'auto'  = Follow system preference
+     */
+    THEME: 'dark',
 
     INPUT_PLACEHOLDER: "Ask me anything...",
 

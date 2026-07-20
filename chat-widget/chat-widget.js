@@ -82,8 +82,8 @@
     --cw-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --cw-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --cw-transition-spring: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    --cw-z-widget: 9998;
-    --cw-z-button: 9999;
+    --cw-z-widget: 2147483647;
+    --cw-z-button: 2147483647;
     --cw-widget-width: 400px;
     --cw-widget-height: 640px;
     --cw-widget-bottom: 24px;
@@ -351,6 +351,9 @@
     // CONFIG
     // ============================================================
     const CFG = {
+        // Widget toggle
+        enabled: (typeof CHAT_CONFIG !== 'undefined' && CHAT_CONFIG.ENABLED !== undefined) ? CHAT_CONFIG.ENABLED : true,
+        defaultTheme: (typeof CHAT_CONFIG !== 'undefined' && CHAT_CONFIG.THEME) || 'dark',
         // Webhook config from webhook-config.js
         get webhookUrl() { return (typeof WEBHOOK_CONFIG !== 'undefined' && WEBHOOK_CONFIG.getURL) ? WEBHOOK_CONFIG.getURL() : ''; },
         get timeout() { return (typeof WEBHOOK_CONFIG !== 'undefined' && WEBHOOK_CONFIG.TIMEOUT) || 30000; },
@@ -406,7 +409,16 @@
     // ============================================================
     const initTheme = () => {
         const t = store.get('theme');
-        S.dark = t === 'dark' ? true : t === 'light' ? false : window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark') {
+            S.dark = true;
+        } else if (t === 'light') {
+            S.dark = false;
+        } else {
+            // No saved preference — use default from config
+            if (CFG.defaultTheme === 'dark') S.dark = true;
+            else if (CFG.defaultTheme === 'light') S.dark = false;
+            else S.dark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+        }
         applyTheme();
     };
     const toggleTheme = () => { S.dark = !S.dark; store.set('theme', S.dark ? 'dark' : 'light'); applyTheme(); };
@@ -669,6 +681,12 @@
     // INIT
     // ============================================================
     const init = () => {
+        // Check if widget is enabled
+        if (!CFG.enabled) {
+            console.log('%c💬 Chat Widget: Disabled', 'color:#94A3B8');
+            return;
+        }
+
         // Inject styles
         const style = document.createElement('style');
         style.textContent = STYLES;

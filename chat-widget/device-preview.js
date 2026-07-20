@@ -1,5 +1,12 @@
-/* Optional development tool. Delete this file to disable it site-wide. */
+/**
+ * ============================================================
+ * DEVICE PREVIEW TOOL (Development Only)
+ * Preview your website in different device sizes.
+ * Delete this file before going live.
+ * ============================================================
+ */
 (function initDevicePreview() {
+  // Stop if already inside an iframe, or if launcher already exists
   if (window.top !== window.self || document.getElementById('device-preview-launcher')) return;
 
   var presets = {
@@ -8,6 +15,7 @@
     mobile: { label: 'Mobile', width: 390 }
   };
 
+  // Inject styles
   var style = document.createElement('style');
   style.textContent = [
     '#device-preview-launcher{position:fixed;left:18px;bottom:18px;z-index:99998;border:0;border-radius:999px;background:#1d4ed8;color:#fff;padding:12px 16px;font:700 14px/1 system-ui,sans-serif;box-shadow:0 10px 24px rgba(15,23,42,.28);cursor:pointer;}',
@@ -24,12 +32,14 @@
   ].join('');
   document.head.appendChild(style);
 
+  // Create launcher button
   var launcher = document.createElement('button');
   launcher.id = 'device-preview-launcher';
   launcher.type = 'button';
-  launcher.textContent = '📱 Preview';
+  launcher.textContent = '\u{1F4F1} Preview';
   launcher.setAttribute('aria-label', 'Open device preview');
 
+  // Create modal
   var modal = document.createElement('div');
   modal.id = 'device-preview-modal';
   modal.setAttribute('role', 'dialog');
@@ -42,7 +52,7 @@
         '<button type="button" data-device="desktop">Desktop</button>' +
         '<button type="button" data-device="tablet">Tablet</button>' +
         '<button type="button" data-device="mobile">Mobile</button>' +
-        '<button type="button" data-device="close">Close ×</button>' +
+        '<button type="button" data-device="close">Close</button>' +
       '</div>' +
       '<div class="device-preview-stage"><iframe class="device-preview-frame" title="Website device preview"></iframe></div>' +
     '</div>';
