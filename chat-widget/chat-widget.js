@@ -664,7 +664,7 @@
         D.btn.addEventListener('click', toggle);
         D.close.addEventListener('click', close);
         D.max.addEventListener('click', toggleMax);
-        D.newBtn.addEventListener('click', () => { if (confirm('Start new conversation?')) clearChat(); });
+        D.newBtn.addEventListener('click', () => { clearChat(); });
         D.theme.addEventListener('click', toggleTheme);
         D.send.addEventListener('click', handleSend);
         D.input.addEventListener('input', () => { resize(); updateChars(); updateBtn(); });
