@@ -364,32 +364,49 @@
    11. AI CHAT WIDGET LOADER
    Automatically loads the AI chat widget on all pages.
    The widget files are located in /chat-widget/ folder.
+   Files loaded: webhook-config.js → config.js → chat-widget.js
    ============================================================= */
 (function initChatWidget() {
-  // Get the base path relative to current script location
+  // Get the site root path (works from any page/subfolder)
   var currentScript = document.currentScript;
-  var basePath = '';
+  var basePath = '/';
   
   if (currentScript && currentScript.src) {
-    // Get directory of main.js
-    var scriptPath = currentScript.src;
-    basePath = scriptPath.substring(0, scriptPath.lastIndexOf('/') + 1);
+    // Extract base URL up to the site root
+    var url = new URL(currentScript.src);
+    // main.js is in /js/ folder, so go one level up to reach root
+    var pathParts = url.pathname.split('/');
+    pathParts.pop(); // remove 'main.js'
+    pathParts.pop(); // remove 'js'
+    basePath = pathParts.join('/') + '/';
   }
 
-  // Load config.js first
-  var configScript = document.createElement('script');
-  configScript.src = basePath + 'chat-widget/config.js';
+  // Step 1: Load webhook-config.js first
+  var webhookScript = document.createElement('script');
+  webhookScript.src = basePath + 'chat-widget/webhook-config.js';
   
-  configScript.onload = function () {
-    // After config loads, load the widget
-    var widgetScript = document.createElement('script');
-    widgetScript.src = basePath + 'chat-widget/chat-widget.js';
-    document.body.appendChild(widgetScript);
+  webhookScript.onload = function () {
+    // Step 2: Load config.js
+    var configScript = document.createElement('script');
+    configScript.src = basePath + 'chat-widget/config.js';
+    
+    configScript.onload = function () {
+      // Step 3: Load the widget
+      var widgetScript = document.createElement('script');
+      widgetScript.src = basePath + 'chat-widget/chat-widget.js';
+      document.body.appendChild(widgetScript);
+    };
+
+    configScript.onerror = function () {
+      console.warn('Chat widget config not found. Skipping chat widget.');
+    };
+
+    document.body.appendChild(configScript);
   };
 
-  configScript.onerror = function () {
-    console.warn('Chat widget config not found. Skipping chat widget.');
+  webhookScript.onerror = function () {
+    console.warn('Webhook config not found. Skipping chat widget.');
   };
 
-  document.body.appendChild(configScript);
+  document.body.appendChild(webhookScript);
 })();
