@@ -19,13 +19,13 @@ const CHAT_CONFIG = {
      * true  = Widget ON (visible)
      * false = Widget OFF (hidden)
      */
-    ENABLED: true,
+    ENABLED: false,
 
     /**
      * true  = Preview Tool ON (📱 button দেখাবে)
      * false = Preview Tool OFF (hide হবে)
      */
-    PREVIEW_ENABLED: true,
+    PREVIEW_ENABLED: false,
 
     // ============================================================
     // 🤖 ASSISTANT IDENTITY
