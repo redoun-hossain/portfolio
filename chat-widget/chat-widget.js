@@ -86,7 +86,7 @@
     --cw-z-button: 2147483647;
     --cw-widget-width: 400px;
     --cw-widget-height: 640px;
-    --cw-widget-bottom: 24px;
+    --cw-widget-bottom: 90px;
     --cw-widget-right: 24px;
     --cw-button-size: 60px;
     --cw-header-height: 64px;
