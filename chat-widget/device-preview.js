@@ -7,7 +7,7 @@
  */
 (function initDevicePreview() {
   // Check if preview is disabled in config
-  if (typeof CHAT_CONFIG !== 'undefined' && CHAT_CONFIG.PREVIEW_ENABLED === false) return;
+  if (typeof CHAT_CONFIG !== 'undefined' && CHAT_CONFIG.DEVICE_PREVIEW_ENABLED === false) return;
 
   // Stop if already inside an iframe, or if launcher already exists
   if (window.top !== window.self || document.getElementById('device-preview-launcher')) return;

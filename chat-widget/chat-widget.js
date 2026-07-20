@@ -352,7 +352,7 @@
     // ============================================================
     const CFG = {
         // Widget toggle
-        enabled: (typeof CHAT_CONFIG !== 'undefined' && CHAT_CONFIG.ENABLED !== undefined) ? CHAT_CONFIG.ENABLED : true,
+        enabled: (typeof CHAT_CONFIG !== 'undefined' && CHAT_CONFIG.CHAT_WIDGET_ENABLED !== undefined) ? CHAT_CONFIG.CHAT_WIDGET_ENABLED : true,
         defaultTheme: (typeof CHAT_CONFIG !== 'undefined' && CHAT_CONFIG.THEME) || 'dark',
         // Webhook config from webhook-config.js
         get webhookUrl() { return (typeof WEBHOOK_CONFIG !== 'undefined' && WEBHOOK_CONFIG.getURL) ? WEBHOOK_CONFIG.getURL() : ''; },
